@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.TeacherRoomController">
+   <children>
+      <Label alignment="CENTER" layoutX="137.0" layoutY="213.0" prefHeight="200.0" prefWidth="526.0" text="TEACHER ROOM">
+         <font>
+            <Font size="64.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

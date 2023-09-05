@@ -2,15 +2,17 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
 
 /** Controller class for the room view. */
-public class RoomController {
+public class MainRoomController {
 
   @FXML private Rectangle door;
   @FXML private Rectangle window;
@@ -19,6 +21,7 @@ public class RoomController {
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
+    System.out.println("************** Initialising MainRoomController **************");
   }
 
   /**
@@ -68,7 +71,11 @@ public class RoomController {
 
     if (!GameState.isRiddleResolved) {
       showDialog("Info", "Riddle", "You need to resolve the riddle!");
-      App.setRoot("chat");
+      // App.setRoot("chat");
+      Rectangle rectangle = (Rectangle) event.getSource();
+      Scene sceneRectangleIsIn = rectangle.getScene();
+      sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.CHAT));
+
       return;
     }
 
