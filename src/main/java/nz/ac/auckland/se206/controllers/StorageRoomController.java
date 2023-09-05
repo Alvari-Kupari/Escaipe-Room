@@ -1,10 +1,36 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
+import javafx.fxml.FXML;
+import javafx.scene.Scene;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Rectangle;
+import nz.ac.auckland.se206.SceneManager;
+import nz.ac.auckland.se206.SceneManager.AppUi;
+
 public class StorageRoomController {
+
+  @FXML private Rectangle mainDoor;
 
   /** Initializes the Storage Room view */
   public void initialize() {
     // Initialization code goes here
+    System.out.println();
     System.out.println("************** Initialising StorageRoomController **************");
+  }
+
+  /**
+   * Handles the click event on the main door.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void clickMainDoor(MouseEvent event) throws IOException {
+    System.out.println("Main Door clicked");
+
+    Rectangle rectangle = (Rectangle) event.getSource();
+    Scene sceneRectangleIsIn = rectangle.getScene();
+    sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAIN_ROOM));
   }
 }

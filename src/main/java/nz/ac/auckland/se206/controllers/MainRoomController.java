@@ -17,10 +17,13 @@ public class MainRoomController {
   @FXML private Rectangle door;
   @FXML private Rectangle window;
   @FXML private Rectangle vase;
+  @FXML private Rectangle teacherDoor;
+  @FXML private Rectangle storageDoor;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
+    System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
   }
 
@@ -109,5 +112,35 @@ public class MainRoomController {
   @FXML
   public void clickWindow(MouseEvent event) {
     System.out.println("window clicked");
+  }
+
+  /**
+   * Handles the click event on the teacher door.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Teacher Room
+   */
+  @FXML
+  public void clickTeacherDoor(MouseEvent event) throws IOException {
+    System.out.println("Teacher Door clicked");
+
+    Rectangle rectangle = (Rectangle) event.getSource();
+    Scene sceneRectangleIsIn = rectangle.getScene();
+    sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.TEACHER_ROOM));
+  }
+
+  /**
+   * Handles the click event on the storage door.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Storage Room
+   */
+  @FXML
+  public void clickStorageDoor(MouseEvent event) throws IOException {
+    System.out.println("Storage Door clicked");
+
+    Rectangle rectangle = (Rectangle) event.getSource();
+    Scene sceneRectangleIsIn = rectangle.getScene();
+    sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.STORAGE_ROOM));
   }
 }

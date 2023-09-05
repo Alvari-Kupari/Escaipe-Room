@@ -32,6 +32,7 @@ public class ChatController {
    */
   @FXML
   public void initialize() throws ApiProxyException {
+    System.out.println();
     System.out.println("************** Initialising ChatController **************");
     chatCompletionRequest =
         new ChatCompletionRequest().setN(1).setTemperature(0.2).setTopP(0.5).setMaxTokens(100);

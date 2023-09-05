@@ -1,16 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
-
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
    <children>
-      <Label alignment="CENTER" layoutX="166.0" layoutY="257.0" prefHeight="112.0" prefWidth="469.0" text="STORAGE ROOM">
+      <ImageView fitHeight="585.0" fitWidth="807.0" layoutX="-3.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/storageroom.png" />
+         </image>
+      </ImageView>
+      <Label alignment="CENTER" layoutX="226.0" layoutY="60.0" prefHeight="81.0" prefWidth="469.0" text="STORAGE ROOM" textFill="#184cb8">
          <font>
             <Font size="56.0" />
          </font>
       </Label>
+      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="390.0" layoutX="14.0" layoutY="159.0" onMouseClicked="#clickMainDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="90.0" />
    </children>
 </Pane>
