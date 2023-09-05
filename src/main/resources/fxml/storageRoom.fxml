@@ -9,7 +9,7 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
    <children>
-      <ImageView fitHeight="585.0" fitWidth="807.0" layoutX="-3.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="634.0" fitWidth="636.0" layoutX="226.0" layoutY="-4.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/storageroom.png" />
          </image>
@@ -19,6 +19,6 @@
             <Font size="56.0" />
          </font>
       </Label>
-      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="390.0" layoutX="14.0" layoutY="159.0" onMouseClicked="#clickMainDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="90.0" />
+      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="390.0" layoutX="226.0" layoutY="143.0" onMouseClicked="#clickMainDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="90.0" />
    </children>
 </Pane>
