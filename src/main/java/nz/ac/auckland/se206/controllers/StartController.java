@@ -17,6 +17,7 @@ public class StartController {
   private void initialize() {
     System.out.println();
     System.out.println("************** Initialising StartController **************");
+    
   }
 
   @FXML
