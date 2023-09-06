@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
+
+<Pane fx:id="mainRoom" focusTraversable="true" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainRoomController">
+   <children>
+      <ImageView fitHeight="643.0" fitWidth="1000.0" layoutX="-151.0" layoutY="-9.0" preserveRatio="true">
+         <image>
+            <Image url="@../images/mainroom.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="vase" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="41.0" layoutX="362.0" layoutY="320.0" onMouseClicked="#clickVase" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="38.0" />
+      <Rectangle fx:id="window" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="60.0" layoutX="488.0" layoutY="311.0" onMouseClicked="#clickWindow" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+      <Rectangle fx:id="door" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="98.0" layoutX="400.0" layoutY="371.0" onMouseClicked="#clickDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
+      <Rectangle fx:id="teacherDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="219.0" layoutY="188.0" onMouseClicked="#clickTeacherDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="87.0" />
+      <Rectangle fx:id="storageDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="741.0" layoutY="188.0" onMouseClicked="#clickStorageDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="59.0" />
+      <ImageView fitHeight="259.0" fitWidth="204.0" layoutX="14.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/professor.png" />
+         </image>
+      </ImageView>
+   </children>
+</Pane>
