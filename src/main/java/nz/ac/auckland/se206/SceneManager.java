@@ -6,33 +6,34 @@ import javafx.scene.Parent;
 /** This is the entry point of the SceneManager, where scenes are added, changed and handled. */
 public class SceneManager {
 
-  public enum AppUi {
+  public enum Room {
     START,
     MAIN_ROOM,
     STORAGE_ROOM,
     TEACHER_ROOM,
     CHAT,
+    GAME_OVER,
   }
 
-  private static HashMap<AppUi, Parent> sceneMap = new HashMap<AppUi, Parent>();
+  private static HashMap<Room, Parent> sceneMap = new HashMap<Room, Parent>();
 
   /**
    * Creates a new scene and adds it to the scene map.
    *
-   * @param appUi
+   * @param Room
    * @param uiRoot
    */
-  public static void addUi(AppUi appUi, Parent uiRoot) {
-    sceneMap.put(appUi, uiRoot);
+  public static void addUi(Room Room, Parent uiRoot) {
+    sceneMap.put(Room, uiRoot);
   }
 
   /**
    * Creates a new Parent based of UiRoot.
    *
-   * @param appUi
+   * @param Room
    * @return
    */
-  public static Parent getUiRoot(AppUi appUi) {
-    return sceneMap.get(appUi);
+  public static Parent getUiRoot(Room Room) {
+    return sceneMap.get(Room);
   }
 }

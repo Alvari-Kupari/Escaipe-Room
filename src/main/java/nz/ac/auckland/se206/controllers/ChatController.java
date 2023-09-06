@@ -9,7 +9,7 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.gpt.ChatMessage;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.gpt.openai.ApiProxyException;
@@ -104,7 +104,7 @@ public class ChatController {
 
     Button button = (Button) event.getSource();
     Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAIN_ROOM));
+    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(Room.MAIN_ROOM));
     // App.setRoot("mainRoom");
   }
 }
