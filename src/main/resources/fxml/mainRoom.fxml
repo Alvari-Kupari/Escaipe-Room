@@ -1,12 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
-<?import javafx.scene.shape.Circle?>
 <?import javafx.scene.shape.Rectangle?>
 
 <Pane fx:id="mainRoom" focusTraversable="true" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainRoomController">
@@ -21,18 +17,9 @@
       <Rectangle fx:id="door" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="98.0" layoutX="400.0" layoutY="371.0" onMouseClicked="#clickDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
       <Rectangle fx:id="teacherDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="219.0" layoutY="188.0" onMouseClicked="#clickTeacherDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="87.0" />
       <Rectangle fx:id="storageDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="741.0" layoutY="188.0" onMouseClicked="#clickStorageDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="59.0" />
-      <TextArea fx:id="chatTextArea" layoutX="14.0" layoutY="56.0" prefHeight="259.0" prefWidth="194.0" wrapText="true" />
-      <TextField fx:id="inputText" layoutX="14.0" layoutY="321.0" prefHeight="26.0" prefWidth="150.0" />
-      <Button fx:id="sendButton" layoutX="168.0" layoutY="322.0" mnemonicParsing="false" onAction="#onSendMessage" text="Send" />
-      <Circle fill="#23bcccc7" layoutX="202.0" layoutY="65.0" radius="21.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="259.0" fitWidth="204.0" layoutX="14.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor.png" />
-         </image>
-      </ImageView>
-      <ImageView fitHeight="52.0" fitWidth="43.0" layoutX="180.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/chatbox.png" />
          </image>
       </ImageView>
    </children>
