@@ -2,14 +2,15 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.timer.Timer;
 
 /** Controller class for the room view. */
 public class MainRoomController {
@@ -19,10 +20,15 @@ public class MainRoomController {
   @FXML private Rectangle vase;
   @FXML private Rectangle teacherDoor;
   @FXML private Rectangle storageDoor;
+  @FXML private TextArea timer;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
+
+    // bind timer to timer text
+    Timer.bindText(Room.MAIN_ROOM, timer);
+
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
   }
@@ -74,10 +80,8 @@ public class MainRoomController {
 
     if (!GameState.isRiddleResolved) {
       showDialog("Info", "Riddle", "You need to resolve the riddle!");
-      // App.setRoot("chat");
-      Rectangle rectangle = (Rectangle) event.getSource();
-      Scene sceneRectangleIsIn = rectangle.getScene();
-      sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.CHAT));
+
+      App.changeScene(Room.CHAT);
 
       return;
     }
@@ -123,10 +127,7 @@ public class MainRoomController {
   @FXML
   public void clickTeacherDoor(MouseEvent event) throws IOException {
     System.out.println("Teacher Door clicked");
-
-    Rectangle rectangle = (Rectangle) event.getSource();
-    Scene sceneRectangleIsIn = rectangle.getScene();
-    sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.TEACHER_ROOM));
+    App.changeScene(Room.TEACHER_ROOM);
   }
 
   /**
@@ -139,8 +140,6 @@ public class MainRoomController {
   public void clickStorageDoor(MouseEvent event) throws IOException {
     System.out.println("Storage Door clicked");
 
-    Rectangle rectangle = (Rectangle) event.getSource();
-    Scene sceneRectangleIsIn = rectangle.getScene();
-    sceneRectangleIsIn.setRoot(SceneManager.getUiRoot(AppUi.STORAGE_ROOM));
+    App.changeScene(Room.STORAGE_ROOM);
   }
 }

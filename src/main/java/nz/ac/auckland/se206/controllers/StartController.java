@@ -2,11 +2,11 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.SceneManager;
-import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.timer.Timer;
 
 /** This is the start screen controller, where difficulty is selected and you can start game. */
 public class StartController {
@@ -17,7 +17,6 @@ public class StartController {
   private void initialize() {
     System.out.println();
     System.out.println("************** Initialising StartController **************");
-    
   }
 
   @FXML
@@ -27,8 +26,10 @@ public class StartController {
     System.out.println(event.getSource());
 
     GameState.isGameStarted = true;
-    Button button = (Button) event.getSource();
-    Scene sceneButtonIsIn = button.getScene();
-    sceneButtonIsIn.setRoot(SceneManager.getUiRoot(AppUi.MAIN_ROOM));
+
+    // start timer
+    Timer.startTimer();
+
+    App.changeScene(Room.MAIN_ROOM);
   }
 }

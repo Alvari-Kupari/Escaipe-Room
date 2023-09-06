@@ -6,7 +6,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
-import nz.ac.auckland.se206.SceneManager.AppUi;
+import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.timer.Timer;
 
 /**
  * This is the entry point of the JavaFX application, while you can change this class, it should
@@ -46,27 +47,32 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
 
-    SceneManager.addUi(AppUi.CHAT, loadFxml("chat"));
-    SceneManager.addUi(AppUi.MAIN_ROOM, loadFxml("mainRoom"));
-    SceneManager.addUi(AppUi.STORAGE_ROOM, loadFxml("storageRoom"));
-    SceneManager.addUi(AppUi.TEACHER_ROOM, loadFxml("teacherRoom"));
-    SceneManager.addUi(AppUi.START, loadFxml("start"));
+    SceneManager.addUi(Room.CHAT, loadFxml("chat"));
+    SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
+    SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
+    SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
+    SceneManager.addUi(Room.START, loadFxml("start"));
+    SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
 
     stage.setOnCloseRequest(
         event -> {
           System.exit(0);
         });
 
-    scene = new Scene(SceneManager.getUiRoot(AppUi.START), 800, 626);
-    Parent root = SceneManager.getUiRoot(AppUi.START);
+    scene = new Scene(SceneManager.getUiRoot(Room.START), 800, 626);
+    Parent root = SceneManager.getUiRoot(Room.START);
     stage.setScene(scene);
     stage.show();
     root.requestFocus();
 
-    // Parent root = loadFxml("mainRoom");
-    // scene = new Scene(root, 600, 470);
-    // stage.setScene(scene);
-    // stage.show();
-    // root.requestFocus();
+    Timer.setTimer(2, 0);
+  }
+
+  public static void changeScene(Room room) {
+
+    // rebind the timer properly
+    Timer.changeRoom(room);
+
+    scene.setRoot(SceneManager.getUiRoot(room));
   }
 }
