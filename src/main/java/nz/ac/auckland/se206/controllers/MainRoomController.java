@@ -142,4 +142,17 @@ public class MainRoomController {
 
     App.changeScene(Room.STORAGE_ROOM);
   }
+
+  /**
+   * Handles the click event on the exit door.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Storage Room
+   */
+  @FXML
+  public void clickExitDoor(MouseEvent event) throws IOException {
+    System.out.println("Exit Door clicked");
+
+    App.changeScene(Room.EXIT);
+  }
 }

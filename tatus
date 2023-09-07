@@ -1,0 +1,92 @@
+[33mcommit 768051baa9077919e2d4753991e57a1f37a697a4[m[33m ([m[1;36mHEAD -> [m[1;32mfeature/locked-door[m[33m, [m[1;31morigin/feature/locked-door[m[33m)[m
+Author: alin484 <alin484@aucklanduni.ac.nz>
+Date:   Thu Sep 7 17:28:23 2023 +1200
+
+    Added 3rd door to main lab room
+
+[33mcommit 6ae5c842ae41e37093a9286d88f1cd32ed7be887[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Merge: adc7da5 f7d03e0
+Author: Alvari Kupari <138302953+Alvari-Kupari@users.noreply.github.com>
+Date:   Wed Sep 6 23:32:19 2023 +1200
+
+    Merge pull request #4 from SOFTENG206-2023/feature/start-screen
+    
+    This merge makes for a main menu screen which allows the user to select the time and difficulty. It looks great, thanks for making all the changes to avoid the merge conflcit
+
+[33mcommit f7d03e094df1efec3589337062f1f88703b7ccda[m
+Author: HamishPatel <hpat874@aucklanduni.ac.nz>
+Date:   Wed Sep 6 23:17:52 2023 +1200
+
+    Made the new start-screen branch due to merge conflicts with exisiting branch for timer, this should have the redone code for functionality of the start-screen with the integration with the timer. Need to make visuals better though.
+
+[33mcommit adc7da56c7fd7ac61e11612103bb31268c5d0cff[m
+Merge: 697c63f 4efecce
+Author: Hamish Patel <hpat874@aucklanduni.ac.nz>
+Date:   Wed Sep 6 22:42:40 2023 +1200
+
+    Merge pull request #2 from SOFTENG206-2023/feature/timer
+    
+    Added a timer to all the game rooms, and made switching between rooms more efficient and easy
+
+[33mcommit 4efecce61c494e448405e310262b2c33bfde084a[m
+Author: Alvari <alvari.jk@gmail.com>
+Date:   Wed Sep 6 21:03:18 2023 +1200
+
+    Added a timer to all the game rooms, and made switching between rooms more efficient
+
+[33mcommit 697c63f15080e7f688f97b35e1f95b670a8c9feb[m
+Merge: d2f1edb c53027c
+Author: Alvari Kupari <138302953+Alvari-Kupari@users.noreply.github.com>
+Date:   Wed Sep 6 16:12:30 2023 +1200
+
+    Merge pull request #1 from SOFTENG206-2023/feature/template
+    
+    Feature/template -looks good, functionality is working as intended
+
+[33mcommit c53027cb9e5da77ad9624e887e0e986289b147ba[m[33m ([m[1;31morigin/feature/template[m[33m, [m[1;32mfeature/template[m[33m)[m
+Author: alin484 <alin484@aucklanduni.ac.nz>
+Date:   Wed Sep 6 14:27:49 2023 +1200
+
+     Removed chatboxes in all the rooms
+
+[33mcommit 9515358789047706ee63dd89e7c96d7808aecb80[m
+Author: alin484 <alin484@aucklanduni.ac.nz>
+Date:   Wed Sep 6 14:02:07 2023 +1200
+
+    Changed Teacher's room AI professor to have floating chatbox, fixed image sizes
+
+[33mcommit 49d0cc576be5ec97efae961a96a3d70c4ffe9ca3[m
+Author: alin484 <alin484@aucklanduni.ac.nz>
+Date:   Wed Sep 6 12:36:54 2023 +1200
+
+    Added AI professor image and chatbox in all rooms
+
+[33mcommit 4eda8094e8f42ce7eb23771d52105a2f2520bc2d[m
+Author: alin484 <alin484@aucklanduni.ac.nz>
+Date:   Wed Sep 6 11:19:27 2023 +1200
+
+    Changed the sizing of the room images
+
+[33mcommit d1dfba939a7e9807b1b03284a031e1904797bf01[m
+Author: HamishPatel <hpat874@aucklanduni.ac.nz>
+Date:   Tue Sep 5 22:35:52 2023 +1200
+
+    Added functionality of switching between the 3 rooms
+
+[33mcommit dc4d6419e03efcdea5f7deb01555c1d6a1948ac1[m
+Author: HamishPatel <hpat874@aucklanduni.ac.nz>
+Date:   Tue Sep 5 22:07:23 2023 +1200
+
+    Added rooms to be used, can be changed later on for better ones
+
+[33mcommit 92cddf6ea24637d5718dadf3f7360b2f6f86a209[m
+Author: HamishPatel <hpat874@aucklanduni.ac.nz>
+Date:   Tue Sep 5 18:02:25 2023 +1200
+
+    Added template for beta
+
+[33mcommit d2f1edb917366266f0570ba62edffbcb9206c5d5[m
+Author: github-classroom[bot] <66690702+github-classroom[bot]@users.noreply.github.com>
+Date:   Thu Aug 31 09:03:40 2023 +0000
+
+    Initial commit
