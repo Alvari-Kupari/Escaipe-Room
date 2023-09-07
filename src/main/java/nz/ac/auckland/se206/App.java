@@ -51,6 +51,7 @@ public class App extends Application {
     SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
     SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
     SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
+    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
     SceneManager.addUi(Room.START, loadFxml("start"));
     SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
 

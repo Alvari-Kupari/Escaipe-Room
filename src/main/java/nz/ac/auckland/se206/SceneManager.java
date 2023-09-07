@@ -13,6 +13,7 @@ public class SceneManager {
     TEACHER_ROOM,
     CHAT,
     GAME_OVER,
+    EXIT,
   }
 
   private static HashMap<Room, Parent> sceneMap = new HashMap<Room, Parent>();

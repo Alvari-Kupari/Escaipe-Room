@@ -24,5 +24,6 @@
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="60.0" prefWidth="187.0" />
+      <Rectangle fx:id="exitDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="265.0" layoutX="302.0" layoutY="197.0" onMouseClicked="#clickExitDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="81.0" />
    </children>
 </Pane>
