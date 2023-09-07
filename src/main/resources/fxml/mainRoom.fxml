@@ -16,8 +16,8 @@
       <Rectangle fx:id="vase" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="41.0" layoutX="568.0" layoutY="320.0" onMouseClicked="#clickVase" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="38.0" />
       <Rectangle fx:id="window" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="60.0" layoutX="619.0" layoutY="331.0" onMouseClicked="#clickWindow" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
       <Rectangle fx:id="door" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="98.0" layoutX="467.0" layoutY="271.0" onMouseClicked="#clickDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
-      <Rectangle fx:id="teacherDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="191.0" layoutY="191.0" onMouseClicked="#clickTeacherDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="87.0" />
-      <Rectangle fx:id="storageDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="722.0" layoutY="188.0" onMouseClicked="#clickStorageDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="81.0" />
+      <Rectangle fx:id="storageDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="191.0" layoutY="191.0" onMouseClicked="#clickStorageDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="87.0" />
+      <Rectangle fx:id="teacherDoor" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" height="288.0" layoutX="722.0" layoutY="188.0" onMouseClicked="#clickTeacherDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="81.0" />
       <ImageView fitHeight="259.0" fitWidth="204.0" layoutX="2.0" layoutY="353.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor.png" />
