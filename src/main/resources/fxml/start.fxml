@@ -8,7 +8,12 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StartController">
    <children>
-      <Button fx:id="btnStart" disable="true" layoutX="348.0" layoutY="320.0" mnemonicParsing="false" onAction="#startGame" prefHeight="44.0" prefWidth="103.0" text="Start">
+      <ImageView fitHeight="632.0" fitWidth="800.0" layoutY="-1.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/Title_Screen.jpg" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnStart" disable="true" layoutX="349.0" layoutY="276.0" mnemonicParsing="false" onAction="#startGame" prefHeight="44.0" prefWidth="103.0" text="Start">
          <font>
             <Font name="System Bold" size="26.0" />
          </font></Button>
@@ -17,34 +22,14 @@
             <Image url="@../images/text-LAB_ESCAPE.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="back4" fitHeight="82.0" fitWidth="139.0" layoutX="612.0" layoutY="335.0" opacity="0.4" pickOnBounds="true" visible="false">
+      <ImageView fitHeight="284.0" fitWidth="259.0" layoutX="47.0" layoutY="237.0" opacity="0.7" pickOnBounds="true">
          <image>
-            <Image url="@../images/orange_background.jpg" />
+            <Image url="@../images/white_panel.jpg" />
          </image>
       </ImageView>
-      <ImageView fx:id="back2" fitHeight="75.0" fitWidth="146.0" layoutX="612.0" layoutY="430.0" opacity="0.6" pickOnBounds="true" visible="false">
+      <ImageView fitHeight="284.0" fitWidth="259.0" layoutX="493.0" layoutY="234.0" opacity="0.7" pickOnBounds="true">
          <image>
-            <Image url="@../images/orange_background.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="backHard" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" opacity="0.6" pickOnBounds="true" visible="false">
-         <image>
-            <Image url="@../images/orange_background.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="backMedium" fitHeight="75.0" fitWidth="163.0" layoutX="53.0" layoutY="337.0" opacity="0.4" pickOnBounds="true" visible="false">
-         <image>
-            <Image url="@../images/orange_background.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="backEasy" fitHeight="74.0" fitWidth="103.0" layoutX="56.0" layoutY="246.0" opacity="0.6" pickOnBounds="true" visible="false">
-         <image>
-            <Image url="@../images/orange_background.jpg" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="back6" fitHeight="75.0" fitWidth="139.0" layoutX="607.0" layoutY="238.0" opacity="0.6" pickOnBounds="true" visible="false">
-         <image>
-            <Image url="@../images/orange_background.jpg" />
+            <Image url="@../images/white_panel.jpg" />
          </image>
       </ImageView>
       <ImageView fitHeight="49.0" fitWidth="234.0" layoutX="511.0" layoutY="193.0" pickOnBounds="true" preserveRatio="true">
@@ -59,30 +44,60 @@
       </ImageView>
       <ImageView fx:id="easy" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#clickEasy" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/text-EASY.png" />
+            <Image url="@../images/text-preEASY.png" />
          </image>
       </ImageView>
       <ImageView fx:id="medium" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#clickMedium" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/text-MEDIUM.png" />
+            <Image url="@../images/text-preMEDIUM.png" />
          </image>
       </ImageView>
       <ImageView fx:id="hard" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#clickHard" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/text-HARD.png" />
+            <Image url="@../images/text-preHARD.png" />
          </image>
       </ImageView>
       <ImageView fx:id="min6" fitHeight="75.0" fitWidth="157.0" layoutX="606.0" layoutY="238.0" onMouseClicked="#clickMin6" pickOnBounds="true" preserveRatio="true">
          <image>
+            <Image url="@../images/text-pre6MIN.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="min4" fitHeight="75.0" fitWidth="139.0" layoutX="606.0" layoutY="337.0" onMouseClicked="#clickMin4" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-pre4MIN.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="min2" fitHeight="75.0" fitWidth="174.0" layoutX="606.0" layoutY="430.0" onMouseClicked="#clickMin2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-pre2MIN.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="easySelect" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#clickEasy" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/text-EASY.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="mediumSelect" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#clickMedium" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/text-MEDIUM.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="hardSelect" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#clickHard" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/text-HARD.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="min6Select" fitHeight="75.0" fitWidth="157.0" layoutX="606.0" layoutY="238.0" onMouseClicked="#clickMin6" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
             <Image url="@../images/text-6_MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min4" fitHeight="75.0" fitWidth="139.0" layoutX="616.0" layoutY="337.0" onMouseClicked="#clickMin4" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="min4Select" fitHeight="75.0" fitWidth="139.0" layoutX="606.0" layoutY="337.0" onMouseClicked="#clickMin4" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-4_MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min2" fitHeight="75.0" fitWidth="174.0" layoutX="616.0" layoutY="430.0" onMouseClicked="#clickMin2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="min2Select" fitHeight="75.0" fitWidth="174.0" layoutX="606.0" layoutY="430.0" onMouseClicked="#clickMin2" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-2_MIN.png" />
          </image>

@@ -19,12 +19,12 @@ public class StartController {
   @FXML private ImageView min4;
   @FXML private ImageView min2;
 
-  @FXML private ImageView backEasy;
-  @FXML private ImageView backMedium;
-  @FXML private ImageView backHard;
-  @FXML private ImageView back6;
-  @FXML private ImageView back4;
-  @FXML private ImageView back2;
+  @FXML private ImageView easySelect;
+  @FXML private ImageView mediumSelect;
+  @FXML private ImageView hardSelect;
+  @FXML private ImageView min6Select;
+  @FXML private ImageView min4Select;
+  @FXML private ImageView min2Select;
 
   @FXML private Button btnStart;
 
@@ -40,7 +40,7 @@ public class StartController {
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
     resetLevelBackground();
-    backEasy.setVisible(true);
+    easySelect.setVisible(true);
     checkButton();
   }
 
@@ -50,7 +50,7 @@ public class StartController {
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
     resetLevelBackground();
-    backMedium.setVisible(true);
+    mediumSelect.setVisible(true);
     checkButton();
   }
 
@@ -60,7 +60,7 @@ public class StartController {
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
     resetLevelBackground();
-    backHard.setVisible(true);
+    hardSelect.setVisible(true);
     checkButton();
   }
 
@@ -70,7 +70,7 @@ public class StartController {
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(6, 0);
     resetTimeBackground();
-    back6.setVisible(true);
+    min6Select.setVisible(true);
     checkButton();
   }
 
@@ -80,7 +80,7 @@ public class StartController {
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(4, 0);
     resetTimeBackground();
-    back4.setVisible(true);
+    min4Select.setVisible(true);
     checkButton();
   }
 
@@ -90,7 +90,7 @@ public class StartController {
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(2, 0);
     resetTimeBackground();
-    back2.setVisible(true);
+    min2Select.setVisible(true);
     checkButton();
   }
 
@@ -109,15 +109,15 @@ public class StartController {
   }
 
   private void resetLevelBackground() {
-    backEasy.setVisible(false);
-    backMedium.setVisible(false);
-    backHard.setVisible(false);
+    easySelect.setVisible(false);
+    mediumSelect.setVisible(false);
+    hardSelect.setVisible(false);
   }
 
   private void resetTimeBackground() {
-    back6.setVisible(false);
-    back4.setVisible(false);
-    back2.setVisible(false);
+    min6Select.setVisible(false);
+    min4Select.setVisible(false);
+    min2Select.setVisible(false);
   }
 
   private void checkButton() {
