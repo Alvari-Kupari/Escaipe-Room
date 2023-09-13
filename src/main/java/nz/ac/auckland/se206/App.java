@@ -65,8 +65,6 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     root.requestFocus();
-
-    Timer.setTimer(2, 0);
   }
 
   public static void changeScene(Room room) {
