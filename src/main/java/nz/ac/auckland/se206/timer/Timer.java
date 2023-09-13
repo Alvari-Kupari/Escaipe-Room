@@ -8,7 +8,7 @@ import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 
 public class Timer {
-  private static int seconds, minutes, miliSeconds;
+  private static int seconds, minutes;
   private static TextArea timerText;
 
   private static Map<Room, TextArea> timerTexts = new HashMap<>();
@@ -32,7 +32,6 @@ public class Timer {
   public static void setTimer(int minutes, int seconds) {
     Timer.seconds = seconds;
     Timer.minutes = minutes;
-    Timer.miliSeconds = 0;
   }
 
   /**
@@ -60,7 +59,7 @@ public class Timer {
                   decrementTime();
 
                   // wait 0.1 seconds.
-                  Thread.sleep(100);
+                  Thread.sleep(1000);
 
                 } catch (InterruptedException e) {
                   e.printStackTrace();
@@ -70,32 +69,26 @@ public class Timer {
               // Timer must have ran out, if the while loop was executed
               App.changeScene(Room.GAME_OVER);
             });
-    thread.setDaemon(true);
+
     thread.start();
   }
 
-  /** Ticks the timer down by 0.1 s */
+  /** Ticks the timer down by 1 s */
   public static void decrementTime() {
-    if (miliSeconds == 0) {
 
-      if (seconds == 0) {
+    if (seconds == 0) {
 
-        // check if the timer has ran out
-        if (minutes == 0) {
-          GameState.isGameStarted = false;
-        }
-
-        // tick down the minutes
-        seconds = 60;
-        minutes--;
+      // check if the timer has ran out
+      if (minutes == 0) {
+        GameState.isGameStarted = false;
       }
-      // decrement the seconds
-      seconds--;
-      miliSeconds = 9;
+
+      // tick down the minutes
+      seconds = 59;
+      minutes--;
       return;
     }
-    // decrement miliseconds
-    miliSeconds -= 1;
+    seconds--;
   }
 
   /**
@@ -110,6 +103,14 @@ public class Timer {
       secondsString = "0" + secondsString;
     }
 
-    return "0" + minutes + ":" + secondsString + "." + miliSeconds;
+    return "0" + minutes + ":" + secondsString;
+  }
+
+  public static void stopTimer() {
+    GameState.taskCompletionTime = getTimeInSeconds();
+  }
+
+  public static int getTimeInSeconds() {
+    return 60 * minutes + seconds;
   }
 }
