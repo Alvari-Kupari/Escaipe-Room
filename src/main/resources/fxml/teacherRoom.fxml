@@ -22,7 +22,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="188.0" />
+      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
       <ImageView fitHeight="311.0" fitWidth="249.0" layoutX="5.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor.png" />
@@ -30,7 +30,7 @@
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="60.0" prefWidth="243.0" />
       <TextArea fx:id="chat" layoutX="5.0" layoutY="130.0" prefHeight="183.0" prefWidth="174.0" wrapText="true" />
-      <TextArea fx:id="tasks" layoutX="617.0" layoutY="401.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+      <TextArea fx:id="tasks" layoutX="617.0" layoutY="517.0" prefHeight="84.0" prefWidth="200.0" wrapText="true" />
       <Button fx:id="sendChat" layoutX="125.0" layoutY="280.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="33.0" prefWidth="54.0" text="Send" />
       <Button fx:id="toggleChat" layoutX="5.0" layoutY="313.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
       <Button fx:id="toggleTasks" layoutX="717.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="92.0" text="Hide Tasks" />

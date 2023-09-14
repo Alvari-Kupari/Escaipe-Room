@@ -35,4 +35,21 @@ public class StorageRoomController extends RoomController {
     App.changeScene(Room.MAIN_ROOM);
     System.out.println("Main Door clicked");
   }
+
+  /**
+   * Handles the mouse hover over the main door.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Bookshelf
+   */
+  @FXML
+  public void hoverMainDoor(MouseEvent event) throws IOException {
+    // make the door area obaque
+    mainDoor.setOpacity(0.5);
+    // when not hovered, make the door area transparent again
+    mainDoor.setOnMouseExited(
+        e -> {
+          mainDoor.setOpacity(0);
+        });
+  }
 }

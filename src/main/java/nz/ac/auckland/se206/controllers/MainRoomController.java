@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
@@ -15,11 +16,11 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
 
-  @FXML private Rectangle door;
   @FXML private Rectangle window;
   @FXML private Rectangle vase;
-  @FXML private Rectangle teacherDoor;
-  @FXML private Rectangle storageDoor;
+  @FXML private Polygon exitDoor;
+  @FXML private Polygon teacherDoor;
+  @FXML private Polygon storageDoor;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
@@ -76,14 +77,14 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the door.
+   * Handles the click event on the exitDoor.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the chat view
    */
   @FXML
   public void clickDoor(MouseEvent event) throws IOException {
-    System.out.println("door clicked");
+    System.out.println("exitDoor clicked");
 
     if (!GameState.isRiddleResolved) {
       showDialog("Info", "Riddle", "You need to resolve the riddle!");
@@ -126,7 +127,7 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the teacher door.
+   * Handles the click event on the teacher exitDoor.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the Teacher Room
@@ -138,7 +139,24 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the storage door.
+   * Handles the mouse hover over the teacher exitDoor.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Teacher Room
+   */
+  @FXML
+  public void hoverTeacherDoor(MouseEvent event) throws IOException {
+    // make the exitDoor area obaque
+    teacherDoor.setOpacity(0.5);
+    // when not hovered, make the exitDoor area transparent again
+    teacherDoor.setOnMouseExited(
+        e -> {
+          teacherDoor.setOpacity(0);
+        });
+  }
+
+  /**
+   * Handles the click event on the storage exitDoor.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the Storage Room
@@ -151,7 +169,24 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the exit door.
+   * Handles the mouse hover over the storage exitDoor.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Teacher Room
+   */
+  @FXML
+  public void hoverStorageDoor(MouseEvent event) throws IOException {
+    // make the exitDoor area obaque
+    storageDoor.setOpacity(0.5);
+    // when not hovered, make the exitDoor area transparent again
+    storageDoor.setOnMouseExited(
+        e -> {
+          storageDoor.setOpacity(0);
+        });
+  }
+
+  /**
+   * Handles the click event on the exit exitDoor.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the Storage Room
@@ -161,5 +196,22 @@ public class MainRoomController extends RoomController {
     System.out.println("Exit Door clicked");
 
     App.changeScene(Room.EXIT);
+  }
+
+  /**
+   * Handles the mouse hover over the exit exitDoor.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Teacher Room
+   */
+  @FXML
+  public void hoverExitDoor(MouseEvent event) throws IOException {
+    // make the exitDoor area obaque
+    exitDoor.setOpacity(0.5);
+    // when not hovered, make the exitDoor area transparent again
+    exitDoor.setOnMouseExited(
+        e -> {
+          exitDoor.setOpacity(0);
+        });
   }
 }
