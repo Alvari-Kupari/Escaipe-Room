@@ -40,9 +40,6 @@ public class Timer {
                   e.printStackTrace();
                 }
               }
-
-              // Timer must have ran out, if the while loop was executed
-              App.changeScene(Room.GAME_OVER);
             });
 
     thread.start();
@@ -56,6 +53,9 @@ public class Timer {
       // check if the timer has ran out
       if (minutes == 0) {
         GameState.isGameStarted = false;
+
+        // change to game over screen
+        App.changeScene(Room.GAME_OVER);
       }
 
       // tick down the minutes

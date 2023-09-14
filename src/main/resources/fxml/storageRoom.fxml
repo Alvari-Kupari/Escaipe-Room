@@ -29,11 +29,11 @@
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" layoutY="2.0" prefHeight="63.0" prefWidth="237.0" />
-      <TextArea fx:id="chat" layoutX="19.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" />
-      <TextArea fx:id="tasks" layoutX="671.0" layoutY="381.0" prefHeight="200.0" prefWidth="200.0" />
-      <Button fx:id="toggleTasks" layoutX="669.0" layoutY="581.0" mnemonicParsing="false" prefHeight="34.0" prefWidth="124.0" text="Button" />
-      <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" text="Button" />
-      <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" text="Button" />
-      <TextField fx:id="input" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
+      <TextArea fx:id="chat" layoutX="19.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+      <TextArea fx:id="tasks" layoutX="671.0" layoutY="381.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
+      <Button fx:id="toggleTasks" layoutX="669.0" layoutY="581.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="34.0" prefWidth="124.0" text="Hide Tasks" />
+      <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
+      <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="34.0" prefWidth="54.0" text="Send" />
+      <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
    </children>
 </Pane>
