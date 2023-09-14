@@ -1,7 +1,5 @@
 package nz.ac.auckland.se206.timer;
 
-import java.util.HashMap;
-import java.util.Map;
 import javafx.scene.control.TextArea;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
@@ -10,18 +8,6 @@ import nz.ac.auckland.se206.SceneManager.Room;
 public class Timer {
   private static int seconds, minutes;
   private static TextArea timerText;
-
-  private static Map<Room, TextArea> timerTexts = new HashMap<>();
-
-  /**
-   * Binds the timer text from a room to the Timer class.
-   *
-   * @param room the room the text came from.
-   * @param text the text area for the timer.
-   */
-  public static void bindText(Room room, TextArea text) {
-    timerTexts.put(room, text);
-  }
 
   /**
    * Resets the timer to the specified starting time.
@@ -34,17 +20,6 @@ public class Timer {
     Timer.minutes = minutes;
   }
 
-  /**
-   * Switches which text to update.
-   *
-   * @param room the room to switch to.
-   */
-  public static void changeRoom(Room room) {
-    if (room == Room.MAIN_ROOM || room == Room.STORAGE_ROOM || room == Room.TEACHER_ROOM) {
-      timerText = timerTexts.get(room);
-    }
-  }
-
   /** starts the timer */
   public static void startTimer() {
 
@@ -55,8 +30,8 @@ public class Timer {
                 try {
 
                   // tick the clock and display the new time
-                  timerText.setText(getTime());
                   decrementTime();
+                  timerText.setText(getTime());
 
                   // wait 0.1 seconds.
                   Thread.sleep(1000);
@@ -65,9 +40,6 @@ public class Timer {
                   e.printStackTrace();
                 }
               }
-
-              // Timer must have ran out, if the while loop was executed
-              App.changeScene(Room.GAME_OVER);
             });
 
     thread.start();
@@ -81,6 +53,9 @@ public class Timer {
       // check if the timer has ran out
       if (minutes == 0) {
         GameState.isGameStarted = false;
+
+        // change to game over screen
+        App.changeScene(Room.GAME_OVER);
       }
 
       // tick down the minutes
@@ -112,5 +87,10 @@ public class Timer {
 
   public static int getTimeInSeconds() {
     return 60 * minutes + seconds;
+  }
+
+  public static void setRoom(TextArea timerText) {
+    timerText.setText(getTime());
+    Timer.timerText = timerText;
   }
 }

@@ -18,7 +18,12 @@ public class GameMaster {
 
     try {
       ChatCompletionRequest request =
-          new ChatCompletionRequest().setN(1).setTemperature(temp).setTopP(topP).setMaxTokens(100);
+          new ChatCompletionRequest()
+              .setN(1)
+              .setTemperature(temp)
+              .setTopP(topP)
+              .setMaxTokens(100)
+              .setN(1);
       request.addMessage("system", context);
       ChatCompletionResult result = request.execute();
       return result.getChoice(0).getChatMessage().getContent();
@@ -36,7 +41,7 @@ public class GameMaster {
    */
   public GameMaster(double temp, double topP) {
     chatCompletionRequest =
-        new ChatCompletionRequest().setN(1).setTemperature(temp).setTopP(topP).setMaxTokens(100);
+        new ChatCompletionRequest().setN(1).setTemperature(temp).setTopP(topP).setMaxTokens(200);
   }
 
   /**

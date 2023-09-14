@@ -23,6 +23,10 @@ public class GameState {
 
   public static int taskCompletionTime;
 
+  // are chats and tasks open?
+  public static boolean isChatOpen;
+  public static boolean areTasksOpen;
+
   public enum Difficulty {
     EASY,
     MEDIUM,

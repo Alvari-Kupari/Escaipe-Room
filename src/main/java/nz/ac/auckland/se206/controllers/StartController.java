@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.timer.Timer;
 
@@ -30,6 +31,7 @@ public class StartController {
 
   @FXML
   private void initialize() {
+
     System.out.println();
     System.out.println("************** Initialising StartController **************");
   }
@@ -102,10 +104,12 @@ public class StartController {
 
     GameState.isGameStarted = true;
 
+    App.changeScene(Room.MAIN_ROOM);
+
     // start timer
     Timer.startTimer();
 
-    App.changeScene(Room.MAIN_ROOM);
+    RoomManager.beginStoryLine();
   }
 
   private void resetLevelBackground() {

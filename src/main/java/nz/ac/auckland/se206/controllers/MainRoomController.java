@@ -3,31 +3,38 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
-import javafx.scene.control.TextArea;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
-import nz.ac.auckland.se206.timer.Timer;
+import nz.ac.auckland.se206.gpt.GameMaster;
 
 /** Controller class for the room view. */
-public class MainRoomController {
+public class MainRoomController extends RoomController {
 
   @FXML private Rectangle door;
   @FXML private Rectangle window;
   @FXML private Rectangle vase;
   @FXML private Rectangle teacherDoor;
   @FXML private Rectangle storageDoor;
-  @FXML private TextArea timer;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
 
-    // bind timer to timer text
-    Timer.bindText(Room.MAIN_ROOM, timer);
+    // bind common room elements
+    RoomManager.bindRoom(
+        Room.MAIN_ROOM, chat, timer, tasks, playerInput, sendChat, toggleChat, toggleTasks);
+
+    // intialize chat and tasks to be open
+    GameState.areTasksOpen = true;
+    GameState.isChatOpen = true;
+
+    // initialize game master
+    gameMaster = new GameMaster(0.5, 0.5);
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
