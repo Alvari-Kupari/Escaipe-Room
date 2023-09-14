@@ -7,7 +7,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import nz.ac.auckland.se206.SceneManager.Room;
-import nz.ac.auckland.se206.timer.Timer;
+import nz.ac.auckland.se206.controllers.RoomController;
 
 /**
  * This is the entry point of the JavaFX application, while you can change this class, it should
@@ -47,7 +47,6 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
 
-    SceneManager.addUi(Room.CHAT, loadFxml("chat"));
     SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
     SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
     SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
@@ -70,7 +69,7 @@ public class App extends Application {
   public static void changeScene(Room room) {
 
     // rebind the timer properly
-    Timer.changeRoom(room);
+    RoomController.changeRoom(room);
 
     scene.setRoot(SceneManager.getUiRoot(room));
   }

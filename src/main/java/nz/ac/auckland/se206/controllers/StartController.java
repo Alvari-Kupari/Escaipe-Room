@@ -102,10 +102,10 @@ public class StartController {
 
     GameState.isGameStarted = true;
 
+    App.changeScene(Room.MAIN_ROOM);
+
     // start timer
     Timer.startTimer();
-
-    App.changeScene(Room.MAIN_ROOM);
   }
 
   private void resetLevelBackground() {
