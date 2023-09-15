@@ -22,7 +22,7 @@
             <Font size="31.0" />
          </font>
       </Label>
-      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="DODGERBLUE" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
+      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
       <ImageView fitHeight="311.0" fitWidth="249.0" layoutX="5.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor.png" />
