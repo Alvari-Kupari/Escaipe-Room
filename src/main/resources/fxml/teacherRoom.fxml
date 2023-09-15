@@ -35,5 +35,15 @@
       <Button fx:id="toggleChat" layoutX="5.0" layoutY="313.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
       <Button fx:id="toggleTasks" layoutX="717.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="92.0" text="Hide Tasks" />
       <TextField fx:id="playerInput" layoutX="-5.0" layoutY="284.0" prefHeight="33.0" prefWidth="129.0" />
+      <ImageView fx:id="chemical2Backpack" fitHeight="76.0" fitWidth="48.0" layoutX="686.0" layoutY="9.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical1Backpack" fitHeight="63.0" fitWidth="41.0" layoutX="740.0" layoutY="8.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

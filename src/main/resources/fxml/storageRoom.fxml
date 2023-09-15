@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
-<?import javafx.scene.text.Font?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
    <children>
@@ -17,11 +15,6 @@
             <Image url="@../images/storageroom.png" />
          </image>
       </ImageView>
-      <Label alignment="CENTER" layoutX="226.0" layoutY="60.0" prefHeight="81.0" prefWidth="469.0" text="STORAGE ROOM" textFill="#184cb8">
-         <font>
-            <Font size="56.0" />
-         </font>
-      </Label>
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="350.0" layoutX="243.0" layoutY="183.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.04" stroke="BLACK" strokeType="INSIDE" width="124.0" />
       <ImageView fitHeight="259.0" fitWidth="204.0" layoutX="26.0" layoutY="351.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -35,5 +28,25 @@
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="34.0" prefWidth="54.0" text="Send" />
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
+      <ImageView fx:id="chemical1" fitHeight="76.0" fitWidth="54.0" layoutX="587.0" layoutY="275.0" onMouseClicked="#clickChemical1" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical2" fitHeight="76.0" fitWidth="48.0" layoutX="437.0" layoutY="467.0" onMouseClicked="#clickChemical2" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical2Backpack" fitHeight="76.0" fitWidth="48.0" layoutX="691.0" layoutY="22.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical1Backpack" fitHeight="63.0" fitWidth="41.0" layoutX="745.0" layoutY="21.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

@@ -19,7 +19,16 @@ public class TeacherRoomController extends RoomController {
 
     // bind common room elements
     RoomManager.bindRoom(
-        Room.TEACHER_ROOM, chat, timer, tasks, playerInput, sendChat, toggleChat, toggleTasks);
+        Room.TEACHER_ROOM,
+        chat,
+        timer,
+        tasks,
+        playerInput,
+        sendChat,
+        toggleChat,
+        toggleTasks,
+        chemical1Backpack,
+        chemical2Backpack);
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");

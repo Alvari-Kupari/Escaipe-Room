@@ -5,6 +5,7 @@ import java.util.Map;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.controllers.RoomController;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
@@ -19,6 +20,8 @@ public class RoomManager {
   private static Map<Room, Button> sendInputButtons = new HashMap<>();
   private static Map<Room, Button> toggleTaskButtons = new HashMap<>();
   private static Map<Room, Button> toggleChatButtons = new HashMap<>();
+  private static Map<Room, ImageView> backpack1 = new HashMap<>();
+  private static Map<Room, ImageView> backpack2 = new HashMap<>();
 
   private static TextArea chat;
   private static TextArea checkList;
@@ -31,7 +34,9 @@ public class RoomManager {
       TextField input,
       Button sendInputButton,
       Button toggleChat,
-      Button toggleTasks) {
+      Button toggleTasks,
+      ImageView chemical1Backpack,
+      ImageView chemical2Backpack) {
     chats.put(room, chat);
     timers.put(room, timer);
     checkLists.put(room, checkList);
@@ -39,6 +44,8 @@ public class RoomManager {
     sendInputButtons.put(room, sendInputButton);
     toggleTaskButtons.put(room, toggleTasks);
     toggleChatButtons.put(room, toggleChat);
+    backpack1.put(room, chemical1Backpack);
+    backpack2.put(room, chemical2Backpack);
   }
 
   public static void changeRoom(Room room) {
@@ -63,6 +70,16 @@ public class RoomManager {
     }
 
     checkList = newCheckList;
+
+    // If the user has obtained chemical1, make it visible in the backpack
+    if (GameState.isChemical1Found) {
+      backpack1.get(room).setOpacity(1);
+    }
+
+    // If the user has obtained chemical2, make it visible in the backpack
+    if (GameState.isChemical2Found) {
+      backpack2.get(room).setOpacity(1);
+    }
   }
 
   public static void beginStoryLine() {

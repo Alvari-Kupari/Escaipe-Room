@@ -2,9 +2,11 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
@@ -12,6 +14,8 @@ import nz.ac.auckland.se206.SoundManager;
 public class StorageRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;
+  @FXML private ImageView chemical1;
+  @FXML private ImageView chemical2;
 
   /** Initializes the Storage Room view */
   public void initialize() {
@@ -19,7 +23,16 @@ public class StorageRoomController extends RoomController {
 
     // bind common room elements
     RoomManager.bindRoom(
-        Room.STORAGE_ROOM, chat, timer, tasks, playerInput, sendChat, toggleChat, toggleTasks);
+        Room.STORAGE_ROOM,
+        chat,
+        timer,
+        tasks,
+        playerInput,
+        sendChat,
+        toggleChat,
+        toggleTasks,
+        chemical1Backpack,
+        chemical2Backpack);
 
     System.out.println();
     System.out.println("************** Initialising StorageRoomController **************");
@@ -55,5 +68,45 @@ public class StorageRoomController extends RoomController {
         e -> {
           mainDoor.setOpacity(0);
         });
+  }
+
+  /**
+   * Handles the click event on the chemical 1.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void clickChemical1(MouseEvent event) throws IOException {
+    SoundManager.playClick();
+    System.out.println("Chemical 1 clicked");
+    // turn image to transparent
+    chemical1.setOpacity(0);
+    // make it unclickable
+    chemical1.setDisable(true);
+    // add chemical to backpack
+    chemical1Backpack.setOpacity(1);
+    // change the state of the chemical
+    GameState.isChemical1Found = true;
+  }
+
+  /**
+   * Handles the click event on the chemical 2.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void clickChemical2(MouseEvent event) throws IOException {
+    SoundManager.playClick();
+    System.out.println("Chemical 2 clicked");
+    // turn image to transparent
+    chemical2.setOpacity(0);
+    // make it unclickable
+    chemical2.setDisable(true);
+    // add chemical to backpack
+    chemical2Backpack.setOpacity(1);
+    // change the state of the chemical
+    GameState.isChemical2Found = true;
   }
 }
