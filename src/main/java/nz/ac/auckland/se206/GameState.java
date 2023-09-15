@@ -21,6 +21,12 @@ public class GameState {
   /** Indicates whether the key has been found. */
   public static boolean isKeyFound = false;
 
+  /** Indicates whether chemical1 has been found. */
+  public static boolean isChemical1Found = false;
+
+  /** Indicates whether chemical2 has been found. */
+  public static boolean isChemical2Found = false;
+
   public static int taskCompletionTime;
 
   // are chats and tasks open?

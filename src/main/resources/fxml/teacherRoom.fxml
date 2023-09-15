@@ -28,12 +28,24 @@
             <Image url="@../images/professor.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="timer" editable="false" prefHeight="60.0" prefWidth="243.0" />
+      <TextArea fx:id="timer" editable="false" prefHeight="33.0" prefWidth="101.0" />
       <TextArea fx:id="chat" layoutX="5.0" layoutY="130.0" prefHeight="183.0" prefWidth="174.0" wrapText="true" />
-      <TextArea fx:id="tasks" layoutX="617.0" layoutY="517.0" prefHeight="84.0" prefWidth="200.0" wrapText="true" />
+      <TextArea fx:id="tasks" layoutX="617.0" layoutY="517.0" prefHeight="84.0" prefWidth="188.0" wrapText="true" />
       <Button fx:id="sendChat" layoutX="125.0" layoutY="280.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="33.0" prefWidth="54.0" text="Send" />
       <Button fx:id="toggleChat" layoutX="5.0" layoutY="313.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
-      <Button fx:id="toggleTasks" layoutX="717.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="92.0" text="Hide Tasks" />
+      <Button fx:id="toggleTasks" layoutX="717.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="17.0" prefWidth="83.0" text="Hide Tasks" />
       <TextField fx:id="playerInput" layoutX="-5.0" layoutY="284.0" prefHeight="33.0" prefWidth="129.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="3.0" layoutY="45.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="16.0" layoutY="57.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="50.0" layoutY="54.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="17.0" layoutY="103.0" text="INVENTORY" />
    </children>
 </Pane>

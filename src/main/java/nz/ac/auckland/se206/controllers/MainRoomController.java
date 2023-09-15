@@ -29,7 +29,16 @@ public class MainRoomController extends RoomController {
 
     // bind common room elements
     RoomManager.bindRoom(
-        Room.MAIN_ROOM, chat, timer, tasks, playerInput, sendChat, toggleChat, toggleTasks);
+        Room.MAIN_ROOM,
+        chat,
+        timer,
+        tasks,
+        playerInput,
+        sendChat,
+        toggleChat,
+        toggleTasks,
+        chemical1Backpack,
+        chemical2Backpack);
 
     // intialize chat and tasks to be open
     GameState.areTasksOpen = true;
