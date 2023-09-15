@@ -11,6 +11,7 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
 
 /** Controller class for the room view. */
@@ -84,6 +85,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickDoor(MouseEvent event) throws IOException {
+
+    SoundManager.playClick();
+
     System.out.println("exitDoor clicked");
 
     if (!GameState.isRiddleResolved) {
@@ -109,6 +113,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickVase(MouseEvent event) {
+
+    SoundManager.playClick();
+
     System.out.println("vase clicked");
     if (GameState.isRiddleResolved && !GameState.isKeyFound) {
       showDialog("Info", "Key Found", "You found a key under the vase!");
@@ -123,6 +130,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickWindow(MouseEvent event) {
+
+    SoundManager.playClick();
+
     System.out.println("window clicked");
   }
 
@@ -134,6 +144,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickTeacherDoor(MouseEvent event) throws IOException {
+
+    SoundManager.playClick();
+
     System.out.println("Teacher Door clicked");
     App.changeScene(Room.TEACHER_ROOM);
   }
@@ -163,6 +176,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickStorageDoor(MouseEvent event) throws IOException {
+
+    SoundManager.playClick();
+
     System.out.println("Storage Door clicked");
 
     App.changeScene(Room.STORAGE_ROOM);
@@ -193,6 +209,9 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickExitDoor(MouseEvent event) throws IOException {
+
+    SoundManager.playClick();
+
     System.out.println("Exit Door clicked");
 
     App.changeScene(Room.EXIT);

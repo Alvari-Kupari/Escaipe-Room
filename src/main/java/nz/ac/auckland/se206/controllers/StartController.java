@@ -8,6 +8,7 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.timer.Timer;
 
 /** This is the start screen controller, where difficulty is selected and you can start game. */
@@ -38,6 +39,7 @@ public class StartController {
 
   @FXML
   private void clickEasy() {
+    SoundManager.playClick();
     System.out.println("Easy Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
@@ -48,6 +50,7 @@ public class StartController {
 
   @FXML
   private void clickMedium() {
+    SoundManager.playClick();
     System.out.println("Medium Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
@@ -58,6 +61,7 @@ public class StartController {
 
   @FXML
   private void clickHard() {
+    SoundManager.playClick();
     System.out.println("Hard Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
@@ -68,6 +72,7 @@ public class StartController {
 
   @FXML
   private void clickMin6() {
+    SoundManager.playClick();
     System.out.println("6 Min Selected");
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(6, 0);
@@ -78,6 +83,7 @@ public class StartController {
 
   @FXML
   private void clickMin4() {
+    SoundManager.playClick();
     System.out.println("4 Min Selected");
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(4, 0);
@@ -88,6 +94,7 @@ public class StartController {
 
   @FXML
   private void clickMin2() {
+    SoundManager.playClick();
     System.out.println("2 Min Selected");
     GameState.isTimeLimitSelected = true;
     Timer.setTimer(2, 0);
@@ -98,6 +105,7 @@ public class StartController {
 
   @FXML
   private void startGame(ActionEvent event) {
+    SoundManager.playClick();
     System.out.println("Action Start");
     System.out.println(event.getSource().getClass());
     System.out.println(event.getSource());
