@@ -7,6 +7,7 @@ import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 
 public class StorageRoomController extends RoomController {
 
@@ -32,6 +33,9 @@ public class StorageRoomController extends RoomController {
    */
   @FXML
   public void clickMainDoor(MouseEvent event) throws IOException {
+
+    SoundManager.playClick();
+
     App.changeScene(Room.MAIN_ROOM);
     System.out.println("Main Door clicked");
   }
