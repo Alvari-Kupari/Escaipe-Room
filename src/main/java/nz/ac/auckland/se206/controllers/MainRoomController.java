@@ -38,7 +38,8 @@ public class MainRoomController extends RoomController {
         toggleChat,
         toggleTasks,
         chemical1Backpack,
-        chemical2Backpack);
+        chemical2Backpack,
+        thinkingFace);
 
     // intialize chat and tasks to be open
     GameState.areTasksOpen = true;
@@ -46,6 +47,17 @@ public class MainRoomController extends RoomController {
 
     // initialize game master
     gameMaster = new GameMaster(0.5, 0.5);
+
+    // Hide the thinking face when the chat text appears
+    chat.textProperty()
+        .addListener(
+            (observable, oldValue, newValue) -> {
+              // Check if chat text is not empty
+              if (!newValue.isEmpty()) {
+                thinkingFace.setVisible(false);
+                GameState.thinkingFaceVisible = false;
+              }
+            });
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");

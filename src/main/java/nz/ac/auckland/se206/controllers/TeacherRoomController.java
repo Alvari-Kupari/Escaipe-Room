@@ -28,7 +28,18 @@ public class TeacherRoomController extends RoomController {
         toggleChat,
         toggleTasks,
         chemical1Backpack,
-        chemical2Backpack);
+        chemical2Backpack,
+        thinkingFace);
+
+    // Hide the thinking face if chat is visable
+    chat.textProperty()
+        .addListener(
+            (observable, oldValue, newValue) -> {
+              // Check if chat text is not empty
+              if (!newValue.isEmpty()) {
+                thinkingFace.setVisible(false);
+              }
+            });
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");

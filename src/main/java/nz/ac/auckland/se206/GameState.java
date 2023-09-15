@@ -33,6 +33,9 @@ public class GameState {
   public static boolean isChatOpen;
   public static boolean areTasksOpen;
 
+  /** Indicates visibility of thinking face */
+  public static boolean thinkingFaceVisible = false;
+
   public enum Difficulty {
     EASY,
     MEDIUM,
