@@ -22,6 +22,7 @@ public class RoomManager {
   private static Map<Room, Button> toggleChatButtons = new HashMap<>();
   private static Map<Room, ImageView> backpack1 = new HashMap<>();
   private static Map<Room, ImageView> backpack2 = new HashMap<>();
+  private static Map<Room, ImageView> thinking = new HashMap<>();
 
   private static TextArea chat;
   private static TextArea checkList;
@@ -36,7 +37,8 @@ public class RoomManager {
       Button toggleChat,
       Button toggleTasks,
       ImageView chemical1Backpack,
-      ImageView chemical2Backpack) {
+      ImageView chemical2Backpack,
+      ImageView thinkingFace) {
     chats.put(room, chat);
     timers.put(room, timer);
     checkLists.put(room, checkList);
@@ -46,6 +48,7 @@ public class RoomManager {
     toggleChatButtons.put(room, toggleChat);
     backpack1.put(room, chemical1Backpack);
     backpack2.put(room, chemical2Backpack);
+    thinking.put(room, thinkingFace);
   }
 
   public static void changeRoom(Room room) {
@@ -111,6 +114,18 @@ public class RoomManager {
 
     for (TextArea chat : chats.values()) {
       chat.setVisible(openChat);
+    }
+
+    for (ImageView thinkingFace : thinking.values()) {
+      thinkingFace.setVisible(openChat);
+      if (openChat) {
+        // check game state of thinking face
+        if (GameState.thinkingFaceVisible) {
+          thinkingFace.setVisible(true);
+        } else {
+          thinkingFace.setVisible(false);
+        }
+      }
     }
 
     GameState.isChatOpen = !GameState.isChatOpen;
