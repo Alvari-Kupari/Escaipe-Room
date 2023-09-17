@@ -137,10 +137,25 @@ public class MainRoomController extends RoomController {
 
     SoundManager.playClick();
 
-    System.out.println("vase clicked");
-    if (GameState.isRiddleResolved && !GameState.isKeyFound) {
-      showDialog("Info", "Key Found", "You found a key under the vase!");
-      GameState.isKeyFound = true;
+    System.out.println("flask clicked");
+    // if (GameState.isRiddleResolved && !GameState.isKeyFound) {
+    //   showDialog("Info", "Key Found", "You found a key under the vase!");
+    //   GameState.isKeyFound = true;
+    // }
+    SoundManager.playClick();
+    if (GameState.isChemical1Found || GameState.isChemical2Found) {
+      if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
+        System.out.println("ADDING CHEMICAL 1");
+        chemical1Backpack.setVisible(false);
+        GameState.isChemical1Added = true;
+        return;
+      }
+      if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
+        System.out.println("ADDING CHEMICAL 2");
+        chemical2Backpack.setVisible(false);
+        GameState.isChemical2Added = true;
+        return;
+      }
     }
   }
 

@@ -27,6 +27,10 @@ public class GameState {
   /** Indicates whether chemical2 has been found. */
   public static boolean isChemical2Found = false;
 
+  public static boolean isChemical1Added = false;
+
+  public static boolean isChemical2Added = false;
+
   public static int taskCompletionTime;
 
   // are chats and tasks open?
