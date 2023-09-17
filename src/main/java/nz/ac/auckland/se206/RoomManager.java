@@ -83,6 +83,16 @@ public class RoomManager {
     if (GameState.isChemical2Found) {
       backpack2.get(room).setOpacity(1);
     }
+
+    // If the user has added chemical1 to the flask, make it invisible in the backpack
+    if (GameState.isChemical1Added) {
+      backpack1.get(room).setOpacity(0);
+    }
+
+    // If the user has added chemical2 to the flask, make it invisible in the backpack
+    if (GameState.isChemical2Added) {
+      backpack2.get(room).setOpacity(0);
+    }
   }
 
   public static void beginStoryLine() {
