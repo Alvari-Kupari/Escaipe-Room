@@ -17,7 +17,22 @@
             <Image url="@../images/mainroom.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="flask" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="41.0" layoutX="568.0" layoutY="320.0" onMouseClicked="#clickFlask" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="38.0" />
+      <ImageView fx:id="flask1" fitHeight="91.0" fitWidth="72.0" layoutX="541.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/flask1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flask2" fitHeight="91.0" fitWidth="72.0" layoutX="541.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/flask2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="flask3" fitHeight="91.0" fitWidth="72.0" layoutX="541.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/flask3.png" />
+         </image>
+      </ImageView>
+      <Rectangle fx:id="flask" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="49.0" layoutX="554.0" layoutY="325.0" onMouseClicked="#clickFlask" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="44.0" />
       <Rectangle fx:id="window" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="60.0" layoutX="619.0" layoutY="331.0" onMouseClicked="#clickWindow" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
       <Rectangle fx:id="door" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="98.0" layoutX="467.0" layoutY="271.0" onMouseClicked="#clickDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
       <ImageView fitHeight="232.0" fitWidth="165.0" layoutX="38.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">

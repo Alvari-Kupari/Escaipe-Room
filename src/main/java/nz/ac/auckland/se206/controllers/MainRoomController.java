@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
@@ -22,6 +23,9 @@ public class MainRoomController extends RoomController {
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
   @FXML private Polygon storageDoor;
+  @FXML private ImageView flask1;
+  @FXML private ImageView flask2;
+  @FXML private ImageView flask3;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
@@ -143,26 +147,35 @@ public class MainRoomController extends RoomController {
     //   GameState.isKeyFound = true;
     // }
     SoundManager.playClick();
+    if (GameState.isTask2Completed) {
+      return;
+    }
+
+    hideFlasks();
     if (GameState.isChemical1Found || GameState.isChemical2Found) {
       if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
         System.out.println("ADDING CHEMICAL 1");
+        flask2.setVisible(true);
+        flask1.setVisible(false);
         chemical1Backpack.setVisible(false);
         GameState.isChemical1Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
-          System.out.println("TASK 1 COMPLETED");
-          GameState.isTask1Completed = true;
+          System.out.println("TASK 2 COMPLETED");
+          GameState.isTask2Completed = true;
         }
         return;
       }
       if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
         System.out.println("ADDING CHEMICAL 2");
+        flask3.setVisible(true);
+        flask1.setVisible(false);
         chemical2Backpack.setVisible(false);
         GameState.isChemical2Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
-          System.out.println("TASK 1 COMPLETED");
-          GameState.isTask1Completed = true;
+          System.out.println("TASK 2 COMPLETED");
+          GameState.isTask2Completed = true;
         }
         return;
       }
@@ -278,5 +291,10 @@ public class MainRoomController extends RoomController {
         e -> {
           exitDoor.setOpacity(0);
         });
+  }
+
+  private void hideFlasks() {
+    flask2.setVisible(false);
+    flask3.setVisible(false);
   }
 }
