@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
@@ -18,10 +19,13 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 public class MainRoomController extends RoomController {
 
   @FXML private Rectangle window;
-  @FXML private Rectangle vase;
+  @FXML private Rectangle flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
   @FXML private Polygon storageDoor;
+  @FXML private ImageView flask1;
+  @FXML private ImageView flask2;
+  @FXML private ImageView flask3;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
@@ -133,14 +137,47 @@ public class MainRoomController extends RoomController {
    * @param event the mouse event
    */
   @FXML
-  public void clickVase(MouseEvent event) {
+  public void clickFlask(MouseEvent event) {
 
     SoundManager.playClick();
 
-    System.out.println("vase clicked");
-    if (GameState.isRiddleResolved && !GameState.isKeyFound) {
-      showDialog("Info", "Key Found", "You found a key under the vase!");
-      GameState.isKeyFound = true;
+    System.out.println("flask clicked");
+    // if (GameState.isRiddleResolved && !GameState.isKeyFound) {
+    //   showDialog("Info", "Key Found", "You found a key under the vase!");
+    //   GameState.isKeyFound = true;
+    // }
+    SoundManager.playClick();
+    if (GameState.isTask2Completed) {
+      return;
+    }
+
+    if (GameState.isChemical1Found || GameState.isChemical2Found) {
+      if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
+        System.out.println("ADDING CHEMICAL 1");
+        hideFlasks();
+        flask2.setVisible(true);
+        chemical1Backpack.setVisible(false);
+        GameState.isChemical1Added = true;
+
+        if (GameState.isChemical1Added && GameState.isChemical2Added) {
+          System.out.println("TASK 2 COMPLETED");
+          GameState.isTask2Completed = true;
+        }
+        return;
+      }
+      if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
+        System.out.println("ADDING CHEMICAL 2");
+        hideFlasks();
+        flask3.setVisible(true);
+        chemical2Backpack.setVisible(false);
+        GameState.isChemical2Added = true;
+
+        if (GameState.isChemical1Added && GameState.isChemical2Added) {
+          System.out.println("TASK 2 COMPLETED");
+          GameState.isTask2Completed = true;
+        }
+        return;
+      }
     }
   }
 
@@ -253,5 +290,10 @@ public class MainRoomController extends RoomController {
         e -> {
           exitDoor.setOpacity(0);
         });
+  }
+
+  private void hideFlasks() {
+    flask2.setVisible(false);
+    flask3.setVisible(false);
   }
 }
