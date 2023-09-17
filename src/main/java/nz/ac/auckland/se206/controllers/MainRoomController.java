@@ -7,7 +7,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
@@ -18,7 +17,7 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
 
-  @FXML private Rectangle flask;
+  @FXML private Polygon flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
   @FXML private Polygon storageDoor;
@@ -271,5 +270,22 @@ public class MainRoomController extends RoomController {
   private void hideFlasks() {
     flask2.setVisible(false);
     flask3.setVisible(false);
+  }
+
+  /**
+   * Handles the mouse hover over the flask.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void hoverFlask(MouseEvent event) throws IOException {
+    // make the flask area obaque
+    flask.setOpacity(0.5);
+    // when not hovered, make the flask area transparent again
+    flask.setOnMouseExited(
+        e -> {
+          flask.setOpacity(0);
+        });
   }
 }

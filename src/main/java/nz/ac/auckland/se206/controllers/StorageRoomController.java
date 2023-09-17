@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
@@ -16,6 +17,8 @@ public class StorageRoomController extends RoomController {
   @FXML private Rectangle mainDoor;
   @FXML private ImageView chemical1;
   @FXML private ImageView chemical2;
+  @FXML private Polygon chemical1Select;
+  @FXML private Polygon chemical2Select;
 
   /** Initializes the Storage Room view */
   public void initialize() {
@@ -95,6 +98,7 @@ public class StorageRoomController extends RoomController {
     chemical1.setOpacity(0);
     // make it unclickable
     chemical1.setDisable(true);
+    chemical1Select.setDisable(true);
     // add chemical to backpack
     chemical1Backpack.setOpacity(1);
     // change the state of the chemical
@@ -115,9 +119,44 @@ public class StorageRoomController extends RoomController {
     chemical2.setOpacity(0);
     // make it unclickable
     chemical2.setDisable(true);
+    chemical2Select.setDisable(true);
     // add chemical to backpack
     chemical2Backpack.setOpacity(1);
     // change the state of the chemical
     GameState.isChemical2Found = true;
+  }
+
+  /**
+   * Handles the mouse hover over the chemical 1.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Bookshelf
+   */
+  @FXML
+  public void hoverChemical1(MouseEvent event) throws IOException {
+    // make the door area obaque
+    chemical1Select.setOpacity(0.5);
+    // when not hovered, make the door area transparent again
+    chemical1Select.setOnMouseExited(
+        e -> {
+          chemical1Select.setOpacity(0);
+        });
+  }
+
+  /**
+   * Handles the mouse hover over the chemical 2.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Bookshelf
+   */
+  @FXML
+  public void hoverChemical2(MouseEvent event) throws IOException {
+    // make the door area obaque
+    chemical2Select.setOpacity(0.5);
+    // when not hovered, make the door area transparent again
+    chemical2Select.setOnMouseExited(
+        e -> {
+          chemical2Select.setOpacity(0);
+        });
   }
 }
