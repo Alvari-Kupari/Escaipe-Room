@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
@@ -29,12 +30,12 @@
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="34.0" prefWidth="54.0" text="Send" />
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
-      <ImageView fx:id="chemical1" fitHeight="76.0" fitWidth="54.0" layoutX="587.0" layoutY="275.0" onMouseClicked="#clickChemical1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical1" fitHeight="76.0" fitWidth="54.0" layoutX="587.0" layoutY="275.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical2" fitHeight="76.0" fitWidth="48.0" layoutX="437.0" layoutY="467.0" onMouseClicked="#clickChemical2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical2" fitHeight="116.0" fitWidth="51.0" layoutX="437.0" layoutY="463.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
@@ -56,5 +57,7 @@
             <Image url="@../images/thinking.gif" />
          </image>
       </ImageView>
+      <Polygon fx:id="chemical2Select" fill="#656f79" layoutX="455.0" layoutY="518.0" onMouseClicked="#clickChemical2" onMouseMoved="#hoverChemical2" opacity="0.0" points="18.0, 13.0, 18.0, -36.4000244140625, 12.0, -45.4000244140625, 12.0, -56.0, -8.0, -56.0, -8.0, -45.4000244140625, -14.0, -36.4000244140625, -14.3, 6.5999755859375, -14.29998779296875, 13.0, 7.49749755859375, 13.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="chemical1Select" fill="#656f79" layoutX="611.0" layoutY="329.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" opacity="0.0" points="18.0, 20.0, 18.0, -26.4000244140625, 7.49755859375, -36.4000244140625, 7.49755859375, -56.0, -10.0, -56.0, -10.0, -36.4000244140625, -22.0, -26.4000244140625, -24.0, 20.0, -16.0, 20.0, 7.49755859375, 20.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

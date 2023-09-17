@@ -32,9 +32,6 @@
             <Image url="@../images/flask3.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="flask" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="49.0" layoutX="554.0" layoutY="325.0" onMouseClicked="#clickFlask" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="44.0" />
-      <Rectangle fx:id="window" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="60.0" layoutX="619.0" layoutY="331.0" onMouseClicked="#clickWindow" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
-      <Rectangle fx:id="door" arcHeight="5.0" arcWidth="5.0" fill="#1f93ff" focusTraversable="true" height="98.0" layoutX="467.0" layoutY="271.0" onMouseClicked="#clickDoor" opacity="0.5" stroke="BLACK" strokeType="INSIDE" width="65.0" />
       <ImageView fitHeight="232.0" fitWidth="165.0" layoutX="38.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor.png" />
@@ -67,5 +64,6 @@
             <Image url="@../images/thinking.gif" />
          </image>
       </ImageView>
+      <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#clickFlask" onMouseMoved="#hoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

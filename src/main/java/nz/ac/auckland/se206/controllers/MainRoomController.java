@@ -7,7 +7,6 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
-import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
@@ -18,8 +17,7 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
 
-  @FXML private Rectangle window;
-  @FXML private Rectangle flask;
+  @FXML private Polygon flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
   @FXML private Polygon storageDoor;
@@ -122,13 +120,6 @@ public class MainRoomController extends RoomController {
 
       return;
     }
-
-    if (!GameState.isKeyFound) {
-      showDialog(
-          "Info", "Find the key!", "You resolved the riddle, now you know where the key is.");
-    } else {
-      showDialog("Info", "You Won!", "Good Job!");
-    }
   }
 
   /**
@@ -142,10 +133,7 @@ public class MainRoomController extends RoomController {
     SoundManager.playClick();
 
     System.out.println("flask clicked");
-    // if (GameState.isRiddleResolved && !GameState.isKeyFound) {
-    //   showDialog("Info", "Key Found", "You found a key under the vase!");
-    //   GameState.isKeyFound = true;
-    // }
+
     SoundManager.playClick();
     if (GameState.isTask2Completed) {
       return;
@@ -179,19 +167,6 @@ public class MainRoomController extends RoomController {
         return;
       }
     }
-  }
-
-  /**
-   * Handles the click event on the window.
-   *
-   * @param event the mouse event
-   */
-  @FXML
-  public void clickWindow(MouseEvent event) {
-
-    SoundManager.playClick();
-
-    System.out.println("window clicked");
   }
 
   /**
@@ -295,5 +270,22 @@ public class MainRoomController extends RoomController {
   private void hideFlasks() {
     flask2.setVisible(false);
     flask3.setVisible(false);
+  }
+
+  /**
+   * Handles the mouse hover over the flask.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void hoverFlask(MouseEvent event) throws IOException {
+    // make the flask area obaque
+    flask.setOpacity(0.5);
+    // when not hovered, make the flask area transparent again
+    flask.setOnMouseExited(
+        e -> {
+          flask.setOpacity(0);
+        });
   }
 }
