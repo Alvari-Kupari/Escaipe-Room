@@ -151,12 +151,11 @@ public class MainRoomController extends RoomController {
       return;
     }
 
-    hideFlasks();
     if (GameState.isChemical1Found || GameState.isChemical2Found) {
       if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
         System.out.println("ADDING CHEMICAL 1");
+        hideFlasks();
         flask2.setVisible(true);
-        flask1.setVisible(false);
         chemical1Backpack.setVisible(false);
         GameState.isChemical1Added = true;
 
@@ -168,8 +167,8 @@ public class MainRoomController extends RoomController {
       }
       if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
         System.out.println("ADDING CHEMICAL 2");
+        hideFlasks();
         flask3.setVisible(true);
-        flask1.setVisible(false);
         chemical2Backpack.setVisible(false);
         GameState.isChemical2Added = true;
 
