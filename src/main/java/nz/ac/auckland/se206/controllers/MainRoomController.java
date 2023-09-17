@@ -18,7 +18,7 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 public class MainRoomController extends RoomController {
 
   @FXML private Rectangle window;
-  @FXML private Rectangle vase;
+  @FXML private Rectangle flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
   @FXML private Polygon storageDoor;
@@ -133,7 +133,7 @@ public class MainRoomController extends RoomController {
    * @param event the mouse event
    */
   @FXML
-  public void clickVase(MouseEvent event) {
+  public void clickFlask(MouseEvent event) {
 
     SoundManager.playClick();
 
