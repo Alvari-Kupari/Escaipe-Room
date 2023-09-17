@@ -148,12 +148,22 @@ public class MainRoomController extends RoomController {
         System.out.println("ADDING CHEMICAL 1");
         chemical1Backpack.setVisible(false);
         GameState.isChemical1Added = true;
+
+        if (GameState.isChemical1Added && GameState.isChemical2Added) {
+          System.out.println("TASK 1 COMPLETED");
+          GameState.isTask1Completed = true;
+        }
         return;
       }
       if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
         System.out.println("ADDING CHEMICAL 2");
         chemical2Backpack.setVisible(false);
         GameState.isChemical2Added = true;
+
+        if (GameState.isChemical1Added && GameState.isChemical2Added) {
+          System.out.println("TASK 1 COMPLETED");
+          GameState.isTask1Completed = true;
+        }
         return;
       }
     }
