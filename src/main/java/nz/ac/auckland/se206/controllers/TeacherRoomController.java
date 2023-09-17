@@ -93,4 +93,21 @@ public class TeacherRoomController extends RoomController {
           laptop.setOpacity(0);
         });
   }
+
+  /**
+   * Handles the mouse hover on the laptop.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void hoverLaptop(MouseEvent event) throws IOException {
+    // make the laptop area obaque
+    laptop.setOpacity(0.5);
+    // when not hovered, make the laptop area transparent again
+    laptop.setOnMouseExited(
+        e -> {
+          laptop.setOpacity(0);
+        });
+  }
 }
