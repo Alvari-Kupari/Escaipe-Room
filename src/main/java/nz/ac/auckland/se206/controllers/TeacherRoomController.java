@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.RoomManager;
@@ -12,6 +13,7 @@ import nz.ac.auckland.se206.SoundManager;
 public class TeacherRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;
+  @FXML private Polygon laptop;
 
   /** Initializes the Teacher Room view */
   public void initialize() {
@@ -74,6 +76,21 @@ public class TeacherRoomController extends RoomController {
     mainDoor.setOnMouseExited(
         e -> {
           mainDoor.setOpacity(0);
+        });
+  }
+
+  @FXML
+  private void onOpenLaptop() {
+    App.changeScene(Room.LAPTOP);
+  }
+
+  @FXML
+  private void onHoverLaptop() {
+    laptop.setOpacity(0.5);
+
+    laptop.setOnMouseExited(
+        e -> {
+          laptop.setOpacity(0);
         });
   }
 }
