@@ -1,11 +1,15 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.animation.RotateTransition;
+import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
+import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomManager;
@@ -17,12 +21,25 @@ public class StorageRoomController extends RoomController {
   @FXML private Rectangle mainDoor;
   @FXML private ImageView chemical1;
   @FXML private ImageView chemical2;
+  @FXML private ImageView rack;
   @FXML private Polygon chemical1Select;
   @FXML private Polygon chemical2Select;
 
+  private RotateTransition rackRotation;
+
   /** Initializes the Storage Room view */
   public void initialize() {
-    // Initialization code goes here
+
+    rackRotation = new RotateTransition(Duration.seconds(1), rack);
+    rackRotation.setCycleCount(RotateTransition.INDEFINITE);
+    rackRotation.setByAngle(10);
+    rackRotation.setAutoReverse(true);
+    rackRotation.play();
+
+    animateNode(chemical1, 10, 25);
+    animateNode(chemical1Select, 10, 25);
+    animateNode(chemical2, 10, 15);
+    animateNode(chemical2Select, 10, 15);
 
     // bind common room elements
     RoomManager.bindRoom(
@@ -50,6 +67,21 @@ public class StorageRoomController extends RoomController {
 
     System.out.println();
     System.out.println("************** Initialising StorageRoomController **************");
+  }
+
+  private void animateNode(Node node, int angle, int x) {
+    RotateTransition rotation = new RotateTransition(Duration.seconds(1), node);
+    rotation.setCycleCount(RotateTransition.INDEFINITE);
+    rotation.setByAngle(angle);
+    rotation.setAutoReverse(true);
+
+    TranslateTransition translation = new TranslateTransition(Duration.seconds(1), node);
+    translation.setCycleCount(TranslateTransition.INDEFINITE);
+    translation.setByX(x);
+    translation.setAutoReverse(true);
+
+    rotation.play();
+    translation.play();
   }
 
   /**
