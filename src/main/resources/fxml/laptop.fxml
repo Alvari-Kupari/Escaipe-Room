@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="765.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.LaptopController">
+   <children>
+      <ImageView fitHeight="561.0" fitWidth="592.0" layoutX="204.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/laptop%20image.jpg" />
+         </image>
+      </ImageView>
+      <PasswordField fx:id="password" layoutX="373.0" layoutY="289.0" prefHeight="37.0" prefWidth="231.0" promptText="Enter Password">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </PasswordField>
+   </children>
+</Pane>

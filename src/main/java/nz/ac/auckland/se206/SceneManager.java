@@ -14,6 +14,7 @@ public class SceneManager {
     CHAT,
     GAME_OVER,
     EXIT,
+    LAPTOP,
   }
 
   private static HashMap<Room, Parent> sceneMap = new HashMap<Room, Parent>();

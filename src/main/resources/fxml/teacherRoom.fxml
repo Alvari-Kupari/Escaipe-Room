@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.Double?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
@@ -7,6 +8,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Polygon?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 
@@ -52,5 +54,20 @@
             <Image url="@../images/thinking.gif" />
          </image>
       </ImageView>
+      <ImageView fitHeight="25.0" fitWidth="89.0" layoutX="319.0" layoutY="305.0" onMouseMoved="#onHoverLaptop" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/enter%20password.JPG" />
+         </image>
+      </ImageView>
+      <Polygon fx:id="laptop" fill="DODGERBLUE" layoutX="353.0" layoutY="336.0" onMouseClicked="#onOpenLaptop" onMouseMoved="#onHoverLaptop" stroke="BLACK" strokeType="INSIDE">
+        <points>
+          <Double fx:value="-50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="50.0" />
+          <Double fx:value="40.0" />
+          <Double fx:value="0.0" />
+          <Double fx:value="-60.0" />
+        </points>
+      </Polygon>
    </children>
 </Pane>
