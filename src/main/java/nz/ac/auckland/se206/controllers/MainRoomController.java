@@ -18,7 +18,6 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
 
-  @FXML private Rectangle window;
   @FXML private Rectangle flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
@@ -122,13 +121,6 @@ public class MainRoomController extends RoomController {
 
       return;
     }
-
-    if (!GameState.isKeyFound) {
-      showDialog(
-          "Info", "Find the key!", "You resolved the riddle, now you know where the key is.");
-    } else {
-      showDialog("Info", "You Won!", "Good Job!");
-    }
   }
 
   /**
@@ -142,10 +134,7 @@ public class MainRoomController extends RoomController {
     SoundManager.playClick();
 
     System.out.println("flask clicked");
-    // if (GameState.isRiddleResolved && !GameState.isKeyFound) {
-    //   showDialog("Info", "Key Found", "You found a key under the vase!");
-    //   GameState.isKeyFound = true;
-    // }
+
     SoundManager.playClick();
     if (GameState.isTask2Completed) {
       return;
@@ -179,19 +168,6 @@ public class MainRoomController extends RoomController {
         return;
       }
     }
-  }
-
-  /**
-   * Handles the click event on the window.
-   *
-   * @param event the mouse event
-   */
-  @FXML
-  public void clickWindow(MouseEvent event) {
-
-    SoundManager.playClick();
-
-    System.out.println("window clicked");
   }
 
   /**
