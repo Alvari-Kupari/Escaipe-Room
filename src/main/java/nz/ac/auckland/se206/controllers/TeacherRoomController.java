@@ -27,6 +27,7 @@ public class TeacherRoomController extends RoomController {
         timer,
         tasks,
         playerInput,
+        hintsNumber,
         sendChat,
         toggleChat,
         toggleTasks,

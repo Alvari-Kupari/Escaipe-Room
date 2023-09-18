@@ -28,6 +28,7 @@ public class LaptopController extends RoomController {
         timer,
         tasks,
         playerInput,
+        hintsNumber,
         sendChat,
         toggleChat,
         toggleTasks,

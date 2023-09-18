@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="555.0" prefWidth="559.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.LaptopController">
    <children>
@@ -70,5 +71,10 @@
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
+      <Text fx:id="hintsNumber" layoutX="199.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+         <font>
+            <Font name="System Bold" size="33.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

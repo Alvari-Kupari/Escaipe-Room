@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.gpt.ChatMessage;
 import nz.ac.auckland.se206.gpt.GameMaster;
@@ -17,6 +18,7 @@ public class RoomController {
   @FXML protected TextArea chat;
   @FXML protected TextArea tasks;
   @FXML protected TextField playerInput;
+  @FXML protected Text hintsNumber;
   @FXML protected Button toggleTasks;
   @FXML protected Button toggleChat;
   @FXML protected Button sendChat;

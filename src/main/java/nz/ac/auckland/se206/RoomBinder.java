@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 
 public class RoomBinder {
 
@@ -13,12 +14,14 @@ public class RoomBinder {
   private static ImageView chemical1, chemical2, thinkingFace, infinity;
   private static TextArea chat;
   private static TextArea checkList;
+  private static Text hintsNumber;
 
   public static void bindRoom(
       TextArea chat,
       TextArea timer,
       TextArea checkList,
       TextField input,
+      Text hintsNumber,
       Button sendInputButton,
       Button toggleChat,
       Button toggleTasks,
@@ -32,6 +35,9 @@ public class RoomBinder {
 
       RoomBinder.chat.textProperty().bindBidirectional(chat.textProperty());
       RoomBinder.chat.visibleProperty().bindBidirectional(chat.visibleProperty());
+
+      RoomBinder.hintsNumber.textProperty().bindBidirectional(hintsNumber.textProperty());
+      RoomBinder.hintsNumber.visibleProperty().bindBidirectional(hintsNumber.visibleProperty());
 
       RoomBinder.checkList.textProperty().bindBidirectional(checkList.textProperty());
       RoomBinder.checkList.visibleProperty().bindBidirectional(checkList.visibleProperty());
@@ -65,5 +71,18 @@ public class RoomBinder {
     RoomBinder.chemical2 = chemical2Backpack;
     RoomBinder.thinkingFace = thinkingFace;
     RoomBinder.infinity = infinity;
+    RoomBinder.hintsNumber = hintsNumber;
+  }
+
+  public static void setHintsInfinite(boolean isInfinite) {
+    infinity.setVisible(isInfinite);
+  }
+
+  public static void toggleHintsVisibility(boolean isVisible) {
+    hintsNumber.setVisible(isVisible);
+  }
+
+  public static void setHintsRemaining(int hints) {
+    hintsNumber.setText(String.valueOf(hints));
   }
 }
