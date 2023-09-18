@@ -32,7 +32,7 @@ public class StorageRoomController extends RoomController {
     Random random = new Random();
 
     // Define the Y coordinates
-    double[] yCoordinates = {125, 234, 331};
+    double[] yCoordinates = {120, 234, 336};
 
     // Randomly select Y coordinates for chemical1 and chemical2
     double yCoordinate1 = yCoordinates[random.nextInt(yCoordinates.length)];
@@ -53,7 +53,7 @@ public class StorageRoomController extends RoomController {
       }
 
       // Calculate a random X coordinate within the bounds
-      double minX = 480; // Minimum X coordinate
+      double minX = 495; // Minimum X coordinate
       double maxX = 606; // Maximum X coordinate
       double xCoordinate = minX + random.nextDouble() * (maxX - minX);
 
@@ -66,9 +66,9 @@ public class StorageRoomController extends RoomController {
     boolean rotateRight = random.nextBoolean();
     int rotationAngle;
     if (rotateRight) {
-      rotationAngle = 10;
+      rotationAngle = 8;
     } else {
-      rotationAngle = -10;
+      rotationAngle = -8;
     }
 
     rackRotation = new RotateTransition(Duration.seconds(0.5), rack);
@@ -78,11 +78,11 @@ public class StorageRoomController extends RoomController {
     rackRotation.play();
 
     if (rotateRight) {
-      animateNode(chemical1, rotationAngle, 50);
-      animateNode(chemical2, rotationAngle, 50);
+      animateNode(chemical1, rotationAngle, 45);
+      animateNode(chemical2, rotationAngle, 45);
     } else {
-      animateNode(chemical1, rotationAngle, -50);
-      animateNode(chemical2, rotationAngle, -50);
+      animateNode(chemical1, rotationAngle, -45);
+      animateNode(chemical2, rotationAngle, -45);
     }
 
     // bind common room elements
@@ -113,6 +113,14 @@ public class StorageRoomController extends RoomController {
     System.out.println("************** Initialising StorageRoomController **************");
   }
 
+  /**
+   * Creates an animation for a node.
+   *
+   * @param node the node to animate
+   * @param angle the angle to rotate the node by
+   * @param x the distance to translate the node by
+   * @return the animation
+   */
   private void animateNode(Node node, int angle, int x) {
     RotateTransition rotation = new RotateTransition(Duration.seconds(0.5), node);
     rotation.setCycleCount(RotateTransition.INDEFINITE);
@@ -208,9 +216,9 @@ public class StorageRoomController extends RoomController {
    */
   @FXML
   public void hoverChemical1(MouseEvent event) throws IOException {
-    // make the door area obaque
+    // make chemical area obaque
     chemical1.setOpacity(0.5);
-    // when not hovered, make the door area transparent again
+    // when not hovered, make chemical area transparent again
     chemical1.setOnMouseExited(
         e -> {
           if (!GameState.isChemical1Found) {
@@ -227,9 +235,9 @@ public class StorageRoomController extends RoomController {
    */
   @FXML
   public void hoverChemical2(MouseEvent event) throws IOException {
-    // make the door area obaque
+    // make chemical area obaque
     chemical2.setOpacity(0.5);
-    // when not hovered, make the door area transparent again
+    // when not hovered, make chemical area transparent again
     chemical2.setOnMouseExited(
         e -> {
           if (!GameState.isChemical2Found) {

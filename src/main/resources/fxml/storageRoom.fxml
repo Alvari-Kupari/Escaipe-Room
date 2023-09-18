@@ -16,7 +16,7 @@
             <Image url="@../images/storageroom.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="rack" fitHeight="481.0" fitWidth="320.0" layoutX="408.0" layoutY="65.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="rack" fitHeight="372.0" fitWidth="335.0" layoutX="402.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/rack.png" />
          </image>
@@ -31,12 +31,12 @@
       <TextArea fx:id="chat" layoutX="19.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="669.0" layoutY="581.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="34.0" prefWidth="124.0" text="Hide Tasks" />
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
-      <ImageView fx:id="chemical1" fitHeight="70.0" fitWidth="51.0" layoutX="587.0" layoutY="125.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical1" fitHeight="70.0" fitWidth="51.0" layoutX="584.0" layoutY="122.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical2" fitHeight="116.0" fitWidth="51.0" layoutX="475.0" layoutY="331.0" onMouseClicked="#clickChemical2" onMouseMoved="#hoverChemical2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical2" fitHeight="116.0" fitWidth="51.0" layoutX="474.0" layoutY="336.0" onMouseClicked="#clickChemical2" onMouseMoved="#hoverChemical2" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
