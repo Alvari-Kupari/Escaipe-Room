@@ -43,8 +43,9 @@ public class RoomBinder {
       RoomBinder.toggleTaskButton.textProperty().bindBidirectional(toggleTasks.textProperty());
       RoomBinder.toggleChatButton.textProperty().bindBidirectional(toggleChat.textProperty());
 
-      RoomBinder.chemical1.imageProperty().bindBidirectional(chemical1Backpack.imageProperty());
-      RoomBinder.chemical2.imageProperty().bindBidirectional(chemical2Backpack.imageProperty());
+      RoomBinder.chemical1.opacityProperty().bindBidirectional(chemical1Backpack.opacityProperty());
+      RoomBinder.chemical2.opacityProperty().bindBidirectional(chemical2Backpack.opacityProperty());
+
       RoomBinder.thinkingFace.imageProperty().bindBidirectional(thinkingFace.imageProperty());
     }
     RoomBinder.chat = chat;
