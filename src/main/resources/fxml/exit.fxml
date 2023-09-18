@@ -21,5 +21,10 @@
       </Text>
       <Button fx:id="btnMainMenu" layoutX="108.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
       <Button fx:id="btnExit" layoutX="271.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
+      <ImageView fx:id="loading" fitHeight="251.0" fitWidth="331.0" layoutX="44.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/text-LOADING.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

@@ -29,6 +29,10 @@ public class SceneManager {
     sceneMap.put(Room, uiRoot);
   }
 
+  public static void removeAllMapping() {
+    sceneMap.clear();
+  }
+
   /**
    * Creates a new Parent based of UiRoot.
    *
