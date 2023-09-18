@@ -70,10 +70,6 @@ public class App extends Application {
   }
 
   public static void changeScene(Room room) {
-
-    // rebind the timer properly
-    RoomManager.changeRoom(room);
-
     scene.setRoot(SceneManager.getUiRoot(room));
   }
 }

@@ -6,7 +6,6 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.timer.Timer;
@@ -116,8 +115,6 @@ public class StartController {
 
     // start timer
     Timer.startTimer();
-
-    RoomManager.beginStoryLine();
   }
 
   private void resetLevelBackground() {

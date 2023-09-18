@@ -9,10 +9,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomManager;
+import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
+import nz.ac.auckland.se206.timer.Timer;
 
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
@@ -28,10 +29,10 @@ public class MainRoomController extends RoomController {
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
+    Timer.bindText(timer);
 
     // bind common room elements
-    RoomManager.bindRoom(
-        Room.MAIN_ROOM,
+    RoomBinder.bindRoom(
         chat,
         timer,
         tasks,
