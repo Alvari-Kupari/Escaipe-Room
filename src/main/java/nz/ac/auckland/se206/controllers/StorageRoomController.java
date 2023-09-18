@@ -8,7 +8,7 @@ import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomManager;
+import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 
@@ -25,8 +25,7 @@ public class StorageRoomController extends RoomController {
     // Initialization code goes here
 
     // bind common room elements
-    RoomManager.bindRoom(
-        Room.STORAGE_ROOM,
+    RoomBinder.bindRoom(
         chat,
         timer,
         tasks,

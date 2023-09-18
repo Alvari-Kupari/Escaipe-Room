@@ -89,7 +89,7 @@ public class Timer {
     return 60 * minutes + seconds;
   }
 
-  public static void setRoom(TextArea timerText) {
+  public static void bindText(TextArea timerText) {
     timerText.setText(getTime());
     Timer.timerText = timerText;
   }

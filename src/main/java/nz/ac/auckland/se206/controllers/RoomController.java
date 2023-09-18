@@ -7,7 +7,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomManager;
 import nz.ac.auckland.se206.gpt.ChatMessage;
 import nz.ac.auckland.se206.gpt.GameMaster;
 
@@ -56,12 +55,26 @@ public class RoomController {
 
   @FXML
   protected void onToggleChat() {
-    RoomManager.toggleChatVisiblity();
+    boolean openChat = !GameState.isChatOpen;
+    String buttonText = openChat ? "Close Chat" : "Open Chat";
+
+    sendChat.setVisible(openChat);
+    toggleChat.setText(buttonText);
+    playerInput.setVisible(openChat);
+    chat.setVisible(openChat);
+
+    GameState.isChatOpen = !GameState.isChatOpen;
   }
 
   @FXML
   protected void onToggleTasks() {
-    RoomManager.toggleTaskVisiblity();
+    boolean openTasks = !GameState.areTasksOpen;
+    String text = openTasks ? "Close Tasks" : "Open Tasks";
+
+    toggleTasks.setText(text);
+    tasks.setVisible(openTasks);
+
+    GameState.areTasksOpen = !GameState.areTasksOpen;
   }
 
   protected void appendMessage(ChatMessage msg) {
