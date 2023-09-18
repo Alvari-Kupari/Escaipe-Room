@@ -48,6 +48,8 @@ public class GameState {
   /** Indicates visibility of thinking face */
   public static boolean thinkingFaceVisible = false;
 
+  public static Password password = Password.BANANA;
+
   public enum Difficulty {
     EASY,
     MEDIUM,

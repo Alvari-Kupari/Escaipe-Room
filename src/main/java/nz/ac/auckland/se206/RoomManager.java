@@ -53,7 +53,10 @@ public class RoomManager {
 
   public static void changeRoom(Room room) {
     // check if the room is an actual room in the gane
-    if (room != Room.MAIN_ROOM && room != Room.STORAGE_ROOM && room != Room.TEACHER_ROOM) {
+    if (room != Room.MAIN_ROOM
+        && room != Room.STORAGE_ROOM
+        && room != Room.TEACHER_ROOM
+        && room != Room.LAPTOP) {
       return;
     }
 
@@ -82,16 +85,6 @@ public class RoomManager {
     // If the user has obtained chemical2, make it visible in the backpack
     if (GameState.isChemical2Found) {
       backpack2.get(room).setOpacity(1);
-    }
-
-    // If the user has added chemical1 to the flask, make it invisible in the backpack
-    if (GameState.isChemical1Added) {
-      backpack1.get(room).setOpacity(0);
-    }
-
-    // If the user has added chemical2 to the flask, make it invisible in the backpack
-    if (GameState.isChemical2Added) {
-      backpack2.get(room).setOpacity(0);
     }
   }
 

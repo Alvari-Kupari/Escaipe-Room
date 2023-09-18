@@ -64,6 +64,9 @@ public class App extends Application {
     stage.setScene(scene);
     stage.show();
     root.requestFocus();
+
+    // generate a random password
+    GameState.password = Password.getRandomPassword();
   }
 
   public static void changeScene(Room room) {
