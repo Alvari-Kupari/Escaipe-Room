@@ -11,6 +11,10 @@ public class SoundManager {
       new Media(App.class.getResource("/sounds/click.mp3").toString());
   private static Media soundSelect =
       new Media(App.class.getResource("/sounds/select.mp3").toString());
+  private static Media soundSplash =
+      new Media(App.class.getResource("/sounds/splash.mp3").toString());
+  private static Media soundBubbles =
+      new Media(App.class.getResource("/sounds/bubbles.mp3").toString());
 
   /** Plays the click sound */
   public static void playClick() {
@@ -27,6 +31,24 @@ public class SoundManager {
       mediaPlayer.stop();
     }
     mediaPlayer = new MediaPlayer(soundSelect);
+    mediaPlayer.play();
+  }
+
+  /** Plays the splash sound */
+  public static void playSplash() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundSplash);
+    mediaPlayer.play();
+  }
+
+  /** Plays the bubbles sound */
+  public static void playBubbles() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundBubbles);
     mediaPlayer.play();
   }
 }
