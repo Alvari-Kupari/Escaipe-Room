@@ -85,6 +85,7 @@ public class GameMaster {
       ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
       ChatMessage result = chatCompletionResult.getChoices().iterator().next().getChatMessage();
       chatCompletionRequest.addMessage(result);
+      printLogs();
       return result.getContent();
     } catch (ApiProxyException e) {
       e.printStackTrace();
@@ -102,6 +103,7 @@ public class GameMaster {
       ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
       ChatMessage result = chatCompletionResult.getChoices().iterator().next().getChatMessage();
       chatCompletionRequest.addMessage(result);
+      printLogs();
       return result.getContent();
     } catch (ApiProxyException e) {
       e.printStackTrace();

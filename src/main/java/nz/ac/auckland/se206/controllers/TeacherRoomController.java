@@ -15,6 +15,8 @@ public class TeacherRoomController extends RoomController {
   @FXML private Rectangle mainDoor;
   @FXML private Polygon laptop;
 
+  private boolean hasLaptopBeenOpened;
+
   /** Initializes the Teacher Room view */
   public void initialize() {
     // Initialization code goes here
@@ -42,6 +44,8 @@ public class TeacherRoomController extends RoomController {
                 thinkingFace.setVisible(false);
               }
             });
+
+    hasLaptopBeenOpened = false;
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");
@@ -81,6 +85,9 @@ public class TeacherRoomController extends RoomController {
 
   @FXML
   private void onOpenLaptop() {
+    if (!hasLaptopBeenOpened) {}
+
+    hasLaptopBeenOpened = true;
     App.changeScene(Room.LAPTOP);
   }
 

@@ -14,4 +14,8 @@ public enum Password {
   public String toString() {
     return word;
   }
+
+  public static Password getRandomPassword() {
+    return Password.values()[(int) Math.random() * Password.values().length];
+  }
 }
