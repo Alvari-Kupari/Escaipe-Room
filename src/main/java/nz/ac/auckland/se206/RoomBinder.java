@@ -46,6 +46,9 @@ public class RoomBinder {
       RoomBinder.chemical1.opacityProperty().bindBidirectional(chemical1Backpack.opacityProperty());
       RoomBinder.chemical2.opacityProperty().bindBidirectional(chemical2Backpack.opacityProperty());
 
+      RoomBinder.chemical1.visibleProperty().bindBidirectional(chemical1Backpack.visibleProperty());
+      RoomBinder.chemical2.visibleProperty().bindBidirectional(chemical2Backpack.visibleProperty());
+
       RoomBinder.thinkingFace.imageProperty().bindBidirectional(thinkingFace.imageProperty());
     }
     RoomBinder.chat = chat;
