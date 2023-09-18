@@ -8,7 +8,8 @@ import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 
-public class GameOverController {
+public class ExitController {
+
   @FXML private Button btnExit;
   @FXML private Button btnMainMenu;
   @FXML private ImageView loading;
@@ -16,7 +17,7 @@ public class GameOverController {
   @FXML
   private void initialize() {
     System.out.println();
-    System.out.println("************** Initialising GameOverController **************");
+    System.out.println("************** Initialising ExitController **************");
   }
 
   @FXML
@@ -27,7 +28,7 @@ public class GameOverController {
     btnMainMenu.setDisable(true);
     GameState.setDefaults();
 
-    Task<Void> restarTask2 =
+    Task<Void> restartTask =
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
@@ -41,22 +42,22 @@ public class GameOverController {
           }
         };
 
-    restarTask2.setOnSucceeded(
+    restartTask.setOnSucceeded(
         e -> {
           System.out.println("---------------------Succeeded---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
         });
 
-    restarTask2.setOnFailed(
+    restartTask.setOnFailed(
         e -> {
           System.out.println("---------------------Failed---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
         });
 
-    Thread restartThread2 = new Thread(restarTask2);
-    restartThread2.start();
+    Thread restartThread = new Thread(restartTask);
+    restartThread.start();
   }
 
   @FXML

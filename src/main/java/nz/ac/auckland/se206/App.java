@@ -52,6 +52,7 @@ public class App extends Application {
     SceneManager.addUi(Room.LAPTOP, loadFxml("laptop"));
     SceneManager.addUi(Room.EXIT, loadFxml("exit"));
     SceneManager.addUi(Room.START, loadFxml("start"));
+    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
     SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
 
     stage.setOnCloseRequest(
@@ -71,5 +72,21 @@ public class App extends Application {
 
   public static void changeScene(Room room) {
     scene.setRoot(SceneManager.getUiRoot(room));
+  }
+
+  public static void reloadFXML() throws IOException {
+    SceneManager.removeAllMapping();
+    SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
+    SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
+    SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
+    SceneManager.addUi(Room.LAPTOP, loadFxml("laptop"));
+    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
+    SceneManager.addUi(Room.START, loadFxml("start"));
+    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
+    SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
+
+    changeScene(Room.START);
+    // generate a random password
+    GameState.password = Password.getRandomPassword();
   }
 }

@@ -45,7 +45,7 @@ public class GameState {
   /** Indicates whether task3 is completed. */
   public static boolean isTask3Completed = false;
 
-  public static int taskCompletionTime;
+  public static int taskCompletionTime = -1;
 
   // are chats and tasks open?
   public static boolean isChatOpen;
@@ -60,5 +60,27 @@ public class GameState {
     EASY,
     MEDIUM,
     HARD
+  }
+
+  public static void setDefaults() {
+    isDifficultySelected = false;
+    levelDifficulty = null;
+    isHintsInfinite = false;
+    hintsRemaining = -1;
+    isTimeLimitSelected = false;
+    isGameStarted = false;
+    isRiddleResolved = false;
+    isChemical1Found = false;
+    isChemical2Found = false;
+    isChemical1Added = false;
+    isChemical2Added = false;
+    isTask1Completed = false;
+    isTask2Completed = false;
+    isTask3Completed = false;
+    taskCompletionTime = -1;
+    isChatOpen = false;
+    areTasksOpen = false;
+    thinkingFaceVisible = false;
+    password = Password.BANANA;
   }
 }
