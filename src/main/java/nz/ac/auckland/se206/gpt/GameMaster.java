@@ -108,4 +108,10 @@ public class GameMaster {
       return null;
     }
   }
+
+  public void printLogs() {
+    for (ChatMessage msg : chatCompletionRequest.getMessages()) {
+      System.out.println(msg.getRole() + ": " + msg.getContent());
+    }
+  }
 }
