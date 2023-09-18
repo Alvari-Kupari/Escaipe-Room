@@ -59,5 +59,15 @@
          </image>
       </ImageView>
       <Polygon fx:id="laptop" fill="#656f79" layoutX="342.0" layoutY="347.0" onMouseClicked="#onOpenLaptop" onMouseMoved="#hoverLaptop" opacity="0.0" points="72.0, 29.0, 72.0, 29.0, 60.0, 2.0, 60.0, -65.0, -39.0, -65.0, -39.0, 2.0, -39.0, 2.0, -54.0, 23.0, -54.0, 29.0, -46.0, 29.0" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="80.0" layoutX="704.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

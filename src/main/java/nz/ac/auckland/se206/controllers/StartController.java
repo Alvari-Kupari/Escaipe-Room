@@ -42,6 +42,7 @@ public class StartController {
     System.out.println("Easy Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
+    GameState.isHintsInfinite = true;
     resetLevelBackground();
     easySelect.setVisible(true);
     checkButton();
@@ -53,6 +54,7 @@ public class StartController {
     System.out.println("Medium Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
+    GameState.hintsRemaining = 5;
     resetLevelBackground();
     mediumSelect.setVisible(true);
     checkButton();
@@ -64,6 +66,7 @@ public class StartController {
     System.out.println("Hard Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
+    GameState.hintsRemaining = 0;
     resetLevelBackground();
     hardSelect.setVisible(true);
     checkButton();

@@ -66,5 +66,15 @@
             <Image url="@../images/thinking.gif" />
          </image>
       </ImageView>
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="31.0" fitWidth="80.0" layoutX="704.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
