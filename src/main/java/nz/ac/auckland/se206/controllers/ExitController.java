@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
@@ -26,39 +27,37 @@ public class ExitController {
     btnExit.setDisable(true);
     btnMainMenu.setDisable(true);
     GameState.setDefaults();
-    App.reloadFXML();
 
-    // Task<Void> restartTask =
-    //     new Task<Void>() {
-    //       @Override
-    //       protected Void call() throws Exception {
-    //         System.out.println(
-    //
-    // "......................................Restarting..................................");
+    Task<Void> restartTask =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            System.out.println(
+                "......................................Restarting..................................");
 
-    //         btnExit.setDisable(true);
-    //         btnMainMenu.setDisable(true);
-    //         App.reloadFXML();
-    //         return null;
-    //       }
-    //     };
+            btnExit.setDisable(true);
+            btnMainMenu.setDisable(true);
+            App.reloadFXML();
+            return null;
+          }
+        };
 
-    // restartTask.setOnSucceeded(
-    //     e -> {
-    //       System.out.println("---------------------Succeeded---------------------");
-    //       btnExit.setDisable(false);
-    //       btnMainMenu.setDisable(false);
-    //     });
+    restartTask.setOnSucceeded(
+        e -> {
+          System.out.println("---------------------Succeeded---------------------");
+          btnExit.setDisable(false);
+          btnMainMenu.setDisable(false);
+        });
 
-    // restartTask.setOnFailed(
-    //     e -> {
-    //       System.out.println("---------------------Failed---------------------");
-    //       btnExit.setDisable(false);
-    //       btnMainMenu.setDisable(false);
-    //     });
+    restartTask.setOnFailed(
+        e -> {
+          System.out.println("---------------------Failed---------------------");
+          btnExit.setDisable(false);
+          btnMainMenu.setDisable(false);
+        });
 
-    // Thread restartThread = new Thread(restartTask);
-    // restartThread.start();
+    Thread restartThread = new Thread(restartTask);
+    restartThread.start();
   }
 
   @FXML
