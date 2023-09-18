@@ -144,6 +144,7 @@ public class MainRoomController extends RoomController {
       if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
         System.out.println("ADDING CHEMICAL 1");
         hideFlasks();
+        SoundManager.playSplash();
         flask2.setVisible(true);
         chemical1Backpack.setVisible(false);
         GameState.isChemical1Added = true;
@@ -157,6 +158,7 @@ public class MainRoomController extends RoomController {
       if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
         System.out.println("ADDING CHEMICAL 2");
         hideFlasks();
+        SoundManager.playBubbles();
         flask3.setVisible(true);
         chemical2Backpack.setVisible(false);
         GameState.isChemical2Added = true;
