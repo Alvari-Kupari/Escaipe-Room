@@ -52,6 +52,7 @@ public class App extends Application {
     SceneManager.addUi(Room.LAPTOP, loadFxml("laptop"));
     SceneManager.addUi(Room.EXIT, loadFxml("exit"));
     SceneManager.addUi(Room.START, loadFxml("start"));
+    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
     SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
 
     stage.setOnCloseRequest(
