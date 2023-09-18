@@ -65,5 +65,10 @@
          </font>
       </Button>
       <TextArea fx:id="quizAnswers" editable="false" layoutX="97.0" layoutY="148.0" prefHeight="221.0" prefWidth="368.0" visible="false" />
+      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="199.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

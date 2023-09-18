@@ -10,7 +10,7 @@ public class RoomBinder {
   private static TextArea timer;
   private static TextField chatInput;
   private static Button sendChat, toggleTaskButton, toggleChatButton;
-  private static ImageView chemical1, chemical2, thinkingFace;
+  private static ImageView chemical1, chemical2, thinkingFace, infinity;
   private static TextArea chat;
   private static TextArea checkList;
 
@@ -24,7 +24,8 @@ public class RoomBinder {
       Button toggleTasks,
       ImageView chemical1Backpack,
       ImageView chemical2Backpack,
-      ImageView thinkingFace) {
+      ImageView thinkingFace,
+      ImageView infinity) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -50,6 +51,8 @@ public class RoomBinder {
       RoomBinder.chemical2.visibleProperty().bindBidirectional(chemical2Backpack.visibleProperty());
 
       RoomBinder.thinkingFace.imageProperty().bindBidirectional(thinkingFace.imageProperty());
+
+      RoomBinder.infinity.visibleProperty().bindBidirectional(infinity.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -61,5 +64,6 @@ public class RoomBinder {
     RoomBinder.chemical1 = chemical1Backpack;
     RoomBinder.chemical2 = chemical2Backpack;
     RoomBinder.thinkingFace = thinkingFace;
+    RoomBinder.infinity = infinity;
   }
 }

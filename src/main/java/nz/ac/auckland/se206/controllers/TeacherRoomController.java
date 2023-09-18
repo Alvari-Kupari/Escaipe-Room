@@ -32,7 +32,8 @@ public class TeacherRoomController extends RoomController {
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace);
+        thinkingFace,
+        infinity);
 
     // Hide the thinking face if chat is visable
     chat.textProperty()

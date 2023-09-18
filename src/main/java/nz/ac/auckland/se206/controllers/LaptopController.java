@@ -33,7 +33,8 @@ public class LaptopController extends RoomController {
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace);
+        thinkingFace,
+        infinity);
     // set password to be hidden
     isPasswordHidden = true;
 
