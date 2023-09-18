@@ -91,12 +91,14 @@ public class StorageRoomController extends RoomController {
         timer,
         tasks,
         playerInput,
+        hintsNumber,
         sendChat,
         toggleChat,
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace);
+        thinkingFace,
+        infinity);
 
     // Hide the thinking face when the chat text appears
     chat.textProperty()

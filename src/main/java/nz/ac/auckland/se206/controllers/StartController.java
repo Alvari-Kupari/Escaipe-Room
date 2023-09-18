@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.timer.Timer;
@@ -42,8 +43,11 @@ public class StartController {
     System.out.println("Easy Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
+    GameState.isHintsInfinite = true;
     resetLevelBackground();
     easySelect.setVisible(true);
+    RoomBinder.setHintsInfinite(true);
+    RoomBinder.toggleHintsVisibility(false);
     checkButton();
   }
 
@@ -53,8 +57,11 @@ public class StartController {
     System.out.println("Medium Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
+    GameState.hintsRemaining = 5;
     resetLevelBackground();
     mediumSelect.setVisible(true);
+    RoomBinder.setHintsInfinite(false);
+    RoomBinder.setHintsRemaining(5);
     checkButton();
   }
 
@@ -64,8 +71,11 @@ public class StartController {
     System.out.println("Hard Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
+    GameState.hintsRemaining = 0;
     resetLevelBackground();
     hardSelect.setVisible(true);
+    RoomBinder.setHintsInfinite(false);
+    RoomBinder.setHintsRemaining(0);
     checkButton();
   }
 

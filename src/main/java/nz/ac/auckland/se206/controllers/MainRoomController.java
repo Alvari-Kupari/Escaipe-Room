@@ -37,12 +37,14 @@ public class MainRoomController extends RoomController {
         timer,
         tasks,
         playerInput,
+        hintsNumber,
         sendChat,
         toggleChat,
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace);
+        thinkingFace,
+        infinity);
 
     // intialize chat and tasks to be open
     GameState.areTasksOpen = true;
@@ -130,6 +132,8 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickFlask(MouseEvent event) {
+
+    infinity.setVisible(false);
 
     SoundManager.playClick();
 

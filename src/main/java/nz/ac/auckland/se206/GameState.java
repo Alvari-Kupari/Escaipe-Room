@@ -9,6 +9,12 @@ public class GameState {
   /** Indicates the difficulty for the round. */
   public static Difficulty levelDifficulty = null;
 
+  /** Indicates whether the hints are infinite. */
+  public static boolean isHintsInfinite = false;
+
+  /** Indicates the number of hints remaining. */
+  public static int hintsRemaining = -1;
+
   /** Indicates whether the time limit has been selected. */
   public static boolean isTimeLimitSelected = false;
 

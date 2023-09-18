@@ -28,12 +28,14 @@ public class LaptopController extends RoomController {
         timer,
         tasks,
         playerInput,
+        hintsNumber,
         sendChat,
         toggleChat,
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace);
+        thinkingFace,
+        infinity);
     // set password to be hidden
     isPasswordHidden = true;
 
