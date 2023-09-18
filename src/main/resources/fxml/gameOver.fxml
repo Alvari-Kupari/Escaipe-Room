@@ -16,7 +16,7 @@
       </Text>
       <Button fx:id="btnMainMenu" layoutX="104.0" layoutY="200.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
       <Button fx:id="btnExit" layoutX="359.0" layoutY="225.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
-      <ImageView fx:id="loading" fitHeight="251.0" fitWidth="331.0" layoutX="104.0" layoutY="269.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="loading" fitHeight="198.0" fitWidth="177.0" layoutX="394.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-LOADING.png" />
          </image>
