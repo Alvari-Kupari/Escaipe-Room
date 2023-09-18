@@ -23,6 +23,14 @@ public class RoomController {
   @FXML protected ImageView chemical1Backpack;
   @FXML protected ImageView chemical2Backpack;
   @FXML protected ImageView thinkingFace;
+  @FXML protected ImageView infinity;
+
+  @FXML
+  private void initialize() {
+
+    System.out.println();
+    System.out.println("************** Initialising RoomController **************");
+  }
 
   @FXML
   protected void onSendText() {
