@@ -2,6 +2,9 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.SceneManager.Room;
 
 public class ExitController {
 
@@ -17,6 +20,8 @@ public class ExitController {
   @FXML
   private void goMainMenu() {
     System.out.println("Go to Main Menu");
+    GameState.setDefaults();
+    App.changeScene(Room.START);
   }
 
   @FXML
