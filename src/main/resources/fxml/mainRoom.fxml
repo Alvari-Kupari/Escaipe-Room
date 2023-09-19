@@ -34,14 +34,34 @@
             <Image url="@../images/flask3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/professor_RESTING.gif" />
+            <Image url="@../images/professor/resting.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="340.0" layoutX="-90.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../images/professor_THINKING.gif" />
+            <Image url="@../images/professor/thinking.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry1" fitHeight="380.0" fitWidth="430.0" layoutX="-90.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry2" fitHeight="380.0" fitWidth="430.0" layoutX="-89.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry2.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry3" fitHeight="365.0" fitWidth="364.0" layoutX="-80.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry3.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry4" fitHeight="356.0" fitWidth="364.0" layoutX="-77.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry4.gif" />
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="41.0" prefWidth="97.0" />

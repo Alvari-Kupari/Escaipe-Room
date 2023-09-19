@@ -12,7 +12,13 @@ public class RoomBinder {
   private static TextField chatInput;
   private static Button sendChat, toggleTaskButton, toggleChatButton;
   private static ImageView chemical1, chemical2, infinity;
-  public static ImageView thinkingFace, professorResting, professorThinking;
+  public static ImageView thinkingFace,
+      professorResting,
+      professorThinking,
+      professorAngry1,
+      professorAngry2,
+      professorAngry3,
+      professorAngry4;
   public static TextArea chat;
   private static TextArea checkList;
   public static Text hintsNumber;
@@ -31,7 +37,11 @@ public class RoomBinder {
       ImageView thinkingFace,
       ImageView infinity,
       ImageView professorResting,
-      ImageView professorThinking) {
+      ImageView professorThinking,
+      ImageView professorAngry1,
+      ImageView professorAngry2,
+      ImageView professorAngry3,
+      ImageView professorAngry4) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -67,6 +77,18 @@ public class RoomBinder {
       RoomBinder.professorThinking
           .visibleProperty()
           .bindBidirectional(professorThinking.visibleProperty());
+      RoomBinder.professorAngry1
+          .visibleProperty()
+          .bindBidirectional(professorAngry1.visibleProperty());
+      RoomBinder.professorAngry2
+          .visibleProperty()
+          .bindBidirectional(professorAngry2.visibleProperty());
+      RoomBinder.professorAngry3
+          .visibleProperty()
+          .bindBidirectional(professorAngry3.visibleProperty());
+      RoomBinder.professorAngry4
+          .visibleProperty()
+          .bindBidirectional(professorAngry4.visibleProperty());
 
       RoomBinder.infinity.visibleProperty().bindBidirectional(infinity.visibleProperty());
     }
@@ -84,6 +106,10 @@ public class RoomBinder {
     RoomBinder.hintsNumber = hintsNumber;
     RoomBinder.professorResting = professorResting;
     RoomBinder.professorThinking = professorThinking;
+    RoomBinder.professorAngry1 = professorAngry1;
+    RoomBinder.professorAngry2 = professorAngry2;
+    RoomBinder.professorAngry3 = professorAngry3;
+    RoomBinder.professorAngry4 = professorAngry4;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {

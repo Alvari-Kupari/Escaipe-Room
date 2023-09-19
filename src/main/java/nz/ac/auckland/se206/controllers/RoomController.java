@@ -27,6 +27,10 @@ public class RoomController {
   @FXML protected ImageView infinity;
   @FXML protected ImageView professorResting;
   @FXML protected ImageView professorThinking;
+  @FXML protected ImageView professorAngry1;
+  @FXML protected ImageView professorAngry2;
+  @FXML protected ImageView professorAngry3;
+  @FXML protected ImageView professorAngry4;
 
   @FXML
   private void initialize() {
@@ -83,6 +87,10 @@ public class RoomController {
         thinkingFace,
         infinity,
         professorResting,
-        professorThinking);
+        professorThinking,
+        professorAngry1,
+        professorAngry2,
+        professorAngry3,
+        professorAngry4);
   }
 }

@@ -70,14 +70,34 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
-      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-80.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/professor_RESTING.gif" />
+            <Image url="@../images/professor/resting.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="340.0" layoutX="-80.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../images/professor_THINKING.gif" />
+            <Image url="@../images/professor/thinking.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry1" fitHeight="380.0" fitWidth="430.0" layoutX="-80.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry2" fitHeight="380.0" fitWidth="430.0" layoutX="-79.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry2.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry3" fitHeight="365.0" fitWidth="364.0" layoutX="-70.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry3.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry4" fitHeight="356.0" fitWidth="364.0" layoutX="-67.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry4.gif" />
          </image>
       </ImageView>
    </children>
