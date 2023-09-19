@@ -22,6 +22,9 @@ public class TeacherRoomController extends RoomController {
   public void initialize() {
     // Initialization code goes here
 
+    // make pressing enter send chat
+    setEnterToSendChat();
+
     // bind common room elements
     bind();
 

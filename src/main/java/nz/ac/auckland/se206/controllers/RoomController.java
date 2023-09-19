@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.text.Text;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
@@ -20,7 +21,6 @@ public class RoomController {
   @FXML protected Text hintsNumber;
   @FXML protected Button toggleTasks;
   @FXML protected Button toggleChat;
-  @FXML protected Button sendChat;
   @FXML protected ImageView chemical1Backpack;
   @FXML protected ImageView chemical2Backpack;
   @FXML protected ImageView infinity;
@@ -39,25 +39,10 @@ public class RoomController {
   }
 
   @FXML
-  protected void onSendText() {
-
-    // get the players message
-    String input = playerInput.getText();
-
-    // clear the input text
-    playerInput.clear();
-
-    // make the AI respond
-    gameMaster.recieveplayerMessage(input);
-    gameMaster.respond();
-  }
-
-  @FXML
   protected void onToggleChat() {
     boolean openChat = !GameState.isChatOpen;
     String buttonText = openChat ? "Close Chat" : "Open Chat";
 
-    sendChat.setVisible(openChat);
     toggleChat.setText(buttonText);
     playerInput.setVisible(openChat);
     chat.setVisible(openChat);
@@ -84,7 +69,6 @@ public class RoomController {
         tasks,
         playerInput,
         hintsNumber,
-        sendChat,
         toggleChat,
         toggleTasks,
         chemical1Backpack,
@@ -96,5 +80,25 @@ public class RoomController {
         professorAngry2,
         professorAngry3,
         professorAngry4);
+  }
+
+  protected void setEnterToSendChat() {
+    playerInput.setPromptText("Chat here...");
+    playerInput.setOnKeyPressed(
+        (e) -> {
+          if (e.getCode().equals(KeyCode.ENTER)) {
+            System.out.println("Enter pressed from chat");
+
+            // get the players message
+            String input = playerInput.getText();
+
+            // clear the input text
+            playerInput.clear();
+
+            // make the AI respond
+            gameMaster.recieveplayerMessage(input);
+            gameMaster.respond();
+          }
+        });
   }
 }

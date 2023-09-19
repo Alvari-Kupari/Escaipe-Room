@@ -25,11 +25,15 @@ public class LaptopController extends RoomController {
   private void initialize() {
     // bind common room elements
     bind();
+
+    // make pressing enter send chat
+    setEnterToSendChat();
+
     // set password to be hidden
     isPasswordHidden = true;
 
     // bind the masked password to the unmasked one
-    unMaskedPassword.textProperty().bind(passwordField.textProperty());
+    unMaskedPassword.textProperty().bindBidirectional(passwordField.textProperty());
 
     // make a new handler to pick up the enter key being pressed
     EventHandler<KeyEvent> handler =
@@ -37,7 +41,7 @@ public class LaptopController extends RoomController {
           @Override
           public void handle(KeyEvent e) {
             if (e.getCode().equals(KeyCode.ENTER)) {
-              System.out.println("Enter pressed");
+              System.out.println("Enter pressed from password");
               String guess = passwordField.getText();
 
               System.out.println(guess);

@@ -91,7 +91,7 @@ public class GameMaster {
 
             // run the AI
             String response = runGpt();
-            RoomBinder.chat.appendText(response + "\n");
+            RoomBinder.chat.appendText("\n" + response + "\n");
 
             return null;
           }

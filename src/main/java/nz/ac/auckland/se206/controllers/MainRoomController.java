@@ -33,6 +33,9 @@ public class MainRoomController extends RoomController {
     // bind common room elements
     bind();
 
+    // make pressing enter send chat
+    setEnterToSendChat();
+
     // intialize chat and tasks to be open
     GameState.areTasksOpen = true;
     GameState.isChatOpen = true;

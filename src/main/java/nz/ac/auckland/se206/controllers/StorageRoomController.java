@@ -28,6 +28,9 @@ public class StorageRoomController extends RoomController {
   public void initialize() {
     bind();
 
+    // make pressing enter send chat
+    setEnterToSendChat();
+
     // Create a random number generator
     Random random = new Random();
 
