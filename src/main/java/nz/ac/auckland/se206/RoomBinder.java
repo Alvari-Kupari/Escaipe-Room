@@ -15,7 +15,7 @@ public class RoomBinder {
   public static ImageView thinkingFace, professorResting, professorThinking;
   public static TextArea chat;
   private static TextArea checkList;
-  private static Text hintsNumber;
+  public static Text hintsNumber;
 
   public static void bindRoom(
       TextArea chat,

@@ -9,6 +9,7 @@ import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.timer.Timer;
 
 /** This is the start screen controller, where difficulty is selected and you can start game. */
@@ -124,6 +125,7 @@ public class StartController {
     App.changeScene(Room.MAIN_ROOM);
 
     // start AI storyline
+    RoomController.gameMaster.giveContext(GptPromptEngineering.introduceGame());
     RoomController.gameMaster.respond();
 
     // start timer
