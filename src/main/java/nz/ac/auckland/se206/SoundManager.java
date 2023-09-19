@@ -18,6 +18,9 @@ public class SoundManager {
   private static Media soundBubbles =
       new Media(App.class.getResource("/sounds/bubbles.mp3").toString());
 
+  private static Media soundCorrect =
+      new Media(App.class.getResource("/sounds/correct.mp3").toString());
+
   /** Plays the click sound */
   public static void playClick() {
     if (mediaPlayer != null) {
@@ -60,6 +63,14 @@ public class SoundManager {
       mediaPlayer.stop();
     }
     mediaPlayer = new MediaPlayer(soundBubbles);
+    mediaPlayer.play();
+  }
+
+  public static void playCorrect() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundCorrect);
     mediaPlayer.play();
   }
 }
