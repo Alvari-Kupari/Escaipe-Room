@@ -42,7 +42,6 @@
             <Image url="@../images/warning.png" />
          </image>
       </ImageView>
-      <TextArea fx:id="tasks" layoutX="671.0" layoutY="470.0" prefHeight="113.0" prefWidth="200.0" wrapText="true" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="13.0" layoutY="55.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="26.0" layoutY="67.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -102,5 +101,20 @@
       </ImageView>
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="200.0" />
+      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="666.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/checklist1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist3.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

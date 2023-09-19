@@ -27,7 +27,6 @@
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
       <TextArea fx:id="timer" editable="false" prefHeight="33.0" prefWidth="101.0" />
       <TextArea fx:id="chat" layoutX="5.0" layoutY="130.0" prefHeight="154.0" prefWidth="174.0" wrapText="true" />
-      <TextArea fx:id="tasks" layoutX="617.0" layoutY="517.0" prefHeight="84.0" prefWidth="188.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="717.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="17.0" prefWidth="83.0" text="Hide Tasks" />
       <TextField fx:id="playerInput" layoutX="2.0" layoutY="282.0" prefHeight="33.0" prefWidth="180.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="3.0" layoutY="45.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
@@ -94,5 +93,20 @@
          </image>
       </ImageView>
       <Button fx:id="toggleChat" layoutX="5.0" layoutY="313.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
+      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="655.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/checklist1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="654.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="654.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist3.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

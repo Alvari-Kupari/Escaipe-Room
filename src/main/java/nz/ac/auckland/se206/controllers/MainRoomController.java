@@ -112,13 +112,17 @@ public class MainRoomController extends RoomController {
   @FXML
   public void clickFlask(MouseEvent event) {
 
-    infinity.setVisible(false);
-
     SoundManager.playClick();
 
     System.out.println("flask clicked");
 
-    SoundManager.playClick();
+    if (!GameState.isTask1Completed) {
+      GameState.isTask1Completed = true;
+      GameState.isChecklist1Active = false;
+      GameState.isChecklist2Active = true;
+      checklist1.setVisible(false);
+      checklist2.setVisible(true);
+    }
     if (GameState.isTask2Completed) {
       return;
     }

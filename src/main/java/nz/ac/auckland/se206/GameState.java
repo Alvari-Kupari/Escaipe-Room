@@ -45,6 +45,11 @@ public class GameState {
   /** Indicates whether task3 is completed. */
   public static boolean isTask3Completed = false;
 
+  public static boolean isChecklist1Active = true;
+  public static boolean isChecklist2Active = false;
+  public static boolean isChecklist3Active = false;
+  public static boolean isChecklist4Active = false;
+
   public static int taskCompletionTime = -1;
 
   /** Indicates how many hints are used */

@@ -68,7 +68,6 @@
       <TextArea fx:id="chat" layoutX="-1.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
       <Button fx:id="toggleChat" layoutX="-1.0" layoutY="349.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="81.0" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="-1.0" layoutY="315.0" prefHeight="33.0" prefWidth="165.0" />
-      <TextArea fx:id="tasks" layoutX="641.0" layoutY="544.0" prefHeight="82.0" prefWidth="165.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="641.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="81.0" text="Hide Tasks" />
       <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 24.0, -265.0, 24.0, 58.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
@@ -101,5 +100,20 @@
          </font>
       </Text>
       <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="644.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/checklist1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist3.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
