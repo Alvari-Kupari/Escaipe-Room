@@ -103,6 +103,23 @@ public class GameMaster {
           GameState.thinkingFaceVisible = false;
           RoomBinder.professorResting.setVisible(true);
           RoomBinder.professorThinking.setVisible(false);
+
+          // check if a hint was given
+          String response = getLastResponse();
+
+          System.out.println("Response: " + response);
+
+          if (response.substring(0, 10).toLowerCase().contains("hint")) {
+            if (GameState.hintsRemaining != 0) {
+              GameState.hintsRemaining--;
+              RoomBinder.hintsNumber.setText(String.valueOf(GameState.hintsRemaining));
+            }
+
+            // stop giving hints, if there arent any hints left
+            if (GameState.hintsRemaining == 0) {
+              giveContext(GptPromptEngineering.stopGivingHints());
+            }
+          }
         });
 
     Thread thread = new Thread(respondTask);
