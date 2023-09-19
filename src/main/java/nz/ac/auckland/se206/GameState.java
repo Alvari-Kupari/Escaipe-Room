@@ -54,7 +54,10 @@ public class GameState {
   public static boolean isChatOpen;
   public static boolean areTasksOpen;
 
-  public static Password password = Password.BANANA;
+  // the laptop password
+  public static Password password;
+
+  public static String quizAnswer;
 
   public enum Difficulty {
     EASY,
@@ -80,6 +83,6 @@ public class GameState {
     taskCompletionTime = -1;
     isChatOpen = false;
     areTasksOpen = false;
-    password = Password.BANANA;
+    password = Password.getRandomPassword();
   }
 }

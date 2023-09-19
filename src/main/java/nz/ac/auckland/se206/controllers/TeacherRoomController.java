@@ -6,8 +6,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
+import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 
 public class TeacherRoomController extends RoomController {
 
@@ -63,7 +65,14 @@ public class TeacherRoomController extends RoomController {
 
   @FXML
   private void onOpenLaptop() {
-    if (!hasLaptopBeenOpened) {}
+    if (!hasLaptopBeenOpened) {
+      // begin the riddle for the laptop
+      gameMaster.giveContext(
+          GptPromptEngineering.getRiddleWithGivenWord(GameState.password.toString().toLowerCase()));
+
+      // make the AI respond
+      gameMaster.respond();
+    }
 
     hasLaptopBeenOpened = true;
     App.changeScene(Room.LAPTOP);

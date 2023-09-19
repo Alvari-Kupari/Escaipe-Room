@@ -91,7 +91,7 @@ public class GameMaster {
 
             // run the AI
             String response = runGpt();
-            RoomBinder.chat.appendText("Professor: " + response + "\n");
+            RoomBinder.chat.appendText(response + "\n");
 
             return null;
           }
@@ -115,8 +115,6 @@ public class GameMaster {
 
           // check if a hint was given
           String response = getLastResponse();
-
-          System.out.println("Response: " + response);
 
           if (response.substring(0, 10).toLowerCase().contains("hint")) {
             // update the hints used
@@ -176,7 +174,7 @@ public class GameMaster {
    */
   private void printLogs() {
     for (ChatMessage msg : chatCompletionRequest.getMessages()) {
-      System.out.println(msg.getRole() + ": " + msg.getContent());
+      System.out.println(msg.getRole() + ": " + msg.getContent() + "\n");
     }
   }
 }

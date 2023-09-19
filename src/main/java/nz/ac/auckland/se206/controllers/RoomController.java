@@ -40,8 +40,14 @@ public class RoomController {
 
   @FXML
   protected void onSendText() {
+
+    // get the players message
     String input = playerInput.getText();
 
+    // clear the input text
+    playerInput.clear();
+
+    // make the AI respond
     gameMaster.recieveplayerMessage(input);
     gameMaster.respond();
   }

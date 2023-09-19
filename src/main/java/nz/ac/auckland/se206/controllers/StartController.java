@@ -45,6 +45,7 @@ public class StartController {
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
     GameState.isHintsInfinite = true;
+    GameState.hintsRemaining = -1;
     resetLevelBackground();
     easySelect.setVisible(true);
     RoomBinder.setHintsInfinite(true);
@@ -59,8 +60,10 @@ public class StartController {
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
     GameState.hintsRemaining = 5;
+    GameState.isHintsInfinite = false;
     resetLevelBackground();
     mediumSelect.setVisible(true);
+    RoomBinder.toggleHintsVisibility(true);
     RoomBinder.setHintsInfinite(false);
     RoomBinder.setHintsRemaining(5);
     checkButton();
@@ -72,9 +75,11 @@ public class StartController {
     System.out.println("Hard Selected");
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
+    GameState.isHintsInfinite = false;
     GameState.hintsRemaining = 0;
     resetLevelBackground();
     hardSelect.setVisible(true);
+    RoomBinder.toggleHintsVisibility(true);
     RoomBinder.setHintsInfinite(false);
     RoomBinder.setHintsRemaining(0);
     checkButton();
