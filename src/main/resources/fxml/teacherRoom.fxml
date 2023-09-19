@@ -25,11 +25,6 @@
          </font>
       </Label>
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="536.0" layoutY="63.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
-      <ImageView fitHeight="311.0" fitWidth="249.0" layoutX="5.0" layoutY="304.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/professor.png" />
-         </image>
-      </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="33.0" prefWidth="101.0" />
       <TextArea fx:id="chat" layoutX="5.0" layoutY="130.0" prefHeight="183.0" prefWidth="174.0" wrapText="true" />
       <TextArea fx:id="tasks" layoutX="617.0" layoutY="517.0" prefHeight="84.0" prefWidth="188.0" wrapText="true" />
@@ -75,5 +70,15 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/professor_RESTING.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor_THINKING.gif" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
