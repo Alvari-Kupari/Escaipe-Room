@@ -21,7 +21,9 @@ public class RoomBinder {
       professorAngry4,
       checklist1,
       checklist2,
-      checklist3;
+      checklist3,
+      checklist4,
+      checklist5;
   public static TextArea chat;
   public static Text hintsNumber;
 
@@ -43,7 +45,9 @@ public class RoomBinder {
       ImageView professorAngry4,
       ImageView checklist1,
       ImageView checklist2,
-      ImageView checklist3) {
+      ImageView checklist3,
+      ImageView checklist4,
+      ImageView checklist5) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -90,6 +94,8 @@ public class RoomBinder {
       RoomBinder.checklist1.visibleProperty().bindBidirectional(checklist1.visibleProperty());
       RoomBinder.checklist2.visibleProperty().bindBidirectional(checklist2.visibleProperty());
       RoomBinder.checklist3.visibleProperty().bindBidirectional(checklist3.visibleProperty());
+      RoomBinder.checklist4.visibleProperty().bindBidirectional(checklist4.visibleProperty());
+      RoomBinder.checklist5.visibleProperty().bindBidirectional(checklist5.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -109,6 +115,8 @@ public class RoomBinder {
     RoomBinder.checklist1 = checklist1;
     RoomBinder.checklist2 = checklist2;
     RoomBinder.checklist3 = checklist3;
+    RoomBinder.checklist4 = checklist4;
+    RoomBinder.checklist5 = checklist5;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {

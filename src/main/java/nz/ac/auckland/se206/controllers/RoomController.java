@@ -32,6 +32,8 @@ public class RoomController {
   @FXML protected ImageView checklist1;
   @FXML protected ImageView checklist2;
   @FXML protected ImageView checklist3;
+  @FXML protected ImageView checklist4;
+  @FXML protected ImageView checklist5;
 
   @FXML
   private void initialize() {
@@ -66,7 +68,9 @@ public class RoomController {
     } else if (GameState.isChecklist3Active) {
       checklist3.setVisible(openTasks);
     } else if (GameState.isChecklist4Active) {
-      // checklist4.setVisible(openTasks);
+      checklist4.setVisible(openTasks);
+    } else if (GameState.isChecklist5Active) {
+      checklist5.setVisible(openTasks);
     }
     GameState.areTasksOpen = !GameState.areTasksOpen;
   }
@@ -91,7 +95,9 @@ public class RoomController {
         professorAngry4,
         checklist1,
         checklist2,
-        checklist3);
+        checklist3,
+        checklist4,
+        checklist5);
   }
 
   protected void setEnterToSendChat() {

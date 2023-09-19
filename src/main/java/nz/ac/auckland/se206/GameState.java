@@ -45,10 +45,14 @@ public class GameState {
   /** Indicates whether task3 is completed. */
   public static boolean isTask3Completed = false;
 
+  /** Indicates whether task4 is completed. */
+  public static boolean isTask4Completed = false;
+
   public static boolean isChecklist1Active = true;
   public static boolean isChecklist2Active = false;
   public static boolean isChecklist3Active = false;
   public static boolean isChecklist4Active = false;
+  public static boolean isChecklist5Active = false;
 
   public static int taskCompletionTime = -1;
 
@@ -85,6 +89,12 @@ public class GameState {
     isTask1Completed = false;
     isTask2Completed = false;
     isTask3Completed = false;
+    isTask4Completed = false;
+    isChecklist1Active = true;
+    isChecklist2Active = false;
+    isChecklist3Active = false;
+    isChecklist4Active = false;
+    isChecklist5Active = false;
     taskCompletionTime = -1;
     isChatOpen = false;
     areTasksOpen = false;

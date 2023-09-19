@@ -128,5 +128,15 @@
             <Image url="@../images/checklist3.png" />
          </image>
       </ImageView>
+      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="416.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="416.0" layoutY="319.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist5.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
