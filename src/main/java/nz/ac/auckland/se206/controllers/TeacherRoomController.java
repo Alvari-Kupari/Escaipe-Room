@@ -6,7 +6,6 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
 import nz.ac.auckland.se206.App;
-import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 
@@ -22,19 +21,7 @@ public class TeacherRoomController extends RoomController {
     // Initialization code goes here
 
     // bind common room elements
-    RoomBinder.bindRoom(
-        chat,
-        timer,
-        tasks,
-        playerInput,
-        hintsNumber,
-        sendChat,
-        toggleChat,
-        toggleTasks,
-        chemical1Backpack,
-        chemical2Backpack,
-        thinkingFace,
-        infinity);
+    bind();
 
     // Hide the thinking face if chat is visable
     chat.textProperty()

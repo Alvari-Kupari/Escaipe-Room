@@ -7,7 +7,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 
 public class LaptopController extends RoomController {
@@ -23,19 +22,7 @@ public class LaptopController extends RoomController {
   @FXML
   private void initialize() {
     // bind common room elements
-    RoomBinder.bindRoom(
-        chat,
-        timer,
-        tasks,
-        playerInput,
-        hintsNumber,
-        sendChat,
-        toggleChat,
-        toggleTasks,
-        chemical1Backpack,
-        chemical2Backpack,
-        thinkingFace,
-        infinity);
+    bind();
     // set password to be hidden
     isPasswordHidden = true;
 

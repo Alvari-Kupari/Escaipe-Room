@@ -9,10 +9,10 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.timer.Timer;
 
 /** Controller class for the room view. */
@@ -32,19 +32,7 @@ public class MainRoomController extends RoomController {
     Timer.bindText(timer);
 
     // bind common room elements
-    RoomBinder.bindRoom(
-        chat,
-        timer,
-        tasks,
-        playerInput,
-        hintsNumber,
-        sendChat,
-        toggleChat,
-        toggleTasks,
-        chemical1Backpack,
-        chemical2Backpack,
-        thinkingFace,
-        infinity);
+    bind();
 
     // intialize chat and tasks to be open
     GameState.areTasksOpen = true;
@@ -52,6 +40,8 @@ public class MainRoomController extends RoomController {
 
     // initialize game master
     gameMaster = new GameMaster(0.5, 0.5);
+
+    gameMaster.giveContext(GptPromptEngineering.introduceGame());
 
     // Hide the thinking face when the chat text appears
     chat.textProperty()
