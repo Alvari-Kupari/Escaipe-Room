@@ -34,9 +34,14 @@
             <Image url="@../images/flask3.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="232.0" fitWidth="165.0" layoutX="38.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/professor.png" />
+            <Image url="@../images/professor_RESTING.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor_THINKING.gif" />
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="41.0" prefWidth="97.0" />

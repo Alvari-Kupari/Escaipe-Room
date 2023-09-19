@@ -25,6 +25,8 @@ public class RoomController {
   @FXML protected ImageView chemical2Backpack;
   @FXML protected ImageView thinkingFace;
   @FXML protected ImageView infinity;
+  @FXML protected ImageView professorResting;
+  @FXML protected ImageView professorThinking;
 
   @FXML
   private void initialize() {
@@ -79,6 +81,8 @@ public class RoomController {
         chemical1Backpack,
         chemical2Backpack,
         thinkingFace,
-        infinity);
+        infinity,
+        professorResting,
+        professorThinking);
   }
 }
