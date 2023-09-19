@@ -1,9 +1,17 @@
 package nz.ac.auckland.se206;
 
+import java.util.Random;
+
 public enum Password {
   BANANA("BANANA"),
-  MAGNESIUM("MAGNESIUM"),
-  FLASK("FLASK");
+  PHONE("PHONE"),
+  HORSE("HORSE"),
+  ZEBRA("ZEBRA"),
+  CHICKEN("CHICKEN"),
+  CAT("CAT"),
+  FARM("FARM"),
+  CLOCK("CLOCK"),
+  BUS("BUS");
 
   private String word;
 
@@ -16,6 +24,6 @@ public enum Password {
   }
 
   public static Password getRandomPassword() {
-    return Password.values()[(int) Math.random() * Password.values().length];
+    return Password.values()[new Random().nextInt(Password.values().length)];
   }
 }

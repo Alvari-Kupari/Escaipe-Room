@@ -54,7 +54,7 @@
             <Image url="@../images/professor/angry4.gif" />
          </image>
       </ImageView>
-      <PasswordField fx:id="passwordField" layoutX="165.0" layoutY="285.0" prefHeight="37.0" prefWidth="231.0">
+      <PasswordField fx:id="passwordField" layoutX="166.0" layoutY="285.0" prefHeight="37.0" prefWidth="185.0">
          <font>
             <Font size="15.0" />
          </font>
@@ -62,53 +62,56 @@
       <Button fx:id="goBackButton" layoutX="466.0" layoutY="490.0" mnemonicParsing="false" onAction="#onGoBack" prefHeight="65.0" prefWidth="96.0" text="Back To Room" />
       <TextArea fx:id="timer" prefHeight="59.0" prefWidth="161.0" wrapText="true" />
       <TextArea fx:id="tasks" layoutX="413.0" layoutY="346.0" prefHeight="119.0" prefWidth="147.0" wrapText="true" />
-      <TextField fx:id="playerInput" layoutY="523.0" prefHeight="20.0" prefWidth="88.0" />
+      <TextField fx:id="playerInput" layoutY="523.0" prefHeight="25.0" prefWidth="140.0" />
       <Button fx:id="toggleTasks" layoutX="486.0" layoutY="465.0" mnemonicParsing="false" onAction="#onToggleTasks" text="Hide Tasks" />
-      <Button fx:id="sendChat" layoutX="88.0" layoutY="523.0" mnemonicParsing="false" onAction="#onSendText" text="Send" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="377.0" layoutY="7.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
-      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="382.0" layoutY="21.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="194.0" layoutY="1.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="194.0" layoutY="6.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="435.0" layoutY="21.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="246.0" layoutY="6.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <Label layoutX="390.0" layoutY="62.0" text="INVENTORY" />
+      <Label layoutX="206.0" layoutY="58.0" text="INVENTORY" />
       <ImageView fx:id="thinkingFace" fitHeight="200.0" fitWidth="140.0" layoutX="8.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/thinking.gif" />
          </image>
       </ImageView>
-      <TextField fx:id="unMaskedPassword" layoutX="172.0" layoutY="291.0" prefHeight="25.0" prefWidth="179.0" visible="false">
+      <TextField fx:id="unMaskedPassword" layoutX="172.0" layoutY="285.0" prefHeight="37.0" prefWidth="179.0" visible="false">
          <font>
             <Font size="15.0" />
          </font>
       </TextField>
-      <TextArea fx:id="quizAnswers" editable="false" layoutX="97.0" layoutY="148.0" prefHeight="221.0" prefWidth="368.0" visible="false" />
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="199.0" layoutY="161.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="465.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
-      <Text fx:id="hintsNumber" layoutX="199.0" layoutY="190.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+      <Text fx:id="hintsNumber" layoutX="465.0" layoutY="52.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
       <TextArea fx:id="chat" layoutY="386.0" prefHeight="137.0" prefWidth="140.0" wrapText="true" />
       <Button fx:id="toggleChat" layoutY="369.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
-      <Button fx:id="maskPasswordButton" layoutX="294.0" layoutY="281.0" mnemonicParsing="false" onAction="#onMaskPassword" opacity="0.0" prefHeight="45.0" prefWidth="58.0" text="Button" textFill="#656f79" />
-      <Button fx:id="sendPassword" layoutX="338.0" layoutY="288.0" mnemonicParsing="false" onAction="#onSendPassword" prefHeight="31.0" prefWidth="58.0" text="Send">
-         <font>
-            <Font size="15.0" />
-         </font>
-      </Button>
-      <ImageView fitHeight="45.0" fitWidth="79.0" layoutX="300.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="303.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="45.0" fitWidth="79.0" layoutX="355.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/eye.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="maskPasswordButton" layoutX="348.0" layoutY="281.0" mnemonicParsing="false" onAction="#onMaskPassword" opacity="0.0" prefHeight="45.0" prefWidth="58.0" text="Button" textFill="#656f79" />
+      <ImageView fx:id="quizAnswers" fitHeight="280.0" fitWidth="278.0" layoutX="148.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/lab%20answers.jpg" />
          </image>
       </ImageView>
    </children>
