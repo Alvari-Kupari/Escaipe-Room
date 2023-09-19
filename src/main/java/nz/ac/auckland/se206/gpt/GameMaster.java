@@ -85,6 +85,8 @@ public class GameMaster {
             // make the thinking face visible
             RoomBinder.thinkingFace.setVisible(true);
             GameState.thinkingFaceVisible = true;
+            RoomBinder.professorResting.setVisible(false);
+            RoomBinder.professorThinking.setVisible(true);
 
             // run the AI
             String response = runGpt();
@@ -99,6 +101,8 @@ public class GameMaster {
         e -> {
           RoomBinder.thinkingFace.setVisible(false);
           GameState.thinkingFaceVisible = false;
+          RoomBinder.professorResting.setVisible(true);
+          RoomBinder.professorThinking.setVisible(false);
         });
 
     Thread thread = new Thread(respondTask);
