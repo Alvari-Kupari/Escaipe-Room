@@ -48,7 +48,8 @@ public class GptPromptEngineering {
     switch (GameState.levelDifficulty) {
       case EASY:
         return " Help the player out, and give them hints if they ask for them. The player can ask"
-                   + " as many hints as they want.";
+            + " as many hints as they want. If the player asks for a hint, begin your reponse with"
+            + " \"Hint: \".";
 
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"

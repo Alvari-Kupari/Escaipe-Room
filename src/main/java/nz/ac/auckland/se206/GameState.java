@@ -47,12 +47,12 @@ public class GameState {
 
   public static int taskCompletionTime = -1;
 
+  /** Indicates how many hints are used */
+  public static int hintsUsed = 1;
+
   // are chats and tasks open?
   public static boolean isChatOpen;
   public static boolean areTasksOpen;
-
-  /** Indicates visibility of thinking face */
-  public static boolean thinkingFaceVisible = false;
 
   public static Password password = Password.BANANA;
 
@@ -80,7 +80,6 @@ public class GameState {
     taskCompletionTime = -1;
     isChatOpen = false;
     areTasksOpen = false;
-    thinkingFaceVisible = false;
     password = Password.BANANA;
   }
 }

@@ -34,14 +34,34 @@
             <Image url="@../images/flask3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="318.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/professor_RESTING.gif" />
+            <Image url="@../images/professor/resting.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="340.0" layoutX="-90.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../images/professor_THINKING.gif" />
+            <Image url="@../images/professor/thinking.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry1" fitHeight="380.0" fitWidth="430.0" layoutX="-90.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry1.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry2" fitHeight="380.0" fitWidth="430.0" layoutX="-89.0" layoutY="298.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry2.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry3" fitHeight="365.0" fitWidth="364.0" layoutX="-80.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry3.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry4" fitHeight="356.0" fitWidth="364.0" layoutX="-77.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry4.gif" />
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="41.0" prefWidth="97.0" />
@@ -51,7 +71,6 @@
       <TextField fx:id="playerInput" layoutX="-1.0" layoutY="315.0" prefHeight="33.0" prefWidth="123.0" />
       <TextArea fx:id="tasks" layoutX="641.0" layoutY="544.0" prefHeight="82.0" prefWidth="165.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="641.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="81.0" text="Hide Tasks" />
-      <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 24.0, -265.0, 24.0, 58.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="5.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
@@ -66,11 +85,6 @@
          </image>
       </ImageView>
       <Label layoutX="19.0" layoutY="112.0" text="INVENTORY" />
-      <ImageView fx:id="thinkingFace" fitHeight="174.0" fitWidth="149.0" layoutX="6.0" layoutY="160.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/thinking.gif" />
-         </image>
-      </ImageView>
       <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#clickFlask" onMouseMoved="#hoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -87,5 +101,6 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
+      <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
    </children>
 </Pane>

@@ -27,7 +27,6 @@
       <TextArea fx:id="timer" editable="false" layoutY="2.0" prefHeight="25.0" prefWidth="83.0" />
       <TextArea fx:id="chat" layoutX="19.0" layoutY="143.0" prefHeight="200.0" prefWidth="200.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="669.0" layoutY="581.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="34.0" prefWidth="124.0" text="Hide Tasks" />
-      <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <ImageView fx:id="chemical1" fitHeight="70.0" fitWidth="51.0" layoutX="584.0" layoutY="122.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
@@ -43,9 +42,7 @@
             <Image url="@../images/warning.png" />
          </image>
       </ImageView>
-      <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="34.0" prefWidth="54.0" text="Send" />
       <TextArea fx:id="tasks" layoutX="671.0" layoutY="470.0" prefHeight="151.0" prefWidth="200.0" wrapText="true" />
-      <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="13.0" layoutY="55.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="26.0" layoutY="67.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -58,11 +55,6 @@
          </image>
       </ImageView>
       <Label layoutX="27.0" layoutY="113.0" text="INVENTORY" />
-      <ImageView fx:id="thinkingFace" fitHeight="135.0" fitWidth="123.0" layoutX="48.0" layoutY="172.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/thinking.gif" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-HINTS_LEFT.png" />
@@ -78,15 +70,38 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
-      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="340.0" layoutX="-80.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../images/professor_RESTING.gif" />
+            <Image url="@../images/professor/thinking.gif" />
          </image>
       </ImageView>
-      <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="346.0" layoutX="-90.0" layoutY="312.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="professorAngry1" fitHeight="380.0" fitWidth="430.0" layoutX="-80.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
-            <Image url="@../images/professor_THINKING.gif" />
+            <Image url="@../images/professor/angry1.gif" />
          </image>
       </ImageView>
+      <ImageView fx:id="professorAngry2" fitHeight="380.0" fitWidth="430.0" layoutX="-79.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry2.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry3" fitHeight="365.0" fitWidth="364.0" layoutX="-70.0" layoutY="317.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry3.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorAngry4" fitHeight="356.0" fitWidth="364.0" layoutX="-67.0" layoutY="325.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor/angry4.gif" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-80.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/professor/resting.gif" />
+         </image>
+      </ImageView>
+      <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
+      <Button fx:id="sendChat" layoutX="167.0" layoutY="313.0" mnemonicParsing="false" onAction="#onSendText" prefHeight="34.0" prefWidth="54.0" text="Send" />
+      <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="149.0" />
    </children>
 </Pane>
