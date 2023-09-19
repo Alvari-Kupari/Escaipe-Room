@@ -85,16 +85,6 @@ public class StorageRoomController extends RoomController {
       animateNode(chemical2, rotationAngle, -45);
     }
 
-    // Hide the thinking face when the chat text appears
-    chat.textProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              // Check if chat text is not empty
-              if (!newValue.isEmpty()) {
-                thinkingFace.setVisible(false);
-              }
-            });
-
     System.out.println();
     System.out.println("************** Initialising StorageRoomController **************");
   }

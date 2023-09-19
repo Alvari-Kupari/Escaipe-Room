@@ -34,7 +34,6 @@ public class RoomBinder {
       Button toggleTasks,
       ImageView chemical1Backpack,
       ImageView chemical2Backpack,
-      ImageView thinkingFace,
       ImageView infinity,
       ImageView professorResting,
       ImageView professorThinking,
@@ -69,8 +68,6 @@ public class RoomBinder {
       RoomBinder.chemical1.visibleProperty().bindBidirectional(chemical1Backpack.visibleProperty());
       RoomBinder.chemical2.visibleProperty().bindBidirectional(chemical2Backpack.visibleProperty());
 
-      RoomBinder.thinkingFace.imageProperty().bindBidirectional(thinkingFace.imageProperty());
-
       RoomBinder.professorResting
           .visibleProperty()
           .bindBidirectional(professorResting.visibleProperty());
@@ -101,7 +98,6 @@ public class RoomBinder {
     RoomBinder.toggleChatButton = toggleChat;
     RoomBinder.chemical1 = chemical1Backpack;
     RoomBinder.chemical2 = chemical2Backpack;
-    RoomBinder.thinkingFace = thinkingFace;
     RoomBinder.infinity = infinity;
     RoomBinder.hintsNumber = hintsNumber;
     RoomBinder.professorResting = professorResting;

@@ -23,16 +23,6 @@ public class TeacherRoomController extends RoomController {
     // bind common room elements
     bind();
 
-    // Hide the thinking face if chat is visable
-    chat.textProperty()
-        .addListener(
-            (observable, oldValue, newValue) -> {
-              // Check if chat text is not empty
-              if (!newValue.isEmpty()) {
-                thinkingFace.setVisible(false);
-              }
-            });
-
     hasLaptopBeenOpened = false;
 
     System.out.println();

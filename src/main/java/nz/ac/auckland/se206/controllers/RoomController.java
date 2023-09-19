@@ -23,7 +23,6 @@ public class RoomController {
   @FXML protected Button sendChat;
   @FXML protected ImageView chemical1Backpack;
   @FXML protected ImageView chemical2Backpack;
-  @FXML protected ImageView thinkingFace;
   @FXML protected ImageView infinity;
   @FXML protected ImageView professorResting;
   @FXML protected ImageView professorThinking;
@@ -84,7 +83,6 @@ public class RoomController {
         toggleTasks,
         chemical1Backpack,
         chemical2Backpack,
-        thinkingFace,
         infinity,
         professorResting,
         professorThinking,
