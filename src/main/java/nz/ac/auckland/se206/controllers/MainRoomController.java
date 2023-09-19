@@ -160,8 +160,6 @@ public class MainRoomController extends RoomController {
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
           System.out.println("TASK 2 COMPLETED");
           GameState.isTask2Completed = true;
-          professorResting.setVisible(false);
-          professorThinking.setVisible(true);
         }
         return;
       }
