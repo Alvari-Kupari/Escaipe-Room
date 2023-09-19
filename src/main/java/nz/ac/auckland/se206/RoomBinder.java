@@ -11,8 +11,9 @@ public class RoomBinder {
   private static TextArea timer;
   private static TextField chatInput;
   private static Button sendChat, toggleTaskButton, toggleChatButton;
-  private static ImageView chemical1, chemical2, thinkingFace, infinity;
-  private static TextArea chat;
+  private static ImageView chemical1, chemical2, infinity;
+  public static ImageView thinkingFace;
+  public static TextArea chat;
   private static TextArea checkList;
   private static Text hintsNumber;
 

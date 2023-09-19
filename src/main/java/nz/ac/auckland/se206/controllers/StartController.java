@@ -123,6 +123,9 @@ public class StartController {
 
     App.changeScene(Room.MAIN_ROOM);
 
+    // start AI storyline
+    RoomController.gameMaster.respond();
+
     // start timer
     Timer.startTimer();
   }

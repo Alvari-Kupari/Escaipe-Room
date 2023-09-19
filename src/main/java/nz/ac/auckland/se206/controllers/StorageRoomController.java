@@ -12,7 +12,6 @@ import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
-import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 
@@ -27,6 +26,7 @@ public class StorageRoomController extends RoomController {
 
   /** Initializes the Storage Room view */
   public void initialize() {
+    bind();
 
     // Create a random number generator
     Random random = new Random();
@@ -84,21 +84,6 @@ public class StorageRoomController extends RoomController {
       animateNode(chemical1, rotationAngle, -45);
       animateNode(chemical2, rotationAngle, -45);
     }
-
-    // bind common room elements
-    RoomBinder.bindRoom(
-        chat,
-        timer,
-        tasks,
-        playerInput,
-        hintsNumber,
-        sendChat,
-        toggleChat,
-        toggleTasks,
-        chemical1Backpack,
-        chemical2Backpack,
-        thinkingFace,
-        infinity);
 
     // Hide the thinking face when the chat text appears
     chat.textProperty()
