@@ -11,6 +11,8 @@ public class SoundManager {
       new Media(App.class.getResource("/sounds/click.mp3").toString());
   private static Media soundSelect =
       new Media(App.class.getResource("/sounds/select.mp3").toString());
+  private static Media soundError =
+      new Media(App.class.getResource("/sounds/error.mp3").toString());
   private static Media soundSplash =
       new Media(App.class.getResource("/sounds/splash.mp3").toString());
   private static Media soundBubbles =
@@ -31,6 +33,15 @@ public class SoundManager {
       mediaPlayer.stop();
     }
     mediaPlayer = new MediaPlayer(soundSelect);
+    mediaPlayer.play();
+  }
+
+  /** Plays the error sound */
+  public static void playError() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundError);
     mediaPlayer.play();
   }
 

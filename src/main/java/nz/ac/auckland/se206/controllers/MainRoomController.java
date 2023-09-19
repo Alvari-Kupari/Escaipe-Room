@@ -112,14 +112,18 @@ public class MainRoomController extends RoomController {
   @FXML
   public void clickFlask(MouseEvent event) {
 
-    infinity.setVisible(false);
-
     SoundManager.playClick();
 
     System.out.println("flask clicked");
 
-    SoundManager.playClick();
-    if (GameState.isTask2Completed) {
+    if (!GameState.isTask1Completed) {
+      GameState.isTask1Completed = true;
+      GameState.isChecklist1Active = false;
+      GameState.isChecklist2Active = true;
+      checklist1.setVisible(false);
+      checklist2.setVisible(true);
+    }
+    if (GameState.isTask3Completed) {
       return;
     }
 
@@ -133,8 +137,12 @@ public class MainRoomController extends RoomController {
         GameState.isChemical1Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
-          System.out.println("TASK 2 COMPLETED");
-          GameState.isTask2Completed = true;
+          System.out.println("TASK 3 COMPLETED");
+          GameState.isTask3Completed = true;
+          GameState.isChecklist3Active = false;
+          GameState.isChecklist4Active = true;
+          checklist3.setVisible(false);
+          checklist4.setVisible(true);
         }
         return;
       }
@@ -147,8 +155,12 @@ public class MainRoomController extends RoomController {
         GameState.isChemical2Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
-          System.out.println("TASK 2 COMPLETED");
-          GameState.isTask2Completed = true;
+          System.out.println("TASK 3 COMPLETED");
+          GameState.isTask3Completed = true;
+          GameState.isChecklist3Active = false;
+          GameState.isChecklist4Active = true;
+          checklist3.setVisible(false);
+          checklist4.setVisible(true);
         }
         return;
       }
@@ -228,10 +240,18 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickExitDoor(MouseEvent event) throws IOException {
+    System.out.println("Exit Door clicked");
+
+    if ((!GameState.isTask1Completed)
+        || (!GameState.isTask2Completed)
+        || (!GameState.isTask3Completed)
+        || (!GameState.isTask4Completed)) {
+      SoundManager.playError();
+      // Code for professor to say you can't leave until you finish all tasks
+      return;
+    }
 
     SoundManager.playClick();
-
-    System.out.println("Exit Door clicked");
 
     App.changeScene(Room.EXIT);
   }

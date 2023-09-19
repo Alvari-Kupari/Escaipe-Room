@@ -165,6 +165,14 @@ public class StorageRoomController extends RoomController {
     chemical1Backpack.setOpacity(1);
     // change the state of the chemical
     GameState.isChemical1Found = true;
+
+    if ((GameState.isChemical1Found) && (GameState.isChemical2Found)) {
+      GameState.isTask2Completed = true;
+      GameState.isChecklist2Active = false;
+      GameState.isChecklist3Active = true;
+      checklist2.setVisible(false);
+      checklist3.setVisible(true);
+    }
   }
 
   /**
@@ -185,6 +193,14 @@ public class StorageRoomController extends RoomController {
     chemical2Backpack.setOpacity(1);
     // change the state of the chemical
     GameState.isChemical2Found = true;
+
+    if ((GameState.isChemical1Found) && (GameState.isChemical2Found)) {
+      GameState.isTask2Completed = true;
+      GameState.isChecklist2Active = false;
+      GameState.isChecklist3Active = true;
+      checklist2.setVisible(false);
+      checklist3.setVisible(true);
+    }
   }
 
   /**

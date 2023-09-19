@@ -16,7 +16,6 @@ public class RoomController {
 
   @FXML protected TextArea timer;
   @FXML protected TextArea chat;
-  @FXML protected TextArea tasks;
   @FXML protected TextField playerInput;
   @FXML protected Text hintsNumber;
   @FXML protected Button toggleTasks;
@@ -30,6 +29,11 @@ public class RoomController {
   @FXML protected ImageView professorAngry2;
   @FXML protected ImageView professorAngry3;
   @FXML protected ImageView professorAngry4;
+  @FXML protected ImageView checklist1;
+  @FXML protected ImageView checklist2;
+  @FXML protected ImageView checklist3;
+  @FXML protected ImageView checklist4;
+  @FXML protected ImageView checklist5;
 
   @FXML
   private void initialize() {
@@ -56,8 +60,18 @@ public class RoomController {
     String text = openTasks ? "Close Tasks" : "Open Tasks";
 
     toggleTasks.setText(text);
-    tasks.setVisible(openTasks);
 
+    if (GameState.isChecklist1Active) {
+      checklist1.setVisible(openTasks);
+    } else if (GameState.isChecklist2Active) {
+      checklist2.setVisible(openTasks);
+    } else if (GameState.isChecklist3Active) {
+      checklist3.setVisible(openTasks);
+    } else if (GameState.isChecklist4Active) {
+      checklist4.setVisible(openTasks);
+    } else if (GameState.isChecklist5Active) {
+      checklist5.setVisible(openTasks);
+    }
     GameState.areTasksOpen = !GameState.areTasksOpen;
   }
 
@@ -66,7 +80,6 @@ public class RoomController {
     RoomBinder.bindRoom(
         chat,
         timer,
-        tasks,
         playerInput,
         hintsNumber,
         toggleChat,
@@ -79,7 +92,12 @@ public class RoomController {
         professorAngry1,
         professorAngry2,
         professorAngry3,
-        professorAngry4);
+        professorAngry4,
+        checklist1,
+        checklist2,
+        checklist3,
+        checklist4,
+        checklist5);
   }
 
   protected void setEnterToSendChat() {

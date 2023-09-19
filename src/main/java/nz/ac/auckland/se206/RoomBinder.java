@@ -18,15 +18,18 @@ public class RoomBinder {
       professorAngry1,
       professorAngry2,
       professorAngry3,
-      professorAngry4;
+      professorAngry4,
+      checklist1,
+      checklist2,
+      checklist3,
+      checklist4,
+      checklist5;
   public static TextArea chat;
-  private static TextArea checkList;
   public static Text hintsNumber;
 
   public static void bindRoom(
       TextArea chat,
       TextArea timer,
-      TextArea checkList,
       TextField input,
       Text hintsNumber,
       Button toggleChat,
@@ -39,7 +42,12 @@ public class RoomBinder {
       ImageView professorAngry1,
       ImageView professorAngry2,
       ImageView professorAngry3,
-      ImageView professorAngry4) {
+      ImageView professorAngry4,
+      ImageView checklist1,
+      ImageView checklist2,
+      ImageView checklist3,
+      ImageView checklist4,
+      ImageView checklist5) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -49,9 +57,6 @@ public class RoomBinder {
 
       RoomBinder.hintsNumber.textProperty().bindBidirectional(hintsNumber.textProperty());
       RoomBinder.hintsNumber.visibleProperty().bindBidirectional(hintsNumber.visibleProperty());
-
-      RoomBinder.checkList.textProperty().bindBidirectional(checkList.textProperty());
-      RoomBinder.checkList.visibleProperty().bindBidirectional(checkList.visibleProperty());
 
       RoomBinder.chatInput.textProperty().bindBidirectional(input.textProperty());
       RoomBinder.chatInput.visibleProperty().bindBidirectional(input.visibleProperty());
@@ -85,10 +90,15 @@ public class RoomBinder {
           .bindBidirectional(professorAngry4.visibleProperty());
 
       RoomBinder.infinity.visibleProperty().bindBidirectional(infinity.visibleProperty());
+
+      RoomBinder.checklist1.visibleProperty().bindBidirectional(checklist1.visibleProperty());
+      RoomBinder.checklist2.visibleProperty().bindBidirectional(checklist2.visibleProperty());
+      RoomBinder.checklist3.visibleProperty().bindBidirectional(checklist3.visibleProperty());
+      RoomBinder.checklist4.visibleProperty().bindBidirectional(checklist4.visibleProperty());
+      RoomBinder.checklist5.visibleProperty().bindBidirectional(checklist5.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
-    RoomBinder.checkList = checkList;
     RoomBinder.chatInput = input;
     RoomBinder.toggleTaskButton = toggleTasks;
     RoomBinder.toggleChatButton = toggleChat;
@@ -102,6 +112,11 @@ public class RoomBinder {
     RoomBinder.professorAngry2 = professorAngry2;
     RoomBinder.professorAngry3 = professorAngry3;
     RoomBinder.professorAngry4 = professorAngry4;
+    RoomBinder.checklist1 = checklist1;
+    RoomBinder.checklist2 = checklist2;
+    RoomBinder.checklist3 = checklist3;
+    RoomBinder.checklist4 = checklist4;
+    RoomBinder.checklist5 = checklist5;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {

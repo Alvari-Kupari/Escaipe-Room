@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 
 public class LaptopController extends RoomController {
   @FXML private PasswordField passwordField;
@@ -49,10 +50,16 @@ public class LaptopController extends RoomController {
               if (guess.toUpperCase().equals(GameState.password.toString())) {
                 System.out.println("password is right");
                 quizAnswers.setVisible(true);
+                GameState.isTask4Completed = true;
+                GameState.isChecklist4Active = false;
+                GameState.isChecklist5Active = true;
+                checklist4.setVisible(false);
+                checklist5.setVisible(true);
 
                 return;
               }
               System.out.println("password is wrong");
+              SoundManager.playError();
             }
           }
         };
