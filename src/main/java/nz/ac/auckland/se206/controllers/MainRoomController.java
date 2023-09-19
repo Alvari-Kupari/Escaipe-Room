@@ -240,10 +240,18 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickExitDoor(MouseEvent event) throws IOException {
+    System.out.println("Exit Door clicked");
+
+    if ((!GameState.isTask1Completed)
+        || (!GameState.isTask2Completed)
+        || (!GameState.isTask3Completed)
+        || (!GameState.isTask4Completed)) {
+      SoundManager.playError();
+      // Code for professor to say you can't leave until you finish all tasks
+      return;
+    }
 
     SoundManager.playClick();
-
-    System.out.println("Exit Door clicked");
 
     App.changeScene(Room.EXIT);
   }

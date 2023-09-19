@@ -11,6 +11,7 @@ import javafx.scene.input.KeyEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 
 public class LaptopController extends RoomController {
   @FXML private PasswordField passwordField;
@@ -58,6 +59,7 @@ public class LaptopController extends RoomController {
                 return;
               }
               System.out.println("password is wrong");
+              SoundManager.playError();
             }
           }
         };
