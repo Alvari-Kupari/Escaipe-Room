@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206.speech;
 
+import javafx.concurrent.Task;
 import javax.speech.AudioException;
 import javax.speech.Central;
 import javax.speech.EngineException;
@@ -8,6 +9,9 @@ import javax.speech.synthesis.SynthesizerModeDesc;
 
 /** Text-to-speech API using the JavaX speech library. */
 public class TextToSpeech {
+
+  private static TextToSpeech textToSpeech = new TextToSpeech();
+
   /** Custom unchecked exception for Text-to-speech issues. */
   static class TextToSpeechException extends RuntimeException {
     public TextToSpeechException(final String message) {
@@ -110,5 +114,21 @@ public class TextToSpeech {
     } catch (final EngineException e) {
       throw new TextToSpeechException(e.getMessage());
     }
+  }
+
+  public static void speech(String text) {
+    // Multi-Threading
+    Task<Void> speechTask =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            System.out.println("Task.call() method: " + Thread.currentThread().getName());
+            textToSpeech.speak(text);
+            return null;
+          }
+        };
+
+    Thread speechThread = new Thread(speechTask);
+    speechThread.start();
   }
 }
