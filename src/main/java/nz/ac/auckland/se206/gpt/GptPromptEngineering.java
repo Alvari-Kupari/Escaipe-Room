@@ -23,6 +23,11 @@ public class GptPromptEngineering {
         + wordToGuess;
   }
 
+  /**
+   * Introduces the game background to the AI.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceGame() {
     return "You are the professor of a school chemistry lab themed escape room game. The player of"
         + " the game is a student stuck in a school chemistry lab with 3 separate rooms. The"
@@ -35,11 +40,21 @@ public class GptPromptEngineering {
         + getHintPrompt();
   }
 
+  /**
+   * Introduces the 1st task to the AI.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceFirstTask() {
     return "The player must complete task 1 before they can progress. To complete the task 1, the"
         + " player must inspect the flask at the centre of the main room.";
   }
 
+  /**
+   * Introduces the 2nd task to the AI.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceSecondTask() {
     return "The player has now completed task 1, and now must complete task 2 before they can"
         + " progress. To complete task 2, the player must open the storage locker, which is"
@@ -49,6 +64,11 @@ public class GptPromptEngineering {
         + " inside.";
   }
 
+  /**
+   * Introduces the 3rd task to the AI.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceThirdTask() {
     return "The player has now completed task 2, and must complete task 3 before they can progress."
         + " To complete task 3, the player must use the chemicals they have collected from"
@@ -56,6 +76,11 @@ public class GptPromptEngineering {
         + " main room.";
   }
 
+  /**
+   * Tells the AI to stop giving hints to the player.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceFourthTask() {
     return "The player must complete task 4 before they can progress. To complete task 4, the"
         + " player must correctly answer a quiz question on a whiteboard. The whiteboard is"
@@ -65,30 +90,55 @@ public class GptPromptEngineering {
         + " the laptop once it has been hacked into.";
   }
 
+  /**
+   * Tells the AI that the player has completed all the tasks.
+   *
+   * @return the prompt to the AI
+   */
   public static String allTasksComplete() {
     return "The player has completed all tasks and can now exit the game by going through the exit"
         + " door. Pretend you are angry at the student for completing the tasks close to the"
         + " deadline, but happy at the same time that they got all the tasks done.";
   }
 
+  /**
+   * Tells the AI that the player has collected the key.
+   *
+   * @return the prompt to the AI
+   */
   public static String playerCollectedKey() {
     return "The player has collected a key, which they will need to complete task 2. If the player"
-               + " has completed task 1, your hints (if you are allowed to give them) should now"
-               + " focus on using the key to open the storage locker. Pretend like you are"
-               + " wondering what the key does. Respond to the player in under 10 words.";
+        + " has completed task 1, your hints (if you are allowed to give them) should now"
+        + " focus on using the key to open the storage locker. Pretend like you are"
+        + " wondering what the key does. Respond to the player in under 10 words.";
   }
 
+  /**
+   * Introduces the user to the game Used for TTS only.
+   *
+   * @return the prompt to the AI
+   */
   public static String introduceFlask() {
     return "You are a Lab Professor at a school, the student must finish his assignment on time."
         + " The student he must finish in time and click the flask to get started and"
         + " completed the first task. Respond in under 25 words.";
   }
 
+  /**
+   * Tells the AI that the user has done all the tasks.
+   *
+   * @return the prompt to the AI
+   */
   public static String tasksComplete() {
     return "The player has completed all the tasks. Congratulate them, and tell them they can leave"
         + " in under 15 words.";
   }
 
+  /**
+   * Tells the AI to stop giving hints to the player.
+   *
+   * @return the prompt to the AI
+   */
   public static String stopGivingHints() {
     return "The player has now reached 5 hints used. You must no longer give any hints to the"
         + " player under any circumstances, even if they ask for them.";
