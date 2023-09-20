@@ -157,6 +157,10 @@ public class StorageRoomController extends RoomController {
   public void clickChemical1(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 1 clicked");
+    if (!GameState.isTask1Completed) {
+      return;
+    }
+
     // turn image to transparent
     chemical1.setOpacity(0);
     // make it unclickable
@@ -185,6 +189,10 @@ public class StorageRoomController extends RoomController {
   public void clickChemical2(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 2 clicked");
+    if (!GameState.isTask1Completed) {
+      return;
+    }
+
     // turn image to transparent
     chemical2.setOpacity(0);
     // make it unclickable
