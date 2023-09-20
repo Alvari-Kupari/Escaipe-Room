@@ -26,6 +26,9 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView flask1;
   @FXML private ImageView flask2;
   @FXML private ImageView flask3;
+  @FXML private ImageView key;
+  @FXML private ImageView pouch;
+  @FXML private ImageView openedPouch;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
