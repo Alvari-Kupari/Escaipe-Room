@@ -5,19 +5,23 @@ import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomBinder;
 
 public class ExitController {
 
   @FXML private Button btnExit;
   @FXML private Button btnMainMenu;
   @FXML private ImageView loading;
+  @FXML private Text grade;
 
   @FXML
   private void initialize() {
     System.out.println();
     System.out.println("************** Initialising ExitController **************");
+    RoomBinder.grade = grade;
   }
 
   @FXML
