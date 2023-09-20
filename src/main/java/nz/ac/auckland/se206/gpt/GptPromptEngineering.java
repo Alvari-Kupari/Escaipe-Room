@@ -36,7 +36,7 @@ public class GptPromptEngineering {
 
   public static String introduceFlask() {
     return "You are a Lab Professor at a school, the student must finish his assignment on time."
-        + " Tell the student he must finish in time and click the flask to get started and"
+        + " The student he must finish in time and click the flask to get started and"
         + " completed the first task. Respond in under 25 words.";
   }
 
