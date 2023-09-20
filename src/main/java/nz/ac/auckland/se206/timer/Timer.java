@@ -93,4 +93,13 @@ public class Timer {
     timerText.setText(getTime());
     Timer.timerText = timerText;
   }
+
+  public enum GRADES {
+    F,
+    D,
+    C,
+    B,
+    A,
+    A_STAR;
+  }
 }

@@ -9,6 +9,7 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
@@ -253,6 +254,9 @@ public class MainRoomController extends RoomController {
 
     SoundManager.playClick();
 
+    // caculate what grade to show
+    calculateGrade();
+
     App.changeScene(Room.EXIT);
   }
 
@@ -293,5 +297,27 @@ public class MainRoomController extends RoomController {
         e -> {
           flask.setOpacity(0);
         });
+  }
+
+  private void calculateGrade() {
+    // set the task completion time
+    int time = Timer.getTimeInSeconds();
+    GameState.taskCompletionTime = time;
+
+    // figure out which grade to give
+    String grade = "A +";
+    if (time < 60) {
+      grade = "B";
+    }
+
+    if (time < 30) {
+      grade = "C";
+    }
+
+    if (time < 15) {
+      grade = "D";
+    }
+
+    RoomBinder.grade.setText(grade);
   }
 }
