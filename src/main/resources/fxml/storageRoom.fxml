@@ -11,13 +11,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.StorageRoomController">
    <children>
-      <ImageView fitHeight="680.0" fitWidth="985.0" layoutX="-94.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="636.0" fitWidth="1231.0" layoutX="-94.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/storageroom.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="754.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <ImageView fx:id="rack" fitHeight="372.0" fitWidth="335.0" layoutX="402.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/rack.png" />
@@ -26,7 +27,7 @@
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="350.0" layoutX="243.0" layoutY="183.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.04" stroke="BLACK" strokeType="INSIDE" width="124.0" />
       <TextArea fx:id="timer" editable="false" layoutY="2.0" prefHeight="25.0" prefWidth="83.0" />
       <TextArea fx:id="chat" layoutX="19.0" layoutY="143.0" prefHeight="170.0" prefWidth="200.0" wrapText="true" />
-      <Button fx:id="toggleTasks" layoutX="669.0" layoutY="581.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="34.0" prefWidth="124.0" text="Hide Tasks" />
+      <Button fx:id="toggleTasks" layoutX="808.0" layoutY="571.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="34.0" prefWidth="124.0" text="Hide Tasks" />
       <ImageView fx:id="chemical1" fitHeight="70.0" fitWidth="51.0" layoutX="584.0" layoutY="122.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
@@ -54,17 +55,17 @@
          </image>
       </ImageView>
       <Label layoutX="27.0" layoutY="113.0" text="INVENTORY" />
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="765.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-HINTS_LEFT.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="704.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="922.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
-      <Text fx:id="hintsNumber" layoutX="713.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+      <Text fx:id="hintsNumber" layoutX="931.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
@@ -101,27 +102,27 @@
       </ImageView>
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="200.0" />
-      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="666.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="805.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="804.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="804.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="804.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="665.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="804.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist5.png" />
          </image>
