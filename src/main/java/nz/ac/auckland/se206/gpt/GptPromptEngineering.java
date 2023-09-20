@@ -71,6 +71,13 @@ public class GptPromptEngineering {
         + " deadline, but happy at the same time that they got all the tasks done.";
   }
 
+  public static String playerCollectedKey() {
+    return "The player has collected a key, which they will need to complete task 2. If the player"
+               + " has completed task 1, your hints (if you are allowed to give them) should now"
+               + " focus on using the key to open the storage locker. Pretend like you are"
+               + " wondering what the key does. Respond to the player in under 10 words.";
+  }
+
   public static String introduceFlask() {
     return "You are a Lab Professor at a school, the student must finish his assignment on time."
         + " The student he must finish in time and click the flask to get started and"
