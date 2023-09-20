@@ -8,7 +8,7 @@ import javafx.scene.text.Text;
 
 public class RoomBinder {
 
-  private static TextArea timer;
+  private static Text timer;
   private static TextField chatInput;
   private static Button toggleTaskButton, toggleChatButton;
   private static ImageView chemical1, chemical2, infinity;
@@ -29,7 +29,7 @@ public class RoomBinder {
 
   public static void bindRoom(
       TextArea chat,
-      TextArea timer,
+      Text timer,
       TextField input,
       Text hintsNumber,
       Button toggleChat,

@@ -26,7 +26,6 @@
          </font>
       </PasswordField>
       <Button fx:id="goBackButton" layoutX="881.0" layoutY="534.0" mnemonicParsing="false" onAction="#onGoBack" prefHeight="65.0" prefWidth="96.0" text="Back To Room" />
-      <TextArea fx:id="timer" prefHeight="59.0" prefWidth="161.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="901.0" layoutY="509.0" mnemonicParsing="false" onAction="#onToggleTasks" text="Hide Tasks" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="53.0" layoutY="68.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="53.0" layoutY="73.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
@@ -134,5 +133,20 @@
       </ImageView>
       <TextField fx:id="playerInput" layoutX="47.0" layoutY="349.0" prefHeight="25.0" prefWidth="185.0" />
       <Button fx:id="toggleChat" layoutX="44.0" layoutY="374.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
+      <Pane layoutX="157.0" layoutY="7.0" prefHeight="92.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="97.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/clock.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="31.0" layoutX="33.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="113.0" />
+            <Text fx:id="timer" fill="RED" layoutX="54.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </Pane>

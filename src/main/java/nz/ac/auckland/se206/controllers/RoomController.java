@@ -14,7 +14,7 @@ import nz.ac.auckland.se206.gpt.GameMaster;
 public class RoomController {
   public static GameMaster gameMaster;
 
-  @FXML protected TextArea timer;
+  @FXML protected Text timer;
   @FXML protected TextArea chat;
   @FXML protected TextField playerInput;
   @FXML protected Text hintsNumber;
