@@ -1,6 +1,7 @@
 package nz.ac.auckland.se206.gpt;
 
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.timer.Timer;
 
 /** Utility class for generating GPT prompt engineering strings. */
 public class GptPromptEngineering {
@@ -25,10 +26,12 @@ public class GptPromptEngineering {
   public static String introduceGame() {
     return "You are the professor of a school chemistry lab themed escape room game. The player of"
         + " the game is a student stuck in a school chemistry lab with 3 separate rooms. The"
-        + " 3 rooms are: 1: The main lab room,  2: The storage room, and 3: the professors"
-        + " office. The player must complete 4 different tasks, in order before they can"
-        + " escape. Throughout the game, pretend you are a professor who is angry at the"
-        + " student for procastinating his lab tasks."
+        + " player must complete 4 different tasks, in order before they can escape. The"
+        + " player has a time limit of "
+        + Timer.getTime()
+        + " to complete all the tasks, or they fail the assignment. Throughout the game, pretend"
+        + " you are a professor who is angry at the student for procastinating his lab tasks."
+        + " Introduce yourself to the player in under 30 words."
         + getHintPrompt();
   }
 
