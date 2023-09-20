@@ -14,6 +14,7 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 
 public class StorageRoomController extends RoomController {
 
@@ -222,9 +223,15 @@ public class StorageRoomController extends RoomController {
     GameState.isChemical1Found = true;
 
     if ((GameState.isChemical1Found) && (GameState.isChemical2Found)) {
+      // make AI aware that task 2 is complete
+      gameMaster.giveContext(GptPromptEngineering.introduceThirdTask());
+
+      // set task 2 to be complete
       GameState.isTask2Completed = true;
       GameState.isChecklist2Active = false;
       GameState.isChecklist3Active = true;
+
+      // make the user aware they have done task 2
       checklist2.setVisible(false);
       checklist3.setVisible(true);
     }

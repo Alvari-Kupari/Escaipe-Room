@@ -125,6 +125,10 @@ public class MainRoomController extends RoomController {
     keyBackpack.setVisible(true);
     // Update the game state
     GameState.isKeyObtained = true;
+
+    // make AI aware of the new change
+    gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
+    gameMaster.respond();
   }
 
   /**
@@ -162,9 +166,15 @@ public class MainRoomController extends RoomController {
     System.out.println("flask clicked");
 
     if (!GameState.isTask1Completed) {
+      // make AI aware of the task completion
+      gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
+
+      // set all necessary game states to reflect task 2 completion
       GameState.isTask1Completed = true;
       GameState.isChecklist1Active = false;
       GameState.isChecklist2Active = true;
+
+      // make the checklist update to the task completion
       checklist1.setVisible(false);
       checklist2.setVisible(true);
     }
@@ -182,12 +192,19 @@ public class MainRoomController extends RoomController {
         GameState.isChemical1Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
+
+          // set all game state variables to reflect task 3 completion
           System.out.println("TASK 3 COMPLETED");
           GameState.isTask3Completed = true;
           GameState.isChecklist3Active = false;
           GameState.isChecklist4Active = true;
+
+          // tick of the task in the checklist
           checklist3.setVisible(false);
           checklist4.setVisible(true);
+
+          // make AI aware that task 3 is done
+          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
         }
         return;
       }
