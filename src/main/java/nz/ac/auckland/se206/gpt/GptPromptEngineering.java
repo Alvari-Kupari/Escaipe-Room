@@ -24,7 +24,8 @@ public class GptPromptEngineering {
   }
 
   /**
-   * Introduces the game background to the AI.
+   * Introduces the game background to the AI. This allows the AI to understand the context of the
+   * game.
    *
    * @return the prompt to the AI
    */

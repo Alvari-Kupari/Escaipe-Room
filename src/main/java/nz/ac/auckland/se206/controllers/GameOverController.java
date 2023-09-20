@@ -19,6 +19,7 @@ public class GameOverController {
     System.out.println("************** Initialising GameOverController **************");
   }
 
+  // This method is called when the user clicks on the Main Menu button
   @FXML
   private void goMainMenu() throws IOException {
     System.out.println("Go to Main Menu");
@@ -27,9 +28,10 @@ public class GameOverController {
     btnMainMenu.setDisable(true);
     GameState.setDefaults();
 
-    Task<Void> restarTask2 =
+    Task<Void> restartTask2 =
         new Task<Void>() {
           @Override
+          // This allows the game to restart in the background
           protected Void call() throws Exception {
             System.out.println("...Restarting...");
 
@@ -40,21 +42,21 @@ public class GameOverController {
           }
         };
 
-    restarTask2.setOnSucceeded(
+    restartTask2.setOnSucceeded(
         e -> {
           System.out.println("---------------------Succeeded---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
         });
 
-    restarTask2.setOnFailed(
+    restartTask2.setOnFailed(
         e -> {
           System.out.println("---------------------Failed---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
         });
 
-    Thread restartThread2 = new Thread(restarTask2);
+    Thread restartThread2 = new Thread(restartTask2);
     restartThread2.start();
   }
 

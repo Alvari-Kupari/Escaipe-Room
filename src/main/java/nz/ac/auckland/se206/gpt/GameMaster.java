@@ -188,7 +188,7 @@ public class GameMaster {
   }
 
   /**
-   * runs the gpt, returns the AI's response.
+   * This method runs the gpt and returns the AI's response.
    *
    * @return the AI response.
    */

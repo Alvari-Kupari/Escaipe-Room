@@ -141,7 +141,7 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the exitDoor.
+   * Handles the click event on the exitDoor. This allows the player to exit the room.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the chat view

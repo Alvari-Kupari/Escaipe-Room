@@ -81,6 +81,7 @@ public class GameState {
     HARD
   }
 
+  // This sets all the variables to their default values
   public static void setDefaults() {
     isDifficultySelected = false;
     levelDifficulty = null;

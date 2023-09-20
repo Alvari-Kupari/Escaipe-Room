@@ -33,6 +33,7 @@ public class RoomBinder {
   public static ImageView checklist4;
   public static ImageView checklist5;
 
+  // This method is used to bind the room elements to the room controller
   public static void bindRoom(
       TextArea chat,
       Text timer,

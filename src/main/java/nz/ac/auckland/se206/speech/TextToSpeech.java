@@ -118,11 +118,13 @@ public class TextToSpeech {
     }
   }
 
+  // This method is used for the professor to speak
   public static void speech(String text) {
     // Multi-Threading
     Task<Void> speechTask =
         new Task<Void>() {
           @Override
+          // This allows the text to speech to run in the background
           protected Void call() throws Exception {
             System.out.println("Task.call() method: " + Thread.currentThread().getName());
             RoomBinder.professorTalking.setVisible(true);

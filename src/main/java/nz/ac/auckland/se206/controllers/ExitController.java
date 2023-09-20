@@ -24,6 +24,7 @@ public class ExitController {
     RoomBinder.grade = grade;
   }
 
+  // This method is called when the user clicks on the Main Menu button
   @FXML
   private void goMainMenu() throws IOException {
     System.out.println("Go to Main Menu");
@@ -32,6 +33,7 @@ public class ExitController {
     btnMainMenu.setDisable(true);
     GameState.setDefaults();
 
+    // This allows the game to restart in the background
     Task<Void> restartTask =
         new Task<Void>() {
           @Override
