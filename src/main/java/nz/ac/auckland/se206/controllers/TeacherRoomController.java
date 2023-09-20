@@ -1,7 +1,11 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -9,12 +13,15 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
+import nz.ac.auckland.se206.gpt.GameMaster;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
+import nz.ac.auckland.se206.speech.TextToSpeech;
 
 public class TeacherRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;
   @FXML private Polygon laptop;
+  @FXML private TextField userAnswer;
 
   private boolean hasLaptopBeenOpened;
 
@@ -29,6 +36,43 @@ public class TeacherRoomController extends RoomController {
     bind();
 
     hasLaptopBeenOpened = false;
+
+    // make a new handler to pick up the enter key being pressed
+    EventHandler<KeyEvent> handler =
+        new EventHandler<KeyEvent>() {
+          @Override
+          public void handle(KeyEvent e) {
+            if (e.getCode().equals(KeyCode.ENTER)) {
+              System.out.println("Enter pressed from password");
+              String userGuess = userAnswer.getText();
+
+              System.out.println(userGuess);
+
+              if (userGuess.toUpperCase().equals(GameState.quizAnswer.toString().toUpperCase())) {
+                System.out.println("quiz answer is right");
+                SoundManager.playCorrect();
+                GameState.isTask4Completed = true;
+                GameState.isChecklist4Active = false;
+                GameState.isChecklist5Active = true;
+                checklist4.setVisible(false);
+                checklist5.setVisible(true);
+                TextToSpeech.speech(GameState.msgComplete);
+                return;
+              }
+              System.out.println("quiz answer is wrong");
+              SoundManager.playError();
+              userAnswer.clear();
+            }
+          }
+        };
+    // set field to pick up the enter key being pressed
+    userAnswer.setOnKeyPressed(handler);
+
+    gameMaster = new GameMaster(0.5, 0.5);
+
+    gameMaster.giveContext(GptPromptEngineering.tasksComplete());
+    gameMaster.gettalkComplete();
+    System.out.println("msgComplete" + GameState.msgComplete);
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");

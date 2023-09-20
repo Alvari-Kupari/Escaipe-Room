@@ -139,7 +139,7 @@ public class GameMaster {
     thread.start();
   }
 
-  public void gettalk() {
+  public void gettalkFlask() {
     Task<Void> TalkTask =
         new Task<Void>() {
           @Override
@@ -200,6 +200,69 @@ public class GameMaster {
 
     Thread threadTalk = new Thread(TalkTask);
     threadTalk.start();
+  }
+
+  public void gettalkComplete() {
+    Task<Void> TalkTask2 =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            RoomBinder.professorThinking.setVisible(true);
+            RoomBinder.professorAngry1.setVisible(false);
+            RoomBinder.professorAngry2.setVisible(false);
+            RoomBinder.professorAngry3.setVisible(false);
+            RoomBinder.professorAngry4.setVisible(false);
+            RoomBinder.professorResting.setVisible(false);
+            RoomBinder.professorTalking.setVisible(false);
+
+            // run the AI
+            String speech = runGpt();
+            GameState.msgComplete = speech;
+            // RoomBinder.chat.appendText("\n" + response + "\n");
+
+            return null;
+          }
+        };
+
+    // make the face disappear after loading is finished
+    TalkTask2.setOnSucceeded(
+        e -> {
+          RoomBinder.professorThinking.setVisible(false);
+          if (GameState.hintsUsed == 1) {
+            RoomBinder.professorResting.setVisible(true);
+          } else if (GameState.hintsUsed == 2) {
+            RoomBinder.professorAngry1.setVisible(true);
+          } else if (GameState.hintsUsed == 3) {
+            RoomBinder.professorAngry2.setVisible(true);
+          } else if (GameState.hintsUsed == 4) {
+            RoomBinder.professorAngry3.setVisible(true);
+          } else if (GameState.hintsUsed >= 5) {
+            RoomBinder.professorAngry4.setVisible(true);
+          }
+
+          // check if a hint was given
+          String response = getLastResponse();
+
+          if (response.substring(0, 10).toLowerCase().contains("hint")) {
+            // update the hints used
+            GameState.hintsUsed++;
+            // print hint used
+            System.out.println("Hint used");
+
+            if (GameState.hintsRemaining != 0) {
+              GameState.hintsRemaining--;
+              RoomBinder.hintsNumber.setText(String.valueOf(GameState.hintsRemaining));
+            }
+
+            // stop giving hints, if there arent any hints left
+            if (GameState.hintsRemaining == 0) {
+              giveContext(GptPromptEngineering.stopGivingHints());
+            }
+          }
+        });
+
+    Thread threadTalk2 = new Thread(TalkTask2);
+    threadTalk2.start();
   }
 
   /**

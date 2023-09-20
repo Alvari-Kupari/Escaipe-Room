@@ -71,7 +71,7 @@
          </image>
       </ImageView>
       <Button fx:id="maskPasswordButton" layoutX="572.0" layoutY="281.0" mnemonicParsing="false" onAction="#onMaskPassword" opacity="0.0" prefHeight="45.0" prefWidth="58.0" text="Button" textFill="#656f79" />
-      <ImageView fx:id="quizAnswers" fitHeight="280.0" fitWidth="278.0" layoutX="148.0" layoutY="121.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="quizAnswers" fitHeight="274.0" fitWidth="316.0" layoutX="358.0" layoutY="122.0" pickOnBounds="true" visible="false">
          <image>
             <Image url="@../images/lab%20answers.jpg" />
          </image>

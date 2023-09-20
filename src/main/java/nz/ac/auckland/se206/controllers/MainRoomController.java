@@ -46,7 +46,7 @@ public class MainRoomController extends RoomController {
     gameMaster = new GameMaster(0.5, 0.5);
 
     gameMaster.giveContext(GptPromptEngineering.introduceFlask());
-    gameMaster.gettalk();
+    gameMaster.gettalkFlask();
     System.out.println("msgFlask" + GameState.msgFlask);
 
     System.out.println();
