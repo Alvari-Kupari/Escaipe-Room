@@ -68,6 +68,10 @@ public class TeacherRoomController extends RoomController {
 
   @FXML
   private void onOpenLaptop() {
+    SoundManager.playClick();
+    if (!GameState.isTask3Completed) {
+      return;
+    }
     if (!hasLaptopBeenOpened) {
       // begin the riddle for the laptop
       gameMaster.giveContext(
