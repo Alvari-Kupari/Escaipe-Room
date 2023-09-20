@@ -65,7 +65,6 @@
             <Image url="@../images/professor/angry4.gif" />
          </image>
       </ImageView>
-      <TextArea fx:id="timer" editable="false" prefHeight="41.0" prefWidth="97.0" />
       <TextArea fx:id="chat" layoutX="12.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
       <Button fx:id="toggleChat" layoutX="12.0" layoutY="349.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="81.0" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="12.0" layoutY="315.0" prefHeight="33.0" prefWidth="165.0" />
@@ -126,5 +125,20 @@
             <Image url="@../images/checklist5.png" />
          </image>
       </ImageView>
+      <Pane layoutX="125.0" layoutY="8.0" prefHeight="92.0" prefWidth="200.0">
+         <children>
+            <ImageView fitHeight="97.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/clock.png" />
+               </image>
+            </ImageView>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="31.0" layoutX="33.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="113.0" />
+            <Text fx:id="timer" fill="RED" layoutX="54.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+               <font>
+                  <Font size="38.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
    </children>
 </Pane>

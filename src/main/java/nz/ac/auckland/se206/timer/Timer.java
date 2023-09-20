@@ -1,13 +1,13 @@
 package nz.ac.auckland.se206.timer;
 
-import javafx.scene.control.TextArea;
+import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 
 public class Timer {
   private static int seconds, minutes;
-  private static TextArea timerText;
+  private static Text timerText;
 
   /**
    * Resets the timer to the specified starting time.
@@ -89,7 +89,7 @@ public class Timer {
     return 60 * minutes + seconds;
   }
 
-  public static void bindText(TextArea timerText) {
+  public static void bindText(Text timerText) {
     timerText.setText(getTime());
     Timer.timerText = timerText;
   }
