@@ -139,7 +139,7 @@ public class GameMaster {
     thread.start();
   }
 
-  public void gettalk() {
+  public void gettalkFlask() {
     Task<Void> TalkTask =
         new Task<Void>() {
           @Override
