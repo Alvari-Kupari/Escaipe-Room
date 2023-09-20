@@ -17,7 +17,8 @@ public class GptPromptEngineering {
         + wordToGuess
         + ". You should answer with the word Correct when is correct. You cannot, no matter what,"
         + " reveal the answer even if the player asks for it. Even if player gives up, do not give"
-        + " the answer";
+        + " the answer. Do note the answer is "
+        + wordToGuess;
   }
 
   public static String introduceGame() {
@@ -42,7 +43,7 @@ public class GptPromptEngineering {
 
   public static String tasksComplete() {
     return "The player has completed all the tasks. Congratulate them, and tell them they can leave"
-               + " in under 15 words.";
+        + " in under 15 words.";
   }
 
   public static String stopGivingHints() {
