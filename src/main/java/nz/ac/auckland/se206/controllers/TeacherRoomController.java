@@ -48,6 +48,7 @@ public class TeacherRoomController extends RoomController {
 
               if (userGuess.toUpperCase().equals(GameState.quizAnswer.toString().toUpperCase())) {
                 System.out.println("quiz answer is right");
+                SoundManager.playCorrect();
                 GameState.isTask4Completed = true;
                 GameState.isChecklist4Active = false;
                 GameState.isChecklist5Active = true;
