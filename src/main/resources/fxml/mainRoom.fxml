@@ -12,13 +12,14 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane fx:id="mainRoom" focusTraversable="true" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainRoomController">
+<Pane fx:id="mainRoom" focusTraversable="true" onKeyPressed="#onKeyPressed" onKeyReleased="#onKeyReleased" prefHeight="626.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.MainRoomController">
    <children>
-      <ImageView fitHeight="643.0" fitWidth="1000.0" layoutX="-176.0" layoutY="-9.0" preserveRatio="true">
+      <ImageView fitHeight="689.0" fitWidth="1226.0" layoutX="-176.0" layoutY="-9.0" preserveRatio="true">
          <image>
             <Image url="@../images/mainroom.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="754.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <ImageView fx:id="flask1" fitHeight="91.0" fitWidth="72.0" layoutX="541.0" layoutY="286.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/flask1.png" />
@@ -65,11 +66,11 @@
          </image>
       </ImageView>
       <TextArea fx:id="timer" editable="false" prefHeight="41.0" prefWidth="97.0" />
-      <TextArea fx:id="chat" layoutX="-1.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
-      <Button fx:id="toggleChat" layoutX="-1.0" layoutY="349.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="81.0" text="Hide Chat" />
-      <TextField fx:id="playerInput" layoutX="-1.0" layoutY="315.0" prefHeight="33.0" prefWidth="165.0" />
-      <Button fx:id="toggleTasks" layoutX="641.0" layoutY="600.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="81.0" text="Hide Tasks" />
-      <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 24.0, -265.0, 24.0, 58.0" stroke="BLACK" strokeType="INSIDE" />
+      <TextArea fx:id="chat" layoutX="12.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
+      <Button fx:id="toggleChat" layoutX="12.0" layoutY="349.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="81.0" text="Hide Chat" />
+      <TextField fx:id="playerInput" layoutX="12.0" layoutY="315.0" prefHeight="33.0" prefWidth="165.0" />
+      <Button fx:id="toggleTasks" layoutX="837.0" layoutY="578.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="81.0" text="Hide Tasks" />
+      <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="5.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
@@ -84,43 +85,43 @@
       </ImageView>
       <Label layoutX="19.0" layoutY="112.0" text="INVENTORY" />
       <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#clickFlask" onMouseMoved="#hoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="547.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="766.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-HINTS_LEFT.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="704.0" layoutY="26.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="923.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
-      <Text fx:id="hintsNumber" layoutX="713.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+      <Text fx:id="hintsNumber" layoutX="932.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
          <font>
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
       <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
-      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="644.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="840.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="839.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="839.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="839.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="643.0" layoutY="450.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="839.0" layoutY="428.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist5.png" />
          </image>

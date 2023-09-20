@@ -62,7 +62,7 @@ public class App extends Application {
           System.exit(0);
         });
 
-    scene = new Scene(SceneManager.getUiRoot(Room.START), 800, 626);
+    scene = new Scene(SceneManager.getUiRoot(Room.START), 1000, 626);
     Parent root = SceneManager.getUiRoot(Room.START);
     stage.setScene(scene);
     stage.show();
