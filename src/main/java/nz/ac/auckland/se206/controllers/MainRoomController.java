@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
+import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -29,6 +30,7 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView key;
   @FXML private ImageView pouch;
   @FXML private ImageView openedPouch;
+  @FXML private Slider zipper;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
@@ -89,6 +91,22 @@ public class MainRoomController extends RoomController {
     alert.setHeaderText(headerText);
     alert.setContentText(message);
     alert.showAndWait();
+  }
+
+  // when slider is compleded, hide the slider
+  @FXML
+  public void zipperDragReleased(MouseEvent event) {
+    if (zipper.getValue() == zipper.getMax()) {
+      // Mouse drag released on the slider at the maximum value
+      // Handle accordingly
+      System.out.println("Mouse drag released on the slider at maximum value.");
+      // hide the zipper
+      zipper.setVisible(false);
+      // Show the opened pouch
+      openedPouch.setVisible(true);
+      // Show the key
+      key.setVisible(true);
+    }
   }
 
   /**
