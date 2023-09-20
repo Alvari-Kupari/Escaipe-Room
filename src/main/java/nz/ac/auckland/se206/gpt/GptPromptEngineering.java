@@ -40,6 +40,11 @@ public class GptPromptEngineering {
         + " completed the first task. Respond in under 25 words.";
   }
 
+  public static String tasksComplete() {
+    return "The player has completed all the tasks. Congratulate them, and tell them they can leave"
+               + " in under 15 words.";
+  }
+
   public static String stopGivingHints() {
     return "The player has now reached 5 hints used. You must no longer give any hints to the"
         + " player under any circumstances, even if they ask for them.";
