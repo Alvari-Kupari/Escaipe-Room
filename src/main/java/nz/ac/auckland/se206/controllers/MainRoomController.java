@@ -305,7 +305,7 @@ public class MainRoomController extends RoomController {
     GameState.taskCompletionTime = time;
 
     // figure out which grade to give
-    String grade = "A +";
+    String grade = "A+";
     if (time < 60) {
       grade = "B";
     }
