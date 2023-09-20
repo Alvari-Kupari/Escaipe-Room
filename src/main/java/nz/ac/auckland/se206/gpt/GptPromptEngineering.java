@@ -111,9 +111,4 @@ public class GptPromptEngineering {
         return null;
     }
   }
-
-  public static String playerGussedRightAnswer() {
-    return "The player has correctly guessed the answer to the riddle. Congratulate them, and"
-        + " pretend you are disappointed that the user has now hacked into your laptop.";
-  }
 }
