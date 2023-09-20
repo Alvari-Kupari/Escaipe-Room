@@ -13,7 +13,6 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
-import nz.ac.auckland.se206.gpt.GameMaster;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
@@ -70,12 +69,6 @@ public class TeacherRoomController extends RoomController {
         };
     // set field to pick up the enter key being pressed
     userAnswer.setOnKeyPressed(handler);
-
-    gameMaster = new GameMaster(0.5, 0.5);
-
-    gameMaster.giveContext(GptPromptEngineering.tasksComplete());
-    gameMaster.gettalkComplete();
-    System.out.println("msgComplete" + GameState.msgComplete);
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");

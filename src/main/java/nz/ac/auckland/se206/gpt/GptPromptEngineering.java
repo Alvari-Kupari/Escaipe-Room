@@ -160,13 +160,14 @@ public class GptPromptEngineering {
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
             + " are used up, you must not give the player any more hints under any"
-            + " circumstances. If the player asks for a hint or for help, begin your reponse with"
-            + " \"Hint: \".";
+            + " circumstances. If the player asks for a hint or for help in any way, begin"
+            + " your reponse with \"Hint: \". Only give hints if the player asks for help";
 
         // Dont allow AI to give hints at all.
       case HARD:
         return " You must not give any hints to the player under any circumstances, even if they"
-            + " ask for them.";
+            + " ask for them. You can only tell the player knowledge about tasks they have"
+            + " already completed";
 
       default:
         // error message if no difficulty is selected
@@ -177,6 +178,6 @@ public class GptPromptEngineering {
 
   public static String beCarefulInStorageLocker() {
     return "The player has entered the storage locker which has chemicals. Tell the user to be"
-               + " careful in the locker, because the chemicals are dangerous.";
+        + " careful in the locker, because the chemicals are dangerous.";
   }
 }

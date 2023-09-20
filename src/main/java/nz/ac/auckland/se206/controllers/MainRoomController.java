@@ -32,6 +32,9 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
 
+  private static GameMaster flaskTalkingGameMaster;
+  private static GameMaster tasksDoneTalkingGameMaster;
+
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
@@ -50,9 +53,15 @@ public class MainRoomController extends RoomController {
     // initialize game master
     gameMaster = new GameMaster(0.5, 0.5);
 
-    gameMaster.giveContext(GptPromptEngineering.introduceFlask());
-    gameMaster.gettalkFlask();
+    flaskTalkingGameMaster = new GameMaster(0.5, 0.5);
+    tasksDoneTalkingGameMaster = new GameMaster(0.5, 0.5);
+
+    flaskTalkingGameMaster.giveContext(GptPromptEngineering.introduceFlask());
+    flaskTalkingGameMaster.gettalkFlask();
     System.out.println("msgFlask" + GameState.msgFlask);
+
+    tasksDoneTalkingGameMaster.giveContext(GptPromptEngineering.tasksComplete());
+    tasksDoneTalkingGameMaster.gettalkComplete();
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
@@ -223,6 +232,9 @@ public class MainRoomController extends RoomController {
           GameState.isChecklist4Active = true;
           checklist3.setVisible(false);
           checklist4.setVisible(true);
+
+          // make AI aware that task 3 is done
+          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
         }
         return;
       }
