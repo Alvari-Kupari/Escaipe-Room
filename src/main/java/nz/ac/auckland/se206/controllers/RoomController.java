@@ -35,6 +35,7 @@ public class RoomController {
   @FXML protected ImageView checklist3;
   @FXML protected ImageView checklist4;
   @FXML protected ImageView checklist5;
+  @FXML protected ImageView keyBackpack;
 
   @FXML
   private void initialize() {
@@ -99,7 +100,8 @@ public class RoomController {
         checklist2,
         checklist3,
         checklist4,
-        checklist5);
+        checklist5,
+        keyBackpack);
   }
 
   protected void setEnterToSendChat() {

@@ -21,20 +21,8 @@
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="753.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="573.0" layoutY="69.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
-      <TextArea fx:id="chat" layoutX="20.0" layoutY="133.0" prefHeight="188.0" prefWidth="180.0" wrapText="true" />
+      <TextArea fx:id="chat" layoutX="20.0" layoutY="160.0" prefHeight="182.0" prefWidth="180.0" wrapText="true" />
       <Button fx:id="toggleTasks" layoutX="893.0" layoutY="580.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="17.0" prefWidth="83.0" text="Hide Tasks" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="3.0" layoutY="45.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
-      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="16.0" layoutY="57.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/chemical2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="50.0" layoutY="54.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/chemical1.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="17.0" layoutY="103.0" text="INVENTORY" />
       <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="344.0" layoutY="302.0" onMouseMoved="#onHoverLaptop" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/enter%20password.JPG" />
@@ -91,8 +79,8 @@
             <Image url="@../images/professor_TALKING.gif" />
          </image>
       </ImageView>
-      <Button fx:id="toggleChat" layoutX="19.0" layoutY="352.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
-      <TextField fx:id="playerInput" layoutX="20.0" layoutY="321.0" prefHeight="33.0" prefWidth="180.0" />
+      <Button fx:id="toggleChat" layoutX="19.0" layoutY="373.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
+      <TextField fx:id="playerInput" layoutX="20.0" layoutY="342.0" prefHeight="33.0" prefWidth="180.0" />
       <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="831.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
@@ -137,6 +125,23 @@
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="307.0" layoutY="98.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-whiteboard.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="20.0" layoutY="79.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="28.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="62.0" layoutY="88.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="42.0" layoutY="137.0" text="INVENTORY" />
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="87.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/key.png" />
          </image>
       </ImageView>
    </children>

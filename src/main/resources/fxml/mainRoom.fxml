@@ -78,7 +78,7 @@
       <Button fx:id="toggleTasks" layoutX="837.0" layoutY="578.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="25.0" prefWidth="81.0" text="Hide Tasks" />
       <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="5.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="10.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
@@ -89,7 +89,7 @@
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <Label layoutX="19.0" layoutY="112.0" text="INVENTORY" />
+      <Label layoutX="32.0" layoutY="112.0" text="INVENTORY" />
       <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#clickFlask" onMouseMoved="#hoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="766.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -99,6 +99,11 @@
       <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="923.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="77.0" layoutY="67.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/key.png" />
          </image>
       </ImageView>
       <Text fx:id="hintsNumber" layoutX="932.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
@@ -152,7 +157,7 @@
             <Image url="@../images/opened%20pouch.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="key" fitHeight="76.0" fitWidth="36.0" layoutX="656.0" layoutY="484.0" pickOnBounds="true" preserveRatio="true" rotate="66.8" visible="false">
+      <ImageView fx:id="key" fitHeight="76.0" fitWidth="36.0" layoutX="656.0" layoutY="484.0" onMouseClicked="#clickKey" pickOnBounds="true" preserveRatio="true" rotate="66.8" visible="false">
          <image>
             <Image url="@../images/key.png" />
          </image>

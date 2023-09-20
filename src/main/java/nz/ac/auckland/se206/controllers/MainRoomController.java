@@ -110,9 +110,21 @@ public class MainRoomController extends RoomController {
       openedPouch.setVisible(true);
       // Show the key
       key.setVisible(true);
-      // Update the game state
-      GameState.isKeyObtained = true;
     }
+  }
+
+  // when key is clicked, hide the key
+  @FXML
+  public void clickKey(MouseEvent event) {
+    System.out.println("Key clicked");
+    // Hide the key
+    key.setVisible(false);
+    // Make the key unclickable
+    key.setDisable(true);
+    // Make key appear in backpack
+    keyBackpack.setVisible(true);
+    // Update the game state
+    GameState.isKeyObtained = true;
   }
 
   /**
