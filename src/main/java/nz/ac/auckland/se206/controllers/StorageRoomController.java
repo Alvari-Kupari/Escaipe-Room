@@ -136,7 +136,7 @@ public class StorageRoomController extends RoomController {
       return;
     } else {
       // Remove key from backpack
-      keyBackpack.setOpacity(0);
+      keyBackpack.setVisible(false);
       // Remove the lock from the scene so that items underneath can be clicked
       rackDoor.setVisible(false);
       rackDoor.setDisable(true);
