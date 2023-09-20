@@ -72,6 +72,8 @@ public class GameState {
 
   public static String quizAnswer;
 
+  public static boolean isKeyObtained;
+
   public enum Difficulty {
     EASY,
     MEDIUM,
@@ -99,6 +101,7 @@ public class GameState {
     isChecklist3Active = false;
     isChecklist4Active = false;
     isChecklist5Active = false;
+    isKeyObtained = false;
     taskCompletionTime = -1;
     isChatOpen = false;
     areTasksOpen = false;

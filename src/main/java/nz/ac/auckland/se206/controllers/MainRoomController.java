@@ -102,10 +102,16 @@ public class MainRoomController extends RoomController {
       System.out.println("Mouse drag released on the slider at maximum value.");
       // hide the zipper
       zipper.setVisible(false);
+      // Disable the zipper
+      zipper.setDisable(true);
+      // Hide the pouch
+      pouch.setVisible(false);
       // Show the opened pouch
       openedPouch.setVisible(true);
       // Show the key
       key.setVisible(true);
+      // Update the game state
+      GameState.isKeyObtained = true;
     }
   }
 
