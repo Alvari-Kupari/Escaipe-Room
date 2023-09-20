@@ -49,6 +49,8 @@ public class LaptopController extends RoomController {
 
               if (guess.toUpperCase().equals(GameState.password.toString())) {
                 System.out.println("password is right");
+
+                SoundManager.playCorrect();
                 quizAnswers.setVisible(true);
                 GameState.isTask4Completed = true;
                 GameState.isChecklist4Active = false;
