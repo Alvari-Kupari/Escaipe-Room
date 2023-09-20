@@ -151,22 +151,26 @@ public class GptPromptEngineering {
    */
   private static String getHintPrompt() {
     switch (GameState.levelDifficulty) {
+        // allow the AI to give infinite hints
       case EASY:
         return " Help the player out, and give them hints if they ask for them. The player can ask"
             + " as many hints as they want. If the player asks for a hint, begin your reponse with"
             + " \"Hint: \".";
 
+        // allow AI to give 5 hints only
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
             + " are used up, you must not give the player any more hints under any"
             + " circumstances. If the player asks for a hint, begin your reponse with"
             + " \"Hint: \".";
 
+        // Dont allow AI to give hints at all.
       case HARD:
         return " You must not give any hints to the player under any circumstances, even if they"
             + " ask for them.";
 
       default:
+        // error message if no difficulty is selected
         System.out.println("ERROR - A DIFFICULTY HAS NOT BEEN CHOSEN!!!");
         return null;
     }
