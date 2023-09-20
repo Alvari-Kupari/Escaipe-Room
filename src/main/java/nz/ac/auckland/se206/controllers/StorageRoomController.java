@@ -135,6 +135,8 @@ public class StorageRoomController extends RoomController {
     if (GameState.isTask1Completed == false || GameState.isKeyObtained == false) {
       return;
     } else {
+      // Remove key from backpack
+      keyBackpack.setOpacity(0);
       // Remove the lock from the scene so that items underneath can be clicked
       rackDoor.setVisible(false);
       rackDoor.setDisable(true);
