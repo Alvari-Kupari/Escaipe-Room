@@ -6,6 +6,8 @@ import javax.speech.Central;
 import javax.speech.EngineException;
 import javax.speech.synthesis.Synthesizer;
 import javax.speech.synthesis.SynthesizerModeDesc;
+import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomBinder;
 
 /** Text-to-speech API using the JavaX speech library. */
 public class TextToSpeech {
@@ -123,10 +125,34 @@ public class TextToSpeech {
           @Override
           protected Void call() throws Exception {
             System.out.println("Task.call() method: " + Thread.currentThread().getName());
+            RoomBinder.professorTalking.setVisible(true);
+            RoomBinder.professorThinking.setVisible(false);
+            RoomBinder.professorAngry1.setVisible(false);
+            RoomBinder.professorAngry2.setVisible(false);
+            RoomBinder.professorAngry3.setVisible(false);
+            RoomBinder.professorAngry4.setVisible(false);
+            RoomBinder.professorResting.setVisible(false);
+
             textToSpeech.speak(text);
             return null;
           }
         };
+
+    speechTask.setOnSucceeded(
+        e -> {
+          RoomBinder.professorTalking.setVisible(false);
+          if (GameState.hintsUsed == 1) {
+            RoomBinder.professorResting.setVisible(true);
+          } else if (GameState.hintsUsed == 2) {
+            RoomBinder.professorAngry1.setVisible(true);
+          } else if (GameState.hintsUsed == 3) {
+            RoomBinder.professorAngry2.setVisible(true);
+          } else if (GameState.hintsUsed == 4) {
+            RoomBinder.professorAngry3.setVisible(true);
+          } else if (GameState.hintsUsed >= 5) {
+            RoomBinder.professorAngry4.setVisible(true);
+          }
+        });
 
     Thread speechThread = new Thread(speechTask);
     speechThread.start();

@@ -29,6 +29,7 @@ public class RoomController {
   @FXML protected ImageView professorAngry2;
   @FXML protected ImageView professorAngry3;
   @FXML protected ImageView professorAngry4;
+  @FXML protected ImageView professorTalking;
   @FXML protected ImageView checklist1;
   @FXML protected ImageView checklist2;
   @FXML protected ImageView checklist3;
@@ -93,6 +94,7 @@ public class RoomController {
         professorAngry2,
         professorAngry3,
         professorAngry4,
+        professorTalking,
         checklist1,
         checklist2,
         checklist3,

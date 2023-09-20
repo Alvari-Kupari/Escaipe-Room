@@ -99,6 +99,11 @@
             <Image url="@../images/professor/resting.gif" />
          </image>
       </ImageView>
+      <ImageView fx:id="professorTalking" fitHeight="374.0" fitWidth="380.0" layoutX="-77.0" layoutY="308.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/professor_TALKING.gif" />
+         </image>
+      </ImageView>
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="346.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="34.0" prefWidth="200.0" />
       <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="805.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true">

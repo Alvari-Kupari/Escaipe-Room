@@ -88,6 +88,7 @@ public class GameMaster {
             RoomBinder.professorAngry3.setVisible(false);
             RoomBinder.professorAngry4.setVisible(false);
             RoomBinder.professorResting.setVisible(false);
+            RoomBinder.professorTalking.setVisible(false);
 
             // run the AI
             String response = runGpt();
@@ -149,6 +150,7 @@ public class GameMaster {
             RoomBinder.professorAngry3.setVisible(false);
             RoomBinder.professorAngry4.setVisible(false);
             RoomBinder.professorResting.setVisible(false);
+            RoomBinder.professorTalking.setVisible(false);
 
             // run the AI
             String speech = runGpt();
