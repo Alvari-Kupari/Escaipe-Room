@@ -21,8 +21,10 @@ public class StorageRoomController extends RoomController {
   @FXML private ImageView chemical1;
   @FXML private ImageView chemical2;
   @FXML private ImageView rack;
+  @FXML private ImageView rackDoor;
 
   private RotateTransition rackRotation;
+  private RotateTransition rackDoorRotation;
 
   /** Initializes the Storage Room view */
   public void initialize() {
@@ -75,10 +77,15 @@ public class StorageRoomController extends RoomController {
     }
 
     rackRotation = new RotateTransition(Duration.seconds(0.5), rack);
+    rackDoorRotation = new RotateTransition(Duration.seconds(0.5), rackDoor);
     rackRotation.setCycleCount(RotateTransition.INDEFINITE);
+    rackDoorRotation.setCycleCount(RotateTransition.INDEFINITE);
     rackRotation.setByAngle(rotationAngle);
+    rackDoorRotation.setByAngle(rotationAngle);
     rackRotation.setAutoReverse(true);
+    rackDoorRotation.setAutoReverse(true);
     rackRotation.play();
+    rackDoorRotation.play();
 
     if (rotateRight) {
       animateNode(chemical1, rotationAngle, 45);
@@ -113,6 +120,48 @@ public class StorageRoomController extends RoomController {
 
     rotation.play();
     translation.play();
+  }
+
+  /**
+   * Handles the click event on the door of rack.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Main Room
+   */
+  @FXML
+  public void clickRackDoor(MouseEvent event) throws IOException {
+    SoundManager.playClick();
+    System.out.println("Rack clicked");
+    if (GameState.isTask1Completed == false) {
+      return;
+    } else {
+      // Remove the lock from the scene so that items underneath can be clicked
+      rackDoor.setVisible(false);
+      rackDoor.setDisable(true);
+      // make chemicals clickable
+      chemical1.setDisable(false);
+      chemical2.setDisable(false);
+      // make chemicals visible
+      chemical1.setOpacity(1);
+      chemical2.setOpacity(1);
+    }
+  }
+
+  /**
+   * Handles the mouse hover over the door of rack.
+   *
+   * @param event the mouse event
+   * @throws IOException if there is an error loading the Bookshelf
+   */
+  @FXML
+  public void hoverRackDoor(MouseEvent event) throws IOException {
+    // make rack area obaque
+    rackDoor.setOpacity(0.5);
+    // when not hovered, make rack area transparent again
+    rackDoor.setOnMouseExited(
+        e -> {
+          rackDoor.setOpacity(1);
+        });
   }
 
   /**
