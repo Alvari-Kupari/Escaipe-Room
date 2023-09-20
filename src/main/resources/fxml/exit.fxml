@@ -4,27 +4,39 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.Rectangle?>
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ExitController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.ExitController">
    <children>
-      <ImageView fitHeight="676.0" fitWidth="924.0" layoutX="-1.0" layoutY="-38.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="731.0" fitWidth="1041.0" layoutX="-1.0" layoutY="-71.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/outside.png" />
          </image>
       </ImageView>
-      <Text layoutX="23.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="You have escaped the lab!" wrappingWidth="373.13671875">
+      <Text layoutX="30.0" layoutY="65.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Congrats! You have finished the assignment in time!" wrappingWidth="828.13671875">
          <font>
             <Font size="31.0" />
          </font>
       </Text>
-      <Button fx:id="btnMainMenu" layoutX="108.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
-      <Button fx:id="btnExit" layoutX="271.0" layoutY="84.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#010203" height="434.0" layoutX="557.0" layoutY="195.0" opacity="0.27" stroke="BLACK" strokeType="INSIDE" width="445.0" />
       <ImageView fx:id="loading" fitHeight="251.0" fitWidth="331.0" layoutX="44.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-LOADING.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="446.0" fitWidth="494.0" layoutX="562.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/score.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="btnMainMenu" layoutX="664.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
+      <Button fx:id="btnExit" layoutX="825.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit Game" />
+      <Text fill="#d3061a" layoutX="671.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+" wrappingWidth="138.13671875">
+         <font>
+            <Font size="96.0" />
+         </font>
+      </Text>
    </children>
 </Pane>

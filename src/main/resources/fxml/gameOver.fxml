@@ -5,11 +5,11 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.Pane?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.GameOverController">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="626.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nz.ac.auckland.se206.controllers.GameOverController">
    <children>
-      <ImageView fitHeight="638.0" fitWidth="640.0" layoutX="81.0" layoutY="-6.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="635.0" fitWidth="1154.0" layoutX="-73.0" layoutY="-3.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/failed.jpg" />
+            <Image url="@../images/failed.png" />
          </image>
       </ImageView>
       <ImageView fx:id="loading" fitHeight="104.0" fitWidth="303.0" layoutX="440.0" layoutY="219.0" pickOnBounds="true" preserveRatio="true" visible="false">
@@ -17,12 +17,12 @@
             <Image url="@../images/text-LOADING.png" />
          </image>
       </ImageView>
-      <ImageView fitHeight="42.0" fitWidth="321.0" layoutX="441.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" rotate="32.5">
+      <ImageView fitHeight="42.0" fitWidth="321.0" layoutX="448.0" layoutY="85.0" pickOnBounds="true" preserveRatio="true" rotate="32.5">
          <image>
             <Image url="@../images/text-RunOutTime.png" />
          </image>
       </ImageView>
-      <Button fx:id="btnExit" layoutX="443.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit" />
-      <Button fx:id="btnMainMenu" layoutX="312.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
+      <Button fx:id="btnExit" layoutX="571.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#exit" prefHeight="25.0" prefWidth="76.0" text="Exit Game" />
+      <Button fx:id="btnMainMenu" layoutX="329.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
    </children>
 </Pane>
