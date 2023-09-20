@@ -1,7 +1,11 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.TextField;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import javafx.scene.shape.Rectangle;
@@ -15,6 +19,7 @@ public class TeacherRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;
   @FXML private Polygon laptop;
+  @FXML private TextField userAnswer;
 
   private boolean hasLaptopBeenOpened;
 
@@ -29,6 +34,35 @@ public class TeacherRoomController extends RoomController {
     bind();
 
     hasLaptopBeenOpened = false;
+
+    // make a new handler to pick up the enter key being pressed
+    EventHandler<KeyEvent> handler =
+        new EventHandler<KeyEvent>() {
+          @Override
+          public void handle(KeyEvent e) {
+            if (e.getCode().equals(KeyCode.ENTER)) {
+              System.out.println("Enter pressed from password");
+              String userGuess = userAnswer.getText();
+
+              System.out.println(userGuess);
+
+              if (userGuess.toUpperCase().equals(GameState.quizAnswer.toString().toUpperCase())) {
+                System.out.println("quiz answer is right");
+                GameState.isTask4Completed = true;
+                GameState.isChecklist4Active = false;
+                GameState.isChecklist5Active = true;
+                checklist4.setVisible(false);
+                checklist5.setVisible(true);
+                return;
+              }
+              System.out.println("quiz answer is wrong");
+              SoundManager.playError();
+              userAnswer.clear();
+            }
+          }
+        };
+    // set field to pick up the enter key being pressed
+    userAnswer.setOnKeyPressed(handler);
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");
