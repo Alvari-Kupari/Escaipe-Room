@@ -132,9 +132,11 @@ public class StorageRoomController extends RoomController {
   public void clickRackDoor(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Rack clicked");
-    if (GameState.isTask1Completed == false) {
+    if (GameState.isTask1Completed == false || GameState.isKeyObtained == false) {
       return;
     } else {
+      // Remove key from backpack
+      keyBackpack.setVisible(false);
       // Remove the lock from the scene so that items underneath can be clicked
       rackDoor.setVisible(false);
       rackDoor.setDisable(true);

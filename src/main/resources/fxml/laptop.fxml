@@ -27,18 +27,6 @@
       </PasswordField>
       <Button fx:id="goBackButton" layoutX="881.0" layoutY="534.0" mnemonicParsing="false" onAction="#onGoBack" prefHeight="65.0" prefWidth="96.0" text="Back To Room" />
       <Button fx:id="toggleTasks" layoutX="901.0" layoutY="509.0" mnemonicParsing="false" onAction="#onToggleTasks" text="Hide Tasks" />
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="53.0" layoutY="68.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="89.0" />
-      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="53.0" layoutY="73.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/chemical2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="105.0" layoutY="73.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/chemical1.png" />
-         </image>
-      </ImageView>
-      <Label layoutX="65.0" layoutY="125.0" text="INVENTORY" />
       <ImageView fx:id="thinkingFace" fitHeight="200.0" fitWidth="140.0" layoutX="8.0" layoutY="229.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/thinking.gif" />
@@ -153,5 +141,22 @@
             </Text>
          </children>
       </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="47.0" layoutY="68.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="55.0" layoutY="80.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="89.0" layoutY="77.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/chemical1.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="69.0" layoutY="126.0" text="INVENTORY" />
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="114.0" layoutY="81.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/key.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>
