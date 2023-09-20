@@ -57,6 +57,7 @@ public class LaptopController extends RoomController {
               }
               System.out.println("password is wrong");
               SoundManager.playError();
+              passwordField.clear();
             }
           }
         };

@@ -65,6 +65,7 @@ public class GameState {
 
   public static String msgFlask = null;
   public static String msgComplete = null;
+  public static String msgLockedRack = "Complete the first task before opening the rack.";
   public static String msgTime30 = "Hurry Up, 30 seconds left!";
 
   // the laptop password
@@ -103,6 +104,7 @@ public class GameState {
     isChecklist5Active = false;
     isKeyObtained = false;
     taskCompletionTime = -1;
+    hintsUsed = 1;
     isChatOpen = false;
     areTasksOpen = false;
     msgFlask = null;
