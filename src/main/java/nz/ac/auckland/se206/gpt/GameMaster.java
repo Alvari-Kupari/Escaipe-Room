@@ -140,7 +140,7 @@ public class GameMaster {
   }
 
   public void gettalkFlask() {
-    Task<Void> TalkTask =
+    Task<Void> talkTask =
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
@@ -153,12 +153,12 @@ public class GameMaster {
           }
         };
 
-    Thread threadTalk = new Thread(TalkTask);
+    Thread threadTalk = new Thread(talkTask);
     threadTalk.start();
   }
 
   public void gettalkComplete() {
-    Task<Void> TalkTask2 =
+    Task<Void> takTask2 =
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
@@ -171,7 +171,7 @@ public class GameMaster {
           }
         };
 
-    Thread threadTalk2 = new Thread(TalkTask2);
+    Thread threadTalk2 = new Thread(takTask2);
     threadTalk2.start();
   }
 
