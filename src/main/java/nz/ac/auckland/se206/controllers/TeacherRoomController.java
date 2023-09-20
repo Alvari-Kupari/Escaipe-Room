@@ -57,6 +57,9 @@ public class TeacherRoomController extends RoomController {
                 checklist4.setVisible(false);
                 checklist5.setVisible(true);
                 TextToSpeech.speech(GameState.msgComplete);
+
+                // make AI aware that all tasks are done
+                gameMaster.giveContext(GptPromptEngineering.allTasksComplete());
                 return;
               }
               System.out.println("quiz answer is wrong");

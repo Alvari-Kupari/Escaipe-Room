@@ -147,6 +147,10 @@ public class StorageRoomController extends RoomController {
       // make chemicals visible
       chemical1.setOpacity(1);
       chemical2.setOpacity(1);
+
+      // make AI respond to the storage door opening
+      gameMaster.giveContext(GptPromptEngineering.beCarefulInStorageLocker());
+      gameMaster.respond();
     }
   }
 
@@ -261,6 +265,9 @@ public class StorageRoomController extends RoomController {
     GameState.isChemical2Found = true;
 
     if ((GameState.isChemical1Found) && (GameState.isChemical2Found)) {
+      // make AI aware that task 2 is complete
+      gameMaster.giveContext(GptPromptEngineering.introduceThirdTask());
+
       GameState.isTask2Completed = true;
       GameState.isChecklist2Active = false;
       GameState.isChecklist3Active = true;

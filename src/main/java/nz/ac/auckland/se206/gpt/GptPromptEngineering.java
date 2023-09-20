@@ -154,14 +154,13 @@ public class GptPromptEngineering {
         // allow the AI to give infinite hints
       case EASY:
         return " Help the player out, and give them hints if they ask for them. The player can ask"
-            + " as many hints as they want. If the player asks for a hint, begin your reponse with"
-            + " \"Hint: \".";
+            + " as many hints as they want.";
 
         // allow AI to give 5 hints only
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
             + " are used up, you must not give the player any more hints under any"
-            + " circumstances. If the player asks for a hint, begin your reponse with"
+            + " circumstances. If the player asks for a hint or for help, begin your reponse with"
             + " \"Hint: \".";
 
         // Dont allow AI to give hints at all.
@@ -174,5 +173,10 @@ public class GptPromptEngineering {
         System.out.println("ERROR - A DIFFICULTY HAS NOT BEEN CHOSEN!!!");
         return null;
     }
+  }
+
+  public static String beCarefulInStorageLocker() {
+    return "The player has entered the storage locker which has chemicals. Tell the user to be"
+               + " careful in the locker, because the chemicals are dangerous.";
   }
 }
