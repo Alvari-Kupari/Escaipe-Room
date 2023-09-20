@@ -10,24 +10,28 @@ public class RoomBinder {
 
   private static Text timer;
   public static Text grade;
-  private static TextField chatInput;
-  private static Button toggleTaskButton, toggleChatButton;
-  private static ImageView chemical1, chemical2, infinity, keyBackpack;
-  public static ImageView thinkingFace,
-      professorResting,
-      professorThinking,
-      professorAngry1,
-      professorAngry2,
-      professorAngry3,
-      professorAngry4,
-      professorTalking,
-      checklist1,
-      checklist2,
-      checklist3,
-      checklist4,
-      checklist5;
-  public static TextArea chat;
   public static Text hintsNumber;
+  private static TextField chatInput;
+  public static TextArea chat;
+  private static Button toggleTaskButton;
+  private static Button toggleChatButton;
+  public static ImageView chemical1;
+  public static ImageView chemical2;
+  public static ImageView infinity;
+  public static ImageView keyBackpack;
+  public static ImageView thinkingFace;
+  public static ImageView professorResting;
+  public static ImageView professorThinking;
+  public static ImageView professorAngry1;
+  public static ImageView professorAngry2;
+  public static ImageView professorAngry3;
+  public static ImageView professorAngry4;
+  public static ImageView professorTalking;
+  public static ImageView checklist1;
+  public static ImageView checklist2;
+  public static ImageView checklist3;
+  public static ImageView checklist4;
+  public static ImageView checklist5;
 
   public static void bindRoom(
       TextArea chat,

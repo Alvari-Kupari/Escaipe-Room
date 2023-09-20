@@ -31,8 +31,7 @@ public class GameOverController {
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
-            System.out.println(
-                "......................................Restarting..................................");
+            System.out.println("...Restarting...");
 
             btnExit.setDisable(true);
             btnMainMenu.setDisable(true);
