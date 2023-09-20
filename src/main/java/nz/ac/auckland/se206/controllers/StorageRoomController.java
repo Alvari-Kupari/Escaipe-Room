@@ -15,6 +15,7 @@ import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
+import nz.ac.auckland.se206.speech.TextToSpeech;
 
 public class StorageRoomController extends RoomController {
 
@@ -134,6 +135,7 @@ public class StorageRoomController extends RoomController {
     SoundManager.playClick();
     System.out.println("Rack clicked");
     if (GameState.isTask1Completed == false || GameState.isKeyObtained == false) {
+      TextToSpeech.speech(GameState.msgLockedRack);
       return;
     } else {
       // Remove key from backpack
