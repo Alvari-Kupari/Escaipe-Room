@@ -4,6 +4,7 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.speech.TextToSpeech;
 
 public class Timer {
   private static int seconds, minutes;
@@ -62,6 +63,9 @@ public class Timer {
       seconds = 59;
       minutes--;
       return;
+    }
+    if ((minutes == 0) && (seconds == 31)) {
+      TextToSpeech.speech(GameState.msgTime30);
     }
     seconds--;
   }

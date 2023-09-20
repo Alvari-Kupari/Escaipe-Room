@@ -20,6 +20,7 @@ public class RoomBinder {
       professorAngry2,
       professorAngry3,
       professorAngry4,
+      professorTalking,
       checklist1,
       checklist2,
       checklist3,
@@ -44,6 +45,7 @@ public class RoomBinder {
       ImageView professorAngry2,
       ImageView professorAngry3,
       ImageView professorAngry4,
+      ImageView professorTalking,
       ImageView checklist1,
       ImageView checklist2,
       ImageView checklist3,
@@ -89,6 +91,9 @@ public class RoomBinder {
       RoomBinder.professorAngry4
           .visibleProperty()
           .bindBidirectional(professorAngry4.visibleProperty());
+      RoomBinder.professorTalking
+          .visibleProperty()
+          .bindBidirectional(professorTalking.visibleProperty());
 
       RoomBinder.infinity.visibleProperty().bindBidirectional(infinity.visibleProperty());
 
@@ -113,6 +118,7 @@ public class RoomBinder {
     RoomBinder.professorAngry2 = professorAngry2;
     RoomBinder.professorAngry3 = professorAngry3;
     RoomBinder.professorAngry4 = professorAngry4;
+    RoomBinder.professorTalking = professorTalking;
     RoomBinder.checklist1 = checklist1;
     RoomBinder.checklist2 = checklist2;
     RoomBinder.checklist3 = checklist3;

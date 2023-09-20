@@ -63,6 +63,9 @@ public class GameState {
   public static boolean isChatOpen;
   public static boolean areTasksOpen;
 
+  public static String msgFlask = null;
+  public static String msgTime30 = "Hurry Up, 30 seconds left!";
+
   // the laptop password
   public static Password password;
 
@@ -98,6 +101,7 @@ public class GameState {
     taskCompletionTime = -1;
     isChatOpen = false;
     areTasksOpen = false;
+    msgFlask = null;
     password = Password.getRandomPassword();
   }
 }

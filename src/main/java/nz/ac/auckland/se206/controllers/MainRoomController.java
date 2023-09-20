@@ -13,6 +13,7 @@ import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.timer.Timer;
 
 /** Controller class for the room view. */
@@ -43,6 +44,10 @@ public class MainRoomController extends RoomController {
 
     // initialize game master
     gameMaster = new GameMaster(0.5, 0.5);
+
+    gameMaster.giveContext(GptPromptEngineering.introduceFlask());
+    gameMaster.gettalk();
+    System.out.println("msgFlask" + GameState.msgFlask);
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");

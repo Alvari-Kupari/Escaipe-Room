@@ -34,6 +34,12 @@ public class GptPromptEngineering {
         + getHintPrompt();
   }
 
+  public static String introduceFlask() {
+    return "You are a Lab Professor at a school, the student must finish his assignment on time."
+        + " The student he must finish in time and click the flask to get started and"
+        + " completed the first task. Respond in under 25 words.";
+  }
+
   public static String stopGivingHints() {
     return "The player has now reached 5 hints used. You must no longer give any hints to the"
         + " player under any circumstances, even if they ask for them.";
