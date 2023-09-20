@@ -32,6 +32,9 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
 
+  private static GameMaster flaskTalkingGameMaster;
+  private static GameMaster tasksDoneTalkingGameMaster;
+
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
@@ -50,9 +53,15 @@ public class MainRoomController extends RoomController {
     // initialize game master
     gameMaster = new GameMaster(0.5, 0.5);
 
-    gameMaster.giveContext(GptPromptEngineering.introduceFlask());
-    gameMaster.gettalkFlask();
+    flaskTalkingGameMaster = new GameMaster(0.5, 0.5);
+    tasksDoneTalkingGameMaster = new GameMaster(0.5, 0.5);
+
+    flaskTalkingGameMaster.giveContext(GptPromptEngineering.introduceFlask());
+    flaskTalkingGameMaster.gettalkFlask();
     System.out.println("msgFlask" + GameState.msgFlask);
+
+    tasksDoneTalkingGameMaster.giveContext(GptPromptEngineering.tasksComplete());
+    tasksDoneTalkingGameMaster.gettalkComplete();
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
@@ -125,6 +134,10 @@ public class MainRoomController extends RoomController {
     keyBackpack.setVisible(true);
     // Update the game state
     GameState.isKeyObtained = true;
+
+    // make AI aware of the new change
+    gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
+    gameMaster.respond();
   }
 
   /**
@@ -162,9 +175,15 @@ public class MainRoomController extends RoomController {
     System.out.println("flask clicked");
 
     if (!GameState.isTask1Completed) {
+      // make AI aware of the task completion
+      gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
+
+      // set all necessary game states to reflect task 2 completion
       GameState.isTask1Completed = true;
       GameState.isChecklist1Active = false;
       GameState.isChecklist2Active = true;
+
+      // make the checklist update to the task completion
       checklist1.setVisible(false);
       checklist2.setVisible(true);
     }
@@ -182,12 +201,19 @@ public class MainRoomController extends RoomController {
         GameState.isChemical1Added = true;
 
         if (GameState.isChemical1Added && GameState.isChemical2Added) {
+
+          // set all game state variables to reflect task 3 completion
           System.out.println("TASK 3 COMPLETED");
           GameState.isTask3Completed = true;
           GameState.isChecklist3Active = false;
           GameState.isChecklist4Active = true;
+
+          // tick of the task in the checklist
           checklist3.setVisible(false);
           checklist4.setVisible(true);
+
+          // make AI aware that task 3 is done
+          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
         }
         return;
       }
@@ -206,6 +232,9 @@ public class MainRoomController extends RoomController {
           GameState.isChecklist4Active = true;
           checklist3.setVisible(false);
           checklist4.setVisible(true);
+
+          // make AI aware that task 3 is done
+          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
         }
         return;
       }

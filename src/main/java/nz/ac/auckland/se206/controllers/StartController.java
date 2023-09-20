@@ -134,6 +134,9 @@ public class StartController {
     RoomController.gameMaster.giveContext(GptPromptEngineering.introduceGame());
     RoomController.gameMaster.respond();
 
+    // make AI aware of first task
+    RoomController.gameMaster.giveContext(GptPromptEngineering.introduceFirstTask());
+
     // start timer
     Timer.startTimer();
     TextToSpeech.speech(GameState.msgFlask);
