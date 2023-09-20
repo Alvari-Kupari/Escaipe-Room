@@ -12,7 +12,7 @@ public class RoomBinder {
   public static Text grade;
   private static TextField chatInput;
   private static Button toggleTaskButton, toggleChatButton;
-  private static ImageView chemical1, chemical2, infinity;
+  private static ImageView chemical1, chemical2, infinity, keyBackpack;
   public static ImageView thinkingFace,
       professorResting,
       professorThinking,
@@ -50,7 +50,8 @@ public class RoomBinder {
       ImageView checklist2,
       ImageView checklist3,
       ImageView checklist4,
-      ImageView checklist5) {
+      ImageView checklist5,
+      ImageView keyBackpack) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -102,6 +103,7 @@ public class RoomBinder {
       RoomBinder.checklist3.visibleProperty().bindBidirectional(checklist3.visibleProperty());
       RoomBinder.checklist4.visibleProperty().bindBidirectional(checklist4.visibleProperty());
       RoomBinder.checklist5.visibleProperty().bindBidirectional(checklist5.visibleProperty());
+      RoomBinder.keyBackpack.visibleProperty().bindBidirectional(keyBackpack.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -124,6 +126,7 @@ public class RoomBinder {
     RoomBinder.checklist3 = checklist3;
     RoomBinder.checklist4 = checklist4;
     RoomBinder.checklist5 = checklist5;
+    RoomBinder.keyBackpack = keyBackpack;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {
