@@ -151,7 +151,7 @@
          </image>
       </ImageView>
       <Label layoutX="42.0" layoutY="114.0" text="INVENTORY" />
-      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="87.0" layoutY="69.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="87.0" layoutY="69.0" onMouseDragged="#dragKey" onMouseEntered="#hoverKey" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/key.png" />
          </image>

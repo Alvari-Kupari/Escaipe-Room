@@ -91,14 +91,12 @@ public class MainRoomController extends RoomController {
             // original location
             if (chemical1Backpack.getX() < 10) {
               chemical1Backpack.setX(50);
-            }
-            if (chemical1Backpack.getX() > 940) {
+            } else if (chemical1Backpack.getX() > 940) {
               chemical1Backpack.setX(900);
             }
             if (chemical1Backpack.getY() < 10) {
-              chemical1Backpack.setY(50);
-            }
-            if (chemical1Backpack.getY() > 500) {
+              chemical1Backpack.setY(40);
+            } else if (chemical1Backpack.getY() > 500) {
               chemical1Backpack.setY(500);
             }
             // if the chemical1Backpack overlaps with the flask, hide the chemical1Backpack
@@ -122,8 +120,6 @@ public class MainRoomController extends RoomController {
               SoundManager.playSplash();
               GameState.isChemical1Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
-                // set all game state variables to reflect task 3 completion
-                System.out.println("TASK 3 COMPLETED");
                 GameState.isTask3Completed = true;
                 GameState.isChecklist3Active = false;
                 GameState.isChecklist4Active = true;
@@ -131,9 +127,6 @@ public class MainRoomController extends RoomController {
                 // tick of the task in the checklist
                 checklist3.setVisible(false);
                 checklist4.setVisible(true);
-
-                // make AI aware that task 3 is done
-                gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
               }
             }
           });
@@ -141,6 +134,14 @@ public class MainRoomController extends RoomController {
       chemical1Backpack.setOnMouseReleased(
           e -> {
             chemical1Backpack.setOpacity(1);
+
+            // if the task3 is done, make the AI aware of it
+            if (GameState.isTask3Completed) {
+              // set all game state variables to reflect task 3 completion
+              System.out.println("TASK 3 COMPLETED");
+              // make AI aware that task 3 is done
+              gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
+            }
           });
     } else {
       return;
@@ -186,14 +187,12 @@ public class MainRoomController extends RoomController {
             // original location
             if (chemical2Backpack.getX() < 10) {
               chemical2Backpack.setX(50);
-            }
-            if (chemical2Backpack.getX() > 940) {
+            } else if (chemical2Backpack.getX() > 940) {
               chemical2Backpack.setX(900);
             }
             if (chemical2Backpack.getY() < 10) {
               chemical2Backpack.setY(40);
-            }
-            if (chemical2Backpack.getY() > 500) {
+            } else if (chemical2Backpack.getY() > 500) {
               chemical2Backpack.setY(500);
             }
             // if the chemical2Backpack overlaps with the flask, hide the chemical2Backpack
@@ -217,15 +216,11 @@ public class MainRoomController extends RoomController {
               SoundManager.playSplash();
               GameState.isChemical2Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
-                System.out.println("TASK 3 COMPLETED");
                 GameState.isTask3Completed = true;
                 GameState.isChecklist3Active = false;
                 GameState.isChecklist4Active = true;
                 checklist3.setVisible(false);
                 checklist4.setVisible(true);
-
-                // make AI aware that task 3 is done
-                gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
               }
             }
           });
@@ -233,6 +228,13 @@ public class MainRoomController extends RoomController {
       chemical2Backpack.setOnMouseReleased(
           e -> {
             chemical2Backpack.setOpacity(1);
+
+            // if the task3 is done, make the AI aware of it
+            if (GameState.isTask3Completed) {
+              System.out.println("TASK 3 COMPLETED");
+              // make AI aware that task 3 is done
+              gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
+            }
           });
     } else {
       return;
