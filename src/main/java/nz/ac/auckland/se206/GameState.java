@@ -73,6 +73,7 @@ public class GameState {
   public static String msgTime30 = "Hurry Up, 30 seconds left!";
   public static String msgNeedKey = "You need a key to open the shelf.";
   public static String msgUseKey = "You need to use the key.";
+  public static String msgUseKeyAndTask1 = "You need to use the key and complete the first task.";
 
   public static boolean doorOpened = false;
   // the laptop password

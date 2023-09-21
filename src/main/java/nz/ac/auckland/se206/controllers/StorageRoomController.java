@@ -240,8 +240,13 @@ public class StorageRoomController extends RoomController {
     }
 
     // if key is obtained
-    if (GameState.isKeyObtained == true) {
+    if (GameState.isKeyObtained == true && GameState.isTask1Completed == true) {
       TextToSpeech.talk(GameState.msgUseKey);
+      return;
+    }
+
+    if (GameState.isKeyObtained == true && GameState.isTask1Completed == false) {
+      TextToSpeech.talk(GameState.msgUseKeyAndTask1);
       return;
     }
   }
