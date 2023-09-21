@@ -153,17 +153,17 @@ public class StorageRoomController extends RoomController {
             // set the keyBackpack image location to the mouse location
             keyBackpack.setX(e.getSceneX() - horizontalOffset);
             keyBackpack.setY(e.getSceneY() - verticalOffset);
-            // mkae sure that the ckeyBackpack image does not go out of the screen ALL THE TIME
+            // make sure that the ckeyBackpack image does not go out of the screen ALL THE TIME
             // if dragged outside bounds, set the keyBackpack image location back to in bounds
             if (keyBackpack.getX() < 10) {
               keyBackpack.setX(50);
-            } else if (keyBackpack.getX() > 940) {
-              keyBackpack.setX(870);
+            } else if (keyBackpack.getX() > 800) {
+              keyBackpack.setX(800);
             }
             if (keyBackpack.getY() < 10) {
               keyBackpack.setY(40);
-            } else if (keyBackpack.getY() > 500) {
-              keyBackpack.setY(500);
+            } else if (keyBackpack.getY() > 470) {
+              keyBackpack.setY(470);
             }
             // if the keyBackpack overlaps with the rackDoor, hide the keyBackpack
             if (keyBackpack.getBoundsInParent().intersects(rackDoor.getBoundsInParent())) {
@@ -227,8 +227,10 @@ public class StorageRoomController extends RoomController {
    */
   @FXML
   public void clickRackDoor(MouseEvent event) throws IOException {
+    // play click sound
     SoundManager.playClick();
     System.out.println("Rack clicked");
+    // Check if task 1 is completed and if key is found and give appropriate message
     if (GameState.isTask1Completed == false && GameState.isKeyObtained == false) {
       TextToSpeech.talk(GameState.msgLockedRack);
       return;
@@ -239,7 +241,6 @@ public class StorageRoomController extends RoomController {
       return;
     }
 
-    // if key is obtained
     if (GameState.isKeyObtained == true && GameState.isTask1Completed == true) {
       TextToSpeech.talk(GameState.msgUseKey);
       return;
