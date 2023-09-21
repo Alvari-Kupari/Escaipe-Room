@@ -34,3 +34,7 @@
 ## To run codestyle
 
 `./mvnw clean compile exec:java@style`
+
+## Attributes
+
+Go to the "Attributes.md" folder
