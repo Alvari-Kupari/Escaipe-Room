@@ -158,7 +158,7 @@ public class StartController {
   }
 
   @FXML
-  private void startGame(ActionEvent event) {
+  private void onStartGame(ActionEvent event) {
     SoundManager.playSelect();
     System.out.println("Action Start");
     System.out.println(event.getSource().getClass());
@@ -174,7 +174,7 @@ public class StartController {
 
     // start timer
     Timer.startTimer();
-    TextToSpeech.speech(GameState.msgFlask);
+    TextToSpeech.talk(GameState.msgFlask);
   }
 
   private void resetLevelBackground() {

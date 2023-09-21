@@ -48,22 +48,15 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
 
-    SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
-    SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
-    SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
-    SceneManager.addUi(Room.LAPTOP, loadFxml("laptop"));
-    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
-    SceneManager.addUi(Room.START, loadFxml("start"));
-    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
-    SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
+    loadRooms();
 
     stage.setOnCloseRequest(
         event -> {
           System.exit(0);
         });
 
-    scene = new Scene(SceneManager.getUiRoot(Room.START), 1000, 626);
-    Parent root = SceneManager.getUiRoot(Room.START);
+    scene = new Scene(SceneManager.getRoot(Room.START), 1000, 626);
+    Parent root = SceneManager.getRoot(Room.START);
     stage.setScene(scene);
     stage.show();
     root.requestFocus();
@@ -75,19 +68,12 @@ public class App extends Application {
   }
 
   public static void changeScene(Room room) {
-    scene.setRoot(SceneManager.getUiRoot(room));
+    scene.setRoot(SceneManager.getRoot(room));
   }
 
   public static void reloadFXML() throws IOException {
     SceneManager.removeAllMapping();
-    SceneManager.addUi(Room.MAIN_ROOM, loadFxml("mainRoom"));
-    SceneManager.addUi(Room.STORAGE_ROOM, loadFxml("storageRoom"));
-    SceneManager.addUi(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
-    SceneManager.addUi(Room.LAPTOP, loadFxml("laptop"));
-    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
-    SceneManager.addUi(Room.START, loadFxml("start"));
-    SceneManager.addUi(Room.EXIT, loadFxml("exit"));
-    SceneManager.addUi(Room.GAME_OVER, loadFxml("gameOver"));
+    loadRooms();
 
     changeScene(Room.START);
     // generate a random password
@@ -134,5 +120,16 @@ public class App extends Application {
     }
     // Print out the day of the week in the console
     System.out.println(dayOfWeek.toString());
+  }
+
+  private static void loadRooms() throws IOException {
+    SceneManager.addRoom(Room.MAIN_ROOM, loadFxml("mainRoom"));
+    SceneManager.addRoom(Room.STORAGE_ROOM, loadFxml("storageRoom"));
+    SceneManager.addRoom(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
+    SceneManager.addRoom(Room.LAPTOP, loadFxml("laptop"));
+    SceneManager.addRoom(Room.EXIT, loadFxml("exit"));
+    SceneManager.addRoom(Room.START, loadFxml("start"));
+    SceneManager.addRoom(Room.EXIT, loadFxml("exit"));
+    SceneManager.addRoom(Room.GAME_OVER, loadFxml("gameOver"));
   }
 }

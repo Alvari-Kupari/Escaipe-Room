@@ -25,7 +25,7 @@ public class SceneManager {
    * @param Room
    * @param uiRoot
    */
-  public static void addUi(Room Room, Parent uiRoot) {
+  public static void addRoom(Room Room, Parent uiRoot) {
     sceneMap.put(Room, uiRoot);
   }
 
@@ -39,7 +39,7 @@ public class SceneManager {
    * @param Room
    * @return
    */
-  public static Parent getUiRoot(Room Room) {
+  public static Parent getRoot(Room Room) {
     return sceneMap.get(Room);
   }
 }

@@ -8,41 +8,8 @@ import nz.ac.auckland.se206.gpt.openai.ChatCompletionRequest;
 import nz.ac.auckland.se206.gpt.openai.ChatCompletionResult;
 
 public class GameMaster {
+
   private ChatCompletionRequest chatCompletionRequest;
-
-  /**
-   * Gets a one off message from a separate AI instance. Useful if you wish to save tokens, and you
-   * dont require the AI to know any previous context.
-   *
-   * @param context the context of the room / game
-   * @return the message the AI sent back
-   */
-  public static void respondToOneOffMessage(String context, double temp, double topP) {
-
-    try {
-      // make a new AI
-      ChatCompletionRequest request =
-          new ChatCompletionRequest()
-              .setN(1)
-              .setTemperature(temp)
-              .setTopP(topP)
-              .setMaxTokens(100)
-              .setN(1);
-      request.addMessage("system", context);
-
-      // execute the AI response
-      ChatCompletionResult result = request.execute();
-
-      // get the AI response
-      String response = result.getChoice(0).getChatMessage().getContent();
-
-      // set the chat text
-      RoomBinder.chat.setText(response);
-
-    } catch (ApiProxyException e) {
-      e.printStackTrace();
-    }
-  }
 
   /**
    * Creates a new game master instance.
