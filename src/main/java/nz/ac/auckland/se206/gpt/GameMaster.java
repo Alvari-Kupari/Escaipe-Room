@@ -60,7 +60,9 @@ public class GameMaster {
 
             // run the AI
             String response = runGpt();
-            RoomBinder.chat.appendText("\n" + response + "\n");
+
+            // set the chat text
+            RoomBinder.chat.setText(response);
 
             return null;
           }
