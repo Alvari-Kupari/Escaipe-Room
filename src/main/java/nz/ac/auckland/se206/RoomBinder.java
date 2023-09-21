@@ -10,9 +10,9 @@ public class RoomBinder {
 
   private static Text timer;
   public static Text grade;
-  public static Text hintsNumber, riddleText;
+  public static Text hintsNumber;
   private static TextField chatInput;
-  public static TextArea chat;
+  public static TextArea chat, riddleText;
   private static Button toggleTaskButton;
   private static Button toggleChatButton;
   public static ImageView chemical1;
