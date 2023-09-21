@@ -427,7 +427,7 @@ public class MainRoomController extends RoomController {
       return;
     }
 
-    SoundManager.playClick();
+    SoundManager.playRoundWon();
 
     // caculate what grade to show
     calculateGrade();
