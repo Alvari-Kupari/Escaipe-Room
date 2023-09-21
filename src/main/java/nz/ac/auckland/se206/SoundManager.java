@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206;
 
+import java.net.URL;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
@@ -7,30 +8,21 @@ import javafx.scene.media.MediaPlayer;
 public class SoundManager {
 
   private static MediaPlayer mediaPlayer;
-  private static Media soundClick =
-      new Media(App.class.getResource("/sounds/click.mp3").toString());
-  private static Media soundSelect =
-      new Media(App.class.getResource("/sounds/select.mp3").toString());
-  private static Media soundError =
-      new Media(App.class.getResource("/sounds/error.mp3").toString());
-  private static Media soundSplash =
-      new Media(App.class.getResource("/sounds/splash.mp3").toString());
-  private static Media soundBubbles =
-      new Media(App.class.getResource("/sounds/bubbles.mp3").toString());
-
-  private static Media soundCorrect =
-      new Media(App.class.getResource("/sounds/correct.mp3").toString());
-  private static Media soundRoundWon =
-      new Media(App.class.getResource("/sounds/roundWon.mp3").toString());
-  private static Media soundRoundLost =
-      new Media(App.class.getResource("/sounds/roundLost.mp3").toString());
+  private static URL soundClick = App.class.getResource("/sounds/click.mp3");
+  private static URL soundSelect = App.class.getResource("/sounds/select.mp3");
+  private static URL soundError = App.class.getResource("/sounds/error.mp3");
+  private static URL soundSplash = App.class.getResource("/sounds/splash.mp3");
+  private static URL soundBubbles = App.class.getResource("/sounds/bubbles.mp3");
+  private static URL soundCorrect = App.class.getResource("/sounds/correct.mp3");
+  private static URL soundRoundWon = App.class.getResource("/sounds/roundWon.mp3");
+  private static URL soundRoundLost = App.class.getResource("/sounds/roundLost.mp3");
 
   /** Plays the click sound */
   public static void playClick() {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundClick);
+    mediaPlayer = new MediaPlayer(new Media(soundClick.toString()));
     mediaPlayer.play();
   }
 
@@ -39,7 +31,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundSelect);
+    mediaPlayer = new MediaPlayer(new Media(soundSelect.toString()));
     mediaPlayer.play();
   }
 
@@ -48,7 +40,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundError);
+    mediaPlayer = new MediaPlayer(new Media(soundError.toString()));
     mediaPlayer.play();
   }
 
@@ -57,7 +49,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundSplash);
+    mediaPlayer = new MediaPlayer(new Media(soundSplash.toString()));
     mediaPlayer.play();
   }
 
@@ -66,7 +58,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundBubbles);
+    mediaPlayer = new MediaPlayer(new Media(soundBubbles.toString()));
     mediaPlayer.play();
   }
 
@@ -74,7 +66,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundCorrect);
+    mediaPlayer = new MediaPlayer(new Media(soundCorrect.toString()));
     mediaPlayer.play();
   }
 
@@ -82,7 +74,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundRoundWon);
+    mediaPlayer = new MediaPlayer(new Media(soundRoundWon.toString()));
     mediaPlayer.play();
   }
 
@@ -90,7 +82,7 @@ public class SoundManager {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
-    mediaPlayer = new MediaPlayer(soundRoundLost);
+    mediaPlayer = new MediaPlayer(new Media(soundRoundLost.toString()));
     mediaPlayer.play();
   }
 }
