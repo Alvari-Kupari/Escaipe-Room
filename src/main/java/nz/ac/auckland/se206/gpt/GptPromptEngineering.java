@@ -98,8 +98,9 @@ public class GptPromptEngineering {
    */
   public static String allTasksComplete() {
     return "The player has completed all tasks and can now exit the game by going through the exit"
-        + " door. Pretend you are angry at the student for completing the tasks close to the"
-        + " deadline, but happy at the same time that they got all the tasks done.";
+        + " door, which is located in the main room. Pretend you are angry at the student"
+        + " for completing the tasks close to the deadline, but happy at the same time that"
+        + " they got all the tasks done.";
   }
 
   /**
@@ -111,8 +112,8 @@ public class GptPromptEngineering {
     return "The player has collected a key, which they will need to complete task 2. If the player"
         + " has completed task 1, your hints (if you are allowed to give them) should now"
         + " focus on using the key to open the storage locker. Pretend like you are"
-        + " wondering what the key does. Respond to the player in under 10 words.This"
-        + " immedaite response is not a hint.";
+        + " wondering what the key does. Respond to the player in under 10 words. This"
+        + "  response is not a hint.";
   }
 
   /**
@@ -161,9 +162,11 @@ public class GptPromptEngineering {
         // Allow AI to give 5 hints only
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
-            + " are used up, you must not give the player any more hints under any"
-            + " circumstances. If the player asks for a hint or for help in any way, begin"
-            + " your reponse with \"Hint: \". Only give hints if the player asks for help";
+                   + " are used up, you must not give the player any more hints under any"
+                   + " circumstances. If you help out the player in any way, begin your reponse"
+                   + " with \"Hint: \". If you provide any sort of guidance to the player about"
+                   + " what to do, also begin your response with \"Hint: \". Only give hints if the"
+                   + " player asks for help";
 
         // Dont allow AI to give hints at all.
       case HARD:
