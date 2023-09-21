@@ -56,7 +56,6 @@ public class GameState {
   public static boolean isChecklist4Active = false;
   public static boolean isChecklist5Active = false;
   public static boolean isChatOpen = false;
-  public static boolean areTasksOpen = false;
   public static boolean isKeyObtained = false;
 
   /** Indicates the number of hints remaining. */
@@ -123,8 +122,6 @@ public class GameState {
     isChecklist5Active = false;
     // Indicates that the chat is not open
     isChatOpen = false;
-    // Indicates that the tasks are not open
-    areTasksOpen = false;
     // Indicates that the key has not been obtained
     isKeyObtained = false;
     // The number of hints remaining

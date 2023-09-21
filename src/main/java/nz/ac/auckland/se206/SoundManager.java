@@ -20,6 +20,10 @@ public class SoundManager {
 
   private static Media soundCorrect =
       new Media(App.class.getResource("/sounds/correct.mp3").toString());
+  private static Media soundRoundWon =
+      new Media(App.class.getResource("/sounds/roundWon.mp3").toString());
+  private static Media soundRoundLost =
+      new Media(App.class.getResource("/sounds/roundLost.mp3").toString());
 
   /** Plays the click sound */
   public static void playClick() {
@@ -71,6 +75,22 @@ public class SoundManager {
       mediaPlayer.stop();
     }
     mediaPlayer = new MediaPlayer(soundCorrect);
+    mediaPlayer.play();
+  }
+
+  public static void playRoundWon() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundRoundWon);
+    mediaPlayer.play();
+  }
+
+  public static void playRoundLost() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(soundRoundLost);
     mediaPlayer.play();
   }
 }

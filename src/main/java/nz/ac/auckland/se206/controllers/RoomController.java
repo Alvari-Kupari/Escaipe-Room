@@ -18,7 +18,6 @@ public class RoomController {
   @FXML protected TextArea chat;
   @FXML protected TextField playerInput;
   @FXML protected Text hintsNumber;
-  @FXML protected Button toggleTasks;
   @FXML protected Button toggleChat;
   @FXML protected ImageView chemical1Backpack;
   @FXML protected ImageView chemical2Backpack;
@@ -59,30 +58,6 @@ public class RoomController {
     GameState.isChatOpen = !GameState.isChatOpen;
   }
 
-  // This method is called when the user clicks on the Toggle Tasks button
-  @FXML
-  protected void onToggleTasks() {
-    // Get the opposite of the current toggle state of the tasks
-    boolean openTasks = !GameState.areTasksOpen;
-    // Set the button text to the opposite of what it was
-    String text = openTasks ? "Close Tasks" : "Open Tasks";
-    toggleTasks.setText(text);
-    // Check the game state of the tasks and set the visibility to the opposite of what it was
-    if (GameState.isChecklist1Active) {
-      checklist1.setVisible(openTasks);
-    } else if (GameState.isChecklist2Active) {
-      checklist2.setVisible(openTasks);
-    } else if (GameState.isChecklist3Active) {
-      checklist3.setVisible(openTasks);
-    } else if (GameState.isChecklist4Active) {
-      checklist4.setVisible(openTasks);
-    } else if (GameState.isChecklist5Active) {
-      checklist5.setVisible(openTasks);
-    }
-    // Set the game state of the tasks toggle to the opposite of what it was
-    GameState.areTasksOpen = !GameState.areTasksOpen;
-  }
-
   // This method is used to bind the common room elements that all rooms share
   protected void bind() {
     RoomBinder.bindRoom(
@@ -96,8 +71,6 @@ public class RoomController {
         hintsNumber,
         // The button to toggle the chat to the professor
         toggleChat,
-        // The button to toggle the tasks
-        toggleTasks,
         // Image of the chemicals
         chemical1Backpack,
         chemical2Backpack,

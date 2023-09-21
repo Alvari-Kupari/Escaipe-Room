@@ -21,8 +21,7 @@
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="753.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="573.0" layoutY="69.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
-      <TextArea fx:id="chat" layoutX="20.0" layoutY="160.0" prefHeight="182.0" prefWidth="180.0" wrapText="true" />
-      <Button fx:id="toggleTasks" layoutX="893.0" layoutY="580.0" mnemonicParsing="false" onAction="#onToggleTasks" prefHeight="17.0" prefWidth="83.0" text="Hide Tasks" />
+      <TextArea fx:id="chat" editable="false" layoutX="20.0" layoutY="160.0" prefHeight="182.0" prefWidth="180.0" wrapText="true" />
       <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="344.0" layoutY="302.0" onMouseMoved="#onHoverLaptop" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/enter%20password.JPG" />
@@ -81,27 +80,27 @@
       </ImageView>
       <Button fx:id="toggleChat" layoutX="19.0" layoutY="373.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="20.0" layoutY="342.0" prefHeight="33.0" prefWidth="180.0" />
-      <ImageView fx:id="checklist1" fitHeight="150.0" fitWidth="200.0" layoutX="831.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="150.0" fitWidth="200.0" layoutX="830.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist2" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="150.0" fitWidth="200.0" layoutX="830.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="150.0" fitWidth="200.0" layoutX="830.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="150.0" fitWidth="200.0" layoutX="830.0" layoutY="430.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist5" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist5.png" />
          </image>

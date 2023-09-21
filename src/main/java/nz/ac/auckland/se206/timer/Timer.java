@@ -4,6 +4,7 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SceneManager.Room;
+import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 public class Timer {
@@ -57,6 +58,7 @@ public class Timer {
         GameState.isGameStarted = false;
 
         // change to game over screen
+        SoundManager.playRoundLost();
         App.changeScene(Room.GAME_OVER);
       }
 

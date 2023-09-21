@@ -48,8 +48,7 @@ public class MainRoomController extends RoomController {
     // make pressing enter send chat
     setEnterToSendChat();
 
-    // intialize chat and tasks to be open
-    GameState.areTasksOpen = true;
+    // intialize chat to be open
     GameState.isChatOpen = true;
 
     // initialize game master
@@ -105,7 +104,6 @@ public class MainRoomController extends RoomController {
               chemical1Backpack.setVisible(false);
               // make the chemical1Backpack image not interactive
               chemical1Backpack.setDisable(true);
-              // hide flasks
               hideFlasks();
               // check if chemical2 is added
               if (GameState.isChemical2Added) {
@@ -201,7 +199,6 @@ public class MainRoomController extends RoomController {
               chemical2Backpack.setVisible(false);
               // make the chemical2Backpack image not interactive
               chemical2Backpack.setDisable(true);
-              // hide flasks
               hideFlasks();
               // check if chemical2 is added
               if (GameState.isChemical1Added) {
@@ -213,7 +210,7 @@ public class MainRoomController extends RoomController {
               }
               // make flask image opaque
               flask.setOpacity(0.5);
-              SoundManager.playSplash();
+              SoundManager.playBubbles();
               GameState.isChemical2Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
                 GameState.isTask3Completed = true;
@@ -328,6 +325,7 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickFlask(MouseEvent event) {
+    SoundManager.playClick();
     if (!GameState.isTask1Completed) {
       // make AI aware of the task completion
       gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
@@ -430,7 +428,7 @@ public class MainRoomController extends RoomController {
       return;
     }
 
-    SoundManager.playClick();
+    SoundManager.playRoundWon();
 
     // caculate what grade to show
     calculateGrade();
