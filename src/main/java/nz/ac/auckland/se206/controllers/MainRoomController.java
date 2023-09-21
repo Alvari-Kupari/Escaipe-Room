@@ -86,17 +86,17 @@ public class MainRoomController extends RoomController {
             chemical1Backpack.setX(e.getSceneX() - horizontalOffset);
             chemical1Backpack.setY(e.getSceneY() - verticalOffset);
             // mkae sure that the chemical1Backpack image does not go out of the screen ALL THE TIME
-            // if dragged outside bounds, set the chemical1Backpack image location back to the
-            // original location
+            // if dragged outside bounds, set the chemical1Backpack image location back to within
+            // bounds
             if (chemical1Backpack.getX() < 10) {
               chemical1Backpack.setX(50);
-            } else if (chemical1Backpack.getX() > 940) {
-              chemical1Backpack.setX(900);
+            } else if (chemical1Backpack.getX() > 850) {
+              chemical1Backpack.setX(850);
             }
             if (chemical1Backpack.getY() < 10) {
               chemical1Backpack.setY(40);
-            } else if (chemical1Backpack.getY() > 500) {
-              chemical1Backpack.setY(500);
+            } else if (chemical1Backpack.getY() > 450) {
+              chemical1Backpack.setY(450);
             }
             // if the chemical1Backpack overlaps with the flask, hide the chemical1Backpack
             if (chemical1Backpack.getBoundsInParent().intersects(flask.getBoundsInParent())) {
@@ -181,17 +181,17 @@ public class MainRoomController extends RoomController {
             chemical2Backpack.setX(e.getSceneX() - horizontalOffset);
             chemical2Backpack.setY(e.getSceneY() - verticalOffset);
             // make sure that the chemical2Backpack image does not go out of the screen
-            // if dragged outside bounds, set the chemical2Backpack image location back to the
-            // original location
+            // if dragged outside bounds, set the chemical2Backpack image location back to within
+            // bounds
             if (chemical2Backpack.getX() < 10) {
               chemical2Backpack.setX(50);
-            } else if (chemical2Backpack.getX() > 940) {
-              chemical2Backpack.setX(900);
+            } else if (chemical2Backpack.getX() > 850) {
+              chemical2Backpack.setX(850);
             }
             if (chemical2Backpack.getY() < 10) {
               chemical2Backpack.setY(40);
-            } else if (chemical2Backpack.getY() > 500) {
-              chemical2Backpack.setY(500);
+            } else if (chemical2Backpack.getY() > 450) {
+              chemical2Backpack.setY(450);
             }
             // if the chemical2Backpack overlaps with the flask, hide the chemical2Backpack
             if (chemical2Backpack.getBoundsInParent().intersects(flask.getBoundsInParent())) {
@@ -280,9 +280,8 @@ public class MainRoomController extends RoomController {
   public void zipperDragReleased(MouseEvent event) {
     if (zipper.getValue() == zipper.getMax()) {
       // Mouse drag released on the slider at the maximum value
-      // Handle accordingly
       System.out.println("Mouse drag released on the slider at maximum value.");
-      // hide the zipper
+      // Hide the zipper
       zipper.setVisible(false);
       // Disable the zipper
       zipper.setDisable(true);
@@ -295,7 +294,7 @@ public class MainRoomController extends RoomController {
     }
   }
 
-  // when key is clicked, hide the key
+  // when key is clicked, hide the key and add it to the backpack
   @FXML
   public void clickKey(MouseEvent event) {
     System.out.println("Key clicked");

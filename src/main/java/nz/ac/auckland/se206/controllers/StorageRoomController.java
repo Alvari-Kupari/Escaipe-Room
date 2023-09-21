@@ -227,8 +227,10 @@ public class StorageRoomController extends RoomController {
    */
   @FXML
   public void clickRackDoor(MouseEvent event) throws IOException {
+    // play click sound
     SoundManager.playClick();
     System.out.println("Rack clicked");
+    // Check if task 1 is completed and if key is found and give appropriate message
     if (GameState.isTask1Completed == false && GameState.isKeyObtained == false) {
       TextToSpeech.talk(GameState.msgLockedRack);
       return;
@@ -239,7 +241,6 @@ public class StorageRoomController extends RoomController {
       return;
     }
 
-    // if key is obtained
     if (GameState.isKeyObtained == true && GameState.isTask1Completed == true) {
       TextToSpeech.talk(GameState.msgUseKey);
       return;
