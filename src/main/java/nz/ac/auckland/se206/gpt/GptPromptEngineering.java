@@ -157,16 +157,16 @@ public class GptPromptEngineering {
         // Allow the AI to give infinite hints
       case EASY:
         return " Help the player out, and give them hints if they ask for them. The player can ask"
-            + " as many hints as they want.";
+            + " as many hints as they want. If you help out the player in any way,"
+            + " begin your reponse with \"Hint: \". If you provide any sort of guidance to"
+            + "the player about what to do, also begin your response with \"Hint: \".";
 
         // Allow AI to give 5 hints only
       case MEDIUM:
-        return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
-                   + " are used up, you must not give the player any more hints under any"
-                   + " circumstances. If you help out the player in any way, begin your reponse"
-                   + " with \"Hint: \". If you provide any sort of guidance to the player about"
-                   + " what to do, also begin your response with \"Hint: \". Only give hints if the"
-                   + " player asks for help";
+        return " For now you may give hints to the player. If you give hints or help out the player"
+                   + " in any way, begin your reponse with \"Hint: \". If you provide any sort of"
+                   + " guidance to the player about what to do, also begin your response with"
+                   + " \"Hint: \". Only give hints if the player asks for help";
 
         // Dont allow AI to give hints at all.
       case HARD:
