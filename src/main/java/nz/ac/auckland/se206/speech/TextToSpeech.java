@@ -14,13 +14,6 @@ public class TextToSpeech {
 
   private static TextToSpeech textToSpeech = new TextToSpeech();
 
-  /** Custom unchecked exception for Text-to-speech issues. */
-  static class TextToSpeechException extends RuntimeException {
-    public TextToSpeechException(final String message) {
-      super(message);
-    }
-  }
-
   /**
    * Main function to speak the given list of sentences.
    *
@@ -36,6 +29,55 @@ public class TextToSpeech {
 
     textToSpeech.speak(args);
     textToSpeech.terminate();
+  }
+
+  // This method is used for the professor to speak
+  public static void speech(String text) {
+    // Multi-Threading
+    Task<Void> speechTask =
+        new Task<Void>() {
+          @Override
+          // This allows the text to speech to run in the background
+          protected Void call() throws Exception {
+            System.out.println("Task.call() method: " + Thread.currentThread().getName());
+            RoomBinder.professorTalking.setVisible(true);
+            RoomBinder.professorThinking.setVisible(false);
+            RoomBinder.professorAngry1.setVisible(false);
+            RoomBinder.professorAngry2.setVisible(false);
+            RoomBinder.professorAngry3.setVisible(false);
+            RoomBinder.professorAngry4.setVisible(false);
+            RoomBinder.professorResting.setVisible(false);
+
+            textToSpeech.speak(text);
+            return null;
+          }
+        };
+
+    speechTask.setOnSucceeded(
+        e -> {
+          RoomBinder.professorTalking.setVisible(false);
+          if (GameState.hintsUsed == 1) {
+            RoomBinder.professorResting.setVisible(true);
+          } else if (GameState.hintsUsed == 2) {
+            RoomBinder.professorAngry1.setVisible(true);
+          } else if (GameState.hintsUsed == 3) {
+            RoomBinder.professorAngry2.setVisible(true);
+          } else if (GameState.hintsUsed == 4) {
+            RoomBinder.professorAngry3.setVisible(true);
+          } else if (GameState.hintsUsed >= 5) {
+            RoomBinder.professorAngry4.setVisible(true);
+          }
+        });
+
+    Thread speechThread = new Thread(speechTask);
+    speechThread.start();
+  }
+
+  /** Custom unchecked exception for Text-to-speech issues. */
+  static class TextToSpeechException extends RuntimeException {
+    public TextToSpeechException(final String message) {
+      super(message);
+    }
   }
 
   private final Synthesizer synthesizer;
@@ -116,47 +158,5 @@ public class TextToSpeech {
     } catch (final EngineException e) {
       throw new TextToSpeechException(e.getMessage());
     }
-  }
-
-  // This method is used for the professor to speak
-  public static void speech(String text) {
-    // Multi-Threading
-    Task<Void> speechTask =
-        new Task<Void>() {
-          @Override
-          // This allows the text to speech to run in the background
-          protected Void call() throws Exception {
-            System.out.println("Task.call() method: " + Thread.currentThread().getName());
-            RoomBinder.professorTalking.setVisible(true);
-            RoomBinder.professorThinking.setVisible(false);
-            RoomBinder.professorAngry1.setVisible(false);
-            RoomBinder.professorAngry2.setVisible(false);
-            RoomBinder.professorAngry3.setVisible(false);
-            RoomBinder.professorAngry4.setVisible(false);
-            RoomBinder.professorResting.setVisible(false);
-
-            textToSpeech.speak(text);
-            return null;
-          }
-        };
-
-    speechTask.setOnSucceeded(
-        e -> {
-          RoomBinder.professorTalking.setVisible(false);
-          if (GameState.hintsUsed == 1) {
-            RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 2) {
-            RoomBinder.professorAngry1.setVisible(true);
-          } else if (GameState.hintsUsed == 3) {
-            RoomBinder.professorAngry2.setVisible(true);
-          } else if (GameState.hintsUsed == 4) {
-            RoomBinder.professorAngry3.setVisible(true);
-          } else if (GameState.hintsUsed >= 5) {
-            RoomBinder.professorAngry4.setVisible(true);
-          }
-        });
-
-    Thread speechThread = new Thread(speechTask);
-    speechThread.start();
   }
 }

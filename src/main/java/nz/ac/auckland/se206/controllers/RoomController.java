@@ -47,24 +47,27 @@ public class RoomController {
   // This method is called when the user clicks on the Toggle Chat button
   @FXML
   protected void onToggleChat() {
+    // Get the opposite of the current toggle state of the chat
     boolean openChat = !GameState.isChatOpen;
+    // Set the button text to the opposite of what it was
     String buttonText = openChat ? "Close Chat" : "Open Chat";
-
     toggleChat.setText(buttonText);
+    // Set the player input and chat visibility to the opposite of what it was
     playerInput.setVisible(openChat);
     chat.setVisible(openChat);
-
+    // Set the game state of the chat toggle to the opposite of what it was
     GameState.isChatOpen = !GameState.isChatOpen;
   }
 
   // This method is called when the user clicks on the Toggle Tasks button
   @FXML
   protected void onToggleTasks() {
+    // Get the opposite of the current toggle state of the tasks
     boolean openTasks = !GameState.areTasksOpen;
+    // Set the button text to the opposite of what it was
     String text = openTasks ? "Close Tasks" : "Open Tasks";
-
     toggleTasks.setText(text);
-
+    // Check the game state of the tasks and set the visibility to the opposite of what it was
     if (GameState.isChecklist1Active) {
       checklist1.setVisible(openTasks);
     } else if (GameState.isChecklist2Active) {
@@ -76,33 +79,48 @@ public class RoomController {
     } else if (GameState.isChecklist5Active) {
       checklist5.setVisible(openTasks);
     }
+    // Set the game state of the tasks toggle to the opposite of what it was
     GameState.areTasksOpen = !GameState.areTasksOpen;
   }
 
   // This method is used to bind the common room elements that all rooms share
   protected void bind() {
     RoomBinder.bindRoom(
+        // Chat area for the user to see the chat with the professor
         chat,
+        // The timer for the game
         timer,
+        // The input for the user to type in the chat to the professor
         playerInput,
+        // The amount of hints remaining
         hintsNumber,
+        // The button to toggle the chat to the professor
         toggleChat,
+        // The button to toggle the tasks
         toggleTasks,
+        // Image of the chemicals
         chemical1Backpack,
         chemical2Backpack,
+        // Image of the infinity symbol
         infinity,
+        // Image of the professor resting
         professorResting,
+        // Image of the professor thinking
         professorThinking,
+        // Images of the professor getting angrier
         professorAngry1,
         professorAngry2,
         professorAngry3,
         professorAngry4,
+        // Image of the professor talking
         professorTalking,
+        // Images of the checklists
         checklist1,
         checklist2,
         checklist3,
         checklist4,
         checklist5,
+        // Image of the key in the inventory
         keyBackpack);
   }
 

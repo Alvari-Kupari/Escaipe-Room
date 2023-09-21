@@ -79,33 +79,61 @@ public class GameState {
 
   // This sets all the variables to their default values
   public static void setDefaults() {
-    isDifficultySelected = false;
+    // The level difficulty
     levelDifficulty = null;
+    // Indicates difficulty has not been selected
+    isDifficultySelected = false;
+    // Indicates hints are not infinite
     isHintsInfinite = false;
-    hintsRemaining = -1;
+    // Indicates that the time limit has not been selected
     isTimeLimitSelected = false;
+    // Indicates that the game has not been started
     isGameStarted = false;
+    // Indicates that the riddle has not been resolved
     isRiddleResolved = false;
+    // Indicates that chemical1 has not been found
     isChemical1Found = false;
+    // Indicates that chemical2 has not been found
     isChemical2Found = false;
+    // Indicates that chemical1 has not been added
     isChemical1Added = false;
+    // Indicates that chemical2 has not been added
     isChemical2Added = false;
+    // Indicates that task1 has not been completed
     isTask1Completed = false;
+    // Indicates that task2 has not been completed
     isTask2Completed = false;
+    // Indicates that task3 has not been completed
     isTask3Completed = false;
+    // Indicates that task4 has not been completed
     isTask4Completed = false;
+    // Indicates that checklist1 is active
     isChecklist1Active = true;
+    // Indicates that checklist2 is not active
     isChecklist2Active = false;
+    // Indicates that checklist3 is not active
     isChecklist3Active = false;
+    // Indicates that checklist4 is not active
     isChecklist4Active = false;
+    // Indicates that checklist5 is not active
     isChecklist5Active = false;
-    isKeyObtained = false;
-    taskCompletionTime = -1;
-    hintsUsed = 1;
+    // Indicates that the chat is not open
     isChatOpen = false;
+    // Indicates that the tasks are not open
     areTasksOpen = false;
+    // Indicates that the key has not been obtained
+    isKeyObtained = false;
+    // The number of hints remaining
+    hintsRemaining = -1;
+    // The time limit
+    taskCompletionTime = -1;
+    // The number of hints used
+    hintsUsed = 1;
+    // Flask message has not been completed
     msgFlask = null;
+    // Message has not been completed
     msgComplete = null;
+    // the laptop password
     password = Password.getRandomPassword();
   }
 }

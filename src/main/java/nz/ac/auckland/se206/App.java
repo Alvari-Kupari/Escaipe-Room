@@ -96,8 +96,10 @@ public class App extends Application {
 
   // This method generates the answer for the quiz according to the day of the week
   public static void generateQuizAnswer() {
+    // Get the day of the week
     DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
 
+    // Set the answer according to the day of the week
     switch (dayOfWeek) {
       case MONDAY:
         GameState.quizAnswer = "bunsen burner";
@@ -130,6 +132,7 @@ public class App extends Application {
       default:
         break;
     }
+    // Print out the day of the week in the console
     System.out.println(dayOfWeek.toString());
   }
 }

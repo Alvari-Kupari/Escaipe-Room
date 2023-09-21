@@ -28,9 +28,13 @@ public class ExitController {
   @FXML
   private void goMainMenu() throws IOException {
     System.out.println("Go to Main Menu");
+    // Set the loading image to visible
     loading.setVisible(true);
+    // Disable the buttons for exiting
     btnExit.setDisable(true);
+    // Disable the buttons for going to the main menu
     btnMainMenu.setDisable(true);
+    // Set the game back to its default state
     GameState.setDefaults();
 
     // This allows the game to restart in the background

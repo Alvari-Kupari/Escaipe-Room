@@ -194,10 +194,15 @@ public class GameMaster {
    */
   private String runGpt() {
     try {
+      // execute the AI response
       ChatCompletionResult chatCompletionResult = chatCompletionRequest.execute();
+      // get the AI response
       ChatMessage result = chatCompletionResult.getChoices().iterator().next().getChatMessage();
+      // add the AI response to the chat
       chatCompletionRequest.addMessage(result);
+      // print the logs
       printLogs();
+      // return the AI response
       return result.getContent();
     } catch (ApiProxyException e) {
       e.printStackTrace();
