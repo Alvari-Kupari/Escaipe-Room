@@ -2,6 +2,11 @@ package nz.ac.auckland.se206;
 
 /** Represents the state of the game. */
 public class GameState {
+  public enum Difficulty {
+    EASY,
+    MEDIUM,
+    HARD
+  }
 
   /** Indicates the difficulty for the round. */
   public static Difficulty levelDifficulty = null;
@@ -70,12 +75,6 @@ public class GameState {
   public static Password password;
 
   public static String quizAnswer;
-
-  public enum Difficulty {
-    EASY,
-    MEDIUM,
-    HARD
-  }
 
   // This sets all the variables to their default values
   public static void setDefaults() {
