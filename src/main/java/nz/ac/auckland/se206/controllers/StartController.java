@@ -39,6 +39,7 @@ public class StartController {
     System.out.println("************** Initialising StartController **************");
   }
 
+  // This method is called when the user clicks on the Easy button
   @FXML
   private void clickEasy() {
     SoundManager.playSelect();
@@ -54,6 +55,7 @@ public class StartController {
     checkButton();
   }
 
+  // This method is called when the user clicks on the Medium button
   @FXML
   private void clickMedium() {
     SoundManager.playSelect();
@@ -70,6 +72,7 @@ public class StartController {
     checkButton();
   }
 
+  // This method is called when the user clicks on the Hard button
   @FXML
   private void clickHard() {
     SoundManager.playSelect();
@@ -86,6 +89,7 @@ public class StartController {
     checkButton();
   }
 
+  // This method is called when the user clicks on the 6 Min button
   @FXML
   private void clickMin6() {
     SoundManager.playSelect();
@@ -97,6 +101,7 @@ public class StartController {
     checkButton();
   }
 
+  // This method is called when the user clicks on the 4 Min button
   @FXML
   private void clickMin4() {
     SoundManager.playSelect();
@@ -108,6 +113,7 @@ public class StartController {
     checkButton();
   }
 
+  // This method is called when the user clicks on the 2 Min button
   @FXML
   private void clickMin2() {
     SoundManager.playSelect();

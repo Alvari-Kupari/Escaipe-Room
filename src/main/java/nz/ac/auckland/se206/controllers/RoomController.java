@@ -44,6 +44,7 @@ public class RoomController {
     System.out.println("************** Initialising RoomController **************");
   }
 
+  // This method is called when the user clicks on the Toggle Chat button
   @FXML
   protected void onToggleChat() {
     boolean openChat = !GameState.isChatOpen;
@@ -56,6 +57,7 @@ public class RoomController {
     GameState.isChatOpen = !GameState.isChatOpen;
   }
 
+  // This method is called when the user clicks on the Toggle Tasks button
   @FXML
   protected void onToggleTasks() {
     boolean openTasks = !GameState.areTasksOpen;
@@ -77,8 +79,8 @@ public class RoomController {
     GameState.areTasksOpen = !GameState.areTasksOpen;
   }
 
+  // This method is used to bind the common room elements that all rooms share
   protected void bind() {
-    // bind common room elements
     RoomBinder.bindRoom(
         chat,
         timer,

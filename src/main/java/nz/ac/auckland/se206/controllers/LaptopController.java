@@ -43,10 +43,12 @@ public class LaptopController extends RoomController {
           public void handle(KeyEvent e) {
             if (e.getCode().equals(KeyCode.ENTER)) {
               System.out.println("Enter pressed from password");
+              // get the password
               String guess = passwordField.getText();
 
               System.out.println(guess);
 
+              // check if it is correct
               if (guess.toUpperCase().equals(GameState.password.toString())) {
                 System.out.println("password is right");
                 quizAnswers.setVisible(true);

@@ -24,7 +24,8 @@ public class GptPromptEngineering {
   }
 
   /**
-   * Introduces the game background to the AI.
+   * Introduces the game background to the AI. This allows the AI to understand the context of the
+   * game.
    *
    * @return the prompt to the AI
    */
@@ -108,10 +109,10 @@ public class GptPromptEngineering {
    */
   public static String playerCollectedKey() {
     return "The player has collected a key, which they will need to complete task 2. If the player"
-               + " has completed task 1, your hints (if you are allowed to give them) should now"
-               + " focus on using the key to open the storage locker. Pretend like you are"
-               + " wondering what the key does. Respond to the player in under 10 words.This"
-               + " immedaite response is not a hint.";
+        + " has completed task 1, your hints (if you are allowed to give them) should now"
+        + " focus on using the key to open the storage locker. Pretend like you are"
+        + " wondering what the key does. Respond to the player in under 10 words.This"
+        + " immedaite response is not a hint.";
   }
 
   /**
@@ -152,12 +153,12 @@ public class GptPromptEngineering {
    */
   private static String getHintPrompt() {
     switch (GameState.levelDifficulty) {
-        // allow the AI to give infinite hints
+        // Allow the AI to give infinite hints
       case EASY:
         return " Help the player out, and give them hints if they ask for them. The player can ask"
             + " as many hints as they want.";
 
-        // allow AI to give 5 hints only
+        // Allow AI to give 5 hints only
       case MEDIUM:
         return " The player has 5 hints they can use throughout the whole game. After those 5 hints"
             + " are used up, you must not give the player any more hints under any"

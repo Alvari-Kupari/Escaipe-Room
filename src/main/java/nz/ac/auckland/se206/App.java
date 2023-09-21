@@ -94,6 +94,7 @@ public class App extends Application {
     GameState.password = Password.getRandomPassword();
   }
 
+  // This method generates the answer for the quiz according to the day of the week
   public static void generateQuizAnswer() {
     DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
 

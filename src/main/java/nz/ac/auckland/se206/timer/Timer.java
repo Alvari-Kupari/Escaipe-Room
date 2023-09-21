@@ -7,7 +7,8 @@ import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
 public class Timer {
-  private static int seconds, minutes;
+  private static int seconds;
+  private static int minutes;
   private static Text timerText;
 
   /**

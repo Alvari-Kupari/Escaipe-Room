@@ -39,34 +39,35 @@ public class StorageRoomController extends RoomController {
     Random random = new Random();
 
     // Define the Y coordinates
-    double[] yCoordinates = {120, 234, 336};
+    double[] verticalCoordinates = {120, 234, 336};
 
     // Randomly select Y coordinates for chemical1 and chemical2
-    double yCoordinate1 = yCoordinates[random.nextInt(yCoordinates.length)];
-    double yCoordinate2;
+    double verticalCoordinate1 = verticalCoordinates[random.nextInt(verticalCoordinates.length)];
+    double verticalCoordinate2;
 
-    // Make sure that yCoordinate2 is different from yCoordinate1
+    // Make sure that verticalCoordinate2 is different from verticalCoordinate1
     do {
-      yCoordinate2 = yCoordinates[random.nextInt(yCoordinates.length)];
-    } while (yCoordinate2 == yCoordinate1);
+      verticalCoordinate2 = verticalCoordinates[random.nextInt(verticalCoordinates.length)];
+    } while (verticalCoordinate2 == verticalCoordinate1);
 
     // Loop through each chemical
     for (ImageView chemical : new ImageView[] {chemical1, chemical2}) {
-      double yCoordinate;
+      double verticalCoordinate;
       if (chemical == chemical1) {
-        yCoordinate = yCoordinate1;
+        verticalCoordinate = verticalCoordinate1;
       } else {
-        yCoordinate = yCoordinate2;
+        verticalCoordinate = verticalCoordinate2;
       }
 
       // Calculate a random X coordinate within the bounds
-      double minX = 495; // Minimum X coordinate
-      double maxX = 606; // Maximum X coordinate
-      double xCoordinate = minX + random.nextDouble() * (maxX - minX);
+      double minHorizontal = 495; // Minimum X coordinate
+      double maxHorizontal = 606; // Maximum X coordinate
+      double horizontalCoordinate =
+          minHorizontal + random.nextDouble() * (maxHorizontal - minHorizontal);
 
       // Set the position of the chemical
-      chemical.setLayoutX(xCoordinate);
-      chemical.setLayoutY(yCoordinate);
+      chemical.setLayoutX(horizontalCoordinate);
+      chemical.setLayoutY(verticalCoordinate);
     }
 
     // Randomly determine the rotation direction

@@ -20,6 +20,9 @@ import nz.ac.auckland.se206.timer.Timer;
 /** Controller class for the room view. */
 public class MainRoomController extends RoomController {
 
+  private static GameMaster flaskTalkingGameMaster;
+  private static GameMaster tasksDoneTalkingGameMaster;
+
   @FXML private Polygon flask;
   @FXML private Polygon exitDoor;
   @FXML private Polygon teacherDoor;
@@ -31,9 +34,6 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView pouch;
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
-
-  private static GameMaster flaskTalkingGameMaster;
-  private static GameMaster tasksDoneTalkingGameMaster;
 
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
@@ -141,7 +141,7 @@ public class MainRoomController extends RoomController {
   }
 
   /**
-   * Handles the click event on the exitDoor.
+   * Handles the click event on the exitDoor. This allows the player to exit the room.
    *
    * @param event the mouse event
    * @throws IOException if there is an error loading the chat view

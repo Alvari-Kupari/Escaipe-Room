@@ -3,17 +3,14 @@ package nz.ac.auckland.se206;
 /** Represents the state of the game. */
 public class GameState {
 
-  /** Indicates whether the difficulty has been selected. */
-  public static boolean isDifficultySelected = false;
-
   /** Indicates the difficulty for the round. */
   public static Difficulty levelDifficulty = null;
 
+  /** Indicates whether the difficulty has been selected. */
+  public static boolean isDifficultySelected = false;
+
   /** Indicates whether the hints are infinite. */
   public static boolean isHintsInfinite = false;
-
-  /** Indicates the number of hints remaining. */
-  public static int hintsRemaining = -1;
 
   /** Indicates whether the time limit has been selected. */
   public static boolean isTimeLimitSelected = false;
@@ -53,27 +50,26 @@ public class GameState {
   public static boolean isChecklist3Active = false;
   public static boolean isChecklist4Active = false;
   public static boolean isChecklist5Active = false;
+  public static boolean isChatOpen = false;
+  public static boolean areTasksOpen = false;
+  public static boolean isKeyObtained = false;
+
+  /** Indicates the number of hints remaining. */
+  public static int hintsRemaining = -1;
 
   public static int taskCompletionTime = -1;
 
   /** Indicates how many hints are used */
   public static int hintsUsed = 1;
 
-  // are chats and tasks open?
-  public static boolean isChatOpen;
-  public static boolean areTasksOpen;
-
   public static String msgFlask = null;
   public static String msgComplete = null;
   public static String msgLockedRack = "Complete the first task before opening the rack.";
   public static String msgTime30 = "Hurry Up, 30 seconds left!";
-
   // the laptop password
   public static Password password;
 
   public static String quizAnswer;
-
-  public static boolean isKeyObtained;
 
   public enum Difficulty {
     EASY,
@@ -81,6 +77,7 @@ public class GameState {
     HARD
   }
 
+  // This sets all the variables to their default values
   public static void setDefaults() {
     isDifficultySelected = false;
     levelDifficulty = null;
