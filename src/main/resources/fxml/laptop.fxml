@@ -163,10 +163,15 @@
             <Image url="@../images/RiddleWhiteBoard.jpg" />
          </image>
       </ImageView>
-      <TextArea fx:id="riddle" layoutX="774.0" layoutY="111.0" prefHeight="195.0" prefWidth="200.0" wrapText="true">
+      <TextArea fx:id="riddle" layoutX="774.0" layoutY="144.0" prefHeight="162.0" prefWidth="200.0" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
       </TextArea>
+      <ImageView fitHeight="51.0" fitWidth="210.0" layoutX="776.0" layoutY="112.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/solve%20the%20riddle%20text.JPG" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

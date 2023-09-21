@@ -190,8 +190,6 @@ public class GameMaster {
   }
 
   public void setRiddleText() {
-    // set the chat text
-    RoomBinder.chat.setText("Solve the riddle on the whiteboard!!");
     Task<Void> respondTask =
         new Task<Void>() {
           @Override
