@@ -75,11 +75,11 @@ public class GptPromptEngineering {
    */
   public static String introduceFourthTask() {
     return "The player has now completed task 3, and must complete task 4 before they can progress."
-               + " To complete task 4, the player must correctly answer a quiz question on a"
-               + " whiteboard. The whiteboard is located in your office. To find the answer to the"
-               + " question, the player must hack into your laptop by guessing the password. The"
-               + " password will be the answer to a riddle. The answer to the quiz question on the"
-               + " whiteboard will then be open in the laptop once it has been hacked into.";
+        + " To complete task 4, the player must correctly answer a quiz question on a"
+        + " whiteboard. The whiteboard is located in your office. To find the answer to the"
+        + " question, the player must hack into your laptop by guessing the password. The"
+        + " password will be the answer to a riddle. The answer to the quiz question on the"
+        + " whiteboard will then be open in the laptop once it has been hacked into.";
   }
 
   /**
@@ -161,9 +161,11 @@ public class GptPromptEngineering {
         // Allow AI to give 5 hints only
       case MEDIUM:
         return " For now you may give hints to the player. If you give hints or help out the player"
-            + " in any way, begin your reponse with \"Hint: \". If you provide any sort of"
-            + " guidance to the player about what to do, also begin your response with"
-            + " \"Hint: \". Only give hints if the player asks for help";
+                   + " in any way regarding how to escape the lab, begin your reponse with \"Hint:"
+                   + " \". If you provide any sort of guidance to the player about how to escape"
+                   + " the lab, also begin your response with \"Hint: \". You must only give hints"
+                   + " if the player asks for help. You must not give hints if the player did not"
+                   + " ask for help with escaping the lab or solving the riddle.";
 
         // Dont allow AI to give hints at all.
       case HARD:
