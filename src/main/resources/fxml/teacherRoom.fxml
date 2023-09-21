@@ -144,5 +144,15 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
+      <ImageView fitHeight="213.0" fitWidth="330.0" layoutX="799.0" layoutY="99.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/RiddleWhiteBoard.jpg" />
+         </image>
+      </ImageView>
+      <Text fx:id="riddle" layoutX="816.0" layoutY="142.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="276.13671875">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
