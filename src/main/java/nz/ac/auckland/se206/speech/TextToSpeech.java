@@ -12,8 +12,6 @@ import nz.ac.auckland.se206.RoomBinder;
 /** Text-to-speech API using the JavaX speech library. */
 public class TextToSpeech {
 
-  private static TextToSpeech textToSpeech = new TextToSpeech();
-
   /**
    * Main function to speak the given list of sentences.
    *
@@ -30,6 +28,8 @@ public class TextToSpeech {
     textToSpeech.speak(args);
     textToSpeech.terminate();
   }
+
+  private static TextToSpeech textToSpeech = new TextToSpeech();
 
   // This method is used for the professor to speak
   public static void speech(String text) {
