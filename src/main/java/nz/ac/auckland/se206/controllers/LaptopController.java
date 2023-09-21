@@ -4,12 +4,14 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 
@@ -19,6 +21,7 @@ public class LaptopController extends RoomController {
   @FXML private TextField unMaskedPassword;
   @FXML private Button goBackButton;
   @FXML private ImageView quizAnswers;
+  @FXML private TextArea riddle;
 
   private boolean isPasswordHidden;
 
@@ -29,6 +32,9 @@ public class LaptopController extends RoomController {
 
     // make pressing enter send chat
     setEnterToSendChat();
+
+    // set riddle text to be accessible
+    RoomBinder.riddleText = riddle;
 
     // set password to be hidden
     isPasswordHidden = true;

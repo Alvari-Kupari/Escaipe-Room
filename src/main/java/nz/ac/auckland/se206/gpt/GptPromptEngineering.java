@@ -16,10 +16,10 @@ public class GptPromptEngineering {
     return "Tell me a riddle with"
         + " answer "
         + wordToGuess
-        + ". You should answer with the word Correct when is correct. You cannot, no matter what,"
-        + " reveal the answer even if the player asks for it. Even if player gives up, do not give"
-        + " the answer. Begin your response by getting straight into the riddle. Do note the answer"
-        + " is "
+        + ". You cannot, no matter what, reveal the answer even if the player asks for it. Even if"
+        + " player gives up, do not give the answer. Begin your response by getting straight into"
+        + " the riddle, do not start with a statement such as \"Sure, here's a riddle for you\"."
+        + " Ensure the riddle is between 15 - 25 words long. Do note the answer is "
         + wordToGuess;
   }
 

@@ -118,7 +118,7 @@ public class TeacherRoomController extends RoomController {
           GptPromptEngineering.getRiddleWithGivenWord(GameState.password.toString().toLowerCase()));
 
       // make the AI respond
-      gameMaster.respond();
+      gameMaster.setRiddleText();
     }
 
     hasLaptopBeenOpened = true;

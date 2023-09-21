@@ -59,7 +59,9 @@ public class GameMaster {
 
             // run the AI
             String response = runGpt();
-            RoomBinder.chat.appendText("\n" + response + "\n");
+
+            // set the chat text
+            RoomBinder.chat.setText(response);
 
             return null;
           }
@@ -185,5 +187,48 @@ public class GameMaster {
     for (ChatMessage msg : chatCompletionRequest.getMessages()) {
       System.out.println(msg.getRole() + ": " + msg.getContent() + "\n");
     }
+  }
+
+  public void setRiddleText() {
+    Task<Void> respondTask =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            RoomBinder.professorThinking.setVisible(true);
+            RoomBinder.professorAngry1.setVisible(false);
+            RoomBinder.professorAngry2.setVisible(false);
+            RoomBinder.professorAngry3.setVisible(false);
+            RoomBinder.professorAngry4.setVisible(false);
+            RoomBinder.professorResting.setVisible(false);
+            RoomBinder.professorTalking.setVisible(false);
+
+            // run the AI
+            String riddle = runGpt();
+
+            RoomBinder.riddleText.setText(riddle);
+
+            return null;
+          }
+        };
+
+    // make the face disappear after loading is finished
+    respondTask.setOnSucceeded(
+        e -> {
+          RoomBinder.professorThinking.setVisible(false);
+          if (GameState.hintsUsed == 0) {
+            RoomBinder.professorResting.setVisible(true);
+          } else if (GameState.hintsUsed == 1) {
+            RoomBinder.professorAngry1.setVisible(true);
+          } else if (GameState.hintsUsed == 2) {
+            RoomBinder.professorAngry2.setVisible(true);
+          } else if (GameState.hintsUsed == 3) {
+            RoomBinder.professorAngry3.setVisible(true);
+          } else if (GameState.hintsUsed >= 4) {
+            RoomBinder.professorAngry4.setVisible(true);
+          }
+        });
+
+    Thread thread = new Thread(respondTask);
+    thread.start();
   }
 }
