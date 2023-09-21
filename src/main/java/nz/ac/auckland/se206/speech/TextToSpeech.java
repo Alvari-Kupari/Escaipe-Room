@@ -56,15 +56,15 @@ public class TextToSpeech {
     speechTask.setOnSucceeded(
         e -> {
           RoomBinder.professorTalking.setVisible(false);
-          if (GameState.hintsUsed == 1) {
+          if (GameState.hintsUsed == 0) {
             RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 2) {
+          } else if (GameState.hintsUsed == 1) {
             RoomBinder.professorAngry1.setVisible(true);
-          } else if (GameState.hintsUsed == 3) {
+          } else if (GameState.hintsUsed == 2) {
             RoomBinder.professorAngry2.setVisible(true);
-          } else if (GameState.hintsUsed == 4) {
+          } else if (GameState.hintsUsed == 3) {
             RoomBinder.professorAngry3.setVisible(true);
-          } else if (GameState.hintsUsed >= 5) {
+          } else if (GameState.hintsUsed >= 4) {
             RoomBinder.professorAngry4.setVisible(true);
           }
         });
