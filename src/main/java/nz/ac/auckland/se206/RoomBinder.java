@@ -10,7 +10,7 @@ public class RoomBinder {
 
   private static Text timer;
   public static Text grade;
-  public static Text hintsNumber;
+  public static Text hintsNumber, riddleText;
   private static TextField chatInput;
   public static TextArea chat;
   private static Button toggleTaskButton;

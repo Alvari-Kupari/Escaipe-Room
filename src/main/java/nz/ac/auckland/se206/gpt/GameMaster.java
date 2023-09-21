@@ -1,7 +1,6 @@
 package nz.ac.auckland.se206.gpt;
 
 import javafx.concurrent.Task;
-import javafx.scene.text.Text;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.gpt.openai.ApiProxyException;
@@ -190,13 +189,13 @@ public class GameMaster {
     }
   }
 
-  public void setRiddleText(Text riddleText) {
+  public void setRiddleText() {
     Thread thread =
         new Thread(
             () -> {
               String riddle = runGpt();
 
-              riddleText.setText(riddle);
+              RoomBinder.riddleText.setText(riddle);
             });
 
     thread.start();
