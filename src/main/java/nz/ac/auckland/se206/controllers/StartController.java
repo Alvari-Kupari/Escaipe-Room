@@ -42,14 +42,20 @@ public class StartController {
   // This method is called when the user clicks on the Easy button
   @FXML
   private void clickEasy() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("Easy Selected");
+    // Set the difficulty to easy
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.EASY;
+    // Set game state to infinite hints
     GameState.isHintsInfinite = true;
     GameState.hintsRemaining = -1;
+    // Reset the level background
     resetLevelBackground();
+    // Set the easy select image to visible
     easySelect.setVisible(true);
+    // Set the hints to infinite
     RoomBinder.setHintsInfinite(true);
     RoomBinder.toggleHintsVisibility(false);
     checkButton();
@@ -58,13 +64,18 @@ public class StartController {
   // This method is called when the user clicks on the Medium button
   @FXML
   private void clickMedium() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("Medium Selected");
+    // Set the game state to medium
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.MEDIUM;
+    // Set the hints to 5
     GameState.hintsRemaining = 5;
     GameState.isHintsInfinite = false;
+    // Reset the level background
     resetLevelBackground();
+    // Set the medium select image to visible
     mediumSelect.setVisible(true);
     RoomBinder.toggleHintsVisibility(true);
     RoomBinder.setHintsInfinite(false);
@@ -75,13 +86,17 @@ public class StartController {
   // This method is called when the user clicks on the Hard button
   @FXML
   private void clickHard() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("Hard Selected");
+    // Set the game state to hard
     GameState.isDifficultySelected = true;
     GameState.levelDifficulty = GameState.Difficulty.HARD;
     GameState.isHintsInfinite = false;
     GameState.hintsRemaining = 0;
+    // Reset the level background
     resetLevelBackground();
+    // Set the hard select image to visible
     hardSelect.setVisible(true);
     RoomBinder.toggleHintsVisibility(true);
     RoomBinder.setHintsInfinite(false);
@@ -92,35 +107,52 @@ public class StartController {
   // This method is called when the user clicks on the 6 Min button
   @FXML
   private void clickMin6() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("6 Min Selected");
+    // Set the game state to 6 minutes
     GameState.isTimeLimitSelected = true;
+    // Set the timer to 6 minutes
     Timer.setTimer(6, 0);
+    // Reset the time background
     resetTimeBackground();
+    // Set the 6 min select image to visible
     min6Select.setVisible(true);
+    // Check if the start button should be enabled
     checkButton();
   }
 
   // This method is called when the user clicks on the 4 Min button
   @FXML
   private void clickMin4() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("4 Min Selected");
+    // Set the game state to 4 minutes
     GameState.isTimeLimitSelected = true;
+    // Set the timer to 4 minutes
     Timer.setTimer(4, 0);
+    // Reset the time background
     resetTimeBackground();
+    // Set the 4 min select image to visible
     min4Select.setVisible(true);
+    // Check if the start button should be enabled
     checkButton();
   }
 
   // This method is called when the user clicks on the 2 Min button
   @FXML
   private void clickMin2() {
+    // Play the select sound
     SoundManager.playSelect();
     System.out.println("2 Min Selected");
+    // Set the game state to 2 minutes
     GameState.isTimeLimitSelected = true;
+    // Set the timer to 2 minutes
     Timer.setTimer(2, 0);
+    // Reset the time background
     resetTimeBackground();
+    // Set the 2 min select image to visible
     min2Select.setVisible(true);
     checkButton();
   }

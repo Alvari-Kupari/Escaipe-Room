@@ -111,16 +111,25 @@ public class StorageRoomController extends RoomController {
    * @return the animation
    */
   private void animateNode(Node node, int angle, int x) {
+    // Create a new rotate transition
     RotateTransition rotation = new RotateTransition(Duration.seconds(0.5), node);
+    // Set the number of cycles to indefinite
     rotation.setCycleCount(RotateTransition.INDEFINITE);
+    // Rotate the node by the specified angle
     rotation.setByAngle(angle);
+    // Set the animation to auto reverse
     rotation.setAutoReverse(true);
 
+    // Create a new translate transition
     TranslateTransition translation = new TranslateTransition(Duration.seconds(0.5), node);
+    // Set the number of cycles to indefinite
     translation.setCycleCount(TranslateTransition.INDEFINITE);
+    // Translate the node by the specified distance
     translation.setByX(x);
+    // Set the animation to auto reverse
     translation.setAutoReverse(true);
 
+    // Play the animations
     rotation.play();
     translation.play();
   }

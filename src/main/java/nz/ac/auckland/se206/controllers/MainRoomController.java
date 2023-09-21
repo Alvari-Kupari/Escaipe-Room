@@ -2,7 +2,6 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyEvent;
@@ -87,21 +86,6 @@ public class MainRoomController extends RoomController {
     System.out.println("key " + event.getCode() + " released");
   }
 
-  /**
-   * Displays a dialog box with the given title, header text, and message.
-   *
-   * @param title the title of the dialog box
-   * @param headerText the header text of the dialog box
-   * @param message the message content of the dialog box
-   */
-  private void showDialog(String title, String headerText, String message) {
-    Alert alert = new Alert(Alert.AlertType.INFORMATION);
-    alert.setTitle(title);
-    alert.setHeaderText(headerText);
-    alert.setContentText(message);
-    alert.showAndWait();
-  }
-
   // when slider is compleded, hide the slider
   @FXML
   public void zipperDragReleased(MouseEvent event) {
@@ -138,28 +122,6 @@ public class MainRoomController extends RoomController {
     // make AI aware of the new change
     gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
     gameMaster.respond();
-  }
-
-  /**
-   * Handles the click event on the exitDoor. This allows the player to exit the room.
-   *
-   * @param event the mouse event
-   * @throws IOException if there is an error loading the chat view
-   */
-  @FXML
-  public void clickDoor(MouseEvent event) throws IOException {
-
-    SoundManager.playClick();
-
-    System.out.println("exitDoor clicked");
-
-    if (!GameState.isRiddleResolved) {
-      showDialog("Info", "Riddle", "You need to resolve the riddle!");
-
-      App.changeScene(Room.CHAT);
-
-      return;
-    }
   }
 
   /**

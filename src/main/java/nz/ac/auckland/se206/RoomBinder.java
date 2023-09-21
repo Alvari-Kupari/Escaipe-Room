@@ -35,27 +35,49 @@ public class RoomBinder {
 
   // This method is used to bind the room elements to the room controller
   public static void bindRoom(
+      // Chat area for the user to see the chat with the professor
       TextArea chat,
+      // The timer for the game
       Text timer,
+      // The input for the user to type in the chat to the professor
       TextField input,
+      // The amount of hints remaining
       Text hintsNumber,
+      // The button to toggle the chat to the professor
       Button toggleChat,
+      // The button to toggle the tasks
       Button toggleTasks,
+      // Image of the first chemical
       ImageView chemical1Backpack,
+      // Image of the second chemical
       ImageView chemical2Backpack,
+      // Image of the infinity symbol
       ImageView infinity,
+      // Image of the professor resting
       ImageView professorResting,
+      // Image of the professor thinking
       ImageView professorThinking,
+      // Image of the professor angry
       ImageView professorAngry1,
+      // Image of the professor angrier
       ImageView professorAngry2,
+      // Image of the professor very angry
       ImageView professorAngry3,
+      // Image of the professor extremely angry
       ImageView professorAngry4,
+      // Image of the professor talking
       ImageView professorTalking,
+      // Image of the first checklist
       ImageView checklist1,
+      // Image of the second checklist
       ImageView checklist2,
+      // Image of the third checklist
       ImageView checklist3,
+      // Image of the fourth checklist
       ImageView checklist4,
+      // Image of the fifth checklist
       ImageView checklist5,
+      // Image of the key in the inventory
       ImageView keyBackpack) {
 
     if (RoomBinder.chat != null) {

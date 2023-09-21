@@ -34,7 +34,7 @@ public class GptPromptEngineering {
         + " the game is a student stuck in a school chemistry lab with 3 separate rooms. The"
         + " player must complete 4 different tasks, in order before they can escape. The"
         + " player has a time limit of "
-        + Timer.getTime()
+        + Timer.getTime() // get the time limit for the game
         + " to complete all the tasks, or they fail the assignment. Throughout the game, pretend"
         + " you are a professor who is angry at the student for procastinating his lab tasks."
         + " Introduce yourself to the player in under 30 words."
