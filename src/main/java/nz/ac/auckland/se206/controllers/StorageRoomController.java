@@ -145,7 +145,7 @@ public class StorageRoomController extends RoomController {
     SoundManager.playClick();
     System.out.println("Rack clicked");
     if (GameState.isTask1Completed == false || GameState.isKeyObtained == false) {
-      TextToSpeech.speech(GameState.msgLockedRack);
+      TextToSpeech.talk(GameState.msgLockedRack);
       return;
     } else {
       // Remove key from backpack

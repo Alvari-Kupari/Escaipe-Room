@@ -21,7 +21,7 @@
             <Image url="@../images/white_panel.jpg" />
          </image>
       </ImageView>
-      <Button fx:id="btnStart" disable="true" layoutX="449.0" layoutY="155.0" mnemonicParsing="false" onAction="#startGame" prefHeight="44.0" prefWidth="103.0" text="Start">
+      <Button fx:id="btnStart" disable="true" layoutX="449.0" layoutY="155.0" mnemonicParsing="false" onAction="#onStartGame" prefHeight="44.0" prefWidth="103.0" text="Start">
          <font>
             <Font name="System Bold" size="26.0" />
          </font></Button>

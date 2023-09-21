@@ -66,7 +66,7 @@ public class Timer {
       return;
     }
     if ((minutes == 0) && (seconds == 31)) {
-      TextToSpeech.speech(GameState.msgTime30);
+      TextToSpeech.talk(GameState.msgTime30);
     }
     seconds--;
   }

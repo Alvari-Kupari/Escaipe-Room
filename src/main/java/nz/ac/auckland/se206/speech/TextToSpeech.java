@@ -32,7 +32,7 @@ public class TextToSpeech {
   private static TextToSpeech textToSpeech = new TextToSpeech();
 
   // This method is used for the professor to speak
-  public static void speech(String text) {
+  public static void talk(String text) {
     // Multi-Threading
     Task<Void> speechTask =
         new Task<Void>() {

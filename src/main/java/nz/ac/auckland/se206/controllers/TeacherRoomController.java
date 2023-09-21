@@ -55,7 +55,7 @@ public class TeacherRoomController extends RoomController {
                 GameState.isChecklist5Active = true;
                 checklist4.setVisible(false);
                 checklist5.setVisible(true);
-                TextToSpeech.speech(GameState.msgComplete);
+                TextToSpeech.talk(GameState.msgComplete);
 
                 // make AI aware that all tasks are done
                 gameMaster.giveContext(GptPromptEngineering.allTasksComplete());

@@ -161,11 +161,11 @@ public class GptPromptEngineering {
         // Allow AI to give 5 hints only
       case MEDIUM:
         return " For now you may give hints to the player. If you give hints or help out the player"
-                   + " in any way regarding how to escape the lab, begin your reponse with \"Hint:"
-                   + " \". If you provide any sort of guidance to the player about how to escape"
-                   + " the lab, also begin your response with \"Hint: \". You must only give hints"
-                   + " if the player asks for help. You must not give hints if the player did not"
-                   + " ask for help with escaping the lab or solving the riddle.";
+            + " in any way regarding how to escape the lab, begin your reponse with \"Hint:"
+            + " \". If you provide any sort of guidance to the player about how to escape"
+            + " the lab, also begin your response with \"Hint: \". You must only give hints"
+            + " if the player asks for help. You must not give hints if the player did not"
+            + " ask for help with escaping the lab or solving the riddle.";
 
         // Dont allow AI to give hints at all.
       case HARD:
