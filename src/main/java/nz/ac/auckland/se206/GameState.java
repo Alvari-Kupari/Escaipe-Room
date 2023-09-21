@@ -60,7 +60,7 @@ public class GameState {
   public static int taskCompletionTime = -1;
 
   /** Indicates how many hints are used */
-  public static int hintsUsed = 1;
+  public static int hintsUsed = 0;
 
   public static String msgFlask = null;
   public static String msgComplete = null;
@@ -128,7 +128,7 @@ public class GameState {
     // The time limit
     taskCompletionTime = -1;
     // The number of hints used
-    hintsUsed = 1;
+    hintsUsed = 0;
     // Flask message has not been completed
     msgFlask = null;
     // Message has not been completed

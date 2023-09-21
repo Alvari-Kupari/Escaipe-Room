@@ -119,9 +119,14 @@ public class MainRoomController extends RoomController {
     // Update the game state
     GameState.isKeyObtained = true;
 
-    // make AI aware of the new change
-    gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
-    gameMaster.respond();
+    if (GameState.isTask1Completed) {
+      // make AI aware of the new change
+      gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
+      gameMaster.respond();
+    } else {
+      // make sure the AI knows that task 1 is still to be complete
+      gameMaster.giveContext(GptPromptEngineering.playerCollectedKeyBeforeCompletingTask1());
+    }
   }
 
   /**

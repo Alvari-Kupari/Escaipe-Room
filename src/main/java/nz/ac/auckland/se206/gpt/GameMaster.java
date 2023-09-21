@@ -101,18 +101,6 @@ public class GameMaster {
     // make the face disappear after loading is finished
     respondTask.setOnSucceeded(
         e -> {
-          RoomBinder.professorThinking.setVisible(false);
-          if (GameState.hintsUsed == 1) {
-            RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 2) {
-            RoomBinder.professorAngry1.setVisible(true);
-          } else if (GameState.hintsUsed == 3) {
-            RoomBinder.professorAngry2.setVisible(true);
-          } else if (GameState.hintsUsed == 4) {
-            RoomBinder.professorAngry3.setVisible(true);
-          } else if (GameState.hintsUsed >= 5) {
-            RoomBinder.professorAngry4.setVisible(true);
-          }
 
           // check if a hint was given
           String response = getLastResponse();
@@ -132,6 +120,18 @@ public class GameMaster {
             if (GameState.hintsRemaining == 0) {
               giveContext(GptPromptEngineering.stopGivingHints());
             }
+          }
+          RoomBinder.professorThinking.setVisible(false);
+          if (GameState.hintsUsed == 0) {
+            RoomBinder.professorResting.setVisible(true);
+          } else if (GameState.hintsUsed == 1) {
+            RoomBinder.professorAngry1.setVisible(true);
+          } else if (GameState.hintsUsed == 2) {
+            RoomBinder.professorAngry2.setVisible(true);
+          } else if (GameState.hintsUsed == 3) {
+            RoomBinder.professorAngry3.setVisible(true);
+          } else if (GameState.hintsUsed >= 4) {
+            RoomBinder.professorAngry4.setVisible(true);
           }
         });
 
