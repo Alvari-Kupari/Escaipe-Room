@@ -58,7 +58,8 @@ public class TextToSpeech {
           RoomBinder.professorTalking.setVisible(false);
           if (GameState.hintsUsed == 0) {
             RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 1) {
+          }
+          if (GameState.hintsUsed == 1) {
             RoomBinder.professorAngry1.setVisible(true);
           } else if (GameState.hintsUsed == 2) {
             RoomBinder.professorAngry2.setVisible(true);
