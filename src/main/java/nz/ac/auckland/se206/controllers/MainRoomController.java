@@ -48,8 +48,7 @@ public class MainRoomController extends RoomController {
     // make pressing enter send chat
     setEnterToSendChat();
 
-    // intialize chat and tasks to be open
-    GameState.areTasksOpen = true;
+    // intialize chat to be open
     GameState.isChatOpen = true;
 
     // initialize game master
@@ -105,7 +104,6 @@ public class MainRoomController extends RoomController {
               chemical1Backpack.setVisible(false);
               // make the chemical1Backpack image not interactive
               chemical1Backpack.setDisable(true);
-              // hide flasks
               hideFlasks();
               // check if chemical2 is added
               if (GameState.isChemical2Added) {
@@ -201,7 +199,6 @@ public class MainRoomController extends RoomController {
               chemical2Backpack.setVisible(false);
               // make the chemical2Backpack image not interactive
               chemical2Backpack.setDisable(true);
-              // hide flasks
               hideFlasks();
               // check if chemical2 is added
               if (GameState.isChemical1Added) {
