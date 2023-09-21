@@ -210,7 +210,7 @@ public class MainRoomController extends RoomController {
               }
               // make flask image opaque
               flask.setOpacity(0.5);
-              SoundManager.playSplash();
+              SoundManager.playBubbles();
               GameState.isChemical2Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
                 GameState.isTask3Completed = true;
@@ -325,6 +325,7 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickFlask(MouseEvent event) {
+    SoundManager.playClick();
     if (!GameState.isTask1Completed) {
       // make AI aware of the task completion
       gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());

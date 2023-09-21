@@ -46,7 +46,7 @@
             <Font name="System Bold" size="33.0" />
          </font>
       </Text>
-      <TextArea fx:id="chat" layoutX="47.0" layoutY="154.0" prefHeight="195.0" prefWidth="185.0" wrapText="true" />
+      <TextArea fx:id="chat" editable="false" layoutX="47.0" layoutY="154.0" prefHeight="195.0" prefWidth="185.0" wrapText="true" />
       <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="746.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-HINTS_LEFT.png" />

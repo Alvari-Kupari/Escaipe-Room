@@ -82,7 +82,7 @@
             <Image url="@../images/professor_TALKING.gif" />
          </image>
       </ImageView>
-      <TextArea fx:id="chat" layoutX="12.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
+      <TextArea fx:id="chat" editable="false" layoutX="12.0" layoutY="151.0" prefHeight="167.0" prefWidth="165.0" wrapText="true" />
       <Button fx:id="toggleChat" layoutX="12.0" layoutY="349.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="81.0" text="Hide Chat" />
       <TextField fx:id="playerInput" layoutX="12.0" layoutY="315.0" prefHeight="33.0" prefWidth="165.0" />
       <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
