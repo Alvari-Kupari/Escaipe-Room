@@ -79,12 +79,12 @@
       <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
       <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="10.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
-      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" onMouseDragged="#dragChemical2Backpack" onMouseEntered="#hoverChemical2Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="52.0" layoutY="63.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="52.0" layoutY="63.0" onMouseDragged="#dragChemical1Backpack" onMouseEntered="#hoverChemical1Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>

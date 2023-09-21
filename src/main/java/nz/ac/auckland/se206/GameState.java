@@ -71,6 +71,11 @@ public class GameState {
   public static String msgComplete = null;
   public static String msgLockedRack = "Complete the first task before opening the rack.";
   public static String msgTime30 = "Hurry Up, 30 seconds left!";
+  public static String msgNeedKey = "You need a key to open the shelf.";
+  public static String msgUseKey = "You need to use the key.";
+  public static String msgUseKeyAndTask1 = "You need to use the key and complete the first task.";
+
+  public static boolean doorOpened = false;
   // the laptop password
   public static Password password;
 
@@ -132,6 +137,8 @@ public class GameState {
     msgFlask = null;
     // Message has not been completed
     msgComplete = null;
+    // Door opened
+    doorOpened = false;
     // the laptop password
     password = Password.getRandomPassword();
   }

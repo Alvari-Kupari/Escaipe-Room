@@ -27,6 +27,8 @@ public class StorageRoomController extends RoomController {
 
   private RotateTransition rackRotation;
   private RotateTransition rackDoorRotation;
+  private double horizontalOffset;
+  private double verticalOffset;
 
   /** Initializes the Storage Room view */
   public void initialize() {
@@ -134,6 +136,89 @@ public class StorageRoomController extends RoomController {
     translation.play();
   }
 
+  // Allow key to be draggable with mouse
+  @FXML
+  public void dragKey(MouseEvent event) {
+    // check if task1 is completed and key is found
+    if (GameState.isTask1Completed && GameState.isKeyObtained) {
+      System.out.println("Dragging key");
+      // make the keyBackpack image opaque
+      keyBackpack.setOpacity(0.5);
+      // get the x and y offset of the mouse
+      horizontalOffset = event.getSceneX();
+      verticalOffset = event.getSceneY();
+      // make the keyBackpack image draggable
+      keyBackpack.setOnMouseDragged(
+          e -> {
+            // set the keyBackpack image location to the mouse location
+            keyBackpack.setX(e.getSceneX() - horizontalOffset);
+            keyBackpack.setY(e.getSceneY() - verticalOffset);
+            // mkae sure that the ckeyBackpack image does not go out of the screen ALL THE TIME
+            // if dragged outside bounds, set the keyBackpack image location back to in bounds
+            if (keyBackpack.getX() < 10) {
+              keyBackpack.setX(50);
+            } else if (keyBackpack.getX() > 940) {
+              keyBackpack.setX(870);
+            }
+            if (keyBackpack.getY() < 10) {
+              keyBackpack.setY(40);
+            } else if (keyBackpack.getY() > 500) {
+              keyBackpack.setY(500);
+            }
+            // if the keyBackpack overlaps with the rackDoor, hide the keyBackpack
+            if (keyBackpack.getBoundsInParent().intersects(rackDoor.getBoundsInParent())) {
+              // Remove key from backpack
+              keyBackpack.setVisible(false);
+              // disable keyBackpack
+              keyBackpack.setDisable(true);
+              // Remove the lock from the scene so that items underneath can be clicked
+              rackDoor.setVisible(false);
+              rackDoor.setDisable(true);
+              // make chemicals clickable
+              chemical1.setDisable(false);
+              chemical2.setDisable(false);
+              // make chemicals visible
+              chemical1.setOpacity(1);
+              chemical2.setOpacity(1);
+              // Set game state of door opened
+              GameState.doorOpened = true;
+              // click sound
+              SoundManager.playClick();
+            }
+          });
+      // make the keyBackpack back to not opaque when not dragged
+      keyBackpack.setOnMouseReleased(
+          e -> {
+            keyBackpack.setOpacity(1);
+            // if the rackdoor is opened, prompt gpt
+            if (GameState.doorOpened) {
+              // make AI respond to the storage door opening
+              gameMaster.giveContext(GptPromptEngineering.beCarefulInStorageLocker());
+              gameMaster.respond();
+            }
+          });
+    } else {
+      return;
+    }
+  }
+
+  // hover over the keyBackpack image
+  @FXML
+  public void hoverKey(MouseEvent event) {
+    // check if task 1 is completed and key is found
+    if (GameState.isTask1Completed) {
+      // make the keyBackpack area obaque
+      keyBackpack.setOpacity(0.5);
+      // when not hovered, make the keyBackpack area transparent again
+      keyBackpack.setOnMouseExited(
+          e -> {
+            keyBackpack.setOpacity(1);
+          });
+    } else {
+      return;
+    }
+  }
+
   /**
    * Handles the click event on the door of rack.
    *
@@ -144,25 +229,25 @@ public class StorageRoomController extends RoomController {
   public void clickRackDoor(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Rack clicked");
-    if (GameState.isTask1Completed == false || GameState.isKeyObtained == false) {
+    if (GameState.isTask1Completed == false && GameState.isKeyObtained == false) {
       TextToSpeech.talk(GameState.msgLockedRack);
       return;
-    } else {
-      // Remove key from backpack
-      keyBackpack.setVisible(false);
-      // Remove the lock from the scene so that items underneath can be clicked
-      rackDoor.setVisible(false);
-      rackDoor.setDisable(true);
-      // make chemicals clickable
-      chemical1.setDisable(false);
-      chemical2.setDisable(false);
-      // make chemicals visible
-      chemical1.setOpacity(1);
-      chemical2.setOpacity(1);
+    }
 
-      // make AI respond to the storage door opening
-      gameMaster.giveContext(GptPromptEngineering.beCarefulInStorageLocker());
-      gameMaster.respond();
+    if (GameState.isTask1Completed == true && GameState.isKeyObtained == false) {
+      TextToSpeech.talk(GameState.msgNeedKey);
+      return;
+    }
+
+    // if key is obtained
+    if (GameState.isKeyObtained == true && GameState.isTask1Completed == true) {
+      TextToSpeech.talk(GameState.msgUseKey);
+      return;
+    }
+
+    if (GameState.isKeyObtained == true && GameState.isTask1Completed == false) {
+      TextToSpeech.talk(GameState.msgUseKeyAndTask1);
+      return;
     }
   }
 

@@ -34,6 +34,9 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
 
+  private double horizontalOffset;
+  private double verticalOffset;
+
   /** Initializes the room view, it is called when the room loads. */
   public void initialize() {
     // Initialization code goes here
@@ -64,6 +67,195 @@ public class MainRoomController extends RoomController {
 
     System.out.println();
     System.out.println("************** Initialising MainRoomController **************");
+  }
+
+  // Allow chemical1Backpack to be draggable with mouse
+  @FXML
+  public void dragChemical1Backpack(MouseEvent event) {
+    // check if chemical1 is found
+    if (GameState.isChemical1Found) {
+      System.out.println("Dragging chemical 1 backpack");
+      // make the chemical1Backpack image opaque
+      chemical1Backpack.setOpacity(0.5);
+      // get the x and y offset of the mouse
+      horizontalOffset = event.getSceneX();
+      verticalOffset = event.getSceneY();
+      // make the chemical1Backpack image draggable
+      chemical1Backpack.setOnMouseDragged(
+          e -> {
+            // set the chemical1Backpack image location to the mouse location
+            chemical1Backpack.setX(e.getSceneX() - horizontalOffset);
+            chemical1Backpack.setY(e.getSceneY() - verticalOffset);
+            // mkae sure that the chemical1Backpack image does not go out of the screen ALL THE TIME
+            // if dragged outside bounds, set the chemical1Backpack image location back to the
+            // original location
+            if (chemical1Backpack.getX() < 10) {
+              chemical1Backpack.setX(50);
+            } else if (chemical1Backpack.getX() > 940) {
+              chemical1Backpack.setX(900);
+            }
+            if (chemical1Backpack.getY() < 10) {
+              chemical1Backpack.setY(40);
+            } else if (chemical1Backpack.getY() > 500) {
+              chemical1Backpack.setY(500);
+            }
+            // if the chemical1Backpack overlaps with the flask, hide the chemical1Backpack
+            if (chemical1Backpack.getBoundsInParent().intersects(flask.getBoundsInParent())) {
+              // hide the chemical1Backpack
+              chemical1Backpack.setVisible(false);
+              // make the chemical1Backpack image not interactive
+              chemical1Backpack.setDisable(true);
+              // hide flasks
+              hideFlasks();
+              // check if chemical2 is added
+              if (GameState.isChemical2Added) {
+                // set the flask image
+                flask3.setVisible(true);
+              } else {
+                // set the flask image
+                flask2.setVisible(true);
+              }
+              // make flask hover image opaque
+              flask.setOpacity(0.5);
+              SoundManager.playSplash();
+              GameState.isChemical1Added = true;
+              if (GameState.isChemical1Added && GameState.isChemical2Added) {
+                GameState.isTask3Completed = true;
+                GameState.isChecklist3Active = false;
+                GameState.isChecklist4Active = true;
+
+                // tick of the task in the checklist
+                checklist3.setVisible(false);
+                checklist4.setVisible(true);
+              }
+            }
+          });
+      // make the chemical1Backpack back to not opaque when not dragged
+      chemical1Backpack.setOnMouseReleased(
+          e -> {
+            chemical1Backpack.setOpacity(1);
+
+            // if the task3 is done, make the AI aware of it
+            if (GameState.isTask3Completed) {
+              // set all game state variables to reflect task 3 completion
+              System.out.println("TASK 3 COMPLETED");
+              // make AI aware that task 3 is done
+              gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
+            }
+          });
+    } else {
+      return;
+    }
+  }
+
+  // hover over the chemical1Backpack image
+  @FXML
+  public void hoverChemical1Backpack(MouseEvent event) {
+    // check if chemical1 is found
+    if (GameState.isChemical1Found) {
+      // make the chemical1Backpack area obaque
+      chemical1Backpack.setOpacity(0.5);
+      // when not hovered, make the chemical1Backpack area transparent again
+      chemical1Backpack.setOnMouseExited(
+          e -> {
+            chemical1Backpack.setOpacity(1);
+          });
+    } else {
+      return;
+    }
+  }
+
+  // Allow chemical2Backpack to be draggable with mouse
+  @FXML
+  public void dragChemical2Backpack(MouseEvent event) {
+    // check if chemical2 is found
+    if (GameState.isChemical2Found) {
+      System.out.println("Dragging chemical 2 backpack");
+      // make the chemical2Backpack image opaque
+      chemical2Backpack.setOpacity(0.5);
+      // get the x and y offset of the mouse
+      horizontalOffset = event.getSceneX();
+      verticalOffset = event.getSceneY();
+      // make the chemical2Backpack image draggable
+      chemical2Backpack.setOnMouseDragged(
+          e -> {
+            // set the chemical2Backpack image location to the mouse location
+            chemical2Backpack.setX(e.getSceneX() - horizontalOffset);
+            chemical2Backpack.setY(e.getSceneY() - verticalOffset);
+            // make sure that the chemical2Backpack image does not go out of the screen
+            // if dragged outside bounds, set the chemical2Backpack image location back to the
+            // original location
+            if (chemical2Backpack.getX() < 10) {
+              chemical2Backpack.setX(50);
+            } else if (chemical2Backpack.getX() > 940) {
+              chemical2Backpack.setX(900);
+            }
+            if (chemical2Backpack.getY() < 10) {
+              chemical2Backpack.setY(40);
+            } else if (chemical2Backpack.getY() > 500) {
+              chemical2Backpack.setY(500);
+            }
+            // if the chemical2Backpack overlaps with the flask, hide the chemical2Backpack
+            if (chemical2Backpack.getBoundsInParent().intersects(flask.getBoundsInParent())) {
+              // hide the chemical2Backpack
+              chemical2Backpack.setVisible(false);
+              // make the chemical2Backpack image not interactive
+              chemical2Backpack.setDisable(true);
+              // hide flasks
+              hideFlasks();
+              // check if chemical2 is added
+              if (GameState.isChemical1Added) {
+                // set the flask image
+                flask3.setVisible(true);
+              } else {
+                // set the flask image
+                flask2.setVisible(true);
+              }
+              // make flask image opaque
+              flask.setOpacity(0.5);
+              SoundManager.playSplash();
+              GameState.isChemical2Added = true;
+              if (GameState.isChemical1Added && GameState.isChemical2Added) {
+                GameState.isTask3Completed = true;
+                GameState.isChecklist3Active = false;
+                GameState.isChecklist4Active = true;
+                checklist3.setVisible(false);
+                checklist4.setVisible(true);
+              }
+            }
+          });
+      // make the chemical2Backpack back to not opaque when not dragged
+      chemical2Backpack.setOnMouseReleased(
+          e -> {
+            chemical2Backpack.setOpacity(1);
+
+            // if the task3 is done, make the AI aware of it
+            if (GameState.isTask3Completed) {
+              System.out.println("TASK 3 COMPLETED");
+              // make AI aware that task 3 is done
+              gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
+            }
+          });
+    } else {
+      return;
+    }
+  }
+
+  // hover over the chemical2Backpack image
+  @FXML
+  public void hoverChemical2Backpack(MouseEvent event) {
+    // check if chemical2 is found
+    if (GameState.isChemical2Found) {
+      // make the chemical2Backpack area opaque
+      chemical2Backpack.setOpacity(0.5);
+      // when not hovered, make the chemical2Backpack area transparent again
+      chemical2Backpack.setOnMouseExited(
+          e -> {
+            chemical2Backpack.setOpacity(1);
+          });
+    } else {
+      return;
+    }
   }
 
   /**
@@ -136,11 +328,6 @@ public class MainRoomController extends RoomController {
    */
   @FXML
   public void clickFlask(MouseEvent event) {
-
-    SoundManager.playClick();
-
-    System.out.println("flask clicked");
-
     if (!GameState.isTask1Completed) {
       // make AI aware of the task completion
       gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
@@ -156,55 +343,6 @@ public class MainRoomController extends RoomController {
     }
     if (GameState.isTask3Completed) {
       return;
-    }
-
-    if (GameState.isChemical1Found || GameState.isChemical2Found) {
-      if ((GameState.isChemical1Found) && (GameState.isChemical1Added == false)) {
-        System.out.println("ADDING CHEMICAL 1");
-        hideFlasks();
-        SoundManager.playSplash();
-        flask2.setVisible(true);
-        chemical1Backpack.setVisible(false);
-        GameState.isChemical1Added = true;
-
-        if (GameState.isChemical1Added && GameState.isChemical2Added) {
-
-          // set all game state variables to reflect task 3 completion
-          System.out.println("TASK 3 COMPLETED");
-          GameState.isTask3Completed = true;
-          GameState.isChecklist3Active = false;
-          GameState.isChecklist4Active = true;
-
-          // tick of the task in the checklist
-          checklist3.setVisible(false);
-          checklist4.setVisible(true);
-
-          // make AI aware that task 3 is done
-          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
-        }
-        return;
-      }
-      if ((GameState.isChemical2Found) && (GameState.isChemical2Added == false)) {
-        System.out.println("ADDING CHEMICAL 2");
-        hideFlasks();
-        SoundManager.playBubbles();
-        flask3.setVisible(true);
-        chemical2Backpack.setVisible(false);
-        GameState.isChemical2Added = true;
-
-        if (GameState.isChemical1Added && GameState.isChemical2Added) {
-          System.out.println("TASK 3 COMPLETED");
-          GameState.isTask3Completed = true;
-          GameState.isChecklist3Active = false;
-          GameState.isChecklist4Active = true;
-          checklist3.setVisible(false);
-          checklist4.setVisible(true);
-
-          // make AI aware that task 3 is done
-          gameMaster.giveContext(GptPromptEngineering.introduceFourthTask());
-        }
-        return;
-      }
     }
   }
 
