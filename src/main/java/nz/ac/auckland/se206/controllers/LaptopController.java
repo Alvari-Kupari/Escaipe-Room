@@ -14,6 +14,7 @@ import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
+import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 
 public class LaptopController extends RoomController {
   @FXML private PasswordField passwordField;
@@ -63,6 +64,8 @@ public class LaptopController extends RoomController {
                 quizAnswers.setVisible(true);
 
                 SoundManager.playCorrect();
+
+                gameMaster.giveContext(GptPromptEngineering.answerQuestionOnWhiteBoard());
 
                 return;
               }
