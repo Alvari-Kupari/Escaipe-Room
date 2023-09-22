@@ -51,9 +51,25 @@ public class GptPromptEngineering {
     return "The player has now completed task 1, and now must complete task 2 before they can"
         + " progress. To complete task 2, the player must open the storage locker, which is"
         + " located in the storage room. In order to open the storage locker, the student"
-        + " must collect a key from the main room to open the lock to the locker, if they"
-        + " havent already. Once the chemical locker is open, the player must collect the 2"
-        + " chemicals located inside.";
+        + " must use the key they have found, and drag it from their inventory to the lock."
+        + " Once the chemical locker is open, the player must collect the 2 chemicals"
+        + " located inside.";
+  }
+
+  /**
+   * Introduces the 2nd task to the AI.
+   *
+   * @return the prompt to the AI
+   */
+  public static String introduceSecondTaskWithoutKey() {
+    return "The player has now completed task 1, and now must complete task 2 before they can"
+        + " progress. To complete task 2, the player must open the storage locker, which is"
+        + " located in the storage room. In order to open the storage locker, the student"
+        + " must collect a key from the main room The key is"
+        + " located in a zipped bag under the desk in the main room, and the bag must be"
+        + " unzipped to get the key. To use the key, the player needs to drag the key onto"
+        + " the lock in the storage locker. Once the chemical locker is open, the player"
+        + " must collect the 2 chemicals located inside.";
   }
 
   /**
@@ -63,9 +79,8 @@ public class GptPromptEngineering {
    */
   public static String introduceThirdTask() {
     return "The player has now completed task 2, and must complete task 3 before they can progress."
-        + " To complete task 3, the player must use the chemicals they have collected from"
-        + " the storage room, to perform a chemical reaction in the flask, which is in the"
-        + " main room.";
+        + " To complete task 3, the player must drag the chemicals they have collected, from"
+        + " their inventory into the flask. The flask is located in the main room.";
   }
 
   /**
@@ -75,11 +90,25 @@ public class GptPromptEngineering {
    */
   public static String introduceFourthTask() {
     return "The player has now completed task 3, and must complete task 4 before they can progress."
-        + " To complete task 4, the player must correctly answer a quiz question on a"
-        + " whiteboard. The whiteboard is located in your office. To find the answer to the"
-        + " question, the player must hack into your laptop by guessing the password. The"
-        + " password will be the answer to a riddle. The answer to the quiz question on the"
-        + " whiteboard will then be open in the laptop once it has been hacked into.";
+               + " To begin task 4, the player must hack into your laptop by guessing the password."
+               + " The password will be the answer to a riddle, which you will give the player once"
+               + " they click on the laptop. Once the player has answered the riddle correctly,"
+               + " they should then enter the riddle answer as the password. Remember to not help"
+               + " the player with what they should do unless they ask for help or guidance.";
+  }
+
+  /**
+   * Updates the AI's knowledge of the game.
+   *
+   * @return a prompt to the AI.
+   */
+  public static String answerQuestionOnWhiteBoard() {
+    return "The player has now solved the riddle and hacked into your laptop and can now see"
+        + " answers to the quiz question on the whiteboard, for each day of the week. To"
+        + " complete task 4, the player must choose the correct answer, based on what day of"
+        + " the week it currently is. They must then write that answer on the whiteboard,"
+        + " which is located in your office. Remember to only help the player if they ask"
+        + " for help.";
   }
 
   /**
@@ -91,7 +120,8 @@ public class GptPromptEngineering {
     return "The player has completed all tasks and can now exit the game by going through the exit"
         + " door, which is located in the main room. Pretend you are angry at the student"
         + " for completing the tasks close to the deadline. Note that helping the player at"
-        + " this stage still counts as a hint.";
+        + " this stage still counts as a hint, and therefore you shouldn't tell the player"
+        + " they can leave through the exit unless they ask for a hint.";
   }
 
   /**
@@ -100,16 +130,21 @@ public class GptPromptEngineering {
    * @return the prompt to the AI
    */
   public static String playerCollectedKey() {
-    return "The player has collected a key, which they will need to complete task 2. The player"
-        + " should now focus on using the key to open the storage locker. Pretend like you"
-        + " are wondering what the key does. Respond to the player in under 10 words. This "
-        + " response is not a hint.";
+    return "The player has collected a key. Pretend like"
+        + " you are wondering what the key does. Respond to the player in under 10 words."
+        + " This  response is not a hint.";
   }
 
-  public static String playerCollectedKeyBeforeCompletingTask1() {
-    return "The player has just collected a key which can be used to open a storage locker, located"
-        + " in the storage room. However, the player hasn't yet completed task 1, so your"
-        + " hints should still focus on clicking the flask in the middle of the main room.";
+  /**
+   * Tells the AI that the player has collected the key.
+   *
+   * @return the prompt to the AI
+   */
+  public static String playerCollectedKeyButStillOnFirstTask() {
+    return "The player has collected a key. Pretend like you are wondering what the key does."
+        + " Respond to the player in under 10 words. Note at this stage in the game, the"
+        + " player still needs to complete task 1 by clicking the flask in the middle of the"
+        + " main room. This  response is not a hint.";
   }
 
   /**
