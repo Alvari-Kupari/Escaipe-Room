@@ -94,7 +94,7 @@
             <Image url="@../images/professor_TALKING.gif" />
          </image>
       </ImageView>
-      <Button fx:id="toggleChat" layoutX="8.0" layoutY="354.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
+      <Button fx:id="toggleChat" layoutX="8.0" layoutY="354.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="149.0" text="Hide Chat" />
       <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="212.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
          <image>
             <Image url="@../images/chalkboard.png" />
