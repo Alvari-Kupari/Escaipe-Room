@@ -7,7 +7,9 @@ import javafx.scene.media.MediaPlayer;
 /** This is the entry point of the SoundManager. Where all game sounds are handled. */
 public class SoundManager {
 
+  // Create a media player for each sound
   private static MediaPlayer mediaPlayer;
+  // Get the URL for each sound
   private static URL soundClick = App.class.getResource("/sounds/click.mp3");
   private static URL soundSelect = App.class.getResource("/sounds/select.mp3");
   private static URL soundError = App.class.getResource("/sounds/error.mp3");
