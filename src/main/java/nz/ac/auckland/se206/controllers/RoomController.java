@@ -2,7 +2,6 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -15,7 +14,7 @@ public class RoomController {
   public static GameMaster gameMaster;
 
   @FXML protected Text timer;
-  @FXML protected TextArea chat;
+  @FXML protected Text chat;
   @FXML protected TextField playerInput;
   @FXML protected Text hintsNumber;
   @FXML protected Button toggleChat;
@@ -35,6 +34,7 @@ public class RoomController {
   @FXML protected ImageView checklist4;
   @FXML protected ImageView checklist5;
   @FXML protected ImageView keyBackpack;
+  @FXML protected ImageView chalkBoard;
 
   @FXML
   private void initialize() {

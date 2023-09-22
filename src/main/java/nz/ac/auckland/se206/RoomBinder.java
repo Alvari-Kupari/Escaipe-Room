@@ -11,8 +11,9 @@ public class RoomBinder {
   private static Text timer;
   public static Text grade;
   public static Text hintsNumber;
+  public static Text chat;
   private static TextField chatInput;
-  public static TextArea chat, riddleText;
+  public static TextArea riddleText;
   private static Button toggleChatButton;
   public static ImageView chemical1;
   public static ImageView chemical2;
@@ -35,7 +36,7 @@ public class RoomBinder {
   // This method is used to bind the room elements to the room controller
   public static void bindRoom(
       // Chat area for the user to see the chat with the professor
-      TextArea chat,
+      Text chat,
       // The timer for the game
       Text timer,
       // The input for the user to type in the chat to the professor
