@@ -185,8 +185,6 @@ public class StorageRoomController extends RoomController {
               chemical2.setOpacity(1);
               // Set game state of door opened
               GameState.doorOpened = true;
-              // click sound
-              SoundManager.playClick();
             }
           });
       // make the keyBackpack back to not opaque when not dragged
@@ -195,6 +193,8 @@ public class StorageRoomController extends RoomController {
             keyBackpack.setOpacity(1);
             // if the rackdoor is opened, prompt gpt
             if (GameState.doorOpened) {
+              // click sound
+              SoundManager.playClick();
               // make AI respond to the storage door opening
               gameMaster.giveContext(GptPromptEngineering.beCarefulInStorageLocker());
               gameMaster.respond();
