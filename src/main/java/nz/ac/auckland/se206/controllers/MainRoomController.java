@@ -322,14 +322,9 @@ public class MainRoomController extends RoomController {
     // Update the game state
     GameState.isKeyObtained = true;
 
-    if (GameState.isTask1Completed) {
-      // make AI aware of the new change
-      gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
-      gameMaster.respond();
-    } else {
-      // make sure the AI knows that task 1 is still to be complete
-      gameMaster.giveContext(GptPromptEngineering.playerCollectedKeyBeforeCompletingTask1());
-    }
+    // make AI aware of the new change
+    gameMaster.giveContext(GptPromptEngineering.playerCollectedKey());
+    gameMaster.respond();
   }
 
   /**
@@ -341,8 +336,13 @@ public class MainRoomController extends RoomController {
   public void clickFlask(MouseEvent event) {
     SoundManager.playClick();
     if (!GameState.isTask1Completed) {
-      // make AI aware of the task completion
-      gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
+      if (GameState.isKeyObtained) {
+        // make AI aware of the task completion
+        gameMaster.giveContext(GptPromptEngineering.introduceSecondTask());
+      } else {
+        // make AI aware of the task completion
+        gameMaster.giveContext(GptPromptEngineering.introduceSecondTaskWithoutKey());
+      }
 
       // set all necessary game states to reflect task 2 completion
       GameState.isTask1Completed = true;

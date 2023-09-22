@@ -51,11 +51,25 @@ public class GptPromptEngineering {
     return "The player has now completed task 1, and now must complete task 2 before they can"
                + " progress. To complete task 2, the player must open the storage locker, which is"
                + " located in the storage room. In order to open the storage locker, the student"
-               + " must collect a key from the main room, if they havent already. The key is"
-               + " located in a zipped bag under the desk in the main room, and the bag must be"
-               + " unzipped to get the key. To use the key, the player needs to drag the key onto"
-               + " the lock in the storage locker. Once the chemical locker is open, the player"
-               + " must collect the 2 chemicals located inside.";
+               + " must use the key they have found, and drag it from their inventory to the lock."
+               + " Once the chemical locker is open, the player must collect the 2 chemicals"
+               + " located inside.";
+  }
+
+  /**
+   * Introduces the 2nd task to the AI.
+   *
+   * @return the prompt to the AI
+   */
+  public static String introduceSecondTaskWithoutKey() {
+    return "The player has now completed task 1, and now must complete task 2 before they can"
+        + " progress. To complete task 2, the player must open the storage locker, which is"
+        + " located in the storage room. In order to open the storage locker, the student"
+        + " must collect a key from the main room The key is"
+        + " located in a zipped bag under the desk in the main room, and the bag must be"
+        + " unzipped to get the key. To use the key, the player needs to drag the key onto"
+        + " the lock in the storage locker. Once the chemical locker is open, the player"
+        + " must collect the 2 chemicals located inside.";
   }
 
   /**
@@ -101,16 +115,9 @@ public class GptPromptEngineering {
    * @return the prompt to the AI
    */
   public static String playerCollectedKey() {
-    return "The player has collected a key, which they will need to complete task 2. The player"
-        + " should now focus on using the key to open the storage locker. Pretend like you"
-        + " are wondering what the key does. Respond to the player in under 10 words. This "
-        + " response is not a hint.";
-  }
-
-  public static String playerCollectedKeyBeforeCompletingTask1() {
-    return "The player has just collected a key which can be used to open a storage locker, located"
-        + " in the storage room. However, the player hasn't yet completed task 1, so your"
-        + " hints should still focus on clicking the flask in the middle of the main room.";
+    return "The player has collected a key, which they will need to complete task 2. Pretend like"
+               + " you are wondering what the key does. Respond to the player in under 10 words."
+               + " This  response is not a hint.";
   }
 
   /**
