@@ -34,6 +34,9 @@ public class StorageRoomController extends RoomController {
   public void initialize() {
     bind();
 
+    // set chat prompt text
+    playerInput.setPromptText("Chat here ... ");
+
     // make pressing enter send chat
     setEnterToSendChat();
 

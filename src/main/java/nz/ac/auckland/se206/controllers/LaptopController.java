@@ -30,6 +30,9 @@ public class LaptopController extends RoomController {
     // bind common room elements
     bind();
 
+    // set chat prompt text
+    playerInput.setPromptText("Chat here ... ");
+
     // make pressing enter send chat
     setEnterToSendChat();
 

@@ -31,6 +31,9 @@ public class TeacherRoomController extends RoomController {
     // make pressing enter send chat
     setEnterToSendChat();
 
+    // set chat prompt text
+    playerInput.setPromptText("Chat here ... ");
+
     // bind common room elements
     bind();
 

@@ -42,6 +42,9 @@ public class MainRoomController extends RoomController {
     // Initialization code goes here
     Timer.bindText(timer);
 
+    // set chat prompt text
+    playerInput.setPromptText("Chat here ... ");
+
     // bind common room elements
     bind();
 
