@@ -33,7 +33,7 @@
       </ImageView>
       <Button fx:id="btnMainMenu" layoutX="664.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#goMainMenu" text="Main Menu" />
       <Button fx:id="btnExit" layoutX="825.0" layoutY="447.0" mnemonicParsing="false" onMouseClicked="#exit" text="Exit Game" />
-      <Text fx:id="grade" fill="#d3061a" layoutX="685.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+" wrappingWidth="314.8033447265625">
+      <Text fx:id="grade" fill="#d3061a" layoutX="675.0" layoutY="380.0" strokeType="OUTSIDE" strokeWidth="0.0" text="A+" wrappingWidth="314.8033447265625">
          <font>
             <Font size="96.0" />
          </font>
