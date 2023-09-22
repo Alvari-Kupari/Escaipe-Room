@@ -95,6 +95,13 @@
          </image>
       </ImageView>
       <Button fx:id="toggleChat" layoutX="8.0" layoutY="354.0" mnemonicParsing="false" onAction="#onToggleChat" text="Hide Chat" />
+      <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="212.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/chalkboard.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="playerInput" layoutX="16.0" layoutY="300.0" prefHeight="34.0" prefWidth="178.0" />
+      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.0" />
       <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
@@ -152,12 +159,5 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="212.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/chalkboard.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="playerInput" layoutX="16.0" layoutY="300.0" prefHeight="34.0" prefWidth="178.0" />
-      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="178.0" />
    </children>
 </Pane>
