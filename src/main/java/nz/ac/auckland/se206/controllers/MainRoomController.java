@@ -118,7 +118,6 @@ public class MainRoomController extends RoomController {
               }
               // make flask hover image opaque
               flask.setOpacity(0.5);
-              SoundManager.playSplash();
               GameState.isChemical1Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
                 GameState.isTask3Completed = true;
@@ -135,6 +134,13 @@ public class MainRoomController extends RoomController {
       chemical1Backpack.setOnMouseReleased(
           e -> {
             chemical1Backpack.setOpacity(1);
+
+            // if chemical1 is added, make sound accordingly
+            if (GameState.isChemical1Added && !GameState.isChemical2Added) {
+              SoundManager.playSplash();
+            } else if (GameState.isChemical2Added && GameState.isChemical1Added) {
+              SoundManager.playBubbles();
+            }
 
             // if the task3 is done, make the AI aware of it
             if (GameState.isTask3Completed) {
@@ -213,7 +219,6 @@ public class MainRoomController extends RoomController {
               }
               // make flask image opaque
               flask.setOpacity(0.5);
-              SoundManager.playBubbles();
               GameState.isChemical2Added = true;
               if (GameState.isChemical1Added && GameState.isChemical2Added) {
                 GameState.isTask3Completed = true;
@@ -228,6 +233,13 @@ public class MainRoomController extends RoomController {
       chemical2Backpack.setOnMouseReleased(
           e -> {
             chemical2Backpack.setOpacity(1);
+
+            // if chemical2 is added, make sound
+            if (GameState.isChemical2Added && !GameState.isChemical1Added) {
+              SoundManager.playSplash();
+            } else if (GameState.isChemical2Added && GameState.isChemical1Added) {
+              SoundManager.playBubbles();
+            }
 
             // if the task3 is done, make the AI aware of it
             if (GameState.isTask3Completed) {
