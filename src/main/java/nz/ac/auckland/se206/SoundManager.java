@@ -14,7 +14,7 @@ public class SoundManager {
   private static URL soundSelect = App.class.getResource("/sounds/select.mp3");
   private static URL soundError = App.class.getResource("/sounds/error.mp3");
   private static URL soundSplash = App.class.getResource("/sounds/splash.mp3");
-  private static URL soundBubbles = App.class.getResource("/sounds/bubbles.mp3");
+  private static URL soundBubbles = App.class.getResource("/sounds/bubbles.MP3");
   private static URL soundCorrect = App.class.getResource("/sounds/correct.mp3");
   private static URL soundRoundWon = App.class.getResource("/sounds/roundWon.mp3");
   private static URL soundRoundLost = App.class.getResource("/sounds/roundLost.mp3");
