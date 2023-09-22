@@ -63,9 +63,8 @@ public class GptPromptEngineering {
    */
   public static String introduceThirdTask() {
     return "The player has now completed task 2, and must complete task 3 before they can progress."
-        + " To complete task 3, the player must use the chemicals they have collected from"
-        + " the storage room, to perform a chemical reaction in the flask, which is in the"
-        + " main room.";
+               + " To complete task 3, the player must drag the chemicals they have collected, from"
+               + " their inventory into the flask. The flask is located in the main room.";
   }
 
   /**
