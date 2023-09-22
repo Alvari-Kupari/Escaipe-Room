@@ -173,6 +173,6 @@
          </image>
       </ImageView>
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
-      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="156.13671875" />
+      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.13671875" />
    </children>
 </Pane>

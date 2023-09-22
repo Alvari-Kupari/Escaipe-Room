@@ -54,6 +54,10 @@ public class RoomController {
     // Set the player input and chat visibility to the opposite of what it was
     playerInput.setVisible(openChat);
     chat.setVisible(openChat);
+
+    // make chalkboard not visible
+    chalkBoard.setVisible(openChat);
+
     // Set the game state of the chat toggle to the opposite of what it was
     GameState.isChatOpen = !GameState.isChatOpen;
   }
@@ -94,7 +98,8 @@ public class RoomController {
         checklist4,
         checklist5,
         // Image of the key in the inventory
-        keyBackpack);
+        keyBackpack,
+        chalkBoard);
   }
 
   protected void setEnterToSendChat() {

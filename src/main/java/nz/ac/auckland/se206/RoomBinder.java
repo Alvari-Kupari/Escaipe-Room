@@ -32,6 +32,7 @@ public class RoomBinder {
   public static ImageView checklist3;
   public static ImageView checklist4;
   public static ImageView checklist5;
+  private static ImageView chalkBoard;
 
   // This method is used to bind the room elements to the room controller
   public static void bindRoom(
@@ -76,7 +77,8 @@ public class RoomBinder {
       // Image of the fifth checklist
       ImageView checklist5,
       // Image of the key in the inventory
-      ImageView keyBackpack) {
+      ImageView keyBackpack,
+      ImageView chalkBoard) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -128,6 +130,8 @@ public class RoomBinder {
       RoomBinder.checklist4.visibleProperty().bindBidirectional(checklist4.visibleProperty());
       RoomBinder.checklist5.visibleProperty().bindBidirectional(checklist5.visibleProperty());
       RoomBinder.keyBackpack.visibleProperty().bindBidirectional(keyBackpack.visibleProperty());
+
+      RoomBinder.chalkBoard.visibleProperty().bindBidirectional(chalkBoard.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -150,6 +154,7 @@ public class RoomBinder {
     RoomBinder.checklist4 = checklist4;
     RoomBinder.checklist5 = checklist5;
     RoomBinder.keyBackpack = keyBackpack;
+    RoomBinder.chalkBoard = chalkBoard;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {
