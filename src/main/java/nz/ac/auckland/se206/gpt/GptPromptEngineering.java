@@ -49,11 +49,13 @@ public class GptPromptEngineering {
    */
   public static String introduceSecondTask() {
     return "The player has now completed task 1, and now must complete task 2 before they can"
-        + " progress. To complete task 2, the player must open the storage locker, which is"
-        + " located in the storage room. In order to open the storage locker, the student"
-        + " must collect a key from the main room to open the lock to the locker, if they"
-        + " havent already. Once the chemical locker is open, the player must collect the 2"
-        + " chemicals located inside.";
+               + " progress. To complete task 2, the player must open the storage locker, which is"
+               + " located in the storage room. In order to open the storage locker, the student"
+               + " must collect a key from the main room, if they havent already. The key is"
+               + " located in a zipped bag under the desk in the main room, and the bag must be"
+               + " unzipped to get the key. To use the key, the player needs to drag the key onto"
+               + " the lock in the storage locker. Once the chemical locker is open, the player"
+               + " must collect the 2 chemicals located inside.";
   }
 
   /**
@@ -63,8 +65,8 @@ public class GptPromptEngineering {
    */
   public static String introduceThirdTask() {
     return "The player has now completed task 2, and must complete task 3 before they can progress."
-               + " To complete task 3, the player must drag the chemicals they have collected, from"
-               + " their inventory into the flask. The flask is located in the main room.";
+        + " To complete task 3, the player must drag the chemicals they have collected, from"
+        + " their inventory into the flask. The flask is located in the main room.";
   }
 
   /**
