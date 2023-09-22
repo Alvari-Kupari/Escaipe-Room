@@ -76,7 +76,7 @@
             <Image url="@../images/professor_TALKING.gif" />
          </image>
       </ImageView>
-      <Button fx:id="toggleChat" layoutX="21.0" layoutY="370.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="83.0" text="Hide Chat" />
+      <Button fx:id="toggleChat" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="149.0" text="Hide Chat" />
       <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
