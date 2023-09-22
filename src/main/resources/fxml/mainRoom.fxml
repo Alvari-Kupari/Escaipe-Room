@@ -108,6 +108,13 @@
          </font>
       </Text>
       <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
+      <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="185.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/chalkboard.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
+      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.13671875" />
       <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
@@ -167,12 +174,5 @@
          </rotationAxis>
       </ImageView>
       <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#zipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
-      <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="185.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
-         <image>
-            <Image url="@../images/chalkboard.png" />
-         </image>
-      </ImageView>
-      <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
-      <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.13671875" />
    </children>
 </Pane>
