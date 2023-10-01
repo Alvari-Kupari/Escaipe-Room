@@ -90,6 +90,7 @@ public class Timer {
 
   public static void stopTimer() {
     GameState.taskCompletionTime = getTimeInSeconds();
+    GameState.isGameStarted = false;
   }
 
   public static int getTimeInSeconds() {
