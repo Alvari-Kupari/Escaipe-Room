@@ -57,6 +57,9 @@ public class App extends Application {
 
     scene = new Scene(SceneManager.getRoot(Room.START), 1000, 626);
     Parent root = SceneManager.getRoot(Room.START);
+    // Set css style
+    String css = this.getClass().getResource("/css/style.css").toExternalForm();
+    scene.getStylesheets().add(css);
     stage.setScene(scene);
     stage.show();
     root.requestFocus();

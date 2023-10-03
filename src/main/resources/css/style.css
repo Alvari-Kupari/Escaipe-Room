@@ -1,0 +1,22 @@
+.button {
+    -fx-background-color: rgba(91, 71, 20, 0.821);
+    background-color: rgba(91, 71, 20, 0.821);
+    -fx-background-insets: 0, 1, 2, 3, 0;
+    -fx-font-family: "Lucida Console";
+    font-family: "Lucida Console";
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    font-weight: bold;
+    -fx-font-size: 12px;
+    font-size: 12px;
+}
+
+.button:hover {
+    -fx-background-color: rgba(180, 139, 37, 0.821);
+    background-color: rgba(180, 139, 37, 0.821);
+}
+
+#btnStart {
+    -fx-font-size: 36px;
+    font-size: 36px;
+}
