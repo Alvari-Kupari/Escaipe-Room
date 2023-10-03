@@ -453,6 +453,9 @@ public class MainRoomController extends RoomController {
     // caculate what grade to show
     calculateGrade();
 
+    // stop the timer
+    Timer.stopTimer();
+
     App.changeScene(Room.EXIT);
   }
 
