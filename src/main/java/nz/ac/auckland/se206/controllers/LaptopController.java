@@ -1,5 +1,6 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -9,6 +10,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
+import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
@@ -23,6 +25,8 @@ public class LaptopController extends RoomController {
   @FXML private Button goBackButton;
   @FXML private ImageView quizAnswers;
   @FXML private TextArea riddle;
+
+  @FXML private ImageView settingsIcon;
 
   private boolean isPasswordHidden;
 
@@ -80,6 +84,35 @@ public class LaptopController extends RoomController {
     unMaskedPassword.setOnKeyPressed(handler);
   }
 
+  /**
+   * Handles the key pressed event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyPressed(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " pressed");
+
+    if (event.getCode().equals(KeyCode.ESCAPE)) {
+      System.out.println("Escape pressed");
+      if (paneSettings.isVisible()) {
+        paneSettings.setVisible(false);
+      } else {
+        paneSettings.setVisible(true);
+      }
+    }
+  }
+
+  /**
+   * Handles the key released event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyReleased(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " released");
+  }
+
   @FXML
   private void onMaskPassword() {
     unMaskedPassword.setVisible(isPasswordHidden);
@@ -89,5 +122,15 @@ public class LaptopController extends RoomController {
   @FXML
   private void onGoBack() {
     App.changeScene(Room.TEACHER_ROOM);
+  }
+
+  @FXML
+  public void clickSettings(MouseEvent event) throws IOException {
+    System.out.println("Settings Icon clicked");
+    if (paneSettings.isVisible()) {
+      paneSettings.setVisible(false);
+    } else {
+      paneSettings.setVisible(true);
+    }
   }
 }

@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.fxml.FXML;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
@@ -33,6 +34,8 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView pouch;
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
+
+  @FXML private ImageView settingsIcon;
 
   private double horizontalOffset;
   private double verticalOffset;
@@ -278,6 +281,15 @@ public class MainRoomController extends RoomController {
   @FXML
   public void onKeyPressed(KeyEvent event) {
     System.out.println("key " + event.getCode() + " pressed");
+
+    if (event.getCode().equals(KeyCode.ESCAPE)) {
+      System.out.println("Escape pressed");
+      if (paneSettings.isVisible()) {
+        paneSettings.setVisible(false);
+      } else {
+        paneSettings.setVisible(true);
+      }
+    }
   }
 
   /**
@@ -496,6 +508,16 @@ public class MainRoomController extends RoomController {
         e -> {
           flask.setOpacity(0);
         });
+  }
+
+  @FXML
+  public void clickSettings(MouseEvent event) throws IOException {
+    System.out.println("Settings Icon clicked");
+    if (paneSettings.isVisible()) {
+      paneSettings.setVisible(false);
+    } else {
+      paneSettings.setVisible(true);
+    }
   }
 
   private void calculateGrade() {

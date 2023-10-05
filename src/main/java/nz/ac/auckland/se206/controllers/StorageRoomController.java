@@ -7,6 +7,8 @@ import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.KeyCode;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Rectangle;
 import javafx.util.Duration;
@@ -24,6 +26,8 @@ public class StorageRoomController extends RoomController {
   @FXML private ImageView chemical2;
   @FXML private ImageView rack;
   @FXML private ImageView rackDoor;
+
+  @FXML private ImageView settingsIcon;
 
   private RotateTransition rackRotation;
   private RotateTransition rackDoorRotation;
@@ -105,6 +109,35 @@ public class StorageRoomController extends RoomController {
 
     System.out.println();
     System.out.println("************** Initialising StorageRoomController **************");
+  }
+
+  /**
+   * Handles the key pressed event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyPressed(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " pressed");
+
+    if (event.getCode().equals(KeyCode.ESCAPE)) {
+      System.out.println("Escape pressed");
+      if (paneSettings.isVisible()) {
+        paneSettings.setVisible(false);
+      } else {
+        paneSettings.setVisible(true);
+      }
+    }
+  }
+
+  /**
+   * Handles the key released event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyReleased(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " released");
   }
 
   /**
@@ -413,5 +446,15 @@ public class StorageRoomController extends RoomController {
             chemical2.setOpacity(1);
           }
         });
+  }
+
+  @FXML
+  public void clickSettings(MouseEvent event) throws IOException {
+    System.out.println("Settings Icon clicked");
+    if (paneSettings.isVisible()) {
+      paneSettings.setVisible(false);
+    } else {
+      paneSettings.setVisible(true);
+    }
   }
 }

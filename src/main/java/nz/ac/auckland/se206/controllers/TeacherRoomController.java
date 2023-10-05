@@ -4,6 +4,7 @@ import java.io.IOException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
+import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -21,6 +22,8 @@ public class TeacherRoomController extends RoomController {
   @FXML private Rectangle mainDoor;
   @FXML private Polygon laptop;
   @FXML private TextField userAnswer;
+
+  @FXML private ImageView settingsIcon;
 
   private boolean hasLaptopBeenOpened;
 
@@ -75,6 +78,35 @@ public class TeacherRoomController extends RoomController {
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");
+  }
+
+  /**
+   * Handles the key pressed event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyPressed(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " pressed");
+
+    if (event.getCode().equals(KeyCode.ESCAPE)) {
+      System.out.println("Escape pressed");
+      if (paneSettings.isVisible()) {
+        paneSettings.setVisible(false);
+      } else {
+        paneSettings.setVisible(true);
+      }
+    }
+  }
+
+  /**
+   * Handles the key released event.
+   *
+   * @param event the key event
+   */
+  @FXML
+  public void onKeyReleased(KeyEvent event) {
+    System.out.println("key " + event.getCode() + " released");
   }
 
   /**
@@ -153,5 +185,15 @@ public class TeacherRoomController extends RoomController {
         e -> {
           laptop.setOpacity(0);
         });
+  }
+
+  @FXML
+  public void clickSettings(MouseEvent event) throws IOException {
+    System.out.println("Settings Icon clicked");
+    if (paneSettings.isVisible()) {
+      paneSettings.setVisible(false);
+    } else {
+      paneSettings.setVisible(true);
+    }
   }
 }
