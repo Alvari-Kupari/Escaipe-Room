@@ -197,6 +197,13 @@
                </image>
             </ImageView>
             <Button fx:id="btnBack" layoutX="301.0" layoutY="288.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+            <Button fx:id="btnMainMenu" layoutX="147.0" layoutY="288.0" mnemonicParsing="false" onAction="#goMainMenu" text="Main Menu" />
+            <Button fx:id="btnExit" layoutX="437.0" layoutY="288.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="237.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/text-LOADING.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
    </children>

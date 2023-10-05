@@ -37,6 +37,7 @@ public class RoomBinder {
   public static Pane paneSettings;
   public static ImageView speechOn;
   public static ImageView speechOff;
+  public static ImageView loading;
 
   // This method is used to bind the room elements to the room controller
   public static void bindRoom(
@@ -88,7 +89,9 @@ public class RoomBinder {
       // The image of the speech on
       ImageView speechOn,
       // The image of the speech off
-      ImageView speechOff) {
+      ImageView speechOff,
+      // The image of the loading icon
+      ImageView loading) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -146,6 +149,7 @@ public class RoomBinder {
       RoomBinder.paneSettings.visibleProperty().bindBidirectional(paneSettings.visibleProperty());
       RoomBinder.speechOn.visibleProperty().bindBidirectional(speechOn.visibleProperty());
       RoomBinder.speechOff.visibleProperty().bindBidirectional(speechOff.visibleProperty());
+      RoomBinder.loading.visibleProperty().bindBidirectional(loading.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -172,6 +176,7 @@ public class RoomBinder {
     RoomBinder.paneSettings = paneSettings;
     RoomBinder.speechOn = speechOn;
     RoomBinder.speechOff = speechOff;
+    RoomBinder.loading = loading;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {

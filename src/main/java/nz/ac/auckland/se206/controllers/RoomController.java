@@ -39,6 +39,7 @@ public class RoomController {
   @FXML protected Pane paneSettings;
   @FXML protected ImageView speechOn;
   @FXML protected ImageView speechOff;
+  @FXML protected ImageView loading;
 
   @FXML
   private void initialize() {
@@ -106,7 +107,8 @@ public class RoomController {
         chalkBoard,
         paneSettings,
         speechOn,
-        speechOff);
+        speechOff,
+        loading);
   }
 
   protected void setEnterToSendChat() {

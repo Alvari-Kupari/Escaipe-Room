@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.util.Random;
 import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
+import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
 import javafx.scene.control.Button;
@@ -30,6 +31,8 @@ public class StorageRoomController extends RoomController {
 
   @FXML private ImageView settingsIcon;
   @FXML private Button btnBack;
+  @FXML private Button btnMainMenu;
+  @FXML private Button btnExit;
 
   private RotateTransition rackRotation;
   private RotateTransition rackDoorRotation;
@@ -479,5 +482,56 @@ public class StorageRoomController extends RoomController {
   @FXML
   public void goBack() {
     paneSettings.setVisible(false);
+  }
+
+  // This method is called when the user clicks on the Main Menu button
+  @FXML
+  private void goMainMenu() throws IOException {
+    System.out.println("Go to Main Menu");
+    // Set the loading image to visible
+    loading.setVisible(true);
+    // Disable the buttons for exiting
+    btnExit.setDisable(true);
+    // Disable the buttons for going to the main menu
+    btnMainMenu.setDisable(true);
+    // Set the game back to its default state
+    GameState.setDefaults();
+
+    // This allows the game to restart in the background
+    Task<Void> restartTask =
+        new Task<Void>() {
+          @Override
+          protected Void call() throws Exception {
+            System.out.println("...Restarting...");
+
+            btnExit.setDisable(true);
+            btnMainMenu.setDisable(true);
+            App.reloadFXML();
+            return null;
+          }
+        };
+
+    restartTask.setOnSucceeded(
+        e -> {
+          System.out.println("---------------------Succeeded---------------------");
+          btnExit.setDisable(false);
+          btnMainMenu.setDisable(false);
+        });
+
+    restartTask.setOnFailed(
+        e -> {
+          System.out.println("---------------------Failed---------------------");
+          btnExit.setDisable(false);
+          btnMainMenu.setDisable(false);
+        });
+
+    Thread restartThread = new Thread(restartTask);
+    restartThread.start();
+  }
+
+  @FXML
+  private void exit() {
+    System.out.println("Exit");
+    System.exit(0);
   }
 }
