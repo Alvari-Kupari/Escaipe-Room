@@ -33,6 +33,10 @@ public class TextToSpeech {
 
   // This method is used for the professor to speak
   public static void talk(String text) {
+
+    if (!GameState.isTextToSpeechOn) {
+      return;
+    }
     // Multi-Threading
     Task<Void> speechTask =
         new Task<Void>() {
