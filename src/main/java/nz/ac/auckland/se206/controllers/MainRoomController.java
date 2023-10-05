@@ -288,6 +288,7 @@ public class MainRoomController extends RoomController {
     System.out.println("key " + event.getCode() + " pressed");
 
     if (event.getCode().equals(KeyCode.ESCAPE)) {
+      SoundManager.playSetting();
       System.out.println("Escape pressed");
       if (paneSettings.isVisible()) {
         paneSettings.setVisible(false);
@@ -517,6 +518,7 @@ public class MainRoomController extends RoomController {
 
   @FXML
   public void clickSettings(MouseEvent event) throws IOException {
+    SoundManager.playSetting();
     System.out.println("Settings Icon clicked");
     if (paneSettings.isVisible()) {
       paneSettings.setVisible(false);
@@ -527,6 +529,7 @@ public class MainRoomController extends RoomController {
 
   @FXML
   public void turnSpeechOff(MouseEvent event) throws IOException {
+    SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isTextToSpeechOn = false;
     speechOn.setVisible(false);
@@ -535,6 +538,7 @@ public class MainRoomController extends RoomController {
 
   @FXML
   public void turnSpeechOn(MouseEvent event) throws IOException {
+    SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isTextToSpeechOn = true;
     speechOn.setVisible(true);
@@ -543,12 +547,14 @@ public class MainRoomController extends RoomController {
 
   @FXML
   public void goBack() {
+    SoundManager.playSetting();
     paneSettings.setVisible(false);
   }
 
   // This method is called when the user clicks on the Main Menu button
   @FXML
   private void goMainMenu() throws IOException {
+    SoundManager.playSetting();
     System.out.println("Go to Main Menu");
     // Set the loading image to visible
     loading.setVisible(true);
@@ -556,6 +562,7 @@ public class MainRoomController extends RoomController {
     btnExit.setDisable(true);
     // Disable the buttons for going to the main menu
     btnMainMenu.setDisable(true);
+    btnBack.setDisable(true);
     // Set the game back to its default state
     GameState.setDefaults();
 
@@ -578,6 +585,7 @@ public class MainRoomController extends RoomController {
           System.out.println("---------------------Succeeded---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
+          btnBack.setDisable(false);
         });
 
     restartTask.setOnFailed(
@@ -585,6 +593,7 @@ public class MainRoomController extends RoomController {
           System.out.println("---------------------Failed---------------------");
           btnExit.setDisable(false);
           btnMainMenu.setDisable(false);
+          btnBack.setDisable(false);
         });
 
     Thread restartThread = new Thread(restartTask);
@@ -593,6 +602,7 @@ public class MainRoomController extends RoomController {
 
   @FXML
   private void exit() {
+    SoundManager.playSetting();
     System.out.println("Exit");
     System.exit(0);
   }

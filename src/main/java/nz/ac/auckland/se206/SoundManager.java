@@ -18,6 +18,7 @@ public class SoundManager {
   private static URL soundCorrect = App.class.getResource("/sounds/correct.mp3");
   private static URL soundRoundWon = App.class.getResource("/sounds/roundWon.mp3");
   private static URL soundRoundLost = App.class.getResource("/sounds/roundLost.mp3");
+  private static URL soundSetting = App.class.getResource("/sounds/setting.mp3");
 
   /** Plays the click sound */
   public static void playClick() {
@@ -85,6 +86,14 @@ public class SoundManager {
       mediaPlayer.stop();
     }
     mediaPlayer = new MediaPlayer(new Media(soundRoundLost.toString()));
+    mediaPlayer.play();
+  }
+
+  public static void playSetting() {
+    if (mediaPlayer != null) {
+      mediaPlayer.stop();
+    }
+    mediaPlayer = new MediaPlayer(new Media(soundSetting.toString()));
     mediaPlayer.play();
   }
 }
