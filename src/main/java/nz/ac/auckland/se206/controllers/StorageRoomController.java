@@ -6,6 +6,7 @@ import javafx.animation.RotateTransition;
 import javafx.animation.TranslateTransition;
 import javafx.fxml.FXML;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
@@ -28,6 +29,7 @@ public class StorageRoomController extends RoomController {
   @FXML private ImageView rackDoor;
 
   @FXML private ImageView settingsIcon;
+  @FXML private Button btnBack;
 
   private RotateTransition rackRotation;
   private RotateTransition rackDoorRotation;
@@ -472,5 +474,10 @@ public class StorageRoomController extends RoomController {
     GameState.isTextToSpeechOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+  }
+
+  @FXML
+  public void goBack() {
+    paneSettings.setVisible(false);
   }
 }

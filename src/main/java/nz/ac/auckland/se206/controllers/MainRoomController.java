@@ -2,6 +2,7 @@ package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -36,6 +37,7 @@ public class MainRoomController extends RoomController {
   @FXML private Slider zipper;
 
   @FXML private ImageView settingsIcon;
+  @FXML private Button btnBack;
 
   private double horizontalOffset;
   private double verticalOffset;
@@ -534,6 +536,11 @@ public class MainRoomController extends RoomController {
     GameState.isTextToSpeechOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+  }
+
+  @FXML
+  public void goBack() {
+    paneSettings.setVisible(false);
   }
 
   private void calculateGrade() {

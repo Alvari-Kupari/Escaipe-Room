@@ -3,6 +3,7 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
@@ -24,6 +25,7 @@ public class TeacherRoomController extends RoomController {
   @FXML private TextField userAnswer;
 
   @FXML private ImageView settingsIcon;
+  @FXML private Button btnBack;
 
   private boolean hasLaptopBeenOpened;
 
@@ -211,5 +213,10 @@ public class TeacherRoomController extends RoomController {
     GameState.isTextToSpeechOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+  }
+
+  @FXML
+  public void goBack() {
+    paneSettings.setVisible(false);
   }
 }

@@ -27,6 +27,7 @@ public class LaptopController extends RoomController {
   @FXML private TextArea riddle;
 
   @FXML private ImageView settingsIcon;
+  @FXML private Button btnBack;
 
   private boolean isPasswordHidden;
 
@@ -148,5 +149,10 @@ public class LaptopController extends RoomController {
     GameState.isTextToSpeechOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+  }
+
+  @FXML
+  public void goBack() {
+    paneSettings.setVisible(false);
   }
 }

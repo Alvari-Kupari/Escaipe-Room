@@ -196,6 +196,7 @@
                   <Image url="@../images/speechOffIcon.png" />
                </image>
             </ImageView>
+            <Button fx:id="btnBack" layoutX="301.0" layoutY="288.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
          </children>
       </Pane>
    </children>
