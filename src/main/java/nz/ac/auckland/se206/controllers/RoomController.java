@@ -37,6 +37,8 @@ public class RoomController {
   @FXML protected ImageView keyBackpack;
   @FXML protected ImageView chalkBoard;
   @FXML protected Pane paneSettings;
+  @FXML protected ImageView speechOn;
+  @FXML protected ImageView speechOff;
 
   @FXML
   private void initialize() {
@@ -102,7 +104,9 @@ public class RoomController {
         // Image of the key in the inventory
         keyBackpack,
         chalkBoard,
-        paneSettings);
+        paneSettings,
+        speechOn,
+        speechOff);
   }
 
   protected void setEnterToSendChat() {

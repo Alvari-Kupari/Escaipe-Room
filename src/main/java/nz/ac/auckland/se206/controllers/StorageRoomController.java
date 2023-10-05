@@ -457,4 +457,20 @@ public class StorageRoomController extends RoomController {
       paneSettings.setVisible(true);
     }
   }
+
+  @FXML
+  public void turnSpeechOff(MouseEvent event) throws IOException {
+    System.out.println("Turning speech off");
+    GameState.isTextToSpeechOn = false;
+    speechOn.setVisible(false);
+    speechOff.setVisible(true);
+  }
+
+  @FXML
+  public void turnSpeechOn(MouseEvent event) throws IOException {
+    System.out.println("Turning speech on");
+    GameState.isTextToSpeechOn = true;
+    speechOn.setVisible(true);
+    speechOff.setVisible(false);
+  }
 }

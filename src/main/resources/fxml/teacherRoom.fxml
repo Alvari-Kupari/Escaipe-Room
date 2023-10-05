@@ -152,11 +152,21 @@
             <Image url="@../images/settings.png" />
          </image>
       </ImageView>
-      <Pane fx:id="paneSettings" layoutX="194.0" layoutY="124.0" prefHeight="461.0" prefWidth="642.0" visible="false">
+      <Pane fx:id="paneSettings" layoutX="194.0" layoutY="124.0" prefHeight="461.0" prefWidth="642.0">
          <children>
             <ImageView fitHeight="461.0" fitWidth="642.0" pickOnBounds="true">
                <image>
                   <Image url="@../images/Title_Screen.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="speechOn" fitHeight="150.0" fitWidth="200.0" layoutX="261.0" layoutY="63.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/speechIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="speechOff" fitHeight="150.0" fitWidth="200.0" layoutX="261.0" layoutY="63.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../images/speechOffIcon.png" />
                </image>
             </ImageView>
          </children>
