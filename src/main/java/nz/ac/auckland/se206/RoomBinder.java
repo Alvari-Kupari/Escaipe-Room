@@ -4,6 +4,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
 public class RoomBinder {
@@ -33,6 +34,10 @@ public class RoomBinder {
   public static ImageView checklist4;
   public static ImageView checklist5;
   private static ImageView chalkBoard;
+  public static Pane paneSettings;
+  public static ImageView speechOn;
+  public static ImageView speechOff;
+  public static ImageView loading;
 
   // This method is used to bind the room elements to the room controller
   public static void bindRoom(
@@ -78,7 +83,15 @@ public class RoomBinder {
       ImageView checklist5,
       // Image of the key in the inventory
       ImageView keyBackpack,
-      ImageView chalkBoard) {
+      ImageView chalkBoard,
+      // The pane for the settings
+      Pane paneSettings,
+      // The image of the speech on
+      ImageView speechOn,
+      // The image of the speech off
+      ImageView speechOff,
+      // The image of the loading icon
+      ImageView loading) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -132,6 +145,11 @@ public class RoomBinder {
       RoomBinder.keyBackpack.visibleProperty().bindBidirectional(keyBackpack.visibleProperty());
 
       RoomBinder.chalkBoard.visibleProperty().bindBidirectional(chalkBoard.visibleProperty());
+
+      RoomBinder.paneSettings.visibleProperty().bindBidirectional(paneSettings.visibleProperty());
+      RoomBinder.speechOn.visibleProperty().bindBidirectional(speechOn.visibleProperty());
+      RoomBinder.speechOff.visibleProperty().bindBidirectional(speechOff.visibleProperty());
+      RoomBinder.loading.visibleProperty().bindBidirectional(loading.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -155,6 +173,10 @@ public class RoomBinder {
     RoomBinder.checklist5 = checklist5;
     RoomBinder.keyBackpack = keyBackpack;
     RoomBinder.chalkBoard = chalkBoard;
+    RoomBinder.paneSettings = paneSettings;
+    RoomBinder.speechOn = speechOn;
+    RoomBinder.speechOff = speechOff;
+    RoomBinder.loading = loading;
   }
 
   public static void setHintsInfinite(boolean isInfinite) {

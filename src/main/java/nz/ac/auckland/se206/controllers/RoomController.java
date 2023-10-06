@@ -5,6 +5,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
+import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
@@ -35,6 +36,10 @@ public class RoomController {
   @FXML protected ImageView checklist5;
   @FXML protected ImageView keyBackpack;
   @FXML protected ImageView chalkBoard;
+  @FXML protected Pane paneSettings;
+  @FXML protected ImageView speechOn;
+  @FXML protected ImageView speechOff;
+  @FXML protected ImageView loading;
 
   @FXML
   private void initialize() {
@@ -99,7 +104,11 @@ public class RoomController {
         checklist5,
         // Image of the key in the inventory
         keyBackpack,
-        chalkBoard);
+        chalkBoard,
+        paneSettings,
+        speechOn,
+        speechOff,
+        loading);
   }
 
   protected void setEnterToSendChat() {

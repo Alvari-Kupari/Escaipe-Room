@@ -80,6 +80,8 @@ public class GameState {
 
   public static String quizAnswer;
 
+  public static boolean isTextToSpeechOn = true;
+
   // This sets all the variables to their default values
   public static void setDefaults() {
     // The level difficulty
@@ -138,5 +140,7 @@ public class GameState {
     doorOpened = false;
     // the laptop password
     password = Password.getRandomPassword();
+
+    isTextToSpeechOn = true;
   }
 }

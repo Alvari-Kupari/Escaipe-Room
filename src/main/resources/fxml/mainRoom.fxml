@@ -174,5 +174,37 @@
          </rotationAxis>
       </ImageView>
       <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#zipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
+      <ImageView fx:id="settingsIcon" fitHeight="44.0" fitWidth="44.0" layoutX="19.0" layoutY="14.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/settings.png" />
+         </image>
+      </ImageView>
+      <Pane fx:id="paneSettings" layoutX="184.0" layoutY="114.0" prefHeight="461.0" prefWidth="642.0">
+         <children>
+            <ImageView fitHeight="461.0" fitWidth="642.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/Title_Screen.jpg" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="speechOn" fitHeight="150.0" fitWidth="200.0" layoutX="221.0" layoutY="71.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/speechIcon.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="speechOff" fitHeight="150.0" fitWidth="200.0" layoutX="221.0" layoutY="71.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+               <image>
+                  <Image url="@../images/speechOffIcon.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="btnBack" layoutX="301.0" layoutY="288.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
+            <Button fx:id="btnMainMenu" layoutX="147.0" layoutY="288.0" mnemonicParsing="false" onAction="#goMainMenu" text="Main Menu" />
+            <Button fx:id="btnExit" layoutX="437.0" layoutY="288.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
+            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="237.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/text-LOADING.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
    </children>
 </Pane>
