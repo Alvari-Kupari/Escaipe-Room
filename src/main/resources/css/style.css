@@ -4,8 +4,8 @@
 }
 
 .button {
-    -fx-background-color: rgba(91, 71, 20, 0.821);
-    background-color: rgba(91, 71, 20, 0.821);
+    -fx-background-color: rgba(67, 51, 12, 0.821);
+    background-color: rgba(67, 51, 12, 0.821);
     -fx-background-insets: 0, 1, 2, 3, 0;
     -fx-font-family: "Linowrite";
     font-family: "Linowrite";
@@ -17,8 +17,8 @@
 }
 
 .button:hover {
-    -fx-background-color: rgba(91, 71, 20, 0.821);
-    background-color: rgba(91, 71, 20, 0.821);
+    -fx-background-color: rgba(67, 51, 12, 0.821);
+    background-color: rgba(67, 51, 12, 0.821);
 }
 
 #btnStart {
