@@ -17,7 +17,7 @@
             <Image url="@../images/storageroom.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="754.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="754.0" layoutY="13.0" stroke="BLACK" strokeType="INSIDE" width="229.0" />
       <ImageView fx:id="rack" fitHeight="372.0" fitWidth="335.0" layoutX="402.0" layoutY="56.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/rack.png" />
@@ -49,14 +49,14 @@
             <Image url="@../images/text-HINTS_LEFT.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="922.0" layoutY="28.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="34.0" fitWidth="51.0" layoutX="922.0" layoutY="32.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
-      <Text fx:id="hintsNumber" layoutX="931.0" layoutY="55.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+      <Text fx:id="hintsNumber" layoutX="935.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
          <font>
-            <Font name="System Bold" size="33.0" />
+            <Font name="System Bold" size="35.0" />
          </font>
       </Text>
       <ImageView fx:id="professorThinking" fitHeight="340.0" fitWidth="340.0" layoutX="-80.0" layoutY="335.0" pickOnBounds="true" preserveRatio="true" visible="false">

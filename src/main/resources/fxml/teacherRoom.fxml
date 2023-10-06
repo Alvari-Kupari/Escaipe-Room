@@ -18,7 +18,6 @@
             <Image url="@../images/professorsroom.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="753.0" layoutY="16.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="494.0" layoutX="573.0" layoutY="69.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.0" stroke="BLACK" strokeType="INSIDE" width="188.0" />
       <ImageView fitHeight="31.0" fitWidth="120.0" layoutX="344.0" layoutY="302.0" onMouseMoved="#onHoverLaptop" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -26,21 +25,6 @@
          </image>
       </ImageView>
       <Polygon fx:id="laptop" fill="#656f79" layoutX="373.0" layoutY="351.0" onMouseClicked="#onOpenLaptop" onMouseMoved="#hoverLaptop" opacity="0.0" points="72.0, 29.0, 72.0, 29.0, 60.0, 2.0, 60.0, -65.0, -39.0, -65.0, -39.0, 2.0, -39.0, 2.0, -54.0, 23.0, -54.0, 29.0, -46.0, 29.0" stroke="BLACK" strokeType="INSIDE" />
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="766.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/text-HINTS_LEFT.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="923.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/infinity.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="hintsNumber" layoutX="932.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Text>
       <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-80.0" layoutY="328.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor/resting.gif" />
@@ -179,5 +163,21 @@
             </ImageView>
          </children>
       </Pane>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="761.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="229.0" />
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="772.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="infinity" fitHeight="34.0" fitWidth="51.0" layoutX="929.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="hintsNumber" layoutX="942.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
