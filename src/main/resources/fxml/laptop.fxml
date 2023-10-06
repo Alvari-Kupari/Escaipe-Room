@@ -19,7 +19,6 @@
             <Image url="@../images/laptop.png" />
          </image>
       </ImageView>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="734.0" layoutY="24.0" stroke="BLACK" strokeType="INSIDE" width="240.0" />
       <PasswordField fx:id="passwordField" layoutX="395.0" layoutY="281.0" prefHeight="37.0" prefWidth="185.0">
          <font>
             <Font size="15.0" />
@@ -36,21 +35,6 @@
             <Font size="15.0" />
          </font>
       </TextField>
-      <ImageView fx:id="infinity" fitHeight="31.0" fitWidth="80.0" layoutX="908.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/infinity.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="hintsNumber" layoutX="908.0" layoutY="67.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
-         <font>
-            <Font name="System Bold" size="33.0" />
-         </font>
-      </Text>
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="746.0" layoutY="37.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/text-HINTS_LEFT.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="45.0" fitWidth="79.0" layoutX="578.0" layoutY="281.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/eye.png" />
@@ -209,5 +193,21 @@
             <Image url="@../images/settings.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="752.0" layoutY="23.0" stroke="BLACK" strokeType="INSIDE" width="229.0" />
+      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="763.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="infinity" fitHeight="34.0" fitWidth="51.0" layoutX="920.0" layoutY="42.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="hintsNumber" layoutX="934.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
