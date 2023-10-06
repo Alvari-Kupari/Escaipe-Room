@@ -27,8 +27,15 @@
 }
 
 .text,
+.text-area,
+.text-field,
 #chat,
 #timer {
     -fx-font-family: "Linowrite";
     font-family: "Linowrite";
+}
+
+#exit {
+    -fx-font-size: 28px;
+    font-size: 28px;
 }
