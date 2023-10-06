@@ -1,9 +1,14 @@
+@font-face {
+    font-family: "Linowrite";
+    src: url("/fonts/linowrite.ttf");
+}
+
 .button {
     -fx-background-color: rgba(91, 71, 20, 0.821);
     background-color: rgba(91, 71, 20, 0.821);
     -fx-background-insets: 0, 1, 2, 3, 0;
-    -fx-font-family: "Lucida Console";
-    font-family: "Lucida Console";
+    -fx-font-family: "Linowrite";
+    font-family: "Linowrite";
     -fx-text-fill: white;
     -fx-font-weight: bold;
     font-weight: bold;
@@ -12,11 +17,18 @@
 }
 
 .button:hover {
-    -fx-background-color: rgba(180, 139, 37, 0.821);
-    background-color: rgba(180, 139, 37, 0.821);
+    -fx-background-color: rgba(91, 71, 20, 0.821);
+    background-color: rgba(91, 71, 20, 0.821);
 }
 
 #btnStart {
     -fx-font-size: 36px;
     font-size: 36px;
+}
+
+.text,
+#chat,
+#timer {
+    -fx-font-family: "Linowrite";
+    font-family: "Linowrite";
 }
