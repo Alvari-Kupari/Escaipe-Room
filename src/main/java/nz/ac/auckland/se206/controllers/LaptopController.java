@@ -12,6 +12,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.Pane;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
@@ -31,6 +32,13 @@ public class LaptopController extends RoomController {
   @FXML private Button btnBack;
   @FXML private Button btnMainMenu;
   @FXML private Button btnExit;
+  @FXML private Pane tabs;
+  @FXML private TextArea diary;
+  @FXML private Button leftTab;
+  @FXML private Button rightTab;
+
+  @FXML private ImageView rightTabImage;
+  @FXML private ImageView leftTabImage;
 
   private boolean isPasswordHidden;
 
@@ -69,7 +77,8 @@ public class LaptopController extends RoomController {
               // check if it is correct
               if (guess.toUpperCase().equals(GameState.password.toString())) {
                 System.out.println("password is right");
-                quizAnswers.setVisible(true);
+
+                openComputer();
 
                 SoundManager.playCorrect();
 
@@ -218,5 +227,31 @@ public class LaptopController extends RoomController {
     SoundManager.playSetting();
     System.out.println("Exit");
     System.exit(0);
+  }
+
+  private void openComputer() {
+    tabs.setVisible(true);
+
+    diary.setVisible(true);
+
+    rightTabImage.setOpacity(0.5);
+
+    leftTab.setOnAction(
+        (e) -> {
+          leftTabImage.setOpacity(0.5);
+          rightTabImage.setOpacity(1);
+
+          diary.setVisible(false);
+          quizAnswers.setVisible(true);
+        });
+
+    rightTab.setOnAction(
+        (e) -> {
+          leftTabImage.setOpacity(1);
+          rightTabImage.setOpacity(0.5);
+
+          diary.setVisible(true);
+          quizAnswers.setVisible(false);
+        });
   }
 }
