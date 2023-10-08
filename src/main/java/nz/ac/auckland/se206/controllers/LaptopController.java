@@ -13,8 +13,10 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
+import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.QuizAnswer;
 import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
@@ -25,7 +27,6 @@ public class LaptopController extends RoomController {
   @FXML private Button maskPasswordButton;
   @FXML private TextField unMaskedPassword;
   @FXML private Button goBackButton;
-  @FXML private ImageView quizAnswers;
   @FXML private TextArea riddle;
 
   @FXML private ImageView settingsIcon;
@@ -39,6 +40,9 @@ public class LaptopController extends RoomController {
 
   @FXML private ImageView rightTabImage;
   @FXML private ImageView leftTabImage;
+
+  @FXML private Text quizText;
+  @FXML private Pane quizAnswers;
 
   private boolean isPasswordHidden;
 
@@ -95,6 +99,8 @@ public class LaptopController extends RoomController {
     // set both fields to pick up the enter key being pressed
     passwordField.setOnKeyPressed(handler);
     unMaskedPassword.setOnKeyPressed(handler);
+
+    setQuizAnswers();
   }
 
   /**
@@ -253,5 +259,33 @@ public class LaptopController extends RoomController {
           diary.setVisible(true);
           quizAnswers.setVisible(false);
         });
+  }
+
+  private void setQuizAnswers() {
+    // get a selection of random quiz answers
+    String[] answers = QuizAnswer.getRandomAnswers();
+
+    // set the text
+    quizText.setText(
+        "Monday: "
+            + answers[0]
+            + "\n"
+            + "Tuesday: "
+            + answers[1]
+            + "\n"
+            + "Wednesday: "
+            + answers[2]
+            + "\n"
+            + "Thursday: "
+            + answers[3]
+            + "\n"
+            + "Friday: "
+            + answers[4]
+            + "\n"
+            + "Saturday: "
+            + answers[5]
+            + "\n"
+            + "Sunday: "
+            + answers[6]);
   }
 }
