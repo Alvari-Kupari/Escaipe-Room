@@ -11,7 +11,12 @@ public enum Password {
   CAT("CAT"),
   FARM("FARM"),
   CLOCK("CLOCK"),
-  BUS("BUS");
+  BUS("BUS"),
+  BEE("BEE"),
+  CANDLE("CANDLE"),
+  MOON("MOON"),
+  SUN("SUN"),
+  PILLOW("PILLOW");
 
   private String word;
 

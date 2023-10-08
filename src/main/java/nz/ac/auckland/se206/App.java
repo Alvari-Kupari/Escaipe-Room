@@ -1,8 +1,6 @@
 package nz.ac.auckland.se206;
 
 import java.io.IOException;
-import java.time.DayOfWeek;
-import java.time.LocalDate;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -66,8 +64,6 @@ public class App extends Application {
 
     // generate a random password
     GameState.password = Password.getRandomPassword();
-
-    generateQuizAnswer();
   }
 
   public static void changeScene(Room room) {
@@ -81,48 +77,6 @@ public class App extends Application {
     changeScene(Room.START);
     // generate a random password
     GameState.password = Password.getRandomPassword();
-  }
-
-  // This method generates the answer for the quiz according to the day of the week
-  public static void generateQuizAnswer() {
-    // Get the day of the week
-    DayOfWeek dayOfWeek = LocalDate.now().getDayOfWeek();
-
-    // Set the answer according to the day of the week
-    switch (dayOfWeek) {
-      case MONDAY:
-        GameState.quizAnswer = "bunsen burner";
-        break;
-
-      case TUESDAY:
-        GameState.quizAnswer = "magnesium";
-        break;
-
-      case WEDNESDAY:
-        GameState.quizAnswer = "flask";
-        break;
-
-      case THURSDAY:
-        GameState.quizAnswer = "hydrochloric acid";
-        break;
-
-      case FRIDAY:
-        GameState.quizAnswer = "sulfur";
-        break;
-
-      case SATURDAY:
-        GameState.quizAnswer = "covalent bond";
-        break;
-
-      case SUNDAY:
-        GameState.quizAnswer = "ionic bond";
-        break;
-
-      default:
-        break;
-    }
-    // Print out the day of the week in the console
-    System.out.println(dayOfWeek.toString());
   }
 
   private static void loadRooms() throws IOException {

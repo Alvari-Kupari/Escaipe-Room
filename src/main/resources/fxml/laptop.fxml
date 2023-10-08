@@ -169,13 +169,21 @@
                </image>
             </ImageView>
             <Button fx:id="rightTab" layoutX="371.0" layoutY="133.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="76.0" text="Button" />
-            <ImageView fx:id="quizAnswers" fitHeight="264.0" fitWidth="289.0" layoutX="82.0" layoutY="52.0" pickOnBounds="true" preserveRatio="true" visible="false">
-               <image>
-                  <Image url="@../images/quiz%20answers.JPG" />
-               </image>
-            </ImageView>
             <Button fx:id="leftTab" layoutX="14.0" layoutY="133.0" mnemonicParsing="false" opacity="0.0" prefHeight="70.0" prefWidth="76.0" text="Button" />
             <TextArea fx:id="diary" editable="false" layoutX="82.0" layoutY="53.0" prefHeight="232.0" prefWidth="289.0" text="Professor's Diary&#10;&#10;The students are out of control. Its a week past the deadline and theres still 5 students who havent finished the lab. &#10;&#10;Note to self: &#10;Remember to make a stronger password. I've heard a rumour the students are figuring out how to hack my computer....." wrapText="true" />
+            <Pane fx:id="quizAnswers" layoutX="82.0" layoutY="33.0" prefHeight="272.0" prefWidth="304.0" visible="false">
+               <children>
+                  <ImageView fitHeight="261.0" fitWidth="277.0" layoutX="9.0" pickOnBounds="true">
+                     <image>
+                        <Image url="@../images/paper.JPG" />
+                     </image>
+                  </ImageView>
+                  <Text fx:id="quizText" fill="#5b5a5a" layoutX="128.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="140.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
+               </children>
+            </Pane>
          </children>
       </Pane>
       <Pane fx:id="paneSettings" layoutX="194.0" layoutY="124.0" prefHeight="461.0" prefWidth="642.0" visible="false">
