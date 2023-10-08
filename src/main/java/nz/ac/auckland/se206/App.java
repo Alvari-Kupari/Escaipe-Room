@@ -5,6 +5,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import nz.ac.auckland.se206.SceneManager.Room;
 
@@ -45,6 +46,8 @@ public class App extends Application {
    */
   @Override
   public void start(final Stage stage) throws IOException {
+
+    Font.loadFont(getClass().getResourceAsStream("/fonts/linowrite.ttf"), 20);
 
     loadRooms();
 
