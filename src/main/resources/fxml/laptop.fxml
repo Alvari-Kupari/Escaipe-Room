@@ -178,7 +178,10 @@
                         <Image url="@../images/paper.JPG" />
                      </image>
                   </ImageView>
-                  <Text fx:id="quizText" layoutX="16.0" layoutY="54.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="253.0" />
+                  <Text fx:id="quizText" layoutX="111.0" layoutY="99.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.0">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Text>
                </children>
             </Pane>
          </children>

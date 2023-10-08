@@ -263,29 +263,13 @@ public class LaptopController extends RoomController {
 
   private void setQuizAnswers() {
     // get a selection of random quiz answers
-    String[] answers = QuizAnswer.getRandomAnswers();
 
+    StringBuilder sb = new StringBuilder();
+
+    for (String day : QuizAnswer.getRandomAnswers()) {
+      sb.append(day + "\n");
+    }
     // set the text
-    quizText.setText(
-        "Monday: "
-            + answers[0]
-            + "\n"
-            + "Tuesday: "
-            + answers[1]
-            + "\n"
-            + "Wednesday: "
-            + answers[2]
-            + "\n"
-            + "Thursday: "
-            + answers[3]
-            + "\n"
-            + "Friday: "
-            + answers[4]
-            + "\n"
-            + "Saturday: "
-            + answers[5]
-            + "\n"
-            + "Sunday: "
-            + answers[6]);
+    quizText.setText(sb.toString());
   }
 }
