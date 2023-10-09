@@ -41,31 +41,6 @@
          </image>
       </ImageView>
       <Button fx:id="maskPasswordButton" layoutX="572.0" layoutY="281.0" mnemonicParsing="false" onAction="#onMaskPassword" opacity="0.0" prefHeight="45.0" prefWidth="58.0" text="Button" textFill="#656f79" />
-      <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/checklist1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist3.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist4.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="355.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist5.png" />
-         </image>
-      </ImageView>
       <ImageView fx:id="professorResting" fitHeight="340.0" fitWidth="346.0" layoutX="-70.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/professor/resting.gif" />
@@ -234,5 +209,30 @@
             <Font name="System Bold" size="35.0" />
          </font>
       </Text>
+      <ImageView fx:id="checklist1" fitHeight="194.0" fitWidth="185.0" layoutX="818.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/checklist1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist2" fitHeight="183.0" fitWidth="185.0" layoutX="816.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="179.0" layoutX="817.0" layoutY="348.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="185.0" layoutX="816.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist5" fitHeight="184.0" fitWidth="185.0" layoutX="818.0" layoutY="344.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist5.png" />
+         </image>
+      </ImageView>
    </children>
 </Pane>

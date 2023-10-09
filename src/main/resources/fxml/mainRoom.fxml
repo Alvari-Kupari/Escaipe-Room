@@ -99,27 +99,27 @@
       </ImageView>
       <TextField fx:id="playerInput" layoutX="19.0" layoutY="313.0" prefHeight="25.0" prefWidth="149.0" />
       <Text fx:id="chat" fill="WHITE" layoutX="17.0" layoutY="162.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="156.13671875" />
-      <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="checklist1" fitHeight="194.0" fitWidth="185.0" layoutX="822.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist2" fitHeight="183.0" fitWidth="185.0" layoutX="820.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist2.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="179.0" layoutX="821.0" layoutY="420.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist3.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="185.0" layoutX="820.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist4.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="checklist5" fitHeight="184.0" fitWidth="185.0" layoutX="822.0" layoutY="416.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/checklist5.png" />
          </image>
