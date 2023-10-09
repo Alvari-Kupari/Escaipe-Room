@@ -61,21 +61,7 @@
          </image>
       </ImageView>
       <Button fx:id="toggleChat" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="149.0" text="Hide Chat" />
-      <Pane layoutX="100.0" layoutY="8.0" prefHeight="92.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="97.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/clock.png" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="31.0" layoutX="33.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="113.0" />
-            <Text fx:id="timer" fill="RED" layoutX="54.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <Pane layoutX="100.0" layoutY="8.0" prefHeight="92.0" prefWidth="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="20.0" layoutY="79.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="28.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -177,6 +163,16 @@
       <Text fx:id="hintsNumber" layoutX="944.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="40.492187500000114">
          <font>
             <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="91.0" fitWidth="138.0" layoutX="846.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/clock.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="timer" fill="RED" layoutX="863.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="108.0">
+         <font>
+            <Font size="38.0" />
          </font>
       </Text>
    </children>
