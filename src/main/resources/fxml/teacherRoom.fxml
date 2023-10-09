@@ -138,22 +138,6 @@
             </ImageView>
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="761.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="229.0" />
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="772.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/text-HINTS_LEFT.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="infinity" fitHeight="34.0" fitWidth="51.0" layoutX="929.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/infinity.png" />
-         </image>
-      </ImageView>
-      <Text fx:id="hintsNumber" layoutX="942.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
-         <font>
-            <Font name="System Bold" size="35.0" />
-         </font>
-      </Text>
       <ImageView fx:id="checklist1" fitHeight="194.0" fitWidth="185.0" layoutX="822.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/checklist1.png" />
@@ -179,5 +163,21 @@
             <Image url="@../images/checklist5.png" />
          </image>
       </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="760.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="221.0" />
+      <ImageView fitHeight="44.0" fitWidth="171.0" layoutX="768.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/text-HINTS_LEFT.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="infinity" fitHeight="17.0" fitWidth="35.0" layoutX="939.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/infinity.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="hintsNumber" layoutX="944.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="40.492187500000114">
+         <font>
+            <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
    </children>
 </Pane>
