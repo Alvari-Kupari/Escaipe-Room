@@ -25,7 +25,8 @@
 .text-area,
 .text-field,
 #chat,
-#timer {
+#timer,
+#hintsNumber {
     -fx-font-family: "Linowrite";
     font-family: "Linowrite";
 }

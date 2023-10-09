@@ -61,46 +61,7 @@
          </image>
       </ImageView>
       <Button fx:id="toggleChat" layoutX="16.0" layoutY="368.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="149.0" text="Hide Chat" />
-      <ImageView fx:id="checklist1" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../images/checklist1.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist2" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist2.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist3.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist4.png" />
-         </image>
-      </ImageView>
-      <ImageView fx:id="checklist5" fitHeight="177.0" fitWidth="165.0" layoutX="830.0" layoutY="400.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/checklist5.png" />
-         </image>
-      </ImageView>
-      <Pane layoutX="100.0" layoutY="8.0" prefHeight="92.0" prefWidth="200.0">
-         <children>
-            <ImageView fitHeight="97.0" fitWidth="185.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/clock.png" />
-               </image>
-            </ImageView>
-            <Rectangle arcHeight="5.0" arcWidth="5.0" height="31.0" layoutX="33.0" layoutY="31.0" stroke="BLACK" strokeType="INSIDE" width="113.0" />
-            <Text fx:id="timer" fill="RED" layoutX="54.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
-               <font>
-                  <Font size="38.0" />
-               </font>
-            </Text>
-         </children>
-      </Pane>
+      <Pane layoutX="100.0" layoutY="8.0" prefHeight="92.0" prefWidth="200.0" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="20.0" layoutY="79.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
       <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="28.0" layoutY="91.0" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
@@ -113,7 +74,7 @@
          </image>
       </ImageView>
       <Label layoutX="42.0" layoutY="137.0" text="INVENTORY" />
-      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="87.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="90.0" layoutY="92.0" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/key.png" />
          </image>
@@ -163,20 +124,55 @@
             </ImageView>
          </children>
       </Pane>
-      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="761.0" layoutY="14.0" stroke="BLACK" strokeType="INSIDE" width="229.0" />
-      <ImageView fitHeight="41.0" fitWidth="149.0" layoutX="772.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="checklist1" fitHeight="194.0" fitWidth="185.0" layoutX="822.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/checklist1.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist2" fitHeight="183.0" fitWidth="185.0" layoutX="820.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist2.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist3" fitHeight="177.0" fitWidth="179.0" layoutX="821.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist3.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist4" fitHeight="177.0" fitWidth="185.0" layoutX="820.0" layoutY="424.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist4.png" />
+         </image>
+      </ImageView>
+      <ImageView fx:id="checklist5" fitHeight="184.0" fitWidth="185.0" layoutX="822.0" layoutY="418.0" pickOnBounds="true" preserveRatio="true" visible="false">
+         <image>
+            <Image url="@../images/checklist5.png" />
+         </image>
+      </ImageView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#6e7780" height="57.0" layoutX="760.0" layoutY="17.0" stroke="BLACK" strokeType="INSIDE" width="221.0" />
+      <ImageView fitHeight="44.0" fitWidth="171.0" layoutX="768.0" layoutY="30.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-HINTS_LEFT.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="infinity" fitHeight="34.0" fitWidth="51.0" layoutX="929.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="17.0" fitWidth="35.0" layoutX="939.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
       </ImageView>
-      <Text fx:id="hintsNumber" layoutX="942.0" layoutY="59.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="44.0">
+      <Text fx:id="hintsNumber" layoutX="944.0" layoutY="58.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-1" wrappingWidth="40.492187500000114">
          <font>
             <Font name="System Bold" size="35.0" />
+         </font>
+      </Text>
+      <ImageView fitHeight="91.0" fitWidth="138.0" layoutX="846.0" layoutY="77.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../images/clock.png" />
+         </image>
+      </ImageView>
+      <Text fx:id="timer" fill="RED" layoutX="863.0" layoutY="134.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="108.0">
+         <font>
+            <Font size="38.0" />
          </font>
       </Text>
    </children>
