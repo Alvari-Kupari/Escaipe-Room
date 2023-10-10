@@ -103,34 +103,43 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="settingsIcon" fitHeight="44.0" fitWidth="44.0" layoutX="12.0" layoutY="7.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="57.0" fitWidth="64.0" layoutX="12.0" layoutY="-1.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/settings.png" />
+            <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
-      <Pane fx:id="paneSettings" layoutX="214.0" layoutY="124.0" prefHeight="461.0" prefWidth="622.0">
+      <Pane fx:id="paneSettings" layoutX="208.0" layoutY="87.0" prefHeight="498.0" prefWidth="632.0">
          <children>
-            <ImageView fitHeight="461.0" fitWidth="622.0" pickOnBounds="true">
+            <ImageView fitHeight="498.0" fitWidth="632.0" opacity="0.9" pickOnBounds="true">
                <image>
-                  <Image url="@../images/Title_Screen.jpg" />
+                  <Image url="@../images/settings.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOn" fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="69.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="47.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/speechIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOff" fitHeight="150.0" fitWidth="200.0" layoutX="250.0" layoutY="69.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="47.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../images/speechOffIcon.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnBack" layoutX="311.0" layoutY="298.0" mnemonicParsing="false" onAction="#goBack" text="Back" />
-            <Button fx:id="btnMainMenu" layoutX="157.0" layoutY="298.0" mnemonicParsing="false" onAction="#goMainMenu" text="Main Menu" />
-            <Button fx:id="btnExit" layoutX="447.0" layoutY="298.0" mnemonicParsing="false" onAction="#exit" text="Exit" />
-            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="247.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+            <Button fx:id="btnBack" layoutX="277.0" layoutY="298.0" mnemonicParsing="false" onAction="#goBack" prefHeight="36.0" prefWidth="108.0" text="Back">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnMainMenu" layoutX="145.0" layoutY="298.0" mnemonicParsing="false" onAction="#goMainMenu" prefHeight="36.0" prefWidth="108.0" text="Main Menu">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <Button fx:id="btnExit" layoutX="409.0" layoutY="298.0" mnemonicParsing="false" onAction="#exit" prefHeight="36.0" prefWidth="108.0" text="Exit Game">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Button>
+            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="191.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/text-LOADING.png" />
+                  <Image url="@../images/text-LOADING-settings.png" />
                </image>
             </ImageView>
          </children>

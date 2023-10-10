@@ -80,7 +80,7 @@ public class GameState {
 
   public static String quizAnswer;
 
-  public static boolean isTextToSpeechOn = true;
+  public static boolean isAudioOn = true;
 
   // This sets all the variables to their default values
   public static void setDefaults() {
@@ -141,6 +141,6 @@ public class GameState {
     // the laptop password
     password = Password.getRandomPassword();
 
-    isTextToSpeechOn = true;
+    isAudioOn = true;
   }
 }

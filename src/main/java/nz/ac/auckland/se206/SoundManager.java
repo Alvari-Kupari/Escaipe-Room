@@ -22,6 +22,9 @@ public class SoundManager {
 
   /** Plays the click sound */
   public static void playClick() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -40,6 +43,9 @@ public class SoundManager {
 
   /** Plays the error sound */
   public static void playError() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -49,6 +55,9 @@ public class SoundManager {
 
   /** Plays the splash sound */
   public static void playSplash() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -58,6 +67,9 @@ public class SoundManager {
 
   /** Plays the bubbles sound */
   public static void playBubbles() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -66,6 +78,9 @@ public class SoundManager {
   }
 
   public static void playCorrect() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -74,6 +89,9 @@ public class SoundManager {
   }
 
   public static void playRoundWon() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
@@ -82,6 +100,9 @@ public class SoundManager {
   }
 
   public static void playRoundLost() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }
