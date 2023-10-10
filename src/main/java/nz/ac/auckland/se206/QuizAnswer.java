@@ -14,7 +14,7 @@ public class QuizAnswer {
         "Flask",
         "Sulfur",
         "Covalent Bond",
-        " Ionic bond",
+        "Ionic bond",
         "Hydrogen",
         "Pressure",
         "Equilibrium",
