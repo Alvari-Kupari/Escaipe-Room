@@ -531,7 +531,7 @@ public class MainRoomController extends RoomController {
   public void turnSpeechOff(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech off");
-    GameState.isTextToSpeechOn = false;
+    GameState.isAudioOn = false;
     speechOn.setVisible(false);
     speechOff.setVisible(true);
   }
@@ -540,7 +540,7 @@ public class MainRoomController extends RoomController {
   public void turnSpeechOn(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech on");
-    GameState.isTextToSpeechOn = true;
+    GameState.isAudioOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
   }
