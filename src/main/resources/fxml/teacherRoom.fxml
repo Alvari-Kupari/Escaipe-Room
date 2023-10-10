@@ -92,9 +92,9 @@
       </ImageView>
       <TextField fx:id="playerInput" layoutX="28.0" layoutY="317.0" prefHeight="33.0" prefWidth="155.0" />
       <Text fx:id="chat" fill="WHITE" layoutX="25.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="155.0" />
-      <ImageView fx:id="settingsIcon" fitHeight="44.0" fitWidth="44.0" layoutX="29.0" layoutY="24.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="64.0" fitWidth="73.0" layoutX="29.0" layoutY="11.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/settings.png" />
+            <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
       <Pane fx:id="paneSettings" layoutX="188.0" layoutY="84.0" prefHeight="501.0" prefWidth="648.0">
@@ -126,9 +126,9 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="247.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="184.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/text-LOADING.png" />
+                  <Image url="@../images/text-LOADING-settings.png" />
                </image>
             </ImageView>
          </children>

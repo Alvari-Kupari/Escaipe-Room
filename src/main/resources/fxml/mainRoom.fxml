@@ -143,9 +143,9 @@
          </rotationAxis>
       </ImageView>
       <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#zipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
-      <ImageView fx:id="settingsIcon" fitHeight="36.0" fitWidth="40.0" layoutX="19.0" layoutY="14.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="49.0" fitWidth="51.0" layoutX="19.0" layoutY="3.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/settings.png" />
+            <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
       <Pane fx:id="paneSettings" layoutX="177.0" layoutY="90.0" prefHeight="485.0" prefWidth="663.0">
@@ -177,9 +177,9 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="301.0" layoutX="181.0" layoutY="350.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="191.0" layoutY="347.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/text-LOADING.png" />
+                  <Image url="@../images/text-LOADING-settings.png" />
                </image>
             </ImageView>
          </children>

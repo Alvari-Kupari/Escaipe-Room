@@ -103,9 +103,9 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="settingsIcon" fitHeight="44.0" fitWidth="44.0" layoutX="12.0" layoutY="7.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="57.0" fitWidth="64.0" layoutX="12.0" layoutY="-1.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/settings.png" />
+            <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
       <Pane fx:id="paneSettings" layoutX="208.0" layoutY="87.0" prefHeight="498.0" prefWidth="632.0">
@@ -137,9 +137,9 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="247.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="191.0" layoutY="356.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/text-LOADING.png" />
+                  <Image url="@../images/text-LOADING-settings.png" />
                </image>
             </ImageView>
          </children>

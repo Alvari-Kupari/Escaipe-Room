@@ -180,16 +180,16 @@
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <ImageView fx:id="loading" fitHeight="150.0" fitWidth="200.0" layoutX="247.0" layoutY="358.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="154.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../images/text-LOADING.png" />
+                  <Image url="@../images/text-LOADING-settings.png" />
                </image>
             </ImageView>
          </children>
       </Pane>
-      <ImageView fx:id="settingsIcon" fitHeight="44.0" fitWidth="44.0" layoutX="33.0" layoutY="15.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="57.0" fitWidth="76.0" layoutX="28.0" layoutY="9.0" onMouseClicked="#clickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../images/settings.png" />
+            <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
       <ImageView fx:id="checklist1" fitHeight="194.0" fitWidth="185.0" layoutX="818.0" layoutY="382.0" pickOnBounds="true" preserveRatio="true">
