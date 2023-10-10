@@ -43,6 +43,7 @@ public class LaptopController extends RoomController {
 
   @FXML private Text quizText;
   @FXML private Pane quizAnswers;
+  @FXML private Text days;
 
   private boolean isPasswordHidden;
 
@@ -266,10 +267,11 @@ public class LaptopController extends RoomController {
 
     StringBuilder sb = new StringBuilder();
 
-    for (String day : QuizAnswer.getRandomAnswers()) {
-      sb.append(day + "\n");
+    for (String answer : QuizAnswer.getRandomAnswers()) {
+      sb.append(answer + "\n");
     }
-    // set the text
     quizText.setText(sb.toString());
+
+    days.setText("Monday: \nTuesday:\nWednesday:\nThursday:\nFriday:\nSaturday:\nSunday:\n");
   }
 }
