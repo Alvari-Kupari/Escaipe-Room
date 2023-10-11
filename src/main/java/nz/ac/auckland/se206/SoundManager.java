@@ -34,6 +34,9 @@ public class SoundManager {
 
   /** Plays the select sound */
   public static void playSelect() {
+    if (!GameState.isAudioOn) {
+      return;
+    }
     if (mediaPlayer != null) {
       mediaPlayer.stop();
     }

@@ -1,9 +1,11 @@
 package nz.ac.auckland.se206.controllers;
 
+import java.io.IOException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.input.MouseEvent;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
@@ -29,6 +31,9 @@ public class StartController {
   @FXML private ImageView min6Select;
   @FXML private ImageView min4Select;
   @FXML private ImageView min2Select;
+
+  @FXML private ImageView speechOn;
+  @FXML private ImageView speechOff;
 
   @FXML private Button btnStart;
 
@@ -155,6 +160,24 @@ public class StartController {
     // Set the 2 min select image to visible
     min2Select.setVisible(true);
     checkButton();
+  }
+
+  @FXML
+  public void turnSpeechOff(MouseEvent event) throws IOException {
+    SoundManager.playSetting();
+    System.out.println("Turning speech off");
+    GameState.isAudioOn = false;
+    speechOn.setVisible(false);
+    speechOff.setVisible(true);
+  }
+
+  @FXML
+  public void turnSpeechOn(MouseEvent event) throws IOException {
+    SoundManager.playSetting();
+    System.out.println("Turning speech on");
+    GameState.isAudioOn = true;
+    speechOn.setVisible(true);
+    speechOff.setVisible(false);
   }
 
   @FXML
