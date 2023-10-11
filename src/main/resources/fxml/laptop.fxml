@@ -158,12 +158,17 @@
                   <Image url="@../images/settings.jpg" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="151.0" layoutX="219.0" layoutY="67.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="480.0" fitWidth="596.0" layoutX="-1.0" layoutY="-1.0" pickOnBounds="true">
+               <image>
+                  <Image url="@../images/settings-border.png" />
+               </image>
+            </ImageView>
+            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="151.0" layoutX="218.0" layoutY="96.0" onMouseClicked="#turnSpeechOff" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/speechIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="151.0" layoutX="219.0" layoutY="67.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="151.0" layoutX="218.0" layoutY="96.0" onMouseClicked="#turnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../images/speechOffIcon.png" />
                </image>
@@ -183,6 +188,11 @@
             <ImageView fx:id="loading" fitHeight="92.0" fitWidth="298.0" layoutX="154.0" layoutY="349.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/text-LOADING-settings.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="100.0" fitWidth="332.0" layoutX="131.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/text-SETTINGS.png" />
                </image>
             </ImageView>
          </children>
