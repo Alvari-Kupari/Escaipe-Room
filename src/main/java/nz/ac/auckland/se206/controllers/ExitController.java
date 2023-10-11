@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
+import nz.ac.auckland.se206.SoundManager;
 
 public class ExitController {
 
@@ -26,7 +27,7 @@ public class ExitController {
 
   // This method is called when the user clicks on the Main Menu button
   @FXML
-  private void goMainMenu() throws IOException {
+  private void onMainMenu() throws IOException {
     System.out.println("Go to Main Menu");
     // Set the loading image to visible
     loading.setVisible(true);
@@ -70,7 +71,8 @@ public class ExitController {
   }
 
   @FXML
-  private void exit() {
+  private void onExit() {
+    SoundManager.playSetting();
     System.out.println("Exit");
     System.exit(0);
   }

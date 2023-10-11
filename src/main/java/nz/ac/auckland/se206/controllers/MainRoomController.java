@@ -1,13 +1,9 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.Slider;
 import javafx.scene.image.ImageView;
-import javafx.scene.input.KeyCode;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.shape.Polygon;
 import nz.ac.auckland.se206.App;
@@ -37,16 +33,12 @@ public class MainRoomController extends RoomController {
   @FXML private ImageView openedPouch;
   @FXML private Slider zipper;
 
-  @FXML private ImageView settingsIcon;
-  @FXML private Button btnBack;
-  @FXML private Button btnMainMenu;
-  @FXML private Button btnExit;
-
   private double horizontalOffset;
   private double verticalOffset;
 
   /** Initializes the room view, it is called when the room loads. */
-  public void initialize() {
+  @FXML
+  private void initialize() {
     // Initialization code goes here
     Timer.bindText(timer);
 
@@ -81,7 +73,7 @@ public class MainRoomController extends RoomController {
 
   // Allow chemical1Backpack to be draggable with mouse
   @FXML
-  public void dragChemical1Backpack(MouseEvent event) {
+  private void dragChemical1Backpack(MouseEvent event) {
     // check if chemical1 is found
     if (GameState.isChemical1Found) {
       System.out.println("Dragging chemical 1 backpack");
@@ -165,7 +157,7 @@ public class MainRoomController extends RoomController {
 
   // hover over the chemical1Backpack image
   @FXML
-  public void hoverChemical1Backpack(MouseEvent event) {
+  private void hoverChemical1Backpack(MouseEvent event) {
     // check if chemical1 is found
     if (GameState.isChemical1Found) {
       // make the chemical1Backpack area obaque
@@ -182,7 +174,7 @@ public class MainRoomController extends RoomController {
 
   // Allow chemical2Backpack to be draggable with mouse
   @FXML
-  public void dragChemical2Backpack(MouseEvent event) {
+  private void dragChemical2Backpack(MouseEvent event) {
     // check if chemical2 is found
     if (GameState.isChemical2Found) {
       System.out.println("Dragging chemical 2 backpack");
@@ -263,7 +255,7 @@ public class MainRoomController extends RoomController {
 
   // hover over the chemical2Backpack image
   @FXML
-  public void hoverChemical2Backpack(MouseEvent event) {
+  private void hoverChemical2Backpack(MouseEvent event) {
     // check if chemical2 is found
     if (GameState.isChemical2Found) {
       // make the chemical2Backpack area opaque
@@ -278,39 +270,9 @@ public class MainRoomController extends RoomController {
     }
   }
 
-  /**
-   * Handles the key pressed event.
-   *
-   * @param event the key event
-   */
-  @FXML
-  public void onKeyPressed(KeyEvent event) {
-    System.out.println("key " + event.getCode() + " pressed");
-
-    if (event.getCode().equals(KeyCode.ESCAPE)) {
-      SoundManager.playSetting();
-      System.out.println("Escape pressed");
-      if (paneSettings.isVisible()) {
-        paneSettings.setVisible(false);
-      } else {
-        paneSettings.setVisible(true);
-      }
-    }
-  }
-
-  /**
-   * Handles the key released event.
-   *
-   * @param event the key event
-   */
-  @FXML
-  public void onKeyReleased(KeyEvent event) {
-    System.out.println("key " + event.getCode() + " released");
-  }
-
   // when slider is compleded, hide the slider
   @FXML
-  public void zipperDragReleased(MouseEvent event) {
+  private void zipperDragReleased(MouseEvent event) {
     if (zipper.getValue() == zipper.getMax()) {
       // Mouse drag released on the slider at the maximum value
       System.out.println("Mouse drag released on the slider at maximum value.");
@@ -329,7 +291,7 @@ public class MainRoomController extends RoomController {
 
   // when key is clicked, hide the key and add it to the backpack
   @FXML
-  public void clickKey(MouseEvent event) {
+  private void clickKey(MouseEvent event) {
     System.out.println("Key clicked");
     // Hide the key
     key.setVisible(false);
@@ -357,7 +319,7 @@ public class MainRoomController extends RoomController {
    * @param event the mouse event
    */
   @FXML
-  public void clickFlask(MouseEvent event) {
+  private void clickFlask(MouseEvent event) {
     SoundManager.playClick();
     if (!GameState.isTask1Completed) {
       if (GameState.isKeyObtained) {
@@ -389,7 +351,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Teacher Room
    */
   @FXML
-  public void clickTeacherDoor(MouseEvent event) throws IOException {
+  private void clickTeacherDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -404,7 +366,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Teacher Room
    */
   @FXML
-  public void hoverTeacherDoor(MouseEvent event) throws IOException {
+  private void hoverTeacherDoor(MouseEvent event) throws IOException {
     // make the exitDoor area obaque
     teacherDoor.setOpacity(0.5);
     // when not hovered, make the exitDoor area transparent again
@@ -421,7 +383,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Storage Room
    */
   @FXML
-  public void clickStorageDoor(MouseEvent event) throws IOException {
+  private void clickStorageDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -437,7 +399,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Teacher Room
    */
   @FXML
-  public void hoverStorageDoor(MouseEvent event) throws IOException {
+  private void hoverStorageDoor(MouseEvent event) throws IOException {
     // make the exitDoor area obaque
     storageDoor.setOpacity(0.5);
     // when not hovered, make the exitDoor area transparent again
@@ -454,7 +416,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Storage Room
    */
   @FXML
-  public void clickExitDoor(MouseEvent event) throws IOException {
+  private void clickExitDoor(MouseEvent event) throws IOException {
     System.out.println("Exit Door clicked");
 
     if ((!GameState.isTask1Completed)
@@ -484,7 +446,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Teacher Room
    */
   @FXML
-  public void hoverExitDoor(MouseEvent event) throws IOException {
+  private void hoverExitDoor(MouseEvent event) throws IOException {
     // make the exitDoor area obaque
     exitDoor.setOpacity(0.5);
     // when not hovered, make the exitDoor area transparent again
@@ -506,7 +468,7 @@ public class MainRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void hoverFlask(MouseEvent event) throws IOException {
+  private void hoverFlask(MouseEvent event) throws IOException {
     // make the flask area obaque
     flask.setOpacity(0.5);
     // when not hovered, make the flask area transparent again
@@ -514,97 +476,6 @@ public class MainRoomController extends RoomController {
         e -> {
           flask.setOpacity(0);
         });
-  }
-
-  @FXML
-  public void clickSettings(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Settings Icon clicked");
-    if (paneSettings.isVisible()) {
-      paneSettings.setVisible(false);
-    } else {
-      paneSettings.setVisible(true);
-    }
-  }
-
-  @FXML
-  public void turnSpeechOff(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Turning speech off");
-    GameState.isAudioOn = false;
-    speechOn.setVisible(false);
-    speechOff.setVisible(true);
-  }
-
-  @FXML
-  public void turnSpeechOn(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Turning speech on");
-    GameState.isAudioOn = true;
-    speechOn.setVisible(true);
-    speechOff.setVisible(false);
-  }
-
-  @FXML
-  public void goBack() {
-    SoundManager.playSetting();
-    paneSettings.setVisible(false);
-  }
-
-  // This method is called when the user clicks on the Main Menu button
-  @FXML
-  private void goMainMenu() throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Go to Main Menu");
-    // Set the loading image to visible
-    loading.setVisible(true);
-    // Disable the buttons for exiting
-    btnExit.setDisable(true);
-    // Disable the buttons for going to the main menu
-    btnMainMenu.setDisable(true);
-    btnBack.setDisable(true);
-    // Set the game back to its default state
-    GameState.setDefaults();
-
-    // This allows the game to restart in the background
-    Task<Void> restartTask =
-        new Task<Void>() {
-          @Override
-          protected Void call() throws Exception {
-            System.out.println("...Restarting...");
-
-            btnExit.setDisable(true);
-            btnMainMenu.setDisable(true);
-            App.reloadFXML();
-            return null;
-          }
-        };
-
-    restartTask.setOnSucceeded(
-        e -> {
-          System.out.println("---------------------Succeeded---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    restartTask.setOnFailed(
-        e -> {
-          System.out.println("---------------------Failed---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    Thread restartThread = new Thread(restartTask);
-    restartThread.start();
-  }
-
-  @FXML
-  private void exit() {
-    SoundManager.playSetting();
-    System.out.println("Exit");
-    System.exit(0);
   }
 
   private void calculateGrade() {

@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.SoundManager;
 
 public class GameOverController {
   @FXML private Button btnExit;
@@ -21,7 +22,7 @@ public class GameOverController {
 
   // This method is called when the user clicks on the Main Menu button
   @FXML
-  private void goMainMenu() throws IOException {
+  private void onMainMenu() throws IOException {
     // Print out go to main menu in the console
     System.out.println("Go to Main Menu");
     // Set the loading image to visible
@@ -68,7 +69,8 @@ public class GameOverController {
   }
 
   @FXML
-  private void exit() {
+  private void onExit() {
+    SoundManager.playSetting();
     System.out.println("Exit");
     System.exit(0);
   }
