@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.SoundManager;
 
 public class GameOverController {
   @FXML private Button btnExit;
@@ -65,5 +66,12 @@ public class GameOverController {
 
     Thread restartThread2 = new Thread(restartTask2);
     restartThread2.start();
+  }
+
+  @FXML
+  private void onExit() {
+    SoundManager.playSetting();
+    System.out.println("Exit");
+    System.exit(0);
   }
 }

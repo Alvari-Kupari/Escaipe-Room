@@ -119,7 +119,7 @@
                   <Image url="@../images/speechOffIcon.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnBack" layoutX="267.0" layoutY="298.0" mnemonicParsing="false" onAction="#onGoBack" prefHeight="36.0" prefWidth="108.0" text="Back">
+            <Button fx:id="btnBack" layoutX="267.0" layoutY="298.0" mnemonicParsing="false" onAction="#onGoBackToRoom" prefHeight="36.0" prefWidth="108.0" text="Back">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>

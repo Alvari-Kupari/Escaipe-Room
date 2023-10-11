@@ -25,7 +25,8 @@ public class TeacherRoomController extends RoomController {
   private boolean hasLaptopBeenOpened;
 
   /** Initializes the Teacher Room view */
-  public void initialize() {
+  @FXML
+  private void initialize() {
     // Initialization code goes here
 
     // make pressing enter send chat
@@ -84,7 +85,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void clickMainDoor(MouseEvent event) throws IOException {
+  private void clickMainDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -99,7 +100,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  public void hoverMainDoor(MouseEvent event) throws IOException {
+  private void hoverMainDoor(MouseEvent event) throws IOException {
     // make the door area obaque
     mainDoor.setOpacity(0.5);
     // when not hovered, make the door area transparent again
@@ -145,7 +146,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void hoverLaptop(MouseEvent event) throws IOException {
+  private void hoverLaptop(MouseEvent event) throws IOException {
     // make the laptop area obaque
     laptop.setOpacity(0.5);
     // when not hovered, make the laptop area transparent again

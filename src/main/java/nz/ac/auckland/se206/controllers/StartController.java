@@ -163,7 +163,7 @@ public class StartController {
   }
 
   @FXML
-  public void turnSpeechOff(MouseEvent event) throws IOException {
+  private void turnSpeechOff(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
@@ -172,7 +172,7 @@ public class StartController {
   }
 
   @FXML
-  public void turnSpeechOn(MouseEvent event) throws IOException {
+  private void turnSpeechOn(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;

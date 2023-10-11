@@ -9,6 +9,7 @@ import javafx.scene.text.Text;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
+import nz.ac.auckland.se206.SoundManager;
 
 public class ExitController {
 
@@ -67,5 +68,12 @@ public class ExitController {
 
     Thread restartThread = new Thread(restartTask);
     restartThread.start();
+  }
+
+  @FXML
+  private void onExit() {
+    SoundManager.playSetting();
+    System.out.println("Exit");
+    System.exit(0);
   }
 }

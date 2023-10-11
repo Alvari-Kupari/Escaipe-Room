@@ -31,7 +31,8 @@ public class StorageRoomController extends RoomController {
   private double verticalOffset;
 
   /** Initializes the Storage Room view */
-  public void initialize() {
+  @FXML
+  private void initialize() {
     bind();
 
     // set chat prompt text
@@ -141,7 +142,7 @@ public class StorageRoomController extends RoomController {
 
   // Allow key to be draggable with mouse
   @FXML
-  public void dragKey(MouseEvent event) {
+  private void dragKey(MouseEvent event) {
     // check if task1 is completed and key is found
     if (GameState.isTask1Completed && GameState.isKeyObtained) {
       System.out.println("Dragging key");
@@ -207,7 +208,7 @@ public class StorageRoomController extends RoomController {
 
   // hover over the keyBackpack image
   @FXML
-  public void hoverKey(MouseEvent event) {
+  private void hoverKey(MouseEvent event) {
     // check if task 1 is completed and key is found
     if (GameState.isTask1Completed) {
       // make the keyBackpack area obaque
@@ -229,7 +230,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void clickRackDoor(MouseEvent event) throws IOException {
+  private void clickRackDoor(MouseEvent event) throws IOException {
     // play click sound
     SoundManager.playClick();
     System.out.println("Rack clicked");
@@ -262,7 +263,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  public void hoverRackDoor(MouseEvent event) throws IOException {
+  private void hoverRackDoor(MouseEvent event) throws IOException {
     // make rack area obaque
     rackDoor.setOpacity(0.5);
     // when not hovered, make rack area transparent again
@@ -279,7 +280,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void clickMainDoor(MouseEvent event) throws IOException {
+  private void clickMainDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -294,7 +295,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  public void hoverMainDoor(MouseEvent event) throws IOException {
+  private void hoverMainDoor(MouseEvent event) throws IOException {
     // make the door area obaque
     mainDoor.setOpacity(0.5);
     // when not hovered, make the door area transparent again
@@ -311,7 +312,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void clickChemical1(MouseEvent event) throws IOException {
+  private void clickChemical1(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 1 clicked");
     if (!GameState.isTask1Completed) {
@@ -349,7 +350,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  public void clickChemical2(MouseEvent event) throws IOException {
+  private void clickChemical2(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 2 clicked");
     if (!GameState.isTask1Completed) {
@@ -384,7 +385,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  public void hoverChemical1(MouseEvent event) throws IOException {
+  private void hoverChemical1(MouseEvent event) throws IOException {
     // make chemical area obaque
     chemical1.setOpacity(0.5);
     // when not hovered, make chemical area transparent again
@@ -403,7 +404,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  public void hoverChemical2(MouseEvent event) throws IOException {
+  private void hoverChemical2(MouseEvent event) throws IOException {
     // make chemical area obaque
     chemical2.setOpacity(0.5);
     // when not hovered, make chemical area transparent again

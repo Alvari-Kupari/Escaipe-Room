@@ -51,16 +51,9 @@ public class RoomController {
   @FXML protected Button btnBack;
   @FXML private ImageView settingsIcon;
 
-  @FXML
-  private void initialize() {
-
-    System.out.println();
-    System.out.println("************** Initialising RoomController **************");
-  }
-
   // This method is called when the user clicks on the Toggle Chat button
   @FXML
-  protected void onToggleChat() {
+  private void onToggleChat() {
     // Get the opposite of the current toggle state of the chat
     boolean openChat = !GameState.isChatOpen;
     // Set the button text to the opposite of what it was
@@ -204,7 +197,7 @@ public class RoomController {
   }
 
   @FXML
-  public void onClickSettings(MouseEvent event) throws IOException {
+  private void onClickSettings(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Settings Icon clicked");
     if (paneSettings.isVisible()) {
@@ -215,7 +208,7 @@ public class RoomController {
   }
 
   @FXML
-  public void onSpeechOff(MouseEvent event) throws IOException {
+  private void onSpeechOff(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
@@ -224,7 +217,7 @@ public class RoomController {
   }
 
   @FXML
-  public void onSpeechOn(MouseEvent event) throws IOException {
+  private void onSpeechOn(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
@@ -238,7 +231,7 @@ public class RoomController {
    * @param event the key event
    */
   @FXML
-  public void onKeyReleased(KeyEvent event) {
+  private void onKeyReleased(KeyEvent event) {
     System.out.println("key " + event.getCode() + " released");
   }
 
@@ -248,7 +241,7 @@ public class RoomController {
    * @param event the key event
    */
   @FXML
-  public void onKeyPressed(KeyEvent event) {
+  private void onKeyPressed(KeyEvent event) {
     System.out.println("key " + event.getCode() + " pressed");
 
     if (event.getCode().equals(KeyCode.ESCAPE)) {
