@@ -1,12 +1,9 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
-import javafx.concurrent.Task;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.image.ImageView;
 import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
@@ -24,11 +21,6 @@ public class TeacherRoomController extends RoomController {
   @FXML private Rectangle mainDoor;
   @FXML private Polygon laptop;
   @FXML private TextField userAnswer;
-
-  @FXML private ImageView settingsIcon;
-  @FXML private Button btnBack;
-  @FXML private Button btnMainMenu;
-  @FXML private Button btnExit;
 
   private boolean hasLaptopBeenOpened;
 
@@ -83,36 +75,6 @@ public class TeacherRoomController extends RoomController {
 
     System.out.println();
     System.out.println("************** Initialising TeacherRoomController **************");
-  }
-
-  /**
-   * Handles the key pressed event.
-   *
-   * @param event the key event
-   */
-  @FXML
-  public void onKeyPressed(KeyEvent event) {
-    System.out.println("key " + event.getCode() + " pressed");
-
-    if (event.getCode().equals(KeyCode.ESCAPE)) {
-      SoundManager.playSetting();
-      System.out.println("Escape pressed");
-      if (paneSettings.isVisible()) {
-        paneSettings.setVisible(false);
-      } else {
-        paneSettings.setVisible(true);
-      }
-    }
-  }
-
-  /**
-   * Handles the key released event.
-   *
-   * @param event the key event
-   */
-  @FXML
-  public void onKeyReleased(KeyEvent event) {
-    System.out.println("key " + event.getCode() + " released");
   }
 
   /**
@@ -191,96 +153,5 @@ public class TeacherRoomController extends RoomController {
         e -> {
           laptop.setOpacity(0);
         });
-  }
-
-  @FXML
-  public void clickSettings(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Settings Icon clicked");
-    if (paneSettings.isVisible()) {
-      paneSettings.setVisible(false);
-    } else {
-      paneSettings.setVisible(true);
-    }
-  }
-
-  @FXML
-  public void turnSpeechOff(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Turning speech off");
-    GameState.isAudioOn = false;
-    speechOn.setVisible(false);
-    speechOff.setVisible(true);
-  }
-
-  @FXML
-  public void turnSpeechOn(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Turning speech on");
-    GameState.isAudioOn = true;
-    speechOn.setVisible(true);
-    speechOff.setVisible(false);
-  }
-
-  @FXML
-  public void goBack() {
-    SoundManager.playSetting();
-    paneSettings.setVisible(false);
-  }
-
-  // This method is called when the user clicks on the Main Menu button
-  @FXML
-  private void goMainMenu() throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Go to Main Menu");
-    // Set the loading image to visible
-    loading.setVisible(true);
-    // Disable the buttons for exiting
-    btnExit.setDisable(true);
-    // Disable the buttons for going to the main menu
-    btnMainMenu.setDisable(true);
-    btnBack.setDisable(true);
-    // Set the game back to its default state
-    GameState.setDefaults();
-
-    // This allows the game to restart in the background
-    Task<Void> restartTask =
-        new Task<Void>() {
-          @Override
-          protected Void call() throws Exception {
-            System.out.println("...Restarting...");
-
-            btnExit.setDisable(true);
-            btnMainMenu.setDisable(true);
-            App.reloadFXML();
-            return null;
-          }
-        };
-
-    restartTask.setOnSucceeded(
-        e -> {
-          System.out.println("---------------------Succeeded---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    restartTask.setOnFailed(
-        e -> {
-          System.out.println("---------------------Failed---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    Thread restartThread = new Thread(restartTask);
-    restartThread.start();
-  }
-
-  @FXML
-  private void exit() {
-    SoundManager.playSetting();
-    System.out.println("Exit");
-    System.exit(0);
   }
 }

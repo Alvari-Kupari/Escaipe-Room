@@ -21,7 +21,7 @@ public class GameOverController {
 
   // This method is called when the user clicks on the Main Menu button
   @FXML
-  private void goMainMenu() throws IOException {
+  private void onMainMenu() throws IOException {
     // Print out go to main menu in the console
     System.out.println("Go to Main Menu");
     // Set the loading image to visible
@@ -65,11 +65,5 @@ public class GameOverController {
 
     Thread restartThread2 = new Thread(restartTask2);
     restartThread2.start();
-  }
-
-  @FXML
-  private void exit() {
-    System.out.println("Exit");
-    System.exit(0);
   }
 }
