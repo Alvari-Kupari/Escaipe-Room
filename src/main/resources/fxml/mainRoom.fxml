@@ -148,7 +148,7 @@
             <Image url="@../images/settingsIcon.png" />
          </image>
       </ImageView>
-      <Pane fx:id="paneSettings" layoutX="177.0" layoutY="90.0" prefHeight="485.0" prefWidth="663.0">
+      <Pane fx:id="paneSettings" layoutX="177.0" layoutY="90.0" prefHeight="485.0" prefWidth="663.0" visible="false">
          <children>
             <ImageView fitHeight="485.0" fitWidth="663.0" opacity="0.9" pickOnBounds="true">
                <image>
