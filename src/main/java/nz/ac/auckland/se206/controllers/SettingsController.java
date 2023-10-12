@@ -3,16 +3,15 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
+import javafx.scene.layout.Pane;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SoundManager;
 
 public class SettingsController {
-  @FXML protected Button btnExit;
-  @FXML protected Button btnMainMenu;
   @FXML protected ImageView loading;
+  @FXML protected Pane room;
 
   /**
    * Handles the user clicking the main menu button. The user is sent to the start screen, and the
@@ -25,10 +24,8 @@ public class SettingsController {
     System.out.println("Go to Main Menu");
     // Set the loading image to visible
     loading.setVisible(true);
-    // Disable the buttons for exiting
-    btnExit.setDisable(true);
-    // Disable the buttons for going to the main menu
-    btnMainMenu.setDisable(true);
+    // Disable the room
+    room.setDisable(true);
     // Set the game back to its default state
     GameState.setDefaults();
 
@@ -40,8 +37,7 @@ public class SettingsController {
             System.out.println("...Restarting...");
 
             // disable all the buttons while loading
-            btnExit.setDisable(true);
-            btnMainMenu.setDisable(true);
+            room.setDisable(true);
 
             // reload all the rooms
             App.reloadFXML();
@@ -53,18 +49,14 @@ public class SettingsController {
     restartTask.setOnSucceeded(
         e -> {
           System.out.println("---------------------Succeeded---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
+          room.setDisable(false);
         });
 
     // handle the restart failing
     restartTask.setOnFailed(
         e -> {
           System.out.println("---------------------Failed---------------------");
-
-          // set the restart buttons to not be usable while loading
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
+          room.setDisable(false);
         });
 
     // begin the restart
