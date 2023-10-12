@@ -171,11 +171,11 @@ public class StartController {
    */
   @FXML
   private void onSpeechOff(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
     speechOn.setVisible(false);
     speechOff.setVisible(true);
+    RoomBinder.showMuteImage(true);
   }
 
   /**
@@ -186,11 +186,11 @@ public class StartController {
    */
   @FXML
   private void onSpeechOn(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+    RoomBinder.showMuteImage(false);
   }
 
   /**

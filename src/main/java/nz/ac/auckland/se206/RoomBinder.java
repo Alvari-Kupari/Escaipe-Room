@@ -234,4 +234,14 @@ public class RoomBinder {
   public static void setHintsRemaining(int hints) {
     hintsNumber.setText(String.valueOf(hints));
   }
+
+  /**
+   * Shows the mute button
+   *
+   * @param isVisible whether to show the mute button
+   */
+  public static void showMuteImage(boolean isVisible) {
+    speechOn.setVisible(!isVisible);
+    speechOff.setVisible(isVisible);
+  }
 }
