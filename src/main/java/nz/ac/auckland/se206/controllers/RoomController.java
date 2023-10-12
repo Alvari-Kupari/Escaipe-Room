@@ -1,7 +1,6 @@
 package nz.ac.auckland.se206.controllers;
 
 import java.io.IOException;
-import javafx.concurrent.Task;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
@@ -11,13 +10,12 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
-import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
 
-public class RoomController {
+public class RoomController extends SettingsController {
   public static GameMaster gameMaster;
 
   @FXML protected Text timer;
@@ -45,13 +43,12 @@ public class RoomController {
   @FXML protected Pane paneSettings;
   @FXML protected ImageView speechOn;
   @FXML protected ImageView speechOff;
-  @FXML protected ImageView loading;
-  @FXML protected Button btnExit;
-  @FXML protected Button btnMainMenu;
   @FXML protected Button btnBack;
-  @FXML private ImageView settingsIcon;
+  @FXML protected ImageView settingsIcon;
 
-  // This method is called when the user clicks on the Toggle Chat button
+  /**
+   * Handles the chat being toggled. This will toggle the visibility of chat and all its components.
+   */
   @FXML
   private void onToggleChat() {
     // Get the opposite of the current toggle state of the chat
@@ -70,7 +67,7 @@ public class RoomController {
     GameState.isChatOpen = !GameState.isChatOpen;
   }
 
-  // This method is used to bind the common room elements that all rooms share
+  /** This binds all common room elements together. */
   protected void bind() {
     RoomBinder.bindRoom(
         // Chat area for the user to see the chat with the professor
@@ -114,6 +111,7 @@ public class RoomController {
         loading);
   }
 
+  /** Allows user to press the enter key to send a chat message. */
   protected void setEnterToSendChat() {
     playerInput.setPromptText("Chat here...");
     playerInput.setOnKeyPressed(
@@ -134,68 +132,19 @@ public class RoomController {
         });
   }
 
-  @FXML
-  private void onExit() {
-    SoundManager.playSetting();
-    System.out.println("Exit");
-    System.exit(0);
-  }
-
+  /** Handles the user going back to the room. */
   @FXML
   private void onGoBackToRoom() {
     SoundManager.playSetting();
     paneSettings.setVisible(false);
   }
 
-  // This method is called when the user clicks on the Main Menu button
-  @FXML
-  private void onGoMainMenu() throws IOException {
-    SoundManager.playSetting();
-    System.out.println("Go to Main Menu");
-    // Set the loading image to visible
-    loading.setVisible(true);
-    // Disable the buttons for exiting
-    btnExit.setDisable(true);
-    // Disable the buttons for going to the main menu
-    btnMainMenu.setDisable(true);
-    btnBack.setDisable(true);
-    // Set the game back to its default state
-    GameState.setDefaults();
-
-    // This allows the game to restart in the background
-    Task<Void> restartTask =
-        new Task<Void>() {
-          @Override
-          protected Void call() throws Exception {
-            System.out.println("...Restarting...");
-
-            btnExit.setDisable(true);
-            btnMainMenu.setDisable(true);
-            App.reloadFXML();
-            return null;
-          }
-        };
-
-    restartTask.setOnSucceeded(
-        e -> {
-          System.out.println("---------------------Succeeded---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    restartTask.setOnFailed(
-        e -> {
-          System.out.println("---------------------Failed---------------------");
-          btnExit.setDisable(false);
-          btnMainMenu.setDisable(false);
-          btnBack.setDisable(false);
-        });
-
-    Thread restartThread = new Thread(restartTask);
-    restartThread.start();
-  }
-
+  /**
+   * Handles the settings menu being clicked. Loads the settings menu.
+   *
+   * @param event the mouse event.
+   * @throws IOException If the room not loaded properly.
+   */
   @FXML
   private void onClickSettings(MouseEvent event) throws IOException {
     SoundManager.playSetting();
@@ -207,6 +156,12 @@ public class RoomController {
     }
   }
 
+  /**
+   * Turns the speech off, when the speech off button is clicked.
+   *
+   * @param event the mouse event.
+   * @throws IOException if the room is not loaded properly.
+   */
   @FXML
   private void onSpeechOff(MouseEvent event) throws IOException {
     SoundManager.playSetting();
@@ -216,6 +171,12 @@ public class RoomController {
     speechOff.setVisible(true);
   }
 
+  /**
+   * Turns the speech on, when the speech on button is clicked.
+   *
+   * @param event the mouse event.
+   * @throws IOException If the room isn't loaded properly.
+   */
   @FXML
   private void onSpeechOn(MouseEvent event) throws IOException {
     SoundManager.playSetting();

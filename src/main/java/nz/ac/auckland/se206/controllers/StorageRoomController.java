@@ -140,9 +140,13 @@ public class StorageRoomController extends RoomController {
     translation.play();
   }
 
-  // Allow key to be draggable with mouse
+  /**
+   * Handles the user dragging the key around. Needs to open the cupboard if the user drags onto it.
+   *
+   * @param event the mouse event
+   */
   @FXML
-  private void dragKey(MouseEvent event) {
+  private void onDragKey(MouseEvent event) {
     // check if task1 is completed and key is found
     if (GameState.isTask1Completed && GameState.isKeyObtained) {
       System.out.println("Dragging key");
@@ -206,9 +210,13 @@ public class StorageRoomController extends RoomController {
     }
   }
 
-  // hover over the keyBackpack image
+  /**
+   * Handles the player hovering over the key. Illuminates the key when its hovered.
+   *
+   * @param event the mouse event
+   */
   @FXML
-  private void hoverKey(MouseEvent event) {
+  private void onHoverKey(MouseEvent event) {
     // check if task 1 is completed and key is found
     if (GameState.isTask1Completed) {
       // make the keyBackpack area obaque
@@ -230,7 +238,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void clickRackDoor(MouseEvent event) throws IOException {
+  private void onClickRackDoor(MouseEvent event) throws IOException {
     // play click sound
     SoundManager.playClick();
     System.out.println("Rack clicked");
@@ -241,16 +249,19 @@ public class StorageRoomController extends RoomController {
     }
 
     if (GameState.isTask1Completed == true && GameState.isKeyObtained == false) {
+      // alert the user that they need the key
       TextToSpeech.talk(GameState.msgNeedKey);
       return;
     }
 
     if (GameState.isKeyObtained == true && GameState.isTask1Completed == true) {
+      // alert the user that they need to use the key
       TextToSpeech.talk(GameState.msgUseKey);
       return;
     }
 
     if (GameState.isKeyObtained == true && GameState.isTask1Completed == false) {
+      // alert the user that the need to use the key
       TextToSpeech.talk(GameState.msgUseKeyAndTask1);
       return;
     }
@@ -263,7 +274,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  private void hoverRackDoor(MouseEvent event) throws IOException {
+  private void onHoverRackDoor(MouseEvent event) throws IOException {
     // make rack area obaque
     rackDoor.setOpacity(0.5);
     // when not hovered, make rack area transparent again
@@ -280,7 +291,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void clickMainDoor(MouseEvent event) throws IOException {
+  private void onClickMainDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -295,7 +306,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  private void hoverMainDoor(MouseEvent event) throws IOException {
+  private void onHoverMainDoor(MouseEvent event) throws IOException {
     // make the door area obaque
     mainDoor.setOpacity(0.5);
     // when not hovered, make the door area transparent again
@@ -312,7 +323,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void clickChemical1(MouseEvent event) throws IOException {
+  private void onClickChemical1(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 1 clicked");
     if (!GameState.isTask1Completed) {
@@ -350,7 +361,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void clickChemical2(MouseEvent event) throws IOException {
+  private void onClickChemical2(MouseEvent event) throws IOException {
     SoundManager.playClick();
     System.out.println("Chemical 2 clicked");
     if (!GameState.isTask1Completed) {
@@ -385,7 +396,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  private void hoverChemical1(MouseEvent event) throws IOException {
+  private void onHoverChemical1(MouseEvent event) throws IOException {
     // make chemical area obaque
     chemical1.setOpacity(0.5);
     // when not hovered, make chemical area transparent again
@@ -404,7 +415,7 @@ public class StorageRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  private void hoverChemical2(MouseEvent event) throws IOException {
+  private void onHoverChemical2(MouseEvent event) throws IOException {
     // make chemical area obaque
     chemical2.setOpacity(0.5);
     // when not hovered, make chemical area transparent again
