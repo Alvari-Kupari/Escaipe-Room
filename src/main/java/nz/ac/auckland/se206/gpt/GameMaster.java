@@ -108,6 +108,7 @@ public class GameMaster {
     thread.start();
   }
 
+  /** get the message for intro. */
   public void gettalkFlask() {
     Task<Void> talkTask =
         new Task<Void>() {
@@ -126,6 +127,7 @@ public class GameMaster {
     threadTalk.start();
   }
 
+  /** get the tts message for all tasks complete. */
   public void gettalkComplete() {
     Task<Void> takTask2 =
         new Task<Void>() {
@@ -189,6 +191,7 @@ public class GameMaster {
     }
   }
 
+  /** Runs the AI, for getting the riddle. */
   public void setRiddleText() {
     Task<Void> respondTask =
         new Task<Void>() {

@@ -17,10 +17,21 @@ public class App extends Application {
 
   private static Scene scene;
 
+  /**
+   * Launches the game.
+   *
+   * @param args optional args for running the game
+   */
   public static void main(final String[] args) {
     launch();
   }
 
+  /**
+   * Changes which screen is shown to the user.
+   *
+   * @param fxml the string representing the filename to be loaded.
+   * @throws IOException if the FXML file could not be loaded.
+   */
   public static void setRoot(String fxml) throws IOException {
     scene.setRoot(loadFxml(fxml));
     scene.getRoot().requestFocus();
@@ -47,10 +58,12 @@ public class App extends Application {
   @Override
   public void start(final Stage stage) throws IOException {
 
+    // load fonts
     Font.loadFont(getClass().getResourceAsStream("/fonts/linowrite.ttf"), 20);
 
     loadRooms();
 
+    // set exit button to close all threads
     stage.setOnCloseRequest(
         event -> {
           System.exit(0);
@@ -69,6 +82,11 @@ public class App extends Application {
     GameState.password = Password.getRandomPassword();
   }
 
+  /**
+   * Switches which room is shown. Used by the controllers to switch scenes.
+   *
+   * @param room the room to change to.
+   */
   public static void changeScene(Room room) {
     scene.setRoot(SceneManager.getRoot(room));
   }
@@ -82,6 +100,11 @@ public class App extends Application {
     GameState.password = Password.getRandomPassword();
   }
 
+  /**
+   * Loads all the rooms in the game.
+   *
+   * @throws IOException if the files couldnt be loaded properly.
+   */
   private static void loadRooms() throws IOException {
     SceneManager.addRoom(Room.MAIN_ROOM, loadFxml("mainRoom"));
     SceneManager.addRoom(Room.STORAGE_ROOM, loadFxml("storageRoom"));

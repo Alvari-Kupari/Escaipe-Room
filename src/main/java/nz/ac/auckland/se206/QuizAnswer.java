@@ -21,6 +21,11 @@ public class QuizAnswer {
         "Electrolysis"
       };
 
+  /**
+   * Returns a selection of random quiz answers (repeats allowed).
+   *
+   * @return a bunch of random answers.
+   */
   public static String[] getRandomAnswers() {
     String[] answers = new String[7];
 

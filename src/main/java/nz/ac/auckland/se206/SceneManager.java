@@ -36,8 +36,8 @@ public class SceneManager {
   /**
    * Creates a new Parent based of UiRoot.
    *
-   * @param Room
-   * @return
+   * @param Room the room to swtich to
+   * @return the loaded scene
    */
   public static Parent getRoot(Room Room) {
     return sceneMap.get(Room);

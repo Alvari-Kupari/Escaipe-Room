@@ -39,7 +39,36 @@ public class RoomBinder {
   public static ImageView speechOff;
   public static ImageView loading;
 
-  // This method is used to bind the room elements to the room controller
+  /**
+   * Binds the common room elements together.
+   *
+   * @param chat the AI chat area
+   * @param timer the timer text
+   * @param input the user input for talking to the AI
+   * @param hintsNumber the number of hints remaining
+   * @param toggleChat the toggle chat button
+   * @param chemical1Backpack chemical 1
+   * @param chemical2Backpack chemical 2
+   * @param infinity the infinite hints image
+   * @param professorResting the resting face of the professor
+   * @param professorThinking the thinking face of the professor
+   * @param professorAngry1 the angry face 1
+   * @param professorAngry2 angry face 2
+   * @param professorAngry3 angry face 3
+   * @param professorAngry4 angry face 4
+   * @param professorTalking the talking gif
+   * @param checklist1 checklist 1
+   * @param checklist2 checklist 2
+   * @param checklist3 checklist 3
+   * @param checklist4 checklist 4
+   * @param checklist5 checklist 5
+   * @param keyBackpack the key
+   * @param chalkBoard the AI response area
+   * @param paneSettings the settings pane
+   * @param speechOn the button for switching speech on
+   * @param speechOff button for switching speech off
+   * @param loading the loading image
+   */
   public static void bindRoom(
       // Chat area for the user to see the chat with the professor
       Text chat,
@@ -179,14 +208,29 @@ public class RoomBinder {
     RoomBinder.loading = loading;
   }
 
+  /**
+   * Determines whether to give infinite hints or not.
+   *
+   * @param isInfinite Whether to give infinite hints
+   */
   public static void setHintsInfinite(boolean isInfinite) {
     infinity.setVisible(isInfinite);
   }
 
+  /**
+   * Toggles the hint visibility.
+   *
+   * @param isVisible whether to turn visibility on or off
+   */
   public static void toggleHintsVisibility(boolean isVisible) {
     hintsNumber.setVisible(isVisible);
   }
 
+  /**
+   * Sets how many hints are left.
+   *
+   * @param hints how many hints are left.
+   */
   public static void setHintsRemaining(int hints) {
     hintsNumber.setText(String.valueOf(hints));
   }

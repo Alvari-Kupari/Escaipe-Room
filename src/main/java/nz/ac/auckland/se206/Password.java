@@ -24,10 +24,16 @@ public enum Password {
     this.word = word;
   }
 
+  /** Returns a string view of the password. */
   public String toString() {
     return word;
   }
 
+  /**
+   * Gets a random password.
+   *
+   * @return a random password.
+   */
   public static Password getRandomPassword() {
     return Password.values()[new Random().nextInt(Password.values().length)];
   }

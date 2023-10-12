@@ -90,11 +90,11 @@ public class GptPromptEngineering {
    */
   public static String introduceFourthTask() {
     return "The player has now completed task 3, and must complete task 4 before they can progress."
-               + " To begin task 4, the player must hack into your laptop by guessing the password."
-               + " The password will be the answer to a riddle, which you will give the player once"
-               + " they click on the laptop. Once the player has answered the riddle correctly,"
-               + " they should then enter the riddle answer as the password. Remember to not help"
-               + " the player with what they should do unless they ask for help or guidance.";
+        + " To begin task 4, the player must hack into your laptop by guessing the password."
+        + " The password will be the answer to a riddle, which you will give the player once"
+        + " they click on the laptop. Once the player has answered the riddle correctly,"
+        + " they should then enter the riddle answer as the password. Remember to not help"
+        + " the player with what they should do unless they ask for help or guidance.";
   }
 
   /**
@@ -216,6 +216,11 @@ public class GptPromptEngineering {
     }
   }
 
+  /**
+   * prompts the AI to tell the user to be careful in the storage locker due to unsafe chemicals.
+   *
+   * @return the AI prompt.
+   */
   public static String beCarefulInStorageLocker() {
     return "The player has entered the storage locker which has chemicals. Tell the user to be"
         + " careful in the locker, because the chemicals are dangerous. Respond in under 15 words.";

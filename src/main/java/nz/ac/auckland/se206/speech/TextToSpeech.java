@@ -31,7 +31,11 @@ public class TextToSpeech {
 
   private static TextToSpeech textToSpeech = new TextToSpeech();
 
-  // This method is used for the professor to speak
+  /**
+   * Makes the TTS say something.
+   *
+   * @param text what to say.
+   */
   public static void talk(String text) {
 
     if (!GameState.isAudioOn) {
