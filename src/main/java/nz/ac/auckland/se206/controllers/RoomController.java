@@ -135,7 +135,9 @@ public class RoomController extends SettingsController {
   /** Handles the user going back to the room. */
   @FXML
   private void onGoBackToRoom() {
-    SoundManager.playSetting();
+    if (GameState.isAudioOn) {
+      SoundManager.playSetting();
+    }
     paneSettings.setVisible(false);
   }
 
@@ -147,7 +149,9 @@ public class RoomController extends SettingsController {
    */
   @FXML
   private void onClickSettings(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
+    if (GameState.isAudioOn) {
+      SoundManager.playSetting();
+    }
     System.out.println("Settings Icon clicked");
     if (paneSettings.isVisible()) {
       paneSettings.setVisible(false);
@@ -164,7 +168,6 @@ public class RoomController extends SettingsController {
    */
   @FXML
   private void onSpeechOff(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
     speechOn.setVisible(false);
@@ -179,7 +182,6 @@ public class RoomController extends SettingsController {
    */
   @FXML
   private void onSpeechOn(MouseEvent event) throws IOException {
-    SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
     speechOn.setVisible(true);
