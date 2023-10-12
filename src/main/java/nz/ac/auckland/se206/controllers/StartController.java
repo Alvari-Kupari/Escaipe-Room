@@ -175,6 +175,7 @@ public class StartController {
     GameState.isAudioOn = false;
     speechOn.setVisible(false);
     speechOff.setVisible(true);
+    RoomBinder.showMuteImage(true);
   }
 
   /**
@@ -189,6 +190,7 @@ public class StartController {
     GameState.isAudioOn = true;
     speechOn.setVisible(true);
     speechOff.setVisible(false);
+    RoomBinder.showMuteImage(false);
   }
 
   /**
