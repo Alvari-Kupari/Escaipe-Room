@@ -40,6 +40,11 @@ public class LaptopController extends RoomController {
 
   private boolean isPasswordHidden;
 
+  /**
+   * Initializes the fxml for this room. For the laptop room, this involves. Binding the riddle text
+   * to another class, so that the riddle can be loaded, as. well as handling the enter key being
+   * pressed.
+   */
   @FXML
   private void initialize() {
     // bind common room elements
@@ -97,53 +102,70 @@ public class LaptopController extends RoomController {
     setQuizAnswers();
   }
 
+  /** Switches between masking and unmasking the password field text. */
   @FXML
   private void onMaskPassword() {
+    // update the password's visiblity
     unMaskedPassword.setVisible(isPasswordHidden);
     passwordField.setVisible(isPasswordHidden = !isPasswordHidden);
   }
 
+  /** Handles the user exiting the laptop view. This returns them back to the teach room. */
   @FXML
   private void onGoBack() {
     App.changeScene(Room.TEACHER_ROOM);
   }
 
+  /**
+   * Handles the computer being opened for the first time. This method is only invoked once, and
+   * makes the laptop visible.
+   */
   private void openComputer() {
+    // open the computer
     tabs.setVisible(true);
-
     diary.setVisible(true);
 
+    // set the right button to be translucent
     rightTabImage.setOpacity(0.5);
 
+    // activate the left tab button
     leftTab.setOnAction(
         (e) -> {
+          // update opacities of both tab buttons
           leftTabImage.setOpacity(0.5);
           rightTabImage.setOpacity(1);
 
+          // update visiblity
           diary.setVisible(false);
           quizAnswers.setVisible(true);
         });
 
+    // active the right tab button
     rightTab.setOnAction(
         (e) -> {
+          // update opacities of both tab buttons
           leftTabImage.setOpacity(1);
           rightTabImage.setOpacity(0.5);
 
+          // update visiblity
           diary.setVisible(true);
           quizAnswers.setVisible(false);
         });
   }
 
+  /** Sets the quiz answers randomly for this game. */
   private void setQuizAnswers() {
-    // get a selection of random quiz answers
-
     StringBuilder sb = new StringBuilder();
 
+    // get a selection of random quiz answers
     for (String answer : QuizAnswer.getRandomAnswers()) {
       sb.append(answer + "\n");
     }
+
+    // set the quiz answers
     quizText.setText(sb.toString());
 
+    // set all the days of the week
     days.setText("Monday: \nTuesday:\nWednesday:\nThursday:\nFriday:\nSaturday:\nSunday:\n");
   }
 }

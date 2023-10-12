@@ -81,12 +81,12 @@
          </image>
       </ImageView>
       <Button fx:id="toggleChat" layoutX="1.0" layoutY="355.0" mnemonicParsing="false" onAction="#onToggleChat" prefHeight="25.0" prefWidth="138.0" text="Hide Chat" />
-      <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#clickTeacherDoor" onMouseMoved="#hoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#clickExitDoor" onMouseMoved="#hoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="teacherDoor" fill="#656f79" layoutX="780.0" layoutY="447.0" onMouseClicked="#onClickTeacherDoor" onMouseMoved="#onHoverTeacherDoor" opacity="0.0" points="-56.0, 20.0, -56.0, -255.0, 45.0, -271.0, 45.0, 64.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="exitDoor" fill="#656f79" layoutX="358.0" layoutY="443.0" onMouseClicked="#onClickExitDoor" onMouseMoved="#onHoverExitDoor" opacity="0.0" points="-56.0, 29.0, -56.0, -244.0, 22.0, -235.0, 16.0, 10.0" stroke="BLACK" strokeType="INSIDE" />
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#e9ecee" height="76.0" layoutX="10.0" layoutY="54.0" opacity="0.47" stroke="BLACK" strokeType="INSIDE" width="108.0" />
       <Label layoutX="32.0" layoutY="112.0" text="INVENTORY" />
-      <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#clickFlask" onMouseMoved="#hoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
-      <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#clickStorageDoor" onMouseMoved="#hoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="flask" fill="#656f79" layoutX="574.0" layoutY="341.0" onMouseClicked="#onClickFlask" onMouseMoved="#onHoverFlask" opacity="0.0" points="35.671875, 18.0, 15.0, -23.0, 15.0, -49.0, 21.0, -56.0, -14.0, -56.0, -7.0, -49.0, -7.0, -29.0, -34.0, 18.0, -34.0, 29.0, -26.0, 36.0, 27.0, 36.0, 35.671875, 29.0" stroke="BLACK" strokeType="INSIDE" />
+      <Polygon fx:id="storageDoor" fill="#656f79" layoutX="246.0" layoutY="428.0" onMouseClicked="#onClickStorageDoor" onMouseMoved="#onHoverStorageDoor" opacity="0.0" points="-56.00001525878906, 74.33334350585938, -56.00001525878906, -240.3333282470703, 33.999969482421875, -230.3333282470703, 33.999969482421875, 50.33331298828125" stroke="BLACK" strokeType="INSIDE" />
       <ImageView fx:id="chalkBoard" fitHeight="219.0" fitWidth="185.0" layoutX="1.0" layoutY="136.0" pickOnBounds="true">
          <image>
             <Image url="@../images/chalkboard.png" />
@@ -119,12 +119,12 @@
             <Image url="@../images/checklist5.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="52.0" layoutY="63.0" onMouseDragged="#dragChemical1Backpack" onMouseEntered="#hoverChemical1Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical1Backpack" fitHeight="55.0" fitWidth="31.0" layoutX="52.0" layoutY="63.0" onMouseDragged="#onDragChemical1Backpack" onMouseEntered="#onHoverChemical1Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" onMouseDragged="#dragChemical2Backpack" onMouseEntered="#hoverChemical2Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical2Backpack" fitHeight="49.0" fitWidth="38.0" layoutX="18.0" layoutY="66.0" onMouseDragged="#onDragChemical2Backpack" onMouseEntered="#onHoverChemical2Backpack" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
@@ -134,7 +134,7 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="key" fitHeight="76.0" fitWidth="36.0" layoutX="656.0" layoutY="484.0" onMouseClicked="#clickKey" pickOnBounds="true" preserveRatio="true" rotate="66.8" visible="false">
+      <ImageView fx:id="key" fitHeight="76.0" fitWidth="36.0" layoutX="656.0" layoutY="484.0" onMouseClicked="#onClickKey" pickOnBounds="true" preserveRatio="true" rotate="66.8" visible="false">
          <image>
             <Image url="@../images/key.png" />
          </image>
@@ -142,7 +142,7 @@
             <Point3D z="-1.0" />
          </rotationAxis>
       </ImageView>
-      <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#zipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
+      <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#onZipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
       <ImageView fx:id="settingsIcon" fitHeight="49.0" fitWidth="51.0" layoutX="19.0" layoutY="3.0" onMouseClicked="#onClickSettings" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/settingsIcon.png" />

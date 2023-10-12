@@ -80,6 +80,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
+  /** play the correct sound. */
   public static void playCorrect() {
     if (!GameState.isAudioOn) {
       return;
@@ -91,6 +92,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
+  /** play the round won audio. */
   public static void playRoundWon() {
     if (!GameState.isAudioOn) {
       return;
@@ -102,6 +104,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
+  /** play round lost audio. */
   public static void playRoundLost() {
     if (!GameState.isAudioOn) {
       return;
@@ -113,6 +116,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
+  /** play the settings sound. */
   public static void playSetting() {
     if (mediaPlayer != null) {
       mediaPlayer.stop();

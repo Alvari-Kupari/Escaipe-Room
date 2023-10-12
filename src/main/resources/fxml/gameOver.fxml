@@ -23,6 +23,6 @@
          </image>
       </ImageView>
       <Button fx:id="btnExit" layoutX="571.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#onExit" prefHeight="25.0" prefWidth="76.0" text="Exit Game" />
-      <Button fx:id="btnMainMenu" layoutX="329.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#onMainMenu" text="Main Menu" />
+      <Button fx:id="btnMainMenu" layoutX="329.0" layoutY="380.0" mnemonicParsing="false" onMouseClicked="#onGoMainMenu" text="Main Menu" />
    </children>
 </Pane>

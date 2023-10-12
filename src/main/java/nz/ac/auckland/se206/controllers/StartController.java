@@ -37,6 +37,7 @@ public class StartController {
 
   @FXML private Button btnStart;
 
+  /** Loads the fxml for this room. */
   @FXML
   private void initialize() {
 
@@ -44,9 +45,9 @@ public class StartController {
     System.out.println("************** Initialising StartController **************");
   }
 
-  // This method is called when the user clicks on the Easy button
+  /** Handles the user selecting the easy option. */
   @FXML
-  private void clickEasy() {
+  private void onClickEasy() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("Easy Selected");
@@ -66,9 +67,9 @@ public class StartController {
     checkButton();
   }
 
-  // This method is called when the user clicks on the Medium button
+  /** Handles the user selecting the medium option. */
   @FXML
-  private void clickMedium() {
+  private void onClickMedium() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("Medium Selected");
@@ -88,9 +89,9 @@ public class StartController {
     checkButton();
   }
 
-  // This method is called when the user clicks on the Hard button
+  /** Handles the user selecting the hard option. */
   @FXML
-  private void clickHard() {
+  private void onClickHard() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("Hard Selected");
@@ -109,9 +110,9 @@ public class StartController {
     checkButton();
   }
 
-  // This method is called when the user clicks on the 6 Min button
+  /** This method is called when the user clicks on the 6 Min button */
   @FXML
-  private void clickMin6() {
+  private void onClickMin6() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("6 Min Selected");
@@ -127,9 +128,9 @@ public class StartController {
     checkButton();
   }
 
-  // This method is called when the user clicks on the 4 Min button
+  /** This method is called when the user clicks on the 4 Min button */
   @FXML
-  private void clickMin4() {
+  private void onClickMin4() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("4 Min Selected");
@@ -145,9 +146,9 @@ public class StartController {
     checkButton();
   }
 
-  // This method is called when the user clicks on the 2 Min button
+  /** This method is called when the user clicks on the 2 Min button */
   @FXML
-  private void clickMin2() {
+  private void onClickMin2() {
     // Play the select sound
     SoundManager.playSelect();
     System.out.println("2 Min Selected");
@@ -162,8 +163,14 @@ public class StartController {
     checkButton();
   }
 
+  /**
+   * Turns the speech off, when the speech off button is clicked.
+   *
+   * @param event the mouse event.
+   * @throws IOException if the room is not loaded properly.
+   */
   @FXML
-  private void turnSpeechOff(MouseEvent event) throws IOException {
+  private void onSpeechOff(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
@@ -171,8 +178,14 @@ public class StartController {
     speechOff.setVisible(true);
   }
 
+  /**
+   * Turns the speech on, when the speech on button is clicked.
+   *
+   * @param event the mouse event.
+   * @throws IOException If the room isn't loaded properly.
+   */
   @FXML
-  private void turnSpeechOn(MouseEvent event) throws IOException {
+  private void onSpeechOn(MouseEvent event) throws IOException {
     SoundManager.playSetting();
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
@@ -180,6 +193,11 @@ public class StartController {
     speechOff.setVisible(false);
   }
 
+  /**
+   * Starts the game. Triggered when the user clicks "start game" button.
+   *
+   * @param event the mouse event
+   */
   @FXML
   private void onStartGame(ActionEvent event) {
     SoundManager.playSelect();
@@ -201,18 +219,21 @@ public class StartController {
     TextToSpeech.talk(GameState.msgFlask);
   }
 
+  /** Resets the background for the difficulty. */
   private void resetLevelBackground() {
     easySelect.setVisible(false);
     mediumSelect.setVisible(false);
     hardSelect.setVisible(false);
   }
 
+  /** Resets the time selection screen. */
   private void resetTimeBackground() {
     min6Select.setVisible(false);
     min4Select.setVisible(false);
     min2Select.setVisible(false);
   }
 
+  /** Determines whether to disable the start button. */
   private void checkButton() {
     if (GameState.isDifficultySelected && GameState.isTimeLimitSelected) {
       btnStart.setDisable(false);

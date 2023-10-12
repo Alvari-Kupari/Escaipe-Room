@@ -88,15 +88,26 @@ public class Timer {
     return "0" + minutes + ":" + secondsString;
   }
 
+  /** Stops the timer. */
   public static void stopTimer() {
     GameState.taskCompletionTime = getTimeInSeconds();
     GameState.isGameStarted = false;
   }
 
+  /**
+   * Returns a seconds view of the time without stopping the time.
+   *
+   * @return how many seconds are left on the time.
+   */
   public static int getTimeInSeconds() {
     return 60 * minutes + seconds;
   }
 
+  /**
+   * Gives a text field that the timer can set the text on.
+   *
+   * @param timerText the text to be set.
+   */
   public static void bindText(Text timerText) {
     timerText.setText(getTime());
     Timer.timerText = timerText;

@@ -22,18 +22,18 @@
             <Image url="@../images/rack.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="rackDoor" fitHeight="380.0" fitWidth="308.0" layoutX="417.0" layoutY="68.0" onMouseClicked="#clickRackDoor" onMouseMoved="#hoverRackDoor" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="rackDoor" fitHeight="380.0" fitWidth="308.0" layoutX="417.0" layoutY="68.0" onMouseClicked="#onClickRackDoor" onMouseMoved="#onHoverRackDoor" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/locked%20rack.png" />
          </image>
       </ImageView>
-      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="350.0" layoutX="243.0" layoutY="183.0" onMouseClicked="#clickMainDoor" onMouseMoved="#hoverMainDoor" opacity="0.04" stroke="BLACK" strokeType="INSIDE" width="124.0" />
-      <ImageView fx:id="chemical1" disable="true" fitHeight="70.0" fitWidth="51.0" layoutX="584.0" layoutY="122.0" onMouseClicked="#clickChemical1" onMouseMoved="#hoverChemical1" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <Rectangle fx:id="mainDoor" arcHeight="5.0" arcWidth="5.0" fill="#656f79" height="350.0" layoutX="243.0" layoutY="183.0" onMouseClicked="#onClickMainDoor" onMouseMoved="#onHoverMainDoor" opacity="0.04" stroke="BLACK" strokeType="INSIDE" width="124.0" />
+      <ImageView fx:id="chemical1" disable="true" fitHeight="70.0" fitWidth="51.0" layoutX="584.0" layoutY="122.0" onMouseClicked="#onClickChemical1" onMouseMoved="#onHoverChemical1" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical1.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="chemical2" disable="true" fitHeight="116.0" fitWidth="51.0" layoutX="474.0" layoutY="336.0" onMouseClicked="#clickChemical2" onMouseMoved="#hoverChemical2" opacity="0.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="chemical2" disable="true" fitHeight="116.0" fitWidth="51.0" layoutX="474.0" layoutY="336.0" onMouseClicked="#onClickChemical2" onMouseMoved="#onHoverChemical2" opacity="0.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/chemical2.png" />
          </image>
@@ -98,7 +98,7 @@
          </image>
       </ImageView>
       <Label layoutX="29.0" layoutY="114.0" text="INVENTORY" />
-      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="79.0" layoutY="69.0" onMouseDragged="#dragKey" onMouseEntered="#hoverKey" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="keyBackpack" fitHeight="76.0" fitWidth="36.0" layoutX="79.0" layoutY="69.0" onMouseDragged="#onDragKey" onMouseEntered="#onHoverKey" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/key.png" />
          </image>

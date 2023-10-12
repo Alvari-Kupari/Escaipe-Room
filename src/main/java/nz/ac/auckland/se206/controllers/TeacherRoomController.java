@@ -85,7 +85,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void clickMainDoor(MouseEvent event) throws IOException {
+  private void onClickMainDoor(MouseEvent event) throws IOException {
 
     SoundManager.playClick();
 
@@ -100,7 +100,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Bookshelf
    */
   @FXML
-  private void hoverMainDoor(MouseEvent event) throws IOException {
+  private void onHoverMainDoor(MouseEvent event) throws IOException {
     // make the door area obaque
     mainDoor.setOpacity(0.5);
     // when not hovered, make the door area transparent again
@@ -129,16 +129,6 @@ public class TeacherRoomController extends RoomController {
     App.changeScene(Room.LAPTOP);
   }
 
-  @FXML
-  private void onHoverLaptop() {
-    laptop.setOpacity(0.5);
-
-    laptop.setOnMouseExited(
-        e -> {
-          laptop.setOpacity(0);
-        });
-  }
-
   /**
    * Handles the mouse hover on the laptop.
    *
@@ -146,7 +136,7 @@ public class TeacherRoomController extends RoomController {
    * @throws IOException if there is an error loading the Main Room
    */
   @FXML
-  private void hoverLaptop(MouseEvent event) throws IOException {
+  private void onHoverLaptop(MouseEvent event) throws IOException {
     // make the laptop area obaque
     laptop.setOpacity(0.5);
     // when not hovered, make the laptop area transparent again
