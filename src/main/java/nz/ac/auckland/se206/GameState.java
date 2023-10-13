@@ -63,7 +63,7 @@ public class GameState {
 
   public static int taskCompletionTime = -1;
 
-  /** Indicates how many hints are used */
+  /** Indicates how many hints are used. */
   public static int hintsUsed = 0;
 
   public static String msgFlask = null;

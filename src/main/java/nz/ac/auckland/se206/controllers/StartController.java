@@ -146,7 +146,7 @@ public class StartController {
     checkButton();
   }
 
-  /** This method is called when the user clicks on the 2 Min button */
+  /** This method is called when the user clicks on the 2 Min button. */
   @FXML
   private void onClickMin2() {
     // Play the select sound
@@ -170,7 +170,7 @@ public class StartController {
    * @throws IOException if the room is not loaded properly.
    */
   @FXML
-  private void onSpeechOff(MouseEvent event) throws IOException {
+  private void onTurnSpeechOff(MouseEvent event) throws IOException {
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
     speechOn.setVisible(false);
@@ -185,7 +185,7 @@ public class StartController {
    * @throws IOException If the room isn't loaded properly.
    */
   @FXML
-  private void onSpeechOn(MouseEvent event) throws IOException {
+  private void onTurnSpeechOn(MouseEvent event) throws IOException {
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
     speechOn.setVisible(true);

@@ -7,6 +7,10 @@ import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
+/**
+ * This class is responsible for the timer logic. A thread is used to constantly update the timers
+ * text.
+ */
 public class Timer {
   private static int seconds;
   private static int minutes;

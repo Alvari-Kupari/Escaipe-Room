@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 
 public class GameOverController extends SettingsController {
 
+  /** Initializes the game over controller. Nothing here needs to be explicitely loaded. */
   @FXML
   private void initialize() {
     System.out.println();

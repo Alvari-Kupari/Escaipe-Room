@@ -91,7 +91,12 @@ public class App extends Application {
     scene.setRoot(SceneManager.getRoot(room));
   }
 
-  public static void reloadFXML() throws IOException {
+  /**
+   * Reloads all the fxml files in the game. Used when restarting the game.
+   *
+   * @throws IOException if the files couldnt be loaded properly.
+   */
+  public static void reload() throws IOException {
     SceneManager.removeAllMapping();
     loadRooms();
 
@@ -106,13 +111,17 @@ public class App extends Application {
    * @throws IOException if the files couldnt be loaded properly.
    */
   private static void loadRooms() throws IOException {
+    // add the 4 primary rooms
     SceneManager.addRoom(Room.MAIN_ROOM, loadFxml("mainRoom"));
     SceneManager.addRoom(Room.STORAGE_ROOM, loadFxml("storageRoom"));
     SceneManager.addRoom(Room.TEACHER_ROOM, loadFxml("teacherRoom"));
     SceneManager.addRoom(Room.LAPTOP, loadFxml("laptop"));
+
+    // add the exit room
     SceneManager.addRoom(Room.EXIT, loadFxml("exit"));
     SceneManager.addRoom(Room.START, loadFxml("start"));
-    SceneManager.addRoom(Room.EXIT, loadFxml("exit"));
+
+    // add the game over room
     SceneManager.addRoom(Room.GAME_OVER, loadFxml("gameOver"));
   }
 }

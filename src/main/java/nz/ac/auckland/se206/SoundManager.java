@@ -20,7 +20,7 @@ public class SoundManager {
   private static URL soundRoundLost = App.class.getResource("/sounds/roundLost.mp3");
   private static URL soundSetting = App.class.getResource("/sounds/setting.mp3");
 
-  /** Plays the click sound */
+  /** Plays the click sound. Also checks if there is already audio playing. */
   public static void playClick() {
     if (!GameState.isAudioOn) {
       return;
@@ -32,7 +32,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** Plays the select sound */
+  /** Plays the select sound. Also checks if there is already audio playing. */
   public static void playSelect() {
     if (!GameState.isAudioOn) {
       return;
@@ -44,7 +44,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** Plays the error sound */
+  /** Plays the error sound. Also checks if there is already audio playing. */
   public static void playError() {
     if (!GameState.isAudioOn) {
       return;
@@ -56,7 +56,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** Plays the splash sound */
+  /** Plays the splash sound. Also checks if there is already audio playing. */
   public static void playSplash() {
     if (!GameState.isAudioOn) {
       return;
@@ -68,7 +68,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** Plays the bubbles sound */
+  /** Plays the bubbles sound. Also checks if there is already audio playing. */
   public static void playBubbles() {
     if (!GameState.isAudioOn) {
       return;
@@ -80,7 +80,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** play the correct sound. */
+  /** play the correct sound. Also checks if there is already audio playing. */
   public static void playCorrect() {
     if (!GameState.isAudioOn) {
       return;
@@ -92,7 +92,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** play the round won audio. */
+  /** play the round won audio. Also checks if there is already audio playing. */
   public static void playRoundWon() {
     if (!GameState.isAudioOn) {
       return;
@@ -104,7 +104,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** play round lost audio. */
+  /** play round lost audio. Also checks if there is already audio playing. */
   public static void playRoundLost() {
     if (!GameState.isAudioOn) {
       return;
@@ -116,7 +116,7 @@ public class SoundManager {
     mediaPlayer.play();
   }
 
-  /** play the settings sound. */
+  /** plays the settings sound. Also checks if there is already audio playing. */
   public static void playSetting() {
     if (mediaPlayer != null) {
       mediaPlayer.stop();
