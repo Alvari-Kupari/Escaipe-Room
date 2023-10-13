@@ -15,6 +15,9 @@ import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
 
+/*
+ * Controller for interactive features and visual elements of the rooms in the game.
+ */
 public class RoomController extends SettingsController {
   public static GameMaster gameMaster;
 

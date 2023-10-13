@@ -7,6 +7,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import javafx.scene.text.Text;
 
+/** Binds the common room elements together. */
 public class RoomBinder {
 
   private static Text timer;
@@ -236,7 +237,7 @@ public class RoomBinder {
   }
 
   /**
-   * Shows the mute button
+   * Turns the mute button on and off.
    *
    * @param isVisible whether to show the mute button
    */

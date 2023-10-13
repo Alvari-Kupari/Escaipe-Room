@@ -16,6 +16,7 @@ import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
+/** Used to manage the teacher room. */
 public class TeacherRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;

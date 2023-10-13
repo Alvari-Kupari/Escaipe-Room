@@ -19,6 +19,7 @@ import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 
+/** Used to manage the laptop mini game. */
 public class LaptopController extends RoomController {
   @FXML private PasswordField passwordField;
   @FXML private Button maskPasswordButton;

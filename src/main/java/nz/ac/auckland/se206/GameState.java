@@ -2,6 +2,7 @@ package nz.ac.auckland.se206;
 
 /** Represents the state of the game. */
 public class GameState {
+  /** Represents the difficulty of the game. */
   public enum Difficulty {
     EASY,
     MEDIUM,
@@ -82,7 +83,9 @@ public class GameState {
 
   public static boolean isAudioOn = true;
 
-  // This sets all the variables to their default values
+  /*
+   * This method is used to set the default values for all the variables in the game.
+   */
   public static void setDefaults() {
     // The level difficulty
     levelDifficulty = null;

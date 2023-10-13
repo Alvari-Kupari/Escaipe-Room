@@ -2,6 +2,7 @@ package nz.ac.auckland.se206.controllers;
 
 import javafx.fxml.FXML;
 
+/** Manages the gaem-over screen. */
 public class GameOverController extends SettingsController {
 
   /** Initializes the game over controller. Nothing here needs to be explicitely loaded. */
