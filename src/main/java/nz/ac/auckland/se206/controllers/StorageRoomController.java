@@ -31,7 +31,7 @@ public class StorageRoomController extends RoomController {
   private double horizontalOffset;
   private double verticalOffset;
 
-  /** Initializes the Storage Room view */
+  /** Initializes the Storage Room view. */
   @FXML
   private void initialize() {
     bind();

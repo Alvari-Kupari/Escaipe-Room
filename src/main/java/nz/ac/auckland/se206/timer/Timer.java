@@ -27,7 +27,7 @@ public class Timer {
     Timer.minutes = minutes;
   }
 
-  /** starts the timer */
+  /** This is used to start the timer. */
   public static void startTimer() {
 
     Thread thread =
@@ -52,7 +52,7 @@ public class Timer {
     thread.start();
   }
 
-  /** Ticks the timer down by 1 s */
+  /** Ticks the timer down by 1 second. */
   public static void decrementTime() {
 
     if (seconds == 0) {
@@ -92,7 +92,7 @@ public class Timer {
     return "0" + minutes + ":" + secondsString;
   }
 
-  /** Stops the timer. */
+  /** This is used to stop the timer. */
   public static void stopTimer() {
     GameState.taskCompletionTime = getTimeInSeconds();
     GameState.isGameStarted = false;

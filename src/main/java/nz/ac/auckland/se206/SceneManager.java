@@ -6,6 +6,7 @@ import javafx.scene.Parent;
 /** This is the entry point of the SceneManager, where scenes are added, changed and handled. */
 public class SceneManager {
 
+  /** Represents the rooms in the game. */
   public enum Room {
     START,
     MAIN_ROOM,
@@ -20,10 +21,11 @@ public class SceneManager {
   private static HashMap<Room, Parent> sceneMap = new HashMap<Room, Parent>();
 
   /**
-   * Creates a new scene and adds it to the scene map.
+   * Creates a new scene and adds it to the sceneMap.
    *
-   * @param Room the room it comes from.
-   * @param uiRoot the fxml loaded file.
+   * @param room the room to add
+   * @param uiRoot the root of the scene
+   * @return void
    */
   public static void addRoom(Room room, Parent uiRoot) {
     sceneMap.put(room, uiRoot);
@@ -36,7 +38,7 @@ public class SceneManager {
   /**
    * Creates a new Parent based of UiRoot.
    *
-   * @param Room the room to swtich to
+   * @param room the room to swtich to
    * @return the loaded scene
    */
   public static Parent getRoot(Room room) {

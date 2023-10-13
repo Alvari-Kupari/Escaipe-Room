@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.text.Text;
 import nz.ac.auckland.se206.RoomBinder;
 
+/** Used to manage the exit screen. */
 public class ExitController extends SettingsController {
 
   @FXML private Text grade;

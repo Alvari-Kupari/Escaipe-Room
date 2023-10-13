@@ -4,6 +4,7 @@ import java.time.DayOfWeek;
 import java.time.LocalDate;
 import java.util.Random;
 
+/** Represents the possible answers to the quiz. */
 public class QuizAnswer {
   private static String[] possibleAnswers =
       new String[] {

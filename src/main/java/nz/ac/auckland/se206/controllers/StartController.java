@@ -110,7 +110,7 @@ public class StartController {
     checkButton();
   }
 
-  /** This method is called when the user clicks on the 6 Min button */
+  /** This method is called when the user clicks on the 6 Min button. */
   @FXML
   private void onClickMin6() {
     // Play the select sound
@@ -128,7 +128,7 @@ public class StartController {
     checkButton();
   }
 
-  /** This method is called when the user clicks on the 4 Min button */
+  /** This method is called when the user clicks on the 4 Min button. */
   @FXML
   private void onClickMin4() {
     // Play the select sound
