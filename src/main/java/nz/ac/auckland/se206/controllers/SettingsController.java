@@ -9,6 +9,10 @@ import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
 import nz.ac.auckland.se206.SoundManager;
 
+/**
+ * This is a parent class for any room which has a settings menu. This class is here to avoid
+ * duplicate code, By delegating all the settings logic to this class.
+ */
 public class SettingsController {
   @FXML protected ImageView loading;
   @FXML protected Pane room;
@@ -40,7 +44,7 @@ public class SettingsController {
             room.setDisable(true);
 
             // reload all the rooms
-            App.reloadFXML();
+            App.reload();
             return null;
           }
         };

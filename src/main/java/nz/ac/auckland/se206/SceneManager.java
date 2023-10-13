@@ -22,11 +22,11 @@ public class SceneManager {
   /**
    * Creates a new scene and adds it to the scene map.
    *
-   * @param Room
-   * @param uiRoot
+   * @param Room the room it comes from.
+   * @param uiRoot the fxml loaded file.
    */
-  public static void addRoom(Room Room, Parent uiRoot) {
-    sceneMap.put(Room, uiRoot);
+  public static void addRoom(Room room, Parent uiRoot) {
+    sceneMap.put(room, uiRoot);
   }
 
   public static void removeAllMapping() {
@@ -39,7 +39,7 @@ public class SceneManager {
    * @param Room the room to swtich to
    * @return the loaded scene
    */
-  public static Parent getRoot(Room Room) {
-    return sceneMap.get(Room);
+  public static Parent getRoot(Room room) {
+    return sceneMap.get(room);
   }
 }

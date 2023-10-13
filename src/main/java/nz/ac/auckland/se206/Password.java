@@ -2,6 +2,10 @@ package nz.ac.auckland.se206;
 
 import java.util.Random;
 
+/**
+ * A bunch of possible passwords for one of the mini games. Each password has an associated string
+ * with it.
+ */
 public enum Password {
   BANANA("BANANA"),
   PHONE("PHONE"),
@@ -24,13 +28,13 @@ public enum Password {
     this.word = word;
   }
 
-  /** Returns a string view of the password. */
+  /** Returns a string view of the password. This is the password to check. */
   public String toString() {
     return word;
   }
 
   /**
-   * Gets a random password.
+   * Gets a random password from all the possible values.
    *
    * @return a random password.
    */

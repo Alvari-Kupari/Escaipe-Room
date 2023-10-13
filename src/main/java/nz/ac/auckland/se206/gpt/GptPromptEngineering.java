@@ -62,11 +62,13 @@ public class GptPromptEngineering {
    * @return the prompt to the AI
    */
   public static String introduceSecondTaskWithoutKey() {
+    // tell the AI to get the key
     return "The player has now completed task 1, and now must complete task 2 before they can"
         + " progress. To complete task 2, the player must open the storage locker, which is"
         + " located in the storage room. In order to open the storage locker, the student"
         + " must collect a key from the main room The key is"
         + " located in a zipped bag under the desk in the main room, and the bag must be"
+        // tell the AI to use the key to drag
         + " unzipped to get the key. To use the key, the player needs to drag the key onto"
         + " the lock in the storage locker. Once the chemical locker is open, the player"
         + " must collect the 2 chemicals located inside.";
@@ -186,15 +188,15 @@ public class GptPromptEngineering {
    */
   private static String getHintPrompt() {
     switch (GameState.levelDifficulty) {
-        // Allow the AI to give infinite hints
       case EASY:
+        // Allow the AI to give infinite hints
         return " Help the player out, and give them hints if they ask for them. The player can ask"
             + " as many hints as they want. If you help out the player in any way,"
             + " begin your reponse with \"Hint: \". If you provide any sort of guidance to"
             + "the player about what to do, also begin your response with \"Hint: \".";
 
-        // Allow AI to give 5 hints only
       case MEDIUM:
+        // Allow AI to give 5 hints only
         return " For now you may give hints to the player. If you give hints or help out the player"
             + " in any way regarding how to escape the lab, begin your reponse with \"Hint:"
             + " \". If you provide any sort of guidance to the player about how to escape"
@@ -202,8 +204,8 @@ public class GptPromptEngineering {
             + " if the player asks for help. You must not give hints if the player did not"
             + " ask for help with escaping the lab or solving the riddle.";
 
-        // Dont allow AI to give hints at all.
       case HARD:
+        // Dont allow AI to give hints at all.
         return " You must not give any hints to the player under any circumstances, even if they"
             + " ask for them. You must also not provide any guidance or help to the player,"
             + " even if they ask for help. You can only tell the player knowledge about"

@@ -24,7 +24,7 @@ public class TeacherRoomController extends RoomController {
 
   private boolean hasLaptopBeenOpened;
 
-  /** Initializes the Teacher Room view */
+  /** Initializes the Teacher Room, by loading all the necessary stuff. */
   @FXML
   private void initialize() {
     // Initialization code goes here

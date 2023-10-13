@@ -17,6 +17,7 @@ import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GptPromptEngineering;
 import nz.ac.auckland.se206.speech.TextToSpeech;
 
+/** This is the storage room. In here is located the mini game with the shaking shelf. */
 public class StorageRoomController extends RoomController {
 
   @FXML private Rectangle mainDoor;

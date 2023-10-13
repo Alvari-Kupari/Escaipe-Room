@@ -218,7 +218,7 @@ public class RoomBinder {
   }
 
   /**
-   * Toggles the hint visibility.
+   * Toggles the hint visibility. If its on, it turns off, and vice versa.
    *
    * @param isVisible whether to turn visibility on or off
    */

@@ -149,15 +149,15 @@ public class RoomController extends SettingsController {
    */
   @FXML
   private void onClickSettings(MouseEvent event) throws IOException {
+
+    // play the setting sound if audio is on
     if (GameState.isAudioOn) {
       SoundManager.playSetting();
     }
     System.out.println("Settings Icon clicked");
-    if (paneSettings.isVisible()) {
-      paneSettings.setVisible(false);
-    } else {
-      paneSettings.setVisible(true);
-    }
+
+    // toggle visibility
+    paneSettings.setVisible(!paneSettings.isVisible());
   }
 
   /**
@@ -167,7 +167,7 @@ public class RoomController extends SettingsController {
    * @throws IOException if the room is not loaded properly.
    */
   @FXML
-  private void onSpeechOff(MouseEvent event) throws IOException {
+  private void onTurnSpeechOff(MouseEvent event) throws IOException {
     System.out.println("Turning speech off");
     GameState.isAudioOn = false;
     speechOn.setVisible(false);
@@ -181,7 +181,7 @@ public class RoomController extends SettingsController {
    * @throws IOException If the room isn't loaded properly.
    */
   @FXML
-  private void onSpeechOn(MouseEvent event) throws IOException {
+  private void onTurnSpeechOn(MouseEvent event) throws IOException {
     System.out.println("Turning speech on");
     GameState.isAudioOn = true;
     speechOn.setVisible(true);
@@ -207,14 +207,15 @@ public class RoomController extends SettingsController {
   private void onKeyPressed(KeyEvent event) {
     System.out.println("key " + event.getCode() + " pressed");
 
+    // check if enter key pressed
     if (event.getCode().equals(KeyCode.ESCAPE)) {
+
+      // play setting sound
       SoundManager.playSetting();
       System.out.println("Escape pressed");
-      if (paneSettings.isVisible()) {
-        paneSettings.setVisible(false);
-      } else {
-        paneSettings.setVisible(true);
-      }
+
+      // toggle the visibility
+      paneSettings.setVisible(!paneSettings.isVisible());
     }
   }
 }
