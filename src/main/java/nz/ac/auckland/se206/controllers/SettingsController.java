@@ -3,10 +3,10 @@ package nz.ac.auckland.se206.controllers;
 import java.io.IOException;
 import javafx.concurrent.Task;
 import javafx.fxml.FXML;
-import javafx.scene.image.ImageView;
 import javafx.scene.layout.Pane;
 import nz.ac.auckland.se206.App;
 import nz.ac.auckland.se206.GameState;
+import nz.ac.auckland.se206.SceneManager.Room;
 import nz.ac.auckland.se206.SoundManager;
 
 /**
@@ -14,7 +14,6 @@ import nz.ac.auckland.se206.SoundManager;
  * duplicate code, By delegating all the settings logic to this class.
  */
 public class SettingsController {
-  @FXML protected ImageView loading;
   @FXML protected Pane room;
 
   /**
@@ -26,10 +25,8 @@ public class SettingsController {
   @FXML
   private void onGoMainMenu() throws IOException {
     System.out.println("Go to Main Menu");
-    // Set the loading image to visible
-    loading.setVisible(true);
-    // Disable the room
-    room.setDisable(true);
+    // Go to the loading screen
+    App.changeScene(Room.LOADING);
     // Set the game back to its default state
     GameState.setDefaults();
 
@@ -39,9 +36,6 @@ public class SettingsController {
           @Override
           protected Void call() throws Exception {
             System.out.println("...Restarting...");
-
-            // disable all the buttons while loading
-            room.setDisable(true);
 
             // reload all the rooms
             App.reload();
@@ -53,14 +47,12 @@ public class SettingsController {
     restartTask.setOnSucceeded(
         e -> {
           System.out.println("---------------------Succeeded---------------------");
-          room.setDisable(false);
         });
 
     // handle the restart failing
     restartTask.setOnFailed(
         e -> {
           System.out.println("---------------------Failed---------------------");
-          room.setDisable(false);
         });
 
     // begin the restart

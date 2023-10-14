@@ -31,7 +31,8 @@
     font-family: "Linowrite";
 }
 
-#exit {
+#exit,
+#restart {
     -fx-font-size: 28px;
     font-size: 28px;
 }

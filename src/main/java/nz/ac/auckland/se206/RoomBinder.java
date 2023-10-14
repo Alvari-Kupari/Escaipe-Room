@@ -38,7 +38,6 @@ public class RoomBinder {
   public static Pane paneSettings;
   public static ImageView speechOn;
   public static ImageView speechOff;
-  public static ImageView loading;
 
   /**
    * Binds the common room elements together.
@@ -68,7 +67,6 @@ public class RoomBinder {
    * @param paneSettings the settings pane
    * @param speechOn the button for switching speech on
    * @param speechOff button for switching speech off
-   * @param loading the loading image
    */
   public static void bindRoom(
       // Chat area for the user to see the chat with the professor
@@ -119,9 +117,7 @@ public class RoomBinder {
       // The image of the speech on
       ImageView speechOn,
       // The image of the speech off
-      ImageView speechOff,
-      // The image of the loading icon
-      ImageView loading) {
+      ImageView speechOff) {
 
     if (RoomBinder.chat != null) {
       RoomBinder.timer.textProperty().bindBidirectional(timer.textProperty());
@@ -179,7 +175,6 @@ public class RoomBinder {
       RoomBinder.paneSettings.visibleProperty().bindBidirectional(paneSettings.visibleProperty());
       RoomBinder.speechOn.visibleProperty().bindBidirectional(speechOn.visibleProperty());
       RoomBinder.speechOff.visibleProperty().bindBidirectional(speechOff.visibleProperty());
-      RoomBinder.loading.visibleProperty().bindBidirectional(loading.visibleProperty());
     }
     RoomBinder.chat = chat;
     RoomBinder.timer = timer;
@@ -206,7 +201,6 @@ public class RoomBinder {
     RoomBinder.paneSettings = paneSettings;
     RoomBinder.speechOn = speechOn;
     RoomBinder.speechOff = speechOff;
-    RoomBinder.loading = loading;
   }
 
   /**
