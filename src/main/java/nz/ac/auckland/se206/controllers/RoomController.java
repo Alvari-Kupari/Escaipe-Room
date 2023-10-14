@@ -15,8 +15,9 @@ import nz.ac.auckland.se206.RoomBinder;
 import nz.ac.auckland.se206.SoundManager;
 import nz.ac.auckland.se206.gpt.GameMaster;
 
-/*
- * Controller for interactive features and visual elements of the rooms in the game.
+/**
+ * This is the base controller for all rooms. It contains all the common elements that are used in
+ * all rooms. This calss is used in correspondence with RoomBinder.java.
  */
 public class RoomController extends SettingsController {
   public static GameMaster gameMaster;

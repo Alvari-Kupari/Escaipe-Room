@@ -83,8 +83,9 @@ public class GameState {
 
   public static boolean isAudioOn = true;
 
-  /*
-   * This method is used to set the default values for all the variables in the game.
+  /**
+   * Resets the game state to default values. This is used when the loading screen is shown when
+   * restarting the whole game/ exiting to main menu.
    */
   public static void setDefaults() {
     // The level difficulty
