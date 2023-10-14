@@ -123,5 +123,8 @@ public class App extends Application {
 
     // add the game over room
     SceneManager.addRoom(Room.GAME_OVER, loadFxml("gameOver"));
+
+    // add room to show when the game is loading to main menu
+    SceneManager.addRoom(Room.LOADING, loadFxml("loading"));
   }
 }

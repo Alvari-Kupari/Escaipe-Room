@@ -16,6 +16,7 @@ public class SceneManager {
     GAME_OVER,
     EXIT,
     LAPTOP,
+    LOADING,
   }
 
   private static HashMap<Room, Parent> sceneMap = new HashMap<Room, Parent>();

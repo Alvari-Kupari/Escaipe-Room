@@ -17,11 +17,6 @@
          </image>
       </ImageView>
       <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#010203" height="434.0" layoutX="557.0" layoutY="195.0" opacity="0.27" stroke="BLACK" strokeType="INSIDE" width="445.0" />
-      <ImageView fx:id="loading" fitHeight="251.0" fitWidth="331.0" layoutX="44.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true" visible="false">
-         <image>
-            <Image url="@../images/text-LOADING.png" />
-         </image>
-      </ImageView>
       <ImageView fitHeight="446.0" fitWidth="494.0" layoutX="562.0" layoutY="182.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/score.png" />

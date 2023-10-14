@@ -206,7 +206,6 @@ public class StartController {
     System.out.println(event.getSource());
 
     GameState.isGameStarted = true;
-    RoomBinder.loading.setVisible(false);
 
     App.changeScene(Room.MAIN_ROOM);
 

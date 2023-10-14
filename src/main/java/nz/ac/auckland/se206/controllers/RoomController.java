@@ -110,8 +110,7 @@ public class RoomController extends SettingsController {
         chalkBoard,
         paneSettings,
         speechOn,
-        speechOff,
-        loading);
+        speechOff);
   }
 
   /** Allows user to press the enter key to send a chat message. */
