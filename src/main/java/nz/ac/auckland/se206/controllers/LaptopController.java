@@ -79,7 +79,7 @@ public class LaptopController extends RoomController {
               System.out.println(guess);
 
               // check if it is correct
-              if (guess.toUpperCase().equals(GameState.password.toString())) {
+              if (guess.toLowerCase().equals(GameState.password)) {
                 System.out.println("password is right");
 
                 openComputer();
