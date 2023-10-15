@@ -221,4 +221,21 @@ public class RoomController extends SettingsController {
       paneSettings.setVisible(!paneSettings.isVisible());
     }
   }
+
+  /**
+   * Handles hovering over images that are clickable
+   *
+   * @param event the mouse event
+   */
+  @FXML
+  private void onHover(MouseEvent event) {
+    // When hovering over the item, set the opacity to 0.5
+    ((ImageView) event.getSource()).setOpacity(0.5);
+    // When not hovering over the item, set the opacity back to 1
+    ((ImageView) event.getSource())
+        .setOnMouseExited(
+            e -> {
+              ((ImageView) event.getSource()).setOpacity(1);
+            });
+  }
 }

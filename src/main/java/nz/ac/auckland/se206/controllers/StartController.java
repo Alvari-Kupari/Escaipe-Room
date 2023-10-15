@@ -238,4 +238,21 @@ public class StartController {
       btnStart.setDisable(false);
     }
   }
+
+  /**
+   * Hover effect for the clickable images
+   *
+   * @param event the mouse event
+   */
+  @FXML
+  private void onHover(MouseEvent event) {
+    // Set image to hover
+    ((ImageView) event.getSource()).setOpacity(0.5);
+    // Set image back to normal when not hovering
+    ((ImageView) event.getSource())
+        .setOnMouseExited(
+            e -> {
+              ((ImageView) event.getSource()).setOpacity(1);
+            });
+  }
 }
