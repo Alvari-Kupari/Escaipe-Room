@@ -50,62 +50,62 @@
             <Image url="@../images/text-DIFFICULTY.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="easy" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#onClickEasy" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="easy" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#onClickEasy" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-preEASY.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="medium" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#onClickMedium" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="medium" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#onClickMedium" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-preMEDIUM.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="hard" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#onClickHard" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="hard" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#onClickHard" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-preHARD.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min6" fitHeight="75.0" fitWidth="157.0" layoutX="806.0" layoutY="243.0" onMouseClicked="#onClickMin6" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="min6" fitHeight="75.0" fitWidth="157.0" layoutX="806.0" layoutY="243.0" onMouseClicked="#onClickMin6" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-pre6MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min4" fitHeight="75.0" fitWidth="139.0" layoutX="806.0" layoutY="342.0" onMouseClicked="#onClickMin4" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="min4" fitHeight="75.0" fitWidth="139.0" layoutX="806.0" layoutY="342.0" onMouseClicked="#onClickMin4" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-pre4MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min2" fitHeight="75.0" fitWidth="174.0" layoutX="806.0" layoutY="435.0" onMouseClicked="#onClickMin2" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="min2" fitHeight="75.0" fitWidth="174.0" layoutX="806.0" layoutY="435.0" onMouseClicked="#onClickMin2" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/text-pre2MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="easySelect" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#onClickEasy" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="easySelect" fitHeight="75.0" fitWidth="106.0" layoutX="56.0" layoutY="245.0" onMouseClicked="#onClickEasy" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-EASY.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="mediumSelect" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#onClickMedium" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="mediumSelect" fitHeight="75.0" fitWidth="175.0" layoutX="56.0" layoutY="337.0" onMouseClicked="#onClickMedium" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-MEDIUM.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="hardSelect" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#onClickHard" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="hardSelect" fitHeight="75.0" fitWidth="103.0" layoutX="56.0" layoutY="430.0" onMouseClicked="#onClickHard" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-HARD.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min6Select" fitHeight="75.0" fitWidth="157.0" layoutX="806.0" layoutY="243.0" onMouseClicked="#onClickMin6" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="min6Select" fitHeight="75.0" fitWidth="157.0" layoutX="806.0" layoutY="243.0" onMouseClicked="#onClickMin6" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-6_MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min4Select" fitHeight="75.0" fitWidth="139.0" layoutX="806.0" layoutY="342.0" onMouseClicked="#onClickMin4" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="min4Select" fitHeight="75.0" fitWidth="139.0" layoutX="806.0" layoutY="342.0" onMouseClicked="#onClickMin4" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-4_MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="min2Select" fitHeight="75.0" fitWidth="174.0" layoutX="806.0" layoutY="435.0" onMouseClicked="#onClickMin2" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="min2Select" fitHeight="75.0" fitWidth="174.0" layoutX="806.0" layoutY="435.0" onMouseClicked="#onClickMin2" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/text-2_MIN.png" />
          </image>
