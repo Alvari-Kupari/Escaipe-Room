@@ -103,7 +103,7 @@
             <Image url="@../images/key.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="settingsIcon" fitHeight="57.0" fitWidth="64.0" layoutX="12.0" layoutY="-1.0" onMouseClicked="#onClickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="57.0" fitWidth="64.0" layoutX="12.0" layoutY="-1.0" onMouseClicked="#onClickSettings" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/settingsIcon.png" />
          </image>
@@ -120,12 +120,12 @@
                   <Image url="@../images/settings-border.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="109.0" onMouseClicked="#onTurnSpeechOff" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="109.0" onMouseClicked="#onTurnSpeechOff" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/speechIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="109.0" onMouseClicked="#onTurnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="253.0" layoutY="109.0" onMouseClicked="#onTurnSpeechOn" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../images/speechOffIcon.png" />
                </image>

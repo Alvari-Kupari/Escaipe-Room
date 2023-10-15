@@ -143,7 +143,7 @@
          </rotationAxis>
       </ImageView>
       <Slider fx:id="zipper" layoutX="639.0" layoutY="492.0" onMouseReleased="#onZipperDragReleased" prefHeight="14.0" prefWidth="70.0" />
-      <ImageView fx:id="settingsIcon" fitHeight="49.0" fitWidth="51.0" layoutX="19.0" layoutY="3.0" onMouseClicked="#onClickSettings" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="settingsIcon" fitHeight="49.0" fitWidth="51.0" layoutX="19.0" layoutY="3.0" onMouseClicked="#onClickSettings" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/settingsIcon.png" />
          </image>
@@ -160,12 +160,12 @@
                   <Image url="@../images/settings-border.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOff" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOff" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/speechIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOn" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../images/speechOffIcon.png" />
                </image>

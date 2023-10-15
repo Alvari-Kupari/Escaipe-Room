@@ -110,12 +110,12 @@
             <Image url="@../images/text-2_MIN.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="422.0" layoutY="280.0" onMouseClicked="#onTurnSpeechOff" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="422.0" layoutY="280.0" onMouseClicked="#onTurnSpeechOff" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/speechIcon.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="422.0" layoutY="280.0" onMouseClicked="#onTurnSpeechOn" pickOnBounds="true" preserveRatio="true" visible="false">
+      <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="422.0" layoutY="280.0" onMouseClicked="#onTurnSpeechOn" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
          <image>
             <Image url="@../images/speechOffIcon.png" />
          </image>
