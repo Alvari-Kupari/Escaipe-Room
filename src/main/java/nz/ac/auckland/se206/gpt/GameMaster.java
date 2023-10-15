@@ -205,8 +205,12 @@ public class GameMaster {
     thread.start();
   }
 
+  /** Sets the professor to the thinking face. To do this, all other GIFS must be disabled. */
   private void setProfessorThinking() {
+    // enable the thinking face
     RoomBinder.professorThinking.setVisible(true);
+
+    // disable all other faces
     RoomBinder.professorAngry1.setVisible(false);
     RoomBinder.professorAngry2.setVisible(false);
     RoomBinder.professorAngry3.setVisible(false);
@@ -215,8 +219,14 @@ public class GameMaster {
     RoomBinder.professorTalking.setVisible(false);
   }
 
+  /**
+   * Determines which resting face to use for the AI professor. Based off how many hints are left.
+   */
   private void setProfessorsFace() {
+    // stop the professor from thinking
     RoomBinder.professorThinking.setVisible(false);
+
+    // check if no hints left
     if (GameState.hintsUsed == 0) {
       RoomBinder.professorResting.setVisible(true);
     } else if (GameState.hintsUsed == 1) {
@@ -225,6 +235,8 @@ public class GameMaster {
       RoomBinder.professorAngry2.setVisible(true);
     } else if (GameState.hintsUsed == 3) {
       RoomBinder.professorAngry3.setVisible(true);
+
+      // check if normal resting face can be used.
     } else if (GameState.hintsUsed >= 4) {
       RoomBinder.professorAngry4.setVisible(true);
     }
