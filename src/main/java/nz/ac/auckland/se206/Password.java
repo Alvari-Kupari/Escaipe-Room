@@ -6,39 +6,19 @@ import java.util.Random;
  * A bunch of possible passwords for one of the mini games. Each password has an associated string
  * with it.
  */
-public enum Password {
-  BANANA("BANANA"),
-  PHONE("PHONE"),
-  HORSE("HORSE"),
-  ZEBRA("ZEBRA"),
-  CHICKEN("CHICKEN"),
-  CAT("CAT"),
-  FARM("FARM"),
-  CLOCK("CLOCK"),
-  BUS("BUS"),
-  BEE("BEE"),
-  CANDLE("CANDLE"),
-  MOON("MOON"),
-  SUN("SUN"),
-  PILLOW("PILLOW");
-
-  private String word;
-
-  private Password(String word) {
-    this.word = word;
-  }
-
-  /** Returns a string view of the password. This is the password to check. */
-  public String toString() {
-    return word;
-  }
+public class Password {
+  private static String[] passwords =
+      new String[] {
+        "banana", "phone", "horse", "zebra", "chicken", "cat", "farm", "clock", "bus", "bee",
+        "candle", "moon", "sun", "pillow"
+      };
 
   /**
    * Gets a random password from all the possible values.
    *
    * @return a random password.
    */
-  public static Password getRandomPassword() {
-    return Password.values()[new Random().nextInt(Password.values().length)];
+  public static String getRandomPassword() {
+    return passwords[new Random().nextInt(passwords.length)];
   }
 }

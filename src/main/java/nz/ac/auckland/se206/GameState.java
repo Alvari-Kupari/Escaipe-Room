@@ -77,7 +77,7 @@ public class GameState {
 
   public static boolean doorOpened = false;
   // the laptop password
-  public static Password password;
+  public static String password;
 
   public static String quizAnswer;
 

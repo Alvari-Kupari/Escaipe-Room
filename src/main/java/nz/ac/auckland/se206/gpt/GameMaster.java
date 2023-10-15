@@ -53,13 +53,7 @@ public class GameMaster {
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
-            RoomBinder.professorThinking.setVisible(true);
-            RoomBinder.professorAngry1.setVisible(false);
-            RoomBinder.professorAngry2.setVisible(false);
-            RoomBinder.professorAngry3.setVisible(false);
-            RoomBinder.professorAngry4.setVisible(false);
-            RoomBinder.professorResting.setVisible(false);
-            RoomBinder.professorTalking.setVisible(false);
+            setProfessorThinking();
 
             // run the AI
             String response = runGpt();
@@ -94,18 +88,7 @@ public class GameMaster {
               giveContext(GptPromptEngineering.stopGivingHints());
             }
           }
-          RoomBinder.professorThinking.setVisible(false);
-          if (GameState.hintsUsed == 0) {
-            RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 1) {
-            RoomBinder.professorAngry1.setVisible(true);
-          } else if (GameState.hintsUsed == 2) {
-            RoomBinder.professorAngry2.setVisible(true);
-          } else if (GameState.hintsUsed == 3) {
-            RoomBinder.professorAngry3.setVisible(true);
-          } else if (GameState.hintsUsed >= 4) {
-            RoomBinder.professorAngry4.setVisible(true);
-          }
+          setProfessorsFace();
         });
 
     Thread thread = new Thread(respondTask);
@@ -201,13 +184,7 @@ public class GameMaster {
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
-            RoomBinder.professorThinking.setVisible(true);
-            RoomBinder.professorAngry1.setVisible(false);
-            RoomBinder.professorAngry2.setVisible(false);
-            RoomBinder.professorAngry3.setVisible(false);
-            RoomBinder.professorAngry4.setVisible(false);
-            RoomBinder.professorResting.setVisible(false);
-            RoomBinder.professorTalking.setVisible(false);
+            setProfessorThinking();
 
             // run the AI
             String riddle = runGpt();
@@ -221,21 +198,35 @@ public class GameMaster {
     // make the face disappear after loading is finished
     respondTask.setOnSucceeded(
         e -> {
-          RoomBinder.professorThinking.setVisible(false);
-          if (GameState.hintsUsed == 0) {
-            RoomBinder.professorResting.setVisible(true);
-          } else if (GameState.hintsUsed == 1) {
-            RoomBinder.professorAngry1.setVisible(true);
-          } else if (GameState.hintsUsed == 2) {
-            RoomBinder.professorAngry2.setVisible(true);
-          } else if (GameState.hintsUsed == 3) {
-            RoomBinder.professorAngry3.setVisible(true);
-          } else if (GameState.hintsUsed >= 4) {
-            RoomBinder.professorAngry4.setVisible(true);
-          }
+          setProfessorsFace();
         });
 
     Thread thread = new Thread(respondTask);
     thread.start();
+  }
+
+  private void setProfessorThinking() {
+    RoomBinder.professorThinking.setVisible(true);
+    RoomBinder.professorAngry1.setVisible(false);
+    RoomBinder.professorAngry2.setVisible(false);
+    RoomBinder.professorAngry3.setVisible(false);
+    RoomBinder.professorAngry4.setVisible(false);
+    RoomBinder.professorResting.setVisible(false);
+    RoomBinder.professorTalking.setVisible(false);
+  }
+
+  private void setProfessorsFace() {
+    RoomBinder.professorThinking.setVisible(false);
+    if (GameState.hintsUsed == 0) {
+      RoomBinder.professorResting.setVisible(true);
+    } else if (GameState.hintsUsed == 1) {
+      RoomBinder.professorAngry1.setVisible(true);
+    } else if (GameState.hintsUsed == 2) {
+      RoomBinder.professorAngry2.setVisible(true);
+    } else if (GameState.hintsUsed == 3) {
+      RoomBinder.professorAngry3.setVisible(true);
+    } else if (GameState.hintsUsed >= 4) {
+      RoomBinder.professorAngry4.setVisible(true);
+    }
   }
 }
