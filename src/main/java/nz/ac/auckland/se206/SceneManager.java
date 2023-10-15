@@ -26,7 +26,6 @@ public class SceneManager {
    *
    * @param room the room to add
    * @param uiRoot the root of the scene
-   * @return void
    */
   public static void addRoom(Room room, Parent uiRoot) {
     sceneMap.put(room, uiRoot);

@@ -7,6 +7,10 @@ import nz.ac.auckland.se206.gpt.openai.ApiProxyException;
 import nz.ac.auckland.se206.gpt.openai.ChatCompletionRequest;
 import nz.ac.auckland.se206.gpt.openai.ChatCompletionResult;
 
+/**
+ * This class is used to manage the AI. The mood of the AI is also managed here. Threading is used
+ * when the api is calling the AI, to avoid freezing the game.
+ */
 public class GameMaster {
 
   private ChatCompletionRequest chatCompletionRequest;
