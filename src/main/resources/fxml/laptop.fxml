@@ -99,7 +99,7 @@
             <Image url="@../images/RiddleWhiteBoard.jpg" />
          </image>
       </ImageView>
-      <TextArea fx:id="riddle" layoutX="774.0" layoutY="212.0" prefHeight="150.0" prefWidth="200.0" wrapText="true">
+      <TextArea fx:id="riddle" editable="false" layoutX="774.0" layoutY="212.0" prefHeight="150.0" prefWidth="200.0" wrapText="true">
          <font>
             <Font size="15.0" />
          </font>
