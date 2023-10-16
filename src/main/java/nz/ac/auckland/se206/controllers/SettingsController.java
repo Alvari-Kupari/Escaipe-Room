@@ -24,17 +24,19 @@ public class SettingsController {
    */
   @FXML
   private void onGoMainMenu() throws IOException {
-    System.out.println("Go to Main Menu");
-    // Go to the loading screen
-    App.changeScene(Room.LOADING);
-    // Set the game back to its default state
-    GameState.setDefaults();
 
     // This allows the game to restart in the background
     Task<Void> restartTask =
         new Task<Void>() {
           @Override
           protected Void call() throws Exception {
+
+            // Go to the loading screen
+            App.changeScene(Room.LOADING);
+
+            // Set the game back to its default state
+            GameState.setDefaults();
+
             System.out.println("...Restarting...");
 
             // reload all the rooms
@@ -47,12 +49,6 @@ public class SettingsController {
     restartTask.setOnSucceeded(
         e -> {
           System.out.println("---------------------Succeeded---------------------");
-        });
-
-    // handle the restart failing
-    restartTask.setOnFailed(
-        e -> {
-          System.out.println("---------------------Failed---------------------");
         });
 
     // begin the restart
