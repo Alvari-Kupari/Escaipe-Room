@@ -160,25 +160,25 @@
                   <Image url="@../images/settings-border.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOff" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="speechOn" fitHeight="161.0" fitWidth="156.0" layoutX="254.0" layoutY="138.0" onMouseClicked="#onTurnSpeechOff" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../images/speechIcon.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="257.0" layoutY="87.0" onMouseClicked="#onTurnSpeechOn" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
+            <ImageView fx:id="speechOff" fitHeight="161.0" fitWidth="156.0" layoutX="254.0" layoutY="138.0" onMouseClicked="#onTurnSpeechOn" onMouseMoved="#onHover" pickOnBounds="true" preserveRatio="true" visible="false">
                <image>
                   <Image url="@../images/speechOffIcon.png" />
                </image>
             </ImageView>
-            <Button fx:id="btnBack" layoutX="281.0" layoutY="277.0" mnemonicParsing="false" onAction="#onGoBackToRoom" prefHeight="36.0" prefWidth="108.0" text="Back">
+            <Button fx:id="btnBack" layoutX="281.0" layoutY="358.0" mnemonicParsing="false" onAction="#onGoBackToRoom" prefHeight="36.0" prefWidth="108.0" text="Back">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="btnMainMenu" layoutX="149.0" layoutY="277.0" mnemonicParsing="false" onAction="#onGoMainMenu" prefHeight="36.0" prefWidth="108.0" text="Main Menu">
+            <Button fx:id="btnMainMenu" layoutX="149.0" layoutY="358.0" mnemonicParsing="false" onAction="#onGoMainMenu" prefHeight="36.0" prefWidth="108.0" text="Main Menu">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
-            <Button fx:id="btnExit" layoutX="413.0" layoutY="277.0" mnemonicParsing="false" onAction="#onExit" prefHeight="36.0" prefWidth="108.0" text=" Exit Game">
+            <Button fx:id="btnExit" layoutX="413.0" layoutY="358.0" mnemonicParsing="false" onAction="#onExit" prefHeight="36.0" prefWidth="108.0" text=" Exit Game">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font></Button>
