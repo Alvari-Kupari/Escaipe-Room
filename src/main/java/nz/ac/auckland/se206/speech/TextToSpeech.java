@@ -11,6 +11,13 @@ import nz.ac.auckland.se206.RoomBinder;
 
 /** Text-to-speech API using the JavaX speech library. */
 public class TextToSpeech {
+  /** Custom unchecked exception for Text-to-speech issues. */
+  static class TextToSpeechException extends RuntimeException {
+    public TextToSpeechException(final String message) {
+      super(message);
+    }
+  }
+
   private static TextToSpeech textToSpeech = new TextToSpeech();
 
   /**
@@ -79,13 +86,6 @@ public class TextToSpeech {
 
     Thread speechThread = new Thread(speechTask);
     speechThread.start();
-  }
-
-  /** Custom unchecked exception for Text-to-speech issues. */
-  static class TextToSpeechException extends RuntimeException {
-    public TextToSpeechException(final String message) {
-      super(message);
-    }
   }
 
   private final Synthesizer synthesizer;
