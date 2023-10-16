@@ -11,6 +11,7 @@ import nz.ac.auckland.se206.RoomBinder;
 
 /** Text-to-speech API using the JavaX speech library. */
 public class TextToSpeech {
+  private static TextToSpeech textToSpeech = new TextToSpeech();
 
   /**
    * Main function to speak the given list of sentences.
@@ -28,8 +29,6 @@ public class TextToSpeech {
     textToSpeech.speak(args);
     textToSpeech.terminate();
   }
-
-  private static TextToSpeech textToSpeech = new TextToSpeech();
 
   /**
    * Makes the TTS say something.

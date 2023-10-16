@@ -240,7 +240,7 @@ public class StartController {
   }
 
   /**
-   * Hover effect for the clickable images
+   * Hover effect for the clickable images. Useful for making the GUI look nicer.
    *
    * @param event the mouse event
    */
