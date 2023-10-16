@@ -169,7 +169,7 @@
             <Image url="@../images/text-HINTS_LEFT.png" />
          </image>
       </ImageView>
-      <ImageView fx:id="infinity" fitHeight="17.0" fitWidth="35.0" layoutX="939.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fx:id="infinity" fitHeight="30.0" fitWidth="40.0" layoutX="936.0" layoutY="38.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../images/infinity.png" />
          </image>
